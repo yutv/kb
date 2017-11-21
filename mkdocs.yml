@@ -1,0 +1,14 @@
+site_name: Knowledge Base
+theme:
+  name: 'material'
+  palette:
+      primary: 'Teal'
+      accent: 'Teal'
+extra:
+    social:
+        - type: 'github'
+          link: 'https://github.com/yutv'
+        - type: 'twitter'
+          link: 'https://twitter.com/YuriiTvardyi'
+        - type: 'linkedin'
+          link: 'https://www.linkedin.com/in/yuriitvardyi/'
