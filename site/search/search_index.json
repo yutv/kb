@@ -1,0 +1,99 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Home\n\n\nSet of useful tips for developers who are using bash, git, mysql, etc.", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#home", 
+            "text": "Set of useful tips for developers who are using bash, git, mysql, etc.", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/bash/", 
+            "text": "Bash prompt w/ path and colors\n\n\nAdd the following line to your \n~/.bash_profile\n:\n\n\nexport PS1=\"\\[\\e[0;38;05;15m\\][\\[\\e[0;38;05;47m\\]\\u\\[\\e[0;38;05;15m\\]@\\[\\e[0;38;05;208m\\]\\h:\\[\\e[0;38;05;111m\\]\\w\\[\\e[0;38;05;15m\\]]\\\\$ \\[\\e[0m\\]\"\n\n\n\nConvert DOS to Unix newlines in current directory excluding .git directory\n\n\nfind . -type f -not -path './.git/*' -print0 | xargs -0 dos2unix\n\n\n\nUse custom SSH port with rsync/ssh/scp/sshfs\n\n\nrsync -avz -e \"ssh -p 2244\" --exclude=var user@server.com:/html/ .\nssh user@server.com -p 2244\nscp -P 2244 user@server.com:/html/website_db.sql .\nsshfs user@server.com:/html -p 2244 server.com", 
+            "title": "Bash"
+        }, 
+        {
+            "location": "/bash/#bash-prompt-w-path-and-colors", 
+            "text": "Add the following line to your  ~/.bash_profile :  export PS1=\"\\[\\e[0;38;05;15m\\][\\[\\e[0;38;05;47m\\]\\u\\[\\e[0;38;05;15m\\]@\\[\\e[0;38;05;208m\\]\\h:\\[\\e[0;38;05;111m\\]\\w\\[\\e[0;38;05;15m\\]]\\\\$ \\[\\e[0m\\]\"", 
+            "title": "Bash prompt w/ path and colors"
+        }, 
+        {
+            "location": "/bash/#convert-dos-to-unix-newlines-in-current-directory-excluding-git-directory", 
+            "text": "find . -type f -not -path './.git/*' -print0 | xargs -0 dos2unix", 
+            "title": "Convert DOS to Unix newlines in current directory excluding .git directory"
+        }, 
+        {
+            "location": "/bash/#use-custom-ssh-port-with-rsyncsshscpsshfs", 
+            "text": "rsync -avz -e \"ssh -p 2244\" --exclude=var user@server.com:/html/ .\nssh user@server.com -p 2244\nscp -P 2244 user@server.com:/html/website_db.sql .\nsshfs user@server.com:/html -p 2244 server.com", 
+            "title": "Use custom SSH port with rsync/ssh/scp/sshfs"
+        }, 
+        {
+            "location": "/git/", 
+            "text": "Daily Routine\n\n\nUpdate local list of remote branches\n\n\ngit branch -a\ngit remote update origin --prune\n\n\n\n\nAdding a remote\n\n\ngit remote -v\ngit remote add origin https://domain.com/myrepo.git\n\n\n\n\nMerge branch as new commit\n\n\ngit merge --squash branch_name\ngit commit\n\n\n\n\nSetup\n\n\nGlobal .gitignore\n\n\ngit config --global core.excludesfile ~/.gitignore\nvi ~/.gitignore\n\n\n\n\nAdd your global ignores, e.g:\n\n\n.idea\nvendor\nstudio\n\n\n\nStore passwords\n\n\ngit config --global credential.helper store", 
+            "title": "Git"
+        }, 
+        {
+            "location": "/git/#daily-routine", 
+            "text": "", 
+            "title": "Daily Routine"
+        }, 
+        {
+            "location": "/git/#update-local-list-of-remote-branches", 
+            "text": "git branch -a\ngit remote update origin --prune", 
+            "title": "Update local list of remote branches"
+        }, 
+        {
+            "location": "/git/#adding-a-remote", 
+            "text": "git remote -v\ngit remote add origin https://domain.com/myrepo.git", 
+            "title": "Adding a remote"
+        }, 
+        {
+            "location": "/git/#merge-branch-as-new-commit", 
+            "text": "git merge --squash branch_name\ngit commit", 
+            "title": "Merge branch as new commit"
+        }, 
+        {
+            "location": "/git/#setup", 
+            "text": "", 
+            "title": "Setup"
+        }, 
+        {
+            "location": "/git/#global-gitignore", 
+            "text": "git config --global core.excludesfile ~/.gitignore\nvi ~/.gitignore  Add your global ignores, e.g:  .idea\nvendor\nstudio", 
+            "title": "Global .gitignore"
+        }, 
+        {
+            "location": "/git/#store-passwords", 
+            "text": "git config --global credential.helper store", 
+            "title": "Store passwords"
+        }, 
+        {
+            "location": "/htaccess/", 
+            "text": "Disable Browser Cache for specific folder\n\n\nPlace the following line into .htaccess:\n\n\nHeader set Pragma \"no-cache\" \"expr=%{REQUEST_URI}=~/VendorName/i\"\n\n\n\nAs result url with \"VendorName\" in path will get \nPragma \"no-cache\"\n http header, so browser won't cache it.\nThis trick is very useful for magento developers who are working with js components or html templates and want to disable cache for a certain folder only.", 
+            "title": "Htaccess"
+        }, 
+        {
+            "location": "/htaccess/#disable-browser-cache-for-specific-folder", 
+            "text": "Place the following line into .htaccess:  Header set Pragma \"no-cache\" \"expr=%{REQUEST_URI}=~/VendorName/i\"  As result url with \"VendorName\" in path will get  Pragma \"no-cache\"  http header, so browser won't cache it.\nThis trick is very useful for magento developers who are working with js components or html templates and want to disable cache for a certain folder only.", 
+            "title": "Disable Browser Cache for specific folder"
+        }, 
+        {
+            "location": "/mysql/", 
+            "text": "Store mysql user name and password\n\n\nTo use \nmysql\n and \nmysqldump\n commands without password just store credentials in \n~/.my.cnf\n file, e.g.:\n\n\n[client]\nuser=\"devuser\"\npassword=\"devpassword\"\n\n\n\nDump database w/o DEFINER\n\n\nmysqldump $dbName | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\\*/\\*/' \n $dbName.sql", 
+            "title": "Mysql"
+        }, 
+        {
+            "location": "/mysql/#store-mysql-user-name-and-password", 
+            "text": "To use  mysql  and  mysqldump  commands without password just store credentials in  ~/.my.cnf  file, e.g.:  [client]\nuser=\"devuser\"\npassword=\"devpassword\"", 
+            "title": "Store mysql user name and password"
+        }, 
+        {
+            "location": "/mysql/#dump-database-wo-definer", 
+            "text": "mysqldump $dbName | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\\*/\\*/'   $dbName.sql", 
+            "title": "Dump database w/o DEFINER"
+        }
+    ]
+}
