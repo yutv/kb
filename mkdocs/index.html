@@ -32,7 +32,7 @@
     
     
       
-        <title>Htaccess - Knowledge Base</title>
+        <title>Mkdocs - Knowledge Base</title>
       
     
     
@@ -90,7 +90,7 @@
             
               
             
-            Htaccess
+            Mkdocs
           
         </span>
       </div>
@@ -188,20 +188,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-    <a href="./" title="Htaccess" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../htaccess/" title="Htaccess" class="md-nav__link">
       Htaccess
     </a>
-    
   </li>
 
     
@@ -209,11 +200,18 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../mkdocs/" title="Mkdocs" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+    <a href="./" title="Mkdocs" class="md-nav__link md-nav__link--active">
       Mkdocs
     </a>
+    
   </li>
 
     
@@ -248,33 +246,18 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                <h1 id="disable-browser-cache-for-specific-folder">Disable Browser Cache for specific folder</h1>
-<p>Place the following line into .htaccess:</p>
-<pre><code>Header set Pragma "no-cache" "expr=%{REQUEST_URI}=~/VendorName/i"
-</code></pre>
-<p>As result url with "VendorName" in path will get <code>Pragma "no-cache"</code> http header, so browser won't cache it.
-This trick is very useful for magento developers who are working with js components or html templates and want to disable cache for a certain folder only.  </p>
+                  <h1>Mkdocs</h1>
+                
+                <ul>
+<li><code>mkdocs server</code> - start HTTP server</li>
+<li><code>mkdocs gh-deploy</code> - deploy to github pages</li>
+</ul>
                 
                   
                 
@@ -293,7 +276,7 @@ This trick is very useful for magento developers who are working with js compone
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../git/" title="Git" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../htaccess/" title="Htaccess" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -302,19 +285,19 @@ This trick is very useful for magento developers who are working with js compone
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Git
+                Htaccess
               </span>
             </div>
           </a>
         
         
-          <a href="../mkdocs/" title="Mkdocs" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../mysql/" title="Mysql" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Mkdocs
+                Mysql
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

@@ -248,8 +248,32 @@
 
 
   <li class="md-nav__item">
+    <a href="../mkdocs/" title="Mkdocs" class="md-nav__link">
+      Mkdocs
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../mysql/" title="Mysql" class="md-nav__link">
       Mysql
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../network/" title="Network" class="md-nav__link">
+      Network
     </a>
   </li>
 
@@ -314,6 +338,13 @@
 <p>Add the following line to your <code>~/.bash_profile</code>:</p>
 <pre><code>export PS1="\[\e[0;38;05;15m\][\[\e[0;38;05;47m\]\u\[\e[0;38;05;15m\]@\[\e[0;38;05;208m\]\h:\[\e[0;38;05;111m\]\w\[\e[0;38;05;15m\]]\\$ \[\e[0m\]"
 </code></pre>
+<p>Show colors:</p>
+<pre><code class="bash">for i in {0..255}; do echo -e &quot;\e[38;05;${i}m${i}&quot;; done | column -c 80 -s '  '; echo -e &quot;\e[m&quot;
+</code></pre>
+
+<pre><code class="bash">for code in $(seq -w 0 255); do for attr in 0 1; do printf &quot;%s-%03s %bTest%b\n&quot; &quot;${attr}&quot; &quot;${code}&quot; &quot;\e[${attr};38;05;${code}m&quot; &quot;\e[m&quot;; done; done | column -c $((COLUMNS*2))
+</code></pre>
+
 <h2 id="convert-dos-to-unix-newlines-in-current-directory-excluding-git-directory">Convert DOS to Unix newlines in current directory excluding .git directory</h2>
 <pre><code>find . -type f -not -path './.git/*' -print0 | xargs -0 dos2unix
 </code></pre>

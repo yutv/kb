@@ -12,12 +12,12 @@
         }, 
         {
             "location": "/bash/", 
-            "text": "Bash prompt w/ path and colors\n\n\nAdd the following line to your \n~/.bash_profile\n:\n\n\nexport PS1=\"\\[\\e[0;38;05;15m\\][\\[\\e[0;38;05;47m\\]\\u\\[\\e[0;38;05;15m\\]@\\[\\e[0;38;05;208m\\]\\h:\\[\\e[0;38;05;111m\\]\\w\\[\\e[0;38;05;15m\\]]\\\\$ \\[\\e[0m\\]\"\n\n\n\nConvert DOS to Unix newlines in current directory excluding .git directory\n\n\nfind . -type f -not -path './.git/*' -print0 | xargs -0 dos2unix\n\n\n\nUse custom SSH port with rsync/ssh/scp/sshfs\n\n\nrsync -avz -e \"ssh -p 2244\" --exclude=var user@server.com:/html/ .\nssh user@server.com -p 2244\nscp -P 2244 user@server.com:/html/website_db.sql .\nsshfs user@server.com:/html -p 2244 server.com", 
+            "text": "Bash prompt w/ path and colors\n\n\nAdd the following line to your \n~/.bash_profile\n:\n\n\nexport PS1=\"\\[\\e[0;38;05;15m\\][\\[\\e[0;38;05;47m\\]\\u\\[\\e[0;38;05;15m\\]@\\[\\e[0;38;05;208m\\]\\h:\\[\\e[0;38;05;111m\\]\\w\\[\\e[0;38;05;15m\\]]\\\\$ \\[\\e[0m\\]\"\n\n\n\nShow colors:\n\n\nfor i in {0..255}; do echo -e \n\\e[38;05;${i}m${i}\n; done | column -c 80 -s '  '; echo -e \n\\e[m\n\n\n\n\n\nfor code in $(seq -w 0 255); do for attr in 0 1; do printf \n%s-%03s %bTest%b\\n\n \n${attr}\n \n${code}\n \n\\e[${attr};38;05;${code}m\n \n\\e[m\n; done; done | column -c $((COLUMNS*2))\n\n\n\n\nConvert DOS to Unix newlines in current directory excluding .git directory\n\n\nfind . -type f -not -path './.git/*' -print0 | xargs -0 dos2unix\n\n\n\nUse custom SSH port with rsync/ssh/scp/sshfs\n\n\nrsync -avz -e \"ssh -p 2244\" --exclude=var user@server.com:/html/ .\nssh user@server.com -p 2244\nscp -P 2244 user@server.com:/html/website_db.sql .\nsshfs user@server.com:/html -p 2244 server.com", 
             "title": "Bash"
         }, 
         {
             "location": "/bash/#bash-prompt-w-path-and-colors", 
-            "text": "Add the following line to your  ~/.bash_profile :  export PS1=\"\\[\\e[0;38;05;15m\\][\\[\\e[0;38;05;47m\\]\\u\\[\\e[0;38;05;15m\\]@\\[\\e[0;38;05;208m\\]\\h:\\[\\e[0;38;05;111m\\]\\w\\[\\e[0;38;05;15m\\]]\\\\$ \\[\\e[0m\\]\"", 
+            "text": "Add the following line to your  ~/.bash_profile :  export PS1=\"\\[\\e[0;38;05;15m\\][\\[\\e[0;38;05;47m\\]\\u\\[\\e[0;38;05;15m\\]@\\[\\e[0;38;05;208m\\]\\h:\\[\\e[0;38;05;111m\\]\\w\\[\\e[0;38;05;15m\\]]\\\\$ \\[\\e[0m\\]\"  Show colors:  for i in {0..255}; do echo -e  \\e[38;05;${i}m${i} ; done | column -c 80 -s '  '; echo -e  \\e[m   for code in $(seq -w 0 255); do for attr in 0 1; do printf  %s-%03s %bTest%b\\n   ${attr}   ${code}   \\e[${attr};38;05;${code}m   \\e[m ; done; done | column -c $((COLUMNS*2))", 
             "title": "Bash prompt w/ path and colors"
         }, 
         {
@@ -81,6 +81,11 @@
             "title": "Disable Browser Cache for specific folder"
         }, 
         {
+            "location": "/mkdocs/", 
+            "text": "mkdocs server\n - start HTTP server\n\n\nmkdocs gh-deploy\n - deploy to github pages", 
+            "title": "Mkdocs"
+        }, 
+        {
             "location": "/mysql/", 
             "text": "Store mysql user name and password\n\n\nTo use \nmysql\n and \nmysqldump\n commands without password just store credentials in \n~/.my.cnf\n file, e.g.:\n\n\n[client]\nuser=\"devuser\"\npassword=\"devpassword\"\n\n\n\nDump database w/o DEFINER\n\n\nmysqldump $dbName | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\\*/\\*/' \n $dbName.sql", 
             "title": "Mysql"
@@ -94,6 +99,36 @@
             "location": "/mysql/#dump-database-wo-definer", 
             "text": "mysqldump $dbName | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\\*/\\*/'   $dbName.sql", 
             "title": "Dump database w/o DEFINER"
+        }, 
+        {
+            "location": "/network/", 
+            "text": "Get my IP Address\n\n\nifconfig eth1 | awk '/inet addr/{print substr($2,6)}'\n\n\n\n\nLEDE/OpenWRT\n\n\nSpeed test with iperf (Kyivstar)\n\n\nopkg update\nopkg install iperf\niperf -c 193.41.63.185 -u -b 100m -r\n\n\n\n\nSet up Dropbear public key authentication\n\n\nssh-copy-id  root@192.168.1.1\nssh root@192.168.1.1\ncp /root/.ssh/authorized_keys /etc/dropbear/\nchmod 700 /etc/dropbear\nchmod 600 /etc/dropbear/authorized_keys\n\n\n\n\nIP Addresses daily log (cron job)\n\n\n0 4 * * * echo \n`date +%Y-%m-%d` $(ifconfig eth1 | awk '/inet addr/{print substr($2,6)}')\n \n /root/ip.log", 
+            "title": "Network"
+        }, 
+        {
+            "location": "/network/#get-my-ip-address", 
+            "text": "ifconfig eth1 | awk '/inet addr/{print substr($2,6)}'", 
+            "title": "Get my IP Address"
+        }, 
+        {
+            "location": "/network/#ledeopenwrt", 
+            "text": "", 
+            "title": "LEDE/OpenWRT"
+        }, 
+        {
+            "location": "/network/#speed-test-with-iperf-kyivstar", 
+            "text": "opkg update\nopkg install iperf\niperf -c 193.41.63.185 -u -b 100m -r", 
+            "title": "Speed test with iperf (Kyivstar)"
+        }, 
+        {
+            "location": "/network/#set-up-dropbear-public-key-authentication", 
+            "text": "ssh-copy-id  root@192.168.1.1\nssh root@192.168.1.1\ncp /root/.ssh/authorized_keys /etc/dropbear/\nchmod 700 /etc/dropbear\nchmod 600 /etc/dropbear/authorized_keys", 
+            "title": "Set up Dropbear public key authentication"
+        }, 
+        {
+            "location": "/network/#ip-addresses-daily-log-cron-job", 
+            "text": "0 4 * * * echo  `date +%Y-%m-%d` $(ifconfig eth1 | awk '/inet addr/{print substr($2,6)}')    /root/ip.log", 
+            "title": "IP Addresses daily log (cron job)"
         }
     ]
 }

@@ -32,7 +32,7 @@
     
     
       
-        <title>Htaccess - Knowledge Base</title>
+        <title>Network - Knowledge Base</title>
       
     
     
@@ -90,7 +90,7 @@
             
               
             
-            Htaccess
+            Network
           
         </span>
       </div>
@@ -188,20 +188,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-    <a href="./" title="Htaccess" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../htaccess/" title="Htaccess" class="md-nav__link">
       Htaccess
     </a>
-    
   </li>
 
     
@@ -233,11 +224,77 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../network/" title="Network" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Network
+      </label>
+    
+    <a href="./" title="Network" class="md-nav__link md-nav__link--active">
       Network
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#get-my-ip-address" title="Get my IP Address" class="md-nav__link">
+    Get my IP Address
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ledeopenwrt" title="LEDE/OpenWRT" class="md-nav__link">
+    LEDE/OpenWRT
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#speed-test-with-iperf-kyivstar" title="Speed test with iperf (Kyivstar)" class="md-nav__link">
+    Speed test with iperf (Kyivstar)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-up-dropbear-public-key-authentication" title="Set up Dropbear public key authentication" class="md-nav__link">
+    Set up Dropbear public key authentication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ip-addresses-daily-log-cron-job" title="IP Addresses daily log (cron job)" class="md-nav__link">
+    IP Addresses daily log (cron job)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -255,8 +312,54 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#get-my-ip-address" title="Get my IP Address" class="md-nav__link">
+    Get my IP Address
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ledeopenwrt" title="LEDE/OpenWRT" class="md-nav__link">
+    LEDE/OpenWRT
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#speed-test-with-iperf-kyivstar" title="Speed test with iperf (Kyivstar)" class="md-nav__link">
+    Speed test with iperf (Kyivstar)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-up-dropbear-public-key-authentication" title="Set up Dropbear public key authentication" class="md-nav__link">
+    Set up Dropbear public key authentication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ip-addresses-daily-log-cron-job" title="IP Addresses daily log (cron job)" class="md-nav__link">
+    IP Addresses daily log (cron job)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
   
 </nav>
                   </div>
@@ -269,12 +372,30 @@
               
                 
                 
-                <h1 id="disable-browser-cache-for-specific-folder">Disable Browser Cache for specific folder</h1>
-<p>Place the following line into .htaccess:</p>
-<pre><code>Header set Pragma "no-cache" "expr=%{REQUEST_URI}=~/VendorName/i"
+                  <h1>Network</h1>
+                
+                <h2 id="get-my-ip-address">Get my IP Address</h2>
+<pre><code class="bash">ifconfig eth1 | awk '/inet addr/{print substr($2,6)}'
 </code></pre>
-<p>As result url with "VendorName" in path will get <code>Pragma "no-cache"</code> http header, so browser won't cache it.
-This trick is very useful for magento developers who are working with js components or html templates and want to disable cache for a certain folder only.  </p>
+
+<h2 id="ledeopenwrt">LEDE/OpenWRT</h2>
+<h3 id="speed-test-with-iperf-kyivstar">Speed test with iperf (Kyivstar)</h3>
+<pre><code class="bash">opkg update
+opkg install iperf
+iperf -c 193.41.63.185 -u -b 100m -r
+</code></pre>
+
+<h3 id="set-up-dropbear-public-key-authentication">Set up Dropbear public key authentication</h3>
+<pre><code class="bash">ssh-copy-id  root@192.168.1.1
+ssh root@192.168.1.1
+cp /root/.ssh/authorized_keys /etc/dropbear/
+chmod 700 /etc/dropbear
+chmod 600 /etc/dropbear/authorized_keys
+</code></pre>
+
+<h3 id="ip-addresses-daily-log-cron-job">IP Addresses daily log (cron job)</h3>
+<pre><code class="cron">0 4 * * * echo &quot;`date +%Y-%m-%d` $(ifconfig eth1 | awk '/inet addr/{print substr($2,6)}')&quot; &gt;&gt; /root/ip.log
+</code></pre>
                 
                   
                 
@@ -293,7 +414,7 @@ This trick is very useful for magento developers who are working with js compone
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../git/" title="Git" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../mysql/" title="Mysql" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -302,25 +423,11 @@ This trick is very useful for magento developers who are working with js compone
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Git
+                Mysql
               </span>
             </div>
           </a>
         
-        
-          <a href="../mkdocs/" title="Mkdocs" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Mkdocs
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
         
       </nav>
     </div>
