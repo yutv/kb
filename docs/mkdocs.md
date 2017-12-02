@@ -1,2 +1,3 @@
 - `mkdocs server` - start HTTP server
 - `mkdocs gh-deploy` - deploy to github pages
+- [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
