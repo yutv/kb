@@ -189,6 +189,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#ssh-authentication-wo-password" title="SSH authentication w/o password" class="md-nav__link">
+    SSH authentication w/o password
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#bash-prompt-w-path-and-colors" title="Bash prompt w/ path and colors" class="md-nav__link">
     Bash prompt w/ path and colors
   </a>
@@ -297,6 +304,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#ssh-authentication-wo-password" title="SSH authentication w/o password" class="md-nav__link">
+    SSH authentication w/o password
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#bash-prompt-w-path-and-colors" title="Bash prompt w/ path and colors" class="md-nav__link">
     Bash prompt w/ path and colors
   </a>
@@ -334,7 +348,26 @@
                 
                   <h1>Bash</h1>
                 
-                <h2 id="bash-prompt-w-path-and-colors">Bash prompt w/ path and colors</h2>
+                <h2 id="ssh-authentication-wo-password">SSH authentication w/o password</h2>
+<pre><code class="bash">cd ~/.ssh
+ssh-keygen
+ssh-copy-id -i ~/.ssh/id_rsa.pub remote.host.com
+ssh-add
+ssh remote.host.com
+</code></pre>
+
+<p>If username has a “@” symbol then use the following:</p>
+<pre><code class="bash">ssh -l user@example.com example.com
+mkdir .ssh
+touch .ssh/authorized_keys
+exit
+cat ~/.ssh/id_rsa.pub | ssh -l user@example.com example.com 'cat &gt;&gt; .ssh/authorized_keys'
+chmod 700 .ssh
+chmod 400 .ssh/authorized_keys
+ssh -l user@example.com example.com
+</code></pre>
+
+<h2 id="bash-prompt-w-path-and-colors">Bash prompt w/ path and colors</h2>
 <p>Add the following line to your <code>~/.bash_profile</code>:</p>
 <pre><code>export PS1="\[\e[0;38;05;15m\][\[\e[0;38;05;47m\]\u\[\e[0;38;05;15m\]@\[\e[0;38;05;208m\]\h:\[\e[0;38;05;111m\]\w\[\e[0;38;05;15m\]]\\$ \[\e[0m\]"
 </code></pre>
