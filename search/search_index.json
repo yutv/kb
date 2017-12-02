@@ -82,7 +82,7 @@
         }, 
         {
             "location": "/mkdocs/", 
-            "text": "mkdocs server\n - start HTTP server\n\n\nmkdocs gh-deploy\n - deploy to github pages", 
+            "text": "mkdocs server\n - start HTTP server\n\n\nmkdocs gh-deploy\n - deploy to github pages\n\n\nMarkdown Cheatsheet", 
             "title": "Mkdocs"
         }, 
         {
