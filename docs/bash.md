@@ -1,3 +1,23 @@
+##SSH authentication w/o password
+```bash
+cd ~/.ssh
+ssh-keygen
+ssh-copy-id -i ~/.ssh/id_rsa.pub remote.host.com
+ssh-add
+ssh remote.host.com
+``` 
+If username has a “@” symbol then use the following:
+```bash
+ssh -l user@example.com example.com
+mkdir .ssh
+touch .ssh/authorized_keys
+exit
+cat ~/.ssh/id_rsa.pub | ssh -l user@example.com example.com 'cat >> .ssh/authorized_keys'
+chmod 700 .ssh
+chmod 400 .ssh/authorized_keys
+ssh -l user@example.com example.com
+```
+
 ##Bash prompt w/ path and colors
 
 Add the following line to your `~/.bash_profile`:
