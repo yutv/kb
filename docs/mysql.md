@@ -7,5 +7,5 @@ To use `mysql` and `mysqldump` commands without password just store credentials 
 
 ##Dump database w/o DEFINER
 ```bash
-mysqldump $dbName | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' > $dbName.sql
+dbName='db_name' && mysqldump $dbName | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' > $dbName.sql
 ```

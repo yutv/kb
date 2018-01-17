@@ -22,7 +22,13 @@ ssh -l user@example.com example.com
 
 Add the following line to your `~/.bash_profile`:
 
+Green
+
     export PS1="\[\e[0;38;05;15m\][\[\e[0;38;05;47m\]\u\[\e[0;38;05;15m\]@\[\e[0;38;05;208m\]\h:\[\e[0;38;05;111m\]\w\[\e[0;38;05;15m\]]\\$ \[\e[0m\]"
+
+Yellow
+
+    export PS1="\[\e[0;38;05;15m\][\[\e[0;38;05;226m\]\u\[\e[0;38;05;15m\]@\[\e[0;38;05;226m\]\h:\[\e[0;38;05;180m\]\w\[\e[0;38;05;15m\]]\\$ \[\e[0m\]"
 
 Show colors:
 ```bash
@@ -31,6 +37,15 @@ for i in {0..255}; do echo -e "\e[38;05;${i}m${i}"; done | column -c 80 -s '  ';
 ```bash
 for code in $(seq -w 0 255); do for attr in 0 1; do printf "%s-%03s %bTest%b\n" "${attr}" "${code}" "\e[${attr};38;05;${code}m" "\e[m"; done; done | column -c $((COLUMNS*2))
 ```    
+
+##Aliases
+    
+    #general
+    alias ll='LC_COLLATE=C ls -la --color=auto'
+    
+    #svn
+    alias ssie='svn st --ignore-externals | grep ^[^xX]'
+    alias xdiff='svn diff -x "-w --ignore-eol-style" | vim -R -'
 
 ##Convert DOS to Unix newlines in current directory excluding .git directory
 
