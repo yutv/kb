@@ -195,12 +195,49 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
-      
     
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Htaccess
+      </label>
     
     <a href="./" title="Htaccess" class="md-nav__link md-nav__link--active">
       Htaccess
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#disable-browser-cache-for-specific-folder" title="Disable Browser Cache for specific folder" class="md-nav__link">
+    Disable Browser Cache for specific folder
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-auth-with-url-exception" title="Basic Auth with URL exception" class="md-nav__link">
+    Basic Auth with URL exception
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-base-path-as-environment-variable-for-further-usage" title="Define base path as environment variable for further usage" class="md-nav__link">
+    Define base path as environment variable for further usage
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -255,8 +292,34 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#disable-browser-cache-for-specific-folder" title="Disable Browser Cache for specific folder" class="md-nav__link">
+    Disable Browser Cache for specific folder
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-auth-with-url-exception" title="Basic Auth with URL exception" class="md-nav__link">
+    Basic Auth with URL exception
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-base-path-as-environment-variable-for-further-usage" title="Define base path as environment variable for further usage" class="md-nav__link">
+    Define base path as environment variable for further usage
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
   
 </nav>
                   </div>
@@ -269,12 +332,30 @@
               
                 
                 
-                <h1 id="disable-browser-cache-for-specific-folder">Disable Browser Cache for specific folder</h1>
+                  <h1>Htaccess</h1>
+                
+                <h2 id="disable-browser-cache-for-specific-folder">Disable Browser Cache for specific folder</h2>
 <p>Place the following line into .htaccess:</p>
 <pre><code>Header set Pragma "no-cache" "expr=%{REQUEST_URI}=~/VendorName/i"
 </code></pre>
 <p>As result url with "VendorName" in path will get <code>Pragma "no-cache"</code> http header, so browser won't cache it.
 This trick is very useful for magento developers who are working with js components or html templates and want to disable cache for a certain folder only.  </p>
+<h2 id="basic-auth-with-url-exception">Basic Auth with URL exception</h2>
+<p>Access <strong>/dir/subdir/file.txt</strong> file without authorization</p>
+<pre><code>SetEnvIf Request_URI "dir\/subdir\/file\.txt$" no_auth
+AuthType Basic
+AuthUserFile /home/user/public_html/.htpasswd
+AuthName "Restricted Area"
+Require valid-user
+Order allow,deny
+Allow from env=no_auth
+Satisfy any
+</code></pre>
+<h2 id="define-base-path-as-environment-variable-for-further-usage">Define base path as environment variable for further usage</h2>
+<pre><code>RewriteCond %{REQUEST_URI}::$1 ^(/.+)/(.*)::\2$
+RewriteRule ^(.*) - [E=BASE:%1]
+RewriteRule ^(.*)$ %{ENV:BASE}/index.php [L]
+</code></pre>
                 
                   
                 

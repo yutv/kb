@@ -203,6 +203,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#aliases" title="Aliases" class="md-nav__link">
+    Aliases
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#convert-dos-to-unix-newlines-in-current-directory-excluding-git-directory" title="Convert DOS to Unix newlines in current directory excluding .git directory" class="md-nav__link">
     Convert DOS to Unix newlines in current directory excluding .git directory
   </a>
@@ -318,6 +325,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#aliases" title="Aliases" class="md-nav__link">
+    Aliases
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#convert-dos-to-unix-newlines-in-current-directory-excluding-git-directory" title="Convert DOS to Unix newlines in current directory excluding .git directory" class="md-nav__link">
     Convert DOS to Unix newlines in current directory excluding .git directory
   </a>
@@ -369,7 +383,11 @@ ssh -l user@example.com example.com
 
 <h2 id="bash-prompt-w-path-and-colors">Bash prompt w/ path and colors</h2>
 <p>Add the following line to your <code>~/.bash_profile</code>:</p>
+<p>Green</p>
 <pre><code>export PS1="\[\e[0;38;05;15m\][\[\e[0;38;05;47m\]\u\[\e[0;38;05;15m\]@\[\e[0;38;05;208m\]\h:\[\e[0;38;05;111m\]\w\[\e[0;38;05;15m\]]\\$ \[\e[0m\]"
+</code></pre>
+<p>Yellow</p>
+<pre><code>export PS1="\[\e[0;38;05;15m\][\[\e[0;38;05;226m\]\u\[\e[0;38;05;15m\]@\[\e[0;38;05;226m\]\h:\[\e[0;38;05;180m\]\w\[\e[0;38;05;15m\]]\\$ \[\e[0m\]"
 </code></pre>
 <p>Show colors:</p>
 <pre><code class="bash">for i in {0..255}; do echo -e &quot;\e[38;05;${i}m${i}&quot;; done | column -c 80 -s '  '; echo -e &quot;\e[m&quot;
@@ -378,6 +396,14 @@ ssh -l user@example.com example.com
 <pre><code class="bash">for code in $(seq -w 0 255); do for attr in 0 1; do printf &quot;%s-%03s %bTest%b\n&quot; &quot;${attr}&quot; &quot;${code}&quot; &quot;\e[${attr};38;05;${code}m&quot; &quot;\e[m&quot;; done; done | column -c $((COLUMNS*2))
 </code></pre>
 
+<h2 id="aliases">Aliases</h2>
+<pre><code>#general
+alias ll='LC_COLLATE=C ls -la --color=auto'
+
+#svn
+alias ssie='svn st --ignore-externals | grep ^[^xX]'
+alias xdiff='svn diff -x "-w --ignore-eol-style" | vim -R -'
+</code></pre>
 <h2 id="convert-dos-to-unix-newlines-in-current-directory-excluding-git-directory">Convert DOS to Unix newlines in current directory excluding .git directory</h2>
 <pre><code>find . -type f -not -path './.git/*' -print0 | xargs -0 dos2unix
 </code></pre>

@@ -12,7 +12,7 @@
         }, 
         {
             "location": "/bash/", 
-            "text": "SSH authentication w/o password\n\n\ncd ~/.ssh\nssh-keygen\nssh-copy-id -i ~/.ssh/id_rsa.pub remote.host.com\nssh-add\nssh remote.host.com\n\n\n\n\nIf username has a \u201c@\u201d symbol then use the following:\n\n\nssh -l user@example.com example.com\nmkdir .ssh\ntouch .ssh/authorized_keys\nexit\ncat ~/.ssh/id_rsa.pub | ssh -l user@example.com example.com 'cat \n .ssh/authorized_keys'\nchmod 700 .ssh\nchmod 400 .ssh/authorized_keys\nssh -l user@example.com example.com\n\n\n\n\nBash prompt w/ path and colors\n\n\nAdd the following line to your \n~/.bash_profile\n:\n\n\nexport PS1=\"\\[\\e[0;38;05;15m\\][\\[\\e[0;38;05;47m\\]\\u\\[\\e[0;38;05;15m\\]@\\[\\e[0;38;05;208m\\]\\h:\\[\\e[0;38;05;111m\\]\\w\\[\\e[0;38;05;15m\\]]\\\\$ \\[\\e[0m\\]\"\n\n\n\nShow colors:\n\n\nfor i in {0..255}; do echo -e \n\\e[38;05;${i}m${i}\n; done | column -c 80 -s '  '; echo -e \n\\e[m\n\n\n\n\n\nfor code in $(seq -w 0 255); do for attr in 0 1; do printf \n%s-%03s %bTest%b\\n\n \n${attr}\n \n${code}\n \n\\e[${attr};38;05;${code}m\n \n\\e[m\n; done; done | column -c $((COLUMNS*2))\n\n\n\n\nConvert DOS to Unix newlines in current directory excluding .git directory\n\n\nfind . -type f -not -path './.git/*' -print0 | xargs -0 dos2unix\n\n\n\nUse custom SSH port with rsync/ssh/scp/sshfs\n\n\nrsync -avz -e \"ssh -p 2244\" --exclude=var user@server.com:/html/ .\nssh user@server.com -p 2244\nscp -P 2244 user@server.com:/html/website_db.sql .\nsshfs user@server.com:/html -p 2244 server.com", 
+            "text": "SSH authentication w/o password\n\n\ncd ~/.ssh\nssh-keygen\nssh-copy-id -i ~/.ssh/id_rsa.pub remote.host.com\nssh-add\nssh remote.host.com\n\n\n\n\nIf username has a \u201c@\u201d symbol then use the following:\n\n\nssh -l user@example.com example.com\nmkdir .ssh\ntouch .ssh/authorized_keys\nexit\ncat ~/.ssh/id_rsa.pub | ssh -l user@example.com example.com 'cat \n .ssh/authorized_keys'\nchmod 700 .ssh\nchmod 400 .ssh/authorized_keys\nssh -l user@example.com example.com\n\n\n\n\nBash prompt w/ path and colors\n\n\nAdd the following line to your \n~/.bash_profile\n:\n\n\nGreen\n\n\nexport PS1=\"\\[\\e[0;38;05;15m\\][\\[\\e[0;38;05;47m\\]\\u\\[\\e[0;38;05;15m\\]@\\[\\e[0;38;05;208m\\]\\h:\\[\\e[0;38;05;111m\\]\\w\\[\\e[0;38;05;15m\\]]\\\\$ \\[\\e[0m\\]\"\n\n\n\nYellow\n\n\nexport PS1=\"\\[\\e[0;38;05;15m\\][\\[\\e[0;38;05;226m\\]\\u\\[\\e[0;38;05;15m\\]@\\[\\e[0;38;05;226m\\]\\h:\\[\\e[0;38;05;180m\\]\\w\\[\\e[0;38;05;15m\\]]\\\\$ \\[\\e[0m\\]\"\n\n\n\nShow colors:\n\n\nfor i in {0..255}; do echo -e \n\\e[38;05;${i}m${i}\n; done | column -c 80 -s '  '; echo -e \n\\e[m\n\n\n\n\n\nfor code in $(seq -w 0 255); do for attr in 0 1; do printf \n%s-%03s %bTest%b\\n\n \n${attr}\n \n${code}\n \n\\e[${attr};38;05;${code}m\n \n\\e[m\n; done; done | column -c $((COLUMNS*2))\n\n\n\n\nAliases\n\n\n#general\nalias ll='LC_COLLATE=C ls -la --color=auto'\n\n#svn\nalias ssie='svn st --ignore-externals | grep ^[^xX]'\nalias xdiff='svn diff -x \"-w --ignore-eol-style\" | vim -R -'\n\n\n\nConvert DOS to Unix newlines in current directory excluding .git directory\n\n\nfind . -type f -not -path './.git/*' -print0 | xargs -0 dos2unix\n\n\n\nUse custom SSH port with rsync/ssh/scp/sshfs\n\n\nrsync -avz -e \"ssh -p 2244\" --exclude=var user@server.com:/html/ .\nssh user@server.com -p 2244\nscp -P 2244 user@server.com:/html/website_db.sql .\nsshfs user@server.com:/html -p 2244 server.com", 
             "title": "Bash"
         }, 
         {
@@ -22,8 +22,13 @@
         }, 
         {
             "location": "/bash/#bash-prompt-w-path-and-colors", 
-            "text": "Add the following line to your  ~/.bash_profile :  export PS1=\"\\[\\e[0;38;05;15m\\][\\[\\e[0;38;05;47m\\]\\u\\[\\e[0;38;05;15m\\]@\\[\\e[0;38;05;208m\\]\\h:\\[\\e[0;38;05;111m\\]\\w\\[\\e[0;38;05;15m\\]]\\\\$ \\[\\e[0m\\]\"  Show colors:  for i in {0..255}; do echo -e  \\e[38;05;${i}m${i} ; done | column -c 80 -s '  '; echo -e  \\e[m   for code in $(seq -w 0 255); do for attr in 0 1; do printf  %s-%03s %bTest%b\\n   ${attr}   ${code}   \\e[${attr};38;05;${code}m   \\e[m ; done; done | column -c $((COLUMNS*2))", 
+            "text": "Add the following line to your  ~/.bash_profile :  Green  export PS1=\"\\[\\e[0;38;05;15m\\][\\[\\e[0;38;05;47m\\]\\u\\[\\e[0;38;05;15m\\]@\\[\\e[0;38;05;208m\\]\\h:\\[\\e[0;38;05;111m\\]\\w\\[\\e[0;38;05;15m\\]]\\\\$ \\[\\e[0m\\]\"  Yellow  export PS1=\"\\[\\e[0;38;05;15m\\][\\[\\e[0;38;05;226m\\]\\u\\[\\e[0;38;05;15m\\]@\\[\\e[0;38;05;226m\\]\\h:\\[\\e[0;38;05;180m\\]\\w\\[\\e[0;38;05;15m\\]]\\\\$ \\[\\e[0m\\]\"  Show colors:  for i in {0..255}; do echo -e  \\e[38;05;${i}m${i} ; done | column -c 80 -s '  '; echo -e  \\e[m   for code in $(seq -w 0 255); do for attr in 0 1; do printf  %s-%03s %bTest%b\\n   ${attr}   ${code}   \\e[${attr};38;05;${code}m   \\e[m ; done; done | column -c $((COLUMNS*2))", 
             "title": "Bash prompt w/ path and colors"
+        }, 
+        {
+            "location": "/bash/#aliases", 
+            "text": "#general\nalias ll='LC_COLLATE=C ls -la --color=auto'\n\n#svn\nalias ssie='svn st --ignore-externals | grep ^[^xX]'\nalias xdiff='svn diff -x \"-w --ignore-eol-style\" | vim -R -'", 
+            "title": "Aliases"
         }, 
         {
             "location": "/bash/#convert-dos-to-unix-newlines-in-current-directory-excluding-git-directory", 
@@ -77,7 +82,7 @@
         }, 
         {
             "location": "/htaccess/", 
-            "text": "Disable Browser Cache for specific folder\n\n\nPlace the following line into .htaccess:\n\n\nHeader set Pragma \"no-cache\" \"expr=%{REQUEST_URI}=~/VendorName/i\"\n\n\n\nAs result url with \"VendorName\" in path will get \nPragma \"no-cache\"\n http header, so browser won't cache it.\nThis trick is very useful for magento developers who are working with js components or html templates and want to disable cache for a certain folder only.", 
+            "text": "Disable Browser Cache for specific folder\n\n\nPlace the following line into .htaccess:\n\n\nHeader set Pragma \"no-cache\" \"expr=%{REQUEST_URI}=~/VendorName/i\"\n\n\n\nAs result url with \"VendorName\" in path will get \nPragma \"no-cache\"\n http header, so browser won't cache it.\nThis trick is very useful for magento developers who are working with js components or html templates and want to disable cache for a certain folder only.  \n\n\nBasic Auth with URL exception\n\n\nAccess \n/dir/subdir/file.txt\n file without authorization\n\n\nSetEnvIf Request_URI \"dir\\/subdir\\/file\\.txt$\" no_auth\nAuthType Basic\nAuthUserFile /home/user/public_html/.htpasswd\nAuthName \"Restricted Area\"\nRequire valid-user\nOrder allow,deny\nAllow from env=no_auth\nSatisfy any\n\n\n\nDefine base path as environment variable for further usage\n\n\nRewriteCond %{REQUEST_URI}::$1 ^(/.+)/(.*)::\\2$\nRewriteRule ^(.*) - [E=BASE:%1]\nRewriteRule ^(.*)$ %{ENV:BASE}/index.php [L]", 
             "title": "Htaccess"
         }, 
         {
@@ -86,13 +91,23 @@
             "title": "Disable Browser Cache for specific folder"
         }, 
         {
+            "location": "/htaccess/#basic-auth-with-url-exception", 
+            "text": "Access  /dir/subdir/file.txt  file without authorization  SetEnvIf Request_URI \"dir\\/subdir\\/file\\.txt$\" no_auth\nAuthType Basic\nAuthUserFile /home/user/public_html/.htpasswd\nAuthName \"Restricted Area\"\nRequire valid-user\nOrder allow,deny\nAllow from env=no_auth\nSatisfy any", 
+            "title": "Basic Auth with URL exception"
+        }, 
+        {
+            "location": "/htaccess/#define-base-path-as-environment-variable-for-further-usage", 
+            "text": "RewriteCond %{REQUEST_URI}::$1 ^(/.+)/(.*)::\\2$\nRewriteRule ^(.*) - [E=BASE:%1]\nRewriteRule ^(.*)$ %{ENV:BASE}/index.php [L]", 
+            "title": "Define base path as environment variable for further usage"
+        }, 
+        {
             "location": "/mkdocs/", 
             "text": "mkdocs server\n - start HTTP server\n\n\nmkdocs gh-deploy\n - deploy to github pages\n\n\nMarkdown Cheatsheet", 
             "title": "Mkdocs"
         }, 
         {
             "location": "/mysql/", 
-            "text": "Store mysql user name and password\n\n\nTo use \nmysql\n and \nmysqldump\n commands without password just store credentials in \n~/.my.cnf\n file, e.g.:\n\n\n[client]\nuser=\"devuser\"\npassword=\"devpassword\"\n\n\n\nDump database w/o DEFINER\n\n\nmysqldump $dbName | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\\*/\\*/' \n $dbName.sql", 
+            "text": "Store mysql user name and password\n\n\nTo use \nmysql\n and \nmysqldump\n commands without password just store credentials in \n~/.my.cnf\n file, e.g.:\n\n\n[client]\nuser=\"devuser\"\npassword=\"devpassword\"\n\n\n\nDump database w/o DEFINER\n\n\ndbName='db_name' \n mysqldump $dbName | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\\*/\\*/' \n $dbName.sql", 
             "title": "Mysql"
         }, 
         {
@@ -102,7 +117,7 @@
         }, 
         {
             "location": "/mysql/#dump-database-wo-definer", 
-            "text": "mysqldump $dbName | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\\*/\\*/'   $dbName.sql", 
+            "text": "dbName='db_name'   mysqldump $dbName | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\\*/\\*/'   $dbName.sql", 
             "title": "Dump database w/o DEFINER"
         }, 
         {
