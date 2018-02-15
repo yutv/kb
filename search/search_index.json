@@ -107,7 +107,7 @@
         }, 
         {
             "location": "/mysql/", 
-            "text": "Store mysql user name and password\n\n\nTo use \nmysql\n and \nmysqldump\n commands without password just store credentials in \n~/.my.cnf\n file, e.g.:\n\n\n[client]\nuser=\"devuser\"\npassword=\"devpassword\"\n\n\n\nDump database w/o DEFINER\n\n\ndbName='db_name' \n mysqldump $dbName | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\\*/\\*/' \n $dbName.sql", 
+            "text": "Store mysql user name and password\n\n\nTo use \nmysql\n and \nmysqldump\n commands without password just store credentials in \n~/.my.cnf\n file, e.g.:\n\n\n[client]\nuser=\"devuser\"\npassword=\"devpassword\"\n\n\n\nDump database w/o DEFINER\n\n\ndbName='dbname' \n mysqldump --opt $dbName | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\\*/\\*/' \n $dbName.sql", 
             "title": "Mysql"
         }, 
         {
@@ -117,7 +117,7 @@
         }, 
         {
             "location": "/mysql/#dump-database-wo-definer", 
-            "text": "dbName='db_name'   mysqldump $dbName | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\\*/\\*/'   $dbName.sql", 
+            "text": "dbName='dbname'   mysqldump --opt $dbName | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\\*/\\*/'   $dbName.sql", 
             "title": "Dump database w/o DEFINER"
         }, 
         {

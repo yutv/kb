@@ -327,7 +327,7 @@ user="devuser"
 password="devpassword"
 </code></pre>
 <h2 id="dump-database-wo-definer">Dump database w/o DEFINER</h2>
-<pre><code class="bash">dbName='db_name' &amp;&amp; mysqldump $dbName | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' &gt; $dbName.sql
+<pre><code class="bash">dbName='dbname' &amp;&amp; mysqldump --opt $dbName | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' &gt; $dbName.sql
 </code></pre>
                 
                   
