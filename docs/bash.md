@@ -26,10 +26,14 @@ Green
 
     export PS1="\[\e[0;38;05;15m\][\[\e[0;38;05;47m\]\u\[\e[0;38;05;15m\]@\[\e[0;38;05;208m\]\h:\[\e[0;38;05;111m\]\w\[\e[0;38;05;15m\]]\\$ \[\e[0m\]"
 
-Yellow
+Remote (yellow)
 
     export PS1="\[\e[0;38;05;15m\][\[\e[0;38;05;226m\]\u\[\e[0;38;05;15m\]@\[\e[0;38;05;226m\]\h:\[\e[0;38;05;180m\]\w\[\e[0;38;05;15m\]]\\$ \[\e[0m\]"
 
+Remote Root (red and yellow)
+
+    export PS1="\[\e[0;38;05;15m\][\[\e[0;38;05;196m\]\u\[\e[0;38;05;15m\]@\[\e[0;38;05;226m\]\h:\[\e[0;38;05;180m\]\w\[\e[0;38;05;15m\]]\\$ \[\e[0m\]"
+    
 Show colors:
 ```bash
 for i in {0..255}; do echo -e "\e[38;05;${i}m${i}"; done | column -c 80 -s '  '; echo -e "\e[m"
@@ -47,6 +51,15 @@ for code in $(seq -w 0 255); do for attr in 0 1; do printf "%s-%03s %bTest%b\n" 
     alias ssie='svn st --ignore-externals | grep ^[^xX]'
     alias xdiff='svn diff -x "-w --ignore-eol-style" | vim -R -'
 
+##VIM
+
+~/.vimrc
+
+    set nocompatible
+    set backspace=2
+    set tabstop=4
+    set expandtab
+
 ##Convert DOS to Unix newlines in current directory excluding .git directory
 
     find . -type f -not -path './.git/*' -print0 | xargs -0 dos2unix
@@ -57,3 +70,6 @@ for code in $(seq -w 0 255); do for attr in 0 1; do printf "%s-%03s %bTest%b\n" 
     ssh user@server.com -p 2244
     scp -P 2244 user@server.com:/html/website_db.sql .
     sshfs user@server.com:/html -p 2244 server.com
+    
+##Useful links
+1. [How to parse command line arguments](https://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash)
