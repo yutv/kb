@@ -231,6 +231,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#upload-multiple-files-wo-file-name-duplication" title="Upload multiple files w/o file name duplication" class="md-nav__link">
+    Upload multiple files w/o file name duplication
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#useful-links" title="Useful links" class="md-nav__link">
     Useful links
   </a>
@@ -367,6 +374,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#upload-multiple-files-wo-file-name-duplication" title="Upload multiple files w/o file name duplication" class="md-nav__link">
+    Upload multiple files w/o file name duplication
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#useful-links" title="Useful links" class="md-nav__link">
     Useful links
   </a>
@@ -450,6 +464,12 @@ set expandtab
 ssh user@server.com -p 2244
 scp -P 2244 user@server.com:/html/website_db.sql .
 sshfs user@server.com:/html -p 2244 server.com
+</code></pre>
+<h2 id="upload-multiple-files-wo-file-name-duplication">Upload multiple files w/o file name duplication</h2>
+<pre><code>scp {,user@example.com:~/}public_html/index.php
+scp {,user@example.com:~/}public_html/.htaccess
+scp {,user@example.com:~/}public_html/images/logo.png
+scp {,user@example.com:~/}public_html/js/jquery.js
 </code></pre>
 <h2 id="useful-links">Useful links</h2>
 <ol>

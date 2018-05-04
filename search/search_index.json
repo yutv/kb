@@ -12,7 +12,7 @@
         }, 
         {
             "location": "/bash/", 
-            "text": "SSH authentication w/o password\n\n\ncd ~/.ssh\nssh-keygen\nssh-copy-id -i ~/.ssh/id_rsa.pub remote.host.com\nssh-add\nssh remote.host.com\n\n\n\n\nIf username has a \u201c@\u201d symbol then use the following:\n\n\nssh -l user@example.com example.com\nmkdir .ssh\ntouch .ssh/authorized_keys\nexit\ncat ~/.ssh/id_rsa.pub | ssh -l user@example.com example.com 'cat \n .ssh/authorized_keys'\nchmod 700 .ssh\nchmod 400 .ssh/authorized_keys\nssh -l user@example.com example.com\n\n\n\n\nBash prompt w/ path and colors\n\n\nAdd the following line to your \n~/.bash_profile\n:\n\n\nGreen\n\n\nexport PS1=\"\\[\\e[0;38;05;15m\\][\\[\\e[0;38;05;47m\\]\\u\\[\\e[0;38;05;15m\\]@\\[\\e[0;38;05;208m\\]\\h:\\[\\e[0;38;05;111m\\]\\w\\[\\e[0;38;05;15m\\]]\\\\$ \\[\\e[0m\\]\"\n\n\n\nRemote (yellow)\n\n\nexport PS1=\"\\[\\e[0;38;05;15m\\][\\[\\e[0;38;05;226m\\]\\u\\[\\e[0;38;05;15m\\]@\\[\\e[0;38;05;226m\\]\\h:\\[\\e[0;38;05;180m\\]\\w\\[\\e[0;38;05;15m\\]]\\\\$ \\[\\e[0m\\]\"\n\n\n\nRemote Root (red and yellow)\n\n\nexport PS1=\"\\[\\e[0;38;05;15m\\][\\[\\e[0;38;05;196m\\]\\u\\[\\e[0;38;05;15m\\]@\\[\\e[0;38;05;226m\\]\\h:\\[\\e[0;38;05;180m\\]\\w\\[\\e[0;38;05;15m\\]]\\\\$ \\[\\e[0m\\]\"\n\n\n\nShow colors:\n\n\nfor i in {0..255}; do echo -e \n\\e[38;05;${i}m${i}\n; done | column -c 80 -s '  '; echo -e \n\\e[m\n\n\n\n\n\nfor code in $(seq -w 0 255); do for attr in 0 1; do printf \n%s-%03s %bTest%b\\n\n \n${attr}\n \n${code}\n \n\\e[${attr};38;05;${code}m\n \n\\e[m\n; done; done | column -c $((COLUMNS*2))\n\n\n\n\nAliases\n\n\n#general\nalias ll='LC_COLLATE=C ls -la --color=auto'\n\n#svn\nalias ssie='svn st --ignore-externals | grep ^[^xX]'\nalias xdiff='svn diff -x \"-w --ignore-eol-style\" | vim -R -'\n\n\n\nVIM\n\n\n~/.vimrc\n\n\nset nocompatible\nset backspace=2\nset tabstop=4\nset expandtab\n\n\n\nConvert DOS to Unix newlines in current directory excluding .git directory\n\n\nfind . -type f -not -path './.git/*' -print0 | xargs -0 dos2unix\n\n\n\nUse custom SSH port with rsync/ssh/scp/sshfs\n\n\nrsync -avz -e \"ssh -p 2244\" --exclude=var user@server.com:/html/ .\nssh user@server.com -p 2244\nscp -P 2244 user@server.com:/html/website_db.sql .\nsshfs user@server.com:/html -p 2244 server.com\n\n\n\nUseful links\n\n\n\n\nHow to parse command line arguments", 
+            "text": "SSH authentication w/o password\n\n\ncd ~/.ssh\nssh-keygen\nssh-copy-id -i ~/.ssh/id_rsa.pub remote.host.com\nssh-add\nssh remote.host.com\n\n\n\n\nIf username has a \u201c@\u201d symbol then use the following:\n\n\nssh -l user@example.com example.com\nmkdir .ssh\ntouch .ssh/authorized_keys\nexit\ncat ~/.ssh/id_rsa.pub | ssh -l user@example.com example.com 'cat \n .ssh/authorized_keys'\nchmod 700 .ssh\nchmod 400 .ssh/authorized_keys\nssh -l user@example.com example.com\n\n\n\n\nBash prompt w/ path and colors\n\n\nAdd the following line to your \n~/.bash_profile\n:\n\n\nGreen\n\n\nexport PS1=\"\\[\\e[0;38;05;15m\\][\\[\\e[0;38;05;47m\\]\\u\\[\\e[0;38;05;15m\\]@\\[\\e[0;38;05;208m\\]\\h:\\[\\e[0;38;05;111m\\]\\w\\[\\e[0;38;05;15m\\]]\\\\$ \\[\\e[0m\\]\"\n\n\n\nRemote (yellow)\n\n\nexport PS1=\"\\[\\e[0;38;05;15m\\][\\[\\e[0;38;05;226m\\]\\u\\[\\e[0;38;05;15m\\]@\\[\\e[0;38;05;226m\\]\\h:\\[\\e[0;38;05;180m\\]\\w\\[\\e[0;38;05;15m\\]]\\\\$ \\[\\e[0m\\]\"\n\n\n\nRemote Root (red and yellow)\n\n\nexport PS1=\"\\[\\e[0;38;05;15m\\][\\[\\e[0;38;05;196m\\]\\u\\[\\e[0;38;05;15m\\]@\\[\\e[0;38;05;226m\\]\\h:\\[\\e[0;38;05;180m\\]\\w\\[\\e[0;38;05;15m\\]]\\\\$ \\[\\e[0m\\]\"\n\n\n\nShow colors:\n\n\nfor i in {0..255}; do echo -e \n\\e[38;05;${i}m${i}\n; done | column -c 80 -s '  '; echo -e \n\\e[m\n\n\n\n\n\nfor code in $(seq -w 0 255); do for attr in 0 1; do printf \n%s-%03s %bTest%b\\n\n \n${attr}\n \n${code}\n \n\\e[${attr};38;05;${code}m\n \n\\e[m\n; done; done | column -c $((COLUMNS*2))\n\n\n\n\nAliases\n\n\n#general\nalias ll='LC_COLLATE=C ls -la --color=auto'\n\n#svn\nalias ssie='svn st --ignore-externals | grep ^[^xX]'\nalias xdiff='svn diff -x \"-w --ignore-eol-style\" | vim -R -'\n\n\n\nVIM\n\n\n~/.vimrc\n\n\nset nocompatible\nset backspace=2\nset tabstop=4\nset expandtab\n\n\n\nConvert DOS to Unix newlines in current directory excluding .git directory\n\n\nfind . -type f -not -path './.git/*' -print0 | xargs -0 dos2unix\n\n\n\nUse custom SSH port with rsync/ssh/scp/sshfs\n\n\nrsync -avz -e \"ssh -p 2244\" --exclude=var user@server.com:/html/ .\nssh user@server.com -p 2244\nscp -P 2244 user@server.com:/html/website_db.sql .\nsshfs user@server.com:/html -p 2244 server.com\n\n\n\nUpload multiple files w/o file name duplication\n\n\nscp {,user@example.com:~/}public_html/index.php\nscp {,user@example.com:~/}public_html/.htaccess\nscp {,user@example.com:~/}public_html/images/logo.png\nscp {,user@example.com:~/}public_html/js/jquery.js\n\n\n\nUseful links\n\n\n\n\nHow to parse command line arguments", 
             "title": "Bash"
         }, 
         {
@@ -46,13 +46,18 @@
             "title": "Use custom SSH port with rsync/ssh/scp/sshfs"
         }, 
         {
+            "location": "/bash/#upload-multiple-files-wo-file-name-duplication", 
+            "text": "scp {,user@example.com:~/}public_html/index.php\nscp {,user@example.com:~/}public_html/.htaccess\nscp {,user@example.com:~/}public_html/images/logo.png\nscp {,user@example.com:~/}public_html/js/jquery.js", 
+            "title": "Upload multiple files w/o file name duplication"
+        }, 
+        {
             "location": "/bash/#useful-links", 
             "text": "How to parse command line arguments", 
             "title": "Useful links"
         }, 
         {
             "location": "/git/", 
-            "text": "Daily Routine\n\n\nUpdate local list of remote branches\n\n\ngit branch -a\ngit remote update origin --prune\n\n\n\n\nAdding a remote\n\n\ngit remote -v\ngit remote add origin https://domain.com/myrepo.git\n\n\n\n\nMerge branch as new commit\n\n\ngit merge --squash branch_name\ngit commit\n\n\n\n\nSetup\n\n\nGlobal .gitignore\n\n\ngit config --global core.excludesfile ~/.gitignore\nvi ~/.gitignore\n\n\n\n\nAdd your global ignores, e.g:\n\n\n.idea\nvendor\nstudio\n\n\n\nStore passwords\n\n\ngit config --global credential.helper store", 
+            "text": "Daily Routine\n\n\nUpdate local list of remote branches\n\n\ngit branch -a\ngit remote update origin --prune\n\n\n\n\nAdding a remote\n\n\ngit remote -v\ngit remote add origin https://domain.com/myrepo.git\n\n\n\n\nMerge branch as new commit\n\n\ngit merge --squash branch_name\ngit commit\n\n\n\n\nSetup\n\n\nGlobal .gitignore\n\n\ngit config --global core.excludesfile ~/.gitignore\nvi ~/.gitignore\n\n\n\n\nAdd your global ignores, e.g:\n\n\n.idea\nvendor\nstudio\n\n\n\nStore passwords\n\n\ngit config --global credential.helper store\n\n\n\n\nWorkaround with 403 error\n\n\ngit config --global --unset-all credential.helper\ngit config --unset-all credential.helper", 
             "title": "Git"
         }, 
         {
@@ -89,6 +94,11 @@
             "location": "/git/#store-passwords", 
             "text": "git config --global credential.helper store", 
             "title": "Store passwords"
+        }, 
+        {
+            "location": "/git/#workaround-with-403-error", 
+            "text": "git config --global --unset-all credential.helper\ngit config --unset-all credential.helper", 
+            "title": "Workaround with 403 error"
         }, 
         {
             "location": "/htaccess/", 
