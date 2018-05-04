@@ -32,3 +32,9 @@ Add your global ignores, e.g:
 ```bash
 git config --global credential.helper store
 ```
+
+###Workaround with 403 error 
+```bash
+git config --global --unset-all credential.helper
+git config --unset-all credential.helper
+```
