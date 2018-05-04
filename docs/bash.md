@@ -70,6 +70,13 @@ for code in $(seq -w 0 255); do for attr in 0 1; do printf "%s-%03s %bTest%b\n" 
     ssh user@server.com -p 2244
     scp -P 2244 user@server.com:/html/website_db.sql .
     sshfs user@server.com:/html -p 2244 server.com
+
+##Upload multiple files w/o file name duplication
+
+    scp {,user@example.com:~/}public_html/index.php
+    scp {,user@example.com:~/}public_html/.htaccess
+    scp {,user@example.com:~/}public_html/images/logo.png
+    scp {,user@example.com:~/}public_html/js/jquery.js 
     
 ##Useful links
 1. [How to parse command line arguments](https://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash)
