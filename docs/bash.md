@@ -61,23 +61,24 @@ for code in $(seq -w 0 255); do for attr in 0 1; do printf "%s-%03s %bTest%b\n" 
     set expandtab
 ##Load additional php.ini when run php from terminal
 1. Add the following line into **~/.bashrc** file:
-    ```bash
-    export PHP_INI_SCAN_DIR=":$HOME/etc/php70"
-    ```
-2. Put additional config into **~/etc/php70/php.ini**, e.g:
-    ```memory_limit = -1```
-3. Run the command above or re-login terminal 
-4. Check ini paths:
-    ```bash
-    php --ini
-    ```
-5. Check memory limit:
-    ```bash
-    $ php -i | grep memory_limit
-    memory_limit => -1 => -1
-    ```
 
-[more info on php.net](http://php.net/manual/en/configuration.file.php#configuration.file.scan)
+    ```export PHP_INI_SCAN_DIR=":$HOME/etc/php70"```
+
+2. Put additional config into **~/etc/php70/php.ini**, e.g:
+
+    ```memory_limit = -1```
+    
+3. Run the command #1 or re-login terminal 
+4. Check ini paths:
+    
+    ```php --ini```
+
+5. Check memory limit:
+    
+        $ php -i | grep memory_limit
+        memory_limit => -1 => -1
+
+[More info on php.net](http://php.net/manual/en/configuration.file.php#configuration.file.scan)
 
 ##Convert DOS to Unix newlines in current directory excluding .git directory
 
