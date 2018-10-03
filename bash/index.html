@@ -485,10 +485,21 @@ set tabstop=4
 set expandtab
 </code></pre>
 <h2 id="load-additional-phpini-when-run-php-from-terminal">Load additional php.ini when run php from terminal</h2>
-<p>~/.bashrc</p>
-<pre><code>export PHP_INI_SCAN_DIR=":$HOME/etc/php70"
-php --ini
-</code></pre>
+<ol>
+<li>Add the following line into <strong>~/.bashrc</strong> file:
+    <code>bash
+    export PHP_INI_SCAN_DIR=":$HOME/etc/php70"</code></li>
+<li>Put additional config into <strong>~/etc/php70/php.ini</strong>, e.g:
+    <code>memory_limit = -1</code></li>
+<li>Run the command above or re-login terminal </li>
+<li>Check ini paths:
+    <code>bash
+    php --ini</code></li>
+<li>Check memory limit:
+    <code>bash
+    $ php -i | grep memory_limit
+    memory_limit =&gt; -1 =&gt; -1</code></li>
+</ol>
 <p><a href="http://php.net/manual/en/configuration.file.php#configuration.file.scan">more info on php.net</a></p>
 <h2 id="convert-dos-to-unix-newlines-in-current-directory-excluding-git-directory">Convert DOS to Unix newlines in current directory excluding .git directory</h2>
 <pre><code>find . -type f -not -path './.git/*' -print0 | xargs -0 dos2unix
