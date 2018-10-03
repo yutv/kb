@@ -59,6 +59,13 @@ for code in $(seq -w 0 255); do for attr in 0 1; do printf "%s-%03s %bTest%b\n" 
     set backspace=2
     set tabstop=4
     set expandtab
+##Load additional php.ini when run php from terminal
+~/.bashrc
+
+    export PHP_INI_SCAN_DIR=":$HOME/etc/php70"
+    php --ini
+
+[more info on php.net](http://php.net/manual/en/configuration.file.php#configuration.file.scan)
 
 ##Convert DOS to Unix newlines in current directory excluding .git directory
 
