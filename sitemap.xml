@@ -1,33 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2018-10-03</lastmod>
+     <loc>/</loc>
+     <lastmod>2019-01-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2018-10-03</lastmod>
+     <loc>/bash/</loc>
+     <lastmod>2019-01-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2018-10-03</lastmod>
+     <loc>/disk/</loc>
+     <lastmod>2019-01-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2018-10-03</lastmod>
+     <loc>/git/</loc>
+     <lastmod>2019-01-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2018-10-03</lastmod>
+     <loc>/htaccess/</loc>
+     <lastmod>2019-01-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2018-10-03</lastmod>
+     <loc>/magento2/</loc>
+     <lastmod>2019-01-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
+    <url>
+     <loc>/mysql/</loc>
+     <lastmod>2019-01-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/network/</loc>
+     <lastmod>2019-01-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
 </urlset>

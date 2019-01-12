@@ -27,22 +27,22 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="/assets/images/favicon.png">
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-0.17.1, mkdocs-material-2.0.4">
     
     
       
-        <title>Knowledge Base</title>
+        <title>Disk - Knowledge Base</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/application-709eec9410.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application-709eec9410.css">
       
-        <link rel="stylesheet" href="/assets/stylesheets/application-23f75ab9c7.palette.css">
+        <link rel="stylesheet" href="../assets/stylesheets/application-23f75ab9c7.palette.css">
       
     
     
-      <script src="/assets/javascripts/modernizr-e826f8942a.js"></script>
+      <script src="../assets/javascripts/modernizr-e826f8942a.js"></script>
     
     
       
@@ -75,7 +75,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="/" title="Knowledge Base" class="md-header-nav__button md-logo">
+        <a href=".." title="Knowledge Base" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -88,7 +88,9 @@
         <span class="md-flex__ellipsis md-header-nav__title">
           
             
-            Knowledge Base
+              
+            
+            Disk
           
         </span>
       </div>
@@ -152,7 +154,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/" title="Home" class="md-nav__link">
+    <a href=".." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -164,7 +166,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/bash/" title="Bash" class="md-nav__link">
+    <a href="../bash/" title="Bash" class="md-nav__link">
       Bash
     </a>
   </li>
@@ -174,11 +176,43 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="/disk/" title="Disk" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Disk
+      </label>
+    
+    <a href="./" title="Disk" class="md-nav__link md-nav__link--active">
       Disk
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#write-iso-to-disk" title="write iso to disk" class="md-nav__link">
+    write iso to disk
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -188,7 +222,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/git/" title="Git" class="md-nav__link">
+    <a href="../git/" title="Git" class="md-nav__link">
       Git
     </a>
   </li>
@@ -200,7 +234,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/htaccess/" title="Htaccess" class="md-nav__link">
+    <a href="../htaccess/" title="Htaccess" class="md-nav__link">
       Htaccess
     </a>
   </li>
@@ -212,7 +246,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/magento2/" title="Magento2" class="md-nav__link">
+    <a href="../magento2/" title="Magento2" class="md-nav__link">
       Magento2
     </a>
   </li>
@@ -224,7 +258,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/mysql/" title="Mysql" class="md-nav__link">
+    <a href="../mysql/" title="Mysql" class="md-nav__link">
       Mysql
     </a>
   </li>
@@ -236,7 +270,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/network/" title="Network" class="md-nav__link">
+    <a href="../network/" title="Network" class="md-nav__link">
       Network
     </a>
   </li>
@@ -249,12 +283,51 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#write-iso-to-disk" title="write iso to disk" class="md-nav__link">
+    write iso to disk
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
-  <h1>404 - Not found</h1>
+                
+                
+                  <h1>Disk</h1>
+                
+                <h2 id="write-iso-to-disk">write iso to disk</h2>
+<pre><code class="bash">    dd if=os.img of=/dev/sdX bs=1M status=progress oflag=dsync
+</code></pre>
 
+<p>where
+- oflag=dsync - synchronize I/O for data.</p>
+                
+                  
+                
+              
               
                 
               
@@ -265,6 +338,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../bash/" title="Bash" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Bash
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../git/" title="Git" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Git
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -297,9 +405,9 @@
       
     </div>
     
-      <script src="/assets/javascripts/application-8e4952e681.js"></script>
+      <script src="../assets/javascripts/application-8e4952e681.js"></script>
       
-      <script>app.initialize({version:"0.17.1",url:{base:""}})</script>
+      <script>app.initialize({version:"0.17.1",url:{base:".."}})</script>
       
     
     
