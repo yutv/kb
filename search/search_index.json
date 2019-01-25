@@ -199,6 +199,16 @@
             "location": "/network/#ip-addresses-daily-log-cron-job", 
             "text": "0 4 * * * echo  `date +%Y-%m-%d` $(ifconfig eth1 | awk '/inet addr/{print substr($2,6)}')    /root/ip.log", 
             "title": "IP Addresses daily log (cron job)"
+        }, 
+        {
+            "location": "/system/", 
+            "text": "Info\n\n\n#system info in short format\ninxi -F", 
+            "title": "System"
+        }, 
+        {
+            "location": "/system/#info", 
+            "text": "#system info in short format\ninxi -F", 
+            "title": "Info"
         }
     ]
 }
