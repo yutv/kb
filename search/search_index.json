@@ -61,6 +61,21 @@
             "title": "Useful links"
         }, 
         {
+            "location": "/composer/", 
+            "text": "Add a custom packages repository\n\n\ncomposer config --global repositories.example composer https://packages.example.com/\n\n\n\nInstall composer package from a local folder\n\n\nmkdir -p ~/composer-packages/\ncp vendor-module-x.x.x.zip ~/composer-packages/\ncd ~/public_html/\ncomposer config repositories.local artifact ~/composer-packages/\ncomposer require vendor/module\n#or\ncomposer update vendor/module", 
+            "title": "Composer"
+        }, 
+        {
+            "location": "/composer/#add-a-custom-packages-repository", 
+            "text": "composer config --global repositories.example composer https://packages.example.com/", 
+            "title": "Add a custom packages repository"
+        }, 
+        {
+            "location": "/composer/#install-composer-package-from-a-local-folder", 
+            "text": "mkdir -p ~/composer-packages/\ncp vendor-module-x.x.x.zip ~/composer-packages/\ncd ~/public_html/\ncomposer config repositories.local artifact ~/composer-packages/\ncomposer require vendor/module\n#or\ncomposer update vendor/module", 
+            "title": "Install composer package from a local folder"
+        }, 
+        {
             "location": "/disk/", 
             "text": "write iso to disk\n\n\n    dd if=os.img of=/dev/sdX bs=1M status=progress oflag=dsync\n\n\n\n\nwhere\n- oflag=dsync - synchronize I/O for data.", 
             "title": "Disk"
@@ -137,23 +152,63 @@
         }, 
         {
             "location": "/magento2/", 
-            "text": "riddlerteua\n\n\nAdd block with html content directly in layout\n\n\n\n    \n\n        \n\n            \n\n                Lorem ipsum dolor ...\n            \n\n        \n\n    \n\n\n\n\nAdd content block by id\n\n\n\n    \n\n        \n\n            \nmy-content-block-id\n\n        \n\n    \n\n\n\n\nAdd block to page head section", 
+            "text": "PhpStorm\n\n\nphp bin/magento dev:urn-catalog:generate .idea/misc.xml\n\n\n\nCreate Magento Project\n\n\ncd ~/public_html\n# create project based on the latest magento version\ncomposer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition m23x\n\n# create project based on specific magento version\n# composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.2.7 m22x\n\n\n\nUpgrade Magento Project\n\n\ncp composer.json composer.json.bak\ncomposer require magento/product-community-edition 2.2.7 --no-update\ncomposer update\nphp bin/magento setup:upgrade\n\n\n\nCreate module package\n\n\nFor Marketplace:\n\n\ngit clone https://git.example.com/Vendor_Module.git\ncd Vendor_Module\nzip -r9 \"vendor-module-1.0.0.zip\" . -x *.git* *.idea*\n\n\n\nAlternative way (archive will have a path app/code/Vendor/Module/):\n\n\nzip -r9 \"vendor-module-1.0.0.zip\" app/code/Vendor/Module/ -x *.git*\n\n\n\nLayout\n\n\nAdd block with html content\n\n\nreferenceContainer name=\"content\"\n\n    \nblock class=\"Magento\\Framework\\View\\Element\\Text\" name=\"my.block.name\"\n\n        \narguments\n\n            \nargument translate=\"true\" name=\"text\" xsi:type=\"string\"\n\n                Lorem ipsum dolor ...\n            \n/argument\n\n        \n/arguments\n\n    \n/block\n\n\n/referenceContainer\n\n\n\n\nAdd content block by id\n\n\nreferenceContainer name=\"content\"\n\n    \nblock class=\"Magento\\Cms\\Block\\Block\" name=\"my.content.block\"\n\n        \narguments\n\n            \nargument name=\"block_id\" xsi:type=\"string\"\nmy-content-block-id\n/argument\n\n        \n/arguments\n\n    \n/block\n\n\n/referenceContainer\n\n\n\n\nAdd block to page head section\n\n\nreferenceBlock name=\"head.additional\"\n\n    \nblock class=\"Magento\\Framework\\View\\Element\\Text\" \n           name=\"my.block.name\" \n           template=\"Vendor_Module::template.phtml\" /\n\n\n/referenceBlock\n\n\n\n\nJavascript\n\n\nShow all UI components on the page\n\n\nrequire('uiRegistry').get(function(item) { console.log(item.name, item); });\n\n\n\nAdd administrator\n\n\nphp bin/magento admin:user:create --admin-user=admin --admin-password=password --admin-email=support@example.com --admin-firstname=Support --admin-lastname=Account", 
             "title": "Magento2"
         }, 
         {
-            "location": "/magento2/#add-block-with-html-content-directly-in-layout", 
-            "text": "Lorem ipsum dolor ...", 
-            "title": "Add block with html content directly in layout"
+            "location": "/magento2/#phpstorm", 
+            "text": "php bin/magento dev:urn-catalog:generate .idea/misc.xml", 
+            "title": "PhpStorm"
+        }, 
+        {
+            "location": "/magento2/#create-magento-project", 
+            "text": "cd ~/public_html\n# create project based on the latest magento version\ncomposer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition m23x\n\n# create project based on specific magento version\n# composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.2.7 m22x", 
+            "title": "Create Magento Project"
+        }, 
+        {
+            "location": "/magento2/#upgrade-magento-project", 
+            "text": "cp composer.json composer.json.bak\ncomposer require magento/product-community-edition 2.2.7 --no-update\ncomposer update\nphp bin/magento setup:upgrade", 
+            "title": "Upgrade Magento Project"
+        }, 
+        {
+            "location": "/magento2/#create-module-package", 
+            "text": "For Marketplace:  git clone https://git.example.com/Vendor_Module.git\ncd Vendor_Module\nzip -r9 \"vendor-module-1.0.0.zip\" . -x *.git* *.idea*  Alternative way (archive will have a path app/code/Vendor/Module/):  zip -r9 \"vendor-module-1.0.0.zip\" app/code/Vendor/Module/ -x *.git*", 
+            "title": "Create module package"
+        }, 
+        {
+            "location": "/magento2/#layout", 
+            "text": "", 
+            "title": "Layout"
+        }, 
+        {
+            "location": "/magento2/#add-block-with-html-content", 
+            "text": "referenceContainer name=\"content\" \n     block class=\"Magento\\Framework\\View\\Element\\Text\" name=\"my.block.name\" \n         arguments \n             argument translate=\"true\" name=\"text\" xsi:type=\"string\" \n                Lorem ipsum dolor ...\n             /argument \n         /arguments \n     /block  /referenceContainer", 
+            "title": "Add block with html content"
         }, 
         {
             "location": "/magento2/#add-content-block-by-id", 
-            "text": "my-content-block-id", 
+            "text": "referenceContainer name=\"content\" \n     block class=\"Magento\\Cms\\Block\\Block\" name=\"my.content.block\" \n         arguments \n             argument name=\"block_id\" xsi:type=\"string\" my-content-block-id /argument \n         /arguments \n     /block  /referenceContainer", 
             "title": "Add content block by id"
         }, 
         {
             "location": "/magento2/#add-block-to-page-head-section", 
-            "text": "", 
+            "text": "referenceBlock name=\"head.additional\" \n     block class=\"Magento\\Framework\\View\\Element\\Text\" \n           name=\"my.block.name\" \n           template=\"Vendor_Module::template.phtml\" /  /referenceBlock", 
             "title": "Add block to page head section"
+        }, 
+        {
+            "location": "/magento2/#javascript", 
+            "text": "", 
+            "title": "Javascript"
+        }, 
+        {
+            "location": "/magento2/#show-all-ui-components-on-the-page", 
+            "text": "require('uiRegistry').get(function(item) { console.log(item.name, item); });", 
+            "title": "Show all UI components on the page"
+        }, 
+        {
+            "location": "/magento2/#add-administrator", 
+            "text": "php bin/magento admin:user:create --admin-user=admin --admin-password=password --admin-email=support@example.com --admin-firstname=Support --admin-lastname=Account", 
+            "title": "Add administrator"
         }, 
         {
             "location": "/mysql/", 
@@ -202,13 +257,18 @@
         }, 
         {
             "location": "/system/", 
-            "text": "Info\n\n\n#system info in short format\ninxi -F", 
+            "text": "Info\n\n\n#system info in short format\ninxi -F\n\n\n\nUsgin RAM disk\n\n\nsudo mount -o size=2G -t tmpfs none my.project.com", 
             "title": "System"
         }, 
         {
             "location": "/system/#info", 
             "text": "#system info in short format\ninxi -F", 
             "title": "Info"
+        }, 
+        {
+            "location": "/system/#usgin-ram-disk", 
+            "text": "sudo mount -o size=2G -t tmpfs none my.project.com", 
+            "title": "Usgin RAM disk"
         }
     ]
 }
