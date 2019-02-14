@@ -2,6 +2,18 @@
 
     php bin/magento dev:urn-catalog:generate .idea/misc.xml
 
+##Unison profile
+
+~/.unison/magento2.prf
+    
+    include default
+    ignore = Path var/?*
+    ignore = Path var/.?*
+    ignorenot = Path var/generation
+    ignore = Path pub/media
+    ignore = Path pub/static
+    
+    
 ##Create Magento Project
 
     cd ~/public_html
