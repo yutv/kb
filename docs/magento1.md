@@ -16,6 +16,10 @@ INSERT INTO core_config_data (`path`, `value`) VALUES
 ON DUPLICATE KEY UPDATE `value` = VALUES(`value`);
 ```
 
+##CLI clear cache
+
+    php -r 'require "app/Mage.php"; Mage::app()->getCacheInstance()->flush();'
+
 ##Unison profile
 
 ~/.unison/magento1.prf
