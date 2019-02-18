@@ -278,6 +278,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cli-clear-cache" title="CLI clear cache" class="md-nav__link">
+    CLI clear cache
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#unison-profile" title="Unison profile" class="md-nav__link">
     Unison profile
   </a>
@@ -369,6 +376,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cli-clear-cache" title="CLI clear cache" class="md-nav__link">
+    CLI clear cache
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#unison-profile" title="Unison profile" class="md-nav__link">
     Unison profile
   </a>
@@ -410,6 +424,9 @@
 ON DUPLICATE KEY UPDATE `value` = VALUES(`value`);
 </code></pre>
 
+<h2 id="cli-clear-cache">CLI clear cache</h2>
+<pre><code>php -r 'require "app/Mage.php"; Mage::app()-&gt;getCacheInstance()-&gt;flush();'
+</code></pre>
 <h2 id="unison-profile">Unison profile</h2>
 <p>~/.unison/magento1.prf</p>
 <pre><code>include default
