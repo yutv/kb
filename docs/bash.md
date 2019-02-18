@@ -97,6 +97,11 @@ for code in $(seq -w 0 255); do for attr in 0 1; do printf "%s-%03s %bTest%b\n" 
     scp {,user@example.com:~/}public_html/.htaccess
     scp {,user@example.com:~/}public_html/images/logo.png
     scp {,user@example.com:~/}public_html/js/jquery.js 
+
+## FIX permissions
+
+    find . -type f -exec chmod 640 {} \;
+    find . -type d -exec chmod 750 {} \;
     
 ##Useful links
 1. [How to parse command line arguments](https://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash)
