@@ -267,6 +267,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#fix-permissions" title="FIX permissions" class="md-nav__link">
+    FIX permissions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#useful-links" title="Useful links" class="md-nav__link">
     Useful links
   </a>
@@ -467,6 +474,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#fix-permissions" title="FIX permissions" class="md-nav__link">
+    FIX permissions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#useful-links" title="Useful links" class="md-nav__link">
     Useful links
   </a>
@@ -583,6 +597,10 @@ sshfs user@server.com:/html -p 2244 server.com
 scp {,user@example.com:~/}public_html/.htaccess
 scp {,user@example.com:~/}public_html/images/logo.png
 scp {,user@example.com:~/}public_html/js/jquery.js
+</code></pre>
+<h2 id="fix-permissions">FIX permissions</h2>
+<pre><code>find . -type f -exec chmod 640 {} \;
+find . -type d -exec chmod 750 {} \;
 </code></pre>
 <h2 id="useful-links">Useful links</h2>
 <ol>
