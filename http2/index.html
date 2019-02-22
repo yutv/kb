@@ -32,7 +32,7 @@
     
     
       
-        <title>Network - Knowledge Base</title>
+        <title>Http2 - Knowledge Base</title>
       
     
     
@@ -90,7 +90,7 @@
             
               
             
-            Network
+            Http2
           
         </span>
       </div>
@@ -224,11 +224,50 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../http2/" title="Http2" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Http2
+      </label>
+    
+    <a href="./" title="Http2" class="md-nav__link md-nav__link--active">
       Http2
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#check-http2-support" title="Check HTTP2 support" class="md-nav__link">
+    Check HTTP2 support
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#httpdconf" title="httpd.conf" class="md-nav__link">
+    httpd.conf
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -272,77 +311,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Network
-      </label>
-    
-    <a href="./" title="Network" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../network/" title="Network" class="md-nav__link">
       Network
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#get-my-ip-address" title="Get my IP Address" class="md-nav__link">
-    Get my IP Address
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#openwrt" title="OpenWRT" class="md-nav__link">
-    OpenWRT
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#speed-test-with-iperf3" title="Speed test with iperf3" class="md-nav__link">
-    Speed test with iperf3
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#set-up-dropbear-public-key-authentication" title="Set up Dropbear public key authentication" class="md-nav__link">
-    Set up Dropbear public key authentication
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ip-addresses-daily-log-cron-job" title="IP Addresses daily log (cron job)" class="md-nav__link">
-    IP Addresses daily log (cron job)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -377,43 +350,16 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#get-my-ip-address" title="Get my IP Address" class="md-nav__link">
-    Get my IP Address
+  <a href="#check-http2-support" title="Check HTTP2 support" class="md-nav__link">
+    Check HTTP2 support
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#openwrt" title="OpenWRT" class="md-nav__link">
-    OpenWRT
+  <a href="#httpdconf" title="httpd.conf" class="md-nav__link">
+    httpd.conf
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#speed-test-with-iperf3" title="Speed test with iperf3" class="md-nav__link">
-    Speed test with iperf3
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#set-up-dropbear-public-key-authentication" title="Set up Dropbear public key authentication" class="md-nav__link">
-    Set up Dropbear public key authentication
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ip-addresses-daily-log-cron-job" title="IP Addresses daily log (cron job)" class="md-nav__link">
-    IP Addresses daily log (cron job)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -432,50 +378,21 @@
               
                 
                 
-                  <h1>Network</h1>
+                  <h1>Http2</h1>
                 
-                <h2 id="get-my-ip-address">Get my IP Address</h2>
-<pre><code class="bash">ifconfig eth1 | awk '/inet addr/{print substr($2,6)}'
+                <h2 id="check-http2-support">Check HTTP2 support</h2>
+<pre><code>curl --http2 -vI https://http1.golang.org/ 2&gt;&amp;1 | grep ALPN
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* ALPN, server did not agree to a protocol
+
+curl --http2 -vI https://http2.golang.org/ 2&gt;&amp;1 | grep ALPN
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* ALPN, server accepted to use h2
 </code></pre>
-
-<h2 id="openwrt">OpenWRT</h2>
-<h3 id="speed-test-with-iperf3">Speed test with iperf3</h3>
-<pre><code class="bash"># iperf3 -c ping.online.net -u -b 1G 
-Connecting to host ping.online.net, port 5201
-[  5] local xxx.xxx.xxx.xxx port 46361 connected to 62.210.18.40 port 5201
-[ ID] Interval           Transfer     Bitrate         Total Datagrams
-[  5]   0.00-1.00   sec   114 MBytes   956 Mbits/sec  82519  
-[  5]   1.00-2.00   sec   111 MBytes   931 Mbits/sec  80335  
-[  5]   2.00-3.00   sec   108 MBytes   909 Mbits/sec  78439  
-[  5]   3.00-4.00   sec   109 MBytes   918 Mbits/sec  79250  
-[  5]   4.00-5.00   sec   109 MBytes   914 Mbits/sec  78939  
-[  5]   5.00-6.00   sec   109 MBytes   917 Mbits/sec  79203  
-[  5]   6.00-7.00   sec   111 MBytes   930 Mbits/sec  80253  
-[  5]   7.00-8.00   sec   110 MBytes   924 Mbits/sec  79802  
-[  5]   8.00-9.00   sec   110 MBytes   923 Mbits/sec  79676  
-[  5]   9.00-10.00  sec   111 MBytes   931 Mbits/sec  80381  
-- - - - - - - - - - - - - - - - - - - - - - - - -
-[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
-[  5]   0.00-10.00  sec  1.08 GBytes   925 Mbits/sec  0.000 ms  0/798797 (0%)  sender
-[  5]   0.00-10.00  sec   114 MBytes  95.7 Mbits/sec  0.009 ms  716162/798783 (90%)  receiver
-
-iperf Done.
-</code></pre>
-
-<ul>
-<li><a href="https://github.com/esnet/iperf/issues/480#issuecomment-307205313">Results interpretation</a></li>
-<li><a href="https://iperf.fr/iperf-servers.php">iperf3 servers</a></li>
-</ul>
-<h3 id="set-up-dropbear-public-key-authentication">Set up Dropbear public key authentication</h3>
-<pre><code class="bash">ssh-copy-id  root@192.168.1.1
-ssh root@192.168.1.1
-cp /root/.ssh/authorized_keys /etc/dropbear/
-chmod 700 /etc/dropbear
-chmod 600 /etc/dropbear/authorized_keys
-</code></pre>
-
-<h3 id="ip-addresses-daily-log-cron-job">IP Addresses daily log (cron job)</h3>
-<pre><code class="cron">0 4 * * * echo &quot;`date +%Y-%m-%d` $(ifconfig eth1 | awk '/inet addr/{print substr($2,6)}')&quot; &gt;&gt; /root/ip.log
+<h2 id="httpdconf">httpd.conf</h2>
+<pre><code>Protocols h2 http/1.1
 </code></pre>
                 
                   
@@ -495,7 +412,7 @@ chmod 600 /etc/dropbear/authorized_keys
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../mysql/" title="Mysql" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../htaccess/" title="Htaccess" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -504,19 +421,19 @@ chmod 600 /etc/dropbear/authorized_keys
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Mysql
+                Htaccess
               </span>
             </div>
           </a>
         
         
-          <a href="../system/" title="System" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../magento1/" title="Magento1" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                System
+                Magento1
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

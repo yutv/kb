@@ -1,58 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-18</lastmod>
+     <loc>/</loc>
+     <lastmod>2019-02-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-18</lastmod>
+     <loc>/bash/</loc>
+     <lastmod>2019-02-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-18</lastmod>
+     <loc>/composer/</loc>
+     <lastmod>2019-02-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-18</lastmod>
+     <loc>/disk/</loc>
+     <lastmod>2019-02-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-18</lastmod>
+     <loc>/git/</loc>
+     <lastmod>2019-02-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-18</lastmod>
+     <loc>/htaccess/</loc>
+     <lastmod>2019-02-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-18</lastmod>
+     <loc>/http2/</loc>
+     <lastmod>2019-02-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-18</lastmod>
+     <loc>/magento1/</loc>
+     <lastmod>2019-02-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-18</lastmod>
+     <loc>/magento2/</loc>
+     <lastmod>2019-02-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-18</lastmod>
+     <loc>/mysql/</loc>
+     <lastmod>2019-02-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-18</lastmod>
+     <loc>/network/</loc>
+     <lastmod>2019-02-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
+    <url>
+     <loc>/system/</loc>
+     <lastmod>2019-02-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
 </urlset>
