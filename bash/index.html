@@ -258,6 +258,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#statistics" title="Statistics" class="md-nav__link">
+    Statistics
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#find-of-code-lines-in-directory" title="Find # of code lines in directory" class="md-nav__link">
+    Find # of code lines in directory
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
     </ul>
@@ -475,6 +495,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#statistics" title="Statistics" class="md-nav__link">
+    Statistics
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#find-of-code-lines-in-directory" title="Find # of code lines in directory" class="md-nav__link">
+    Find # of code lines in directory
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
     </ul>
@@ -592,6 +632,10 @@ find . -type d -exec chmod 750 {} \;
 <ol>
 <li><a href="https://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash">How to parse command line arguments</a></li>
 </ol>
+<h2 id="statistics">Statistics</h2>
+<h3 id="find-of-code-lines-in-directory">Find # of code lines in directory</h3>
+<pre><code>(find . -type f -name '*.php' -print0 | xargs -0 cat) | wc -l
+</code></pre>
                 
                   
                 

@@ -298,6 +298,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#calculate-database-size" title="Calculate database size" class="md-nav__link">
+    Calculate database size
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -363,6 +370,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#calculate-database-size" title="Calculate database size" class="md-nav__link">
+    Calculate database size
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -388,6 +402,12 @@ password="devpassword"
 </code></pre>
 <h2 id="dump-database-wo-definer">Dump database w/o DEFINER</h2>
 <pre><code>dbName='dbname' &amp;&amp; mysqldump --opt $dbName | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' &gt; $dbName.sql
+</code></pre>
+<h2 id="calculate-database-size">Calculate database size</h2>
+<pre><code>SELECT table_schema AS "Database", 
+ROUND(SUM(data_length + index_length) / 1024 / 1024, 2) AS "Size (MB)" 
+FROM information_schema.TABLES 
+GROUP BY table_schema;
 </code></pre>
                 
                   
