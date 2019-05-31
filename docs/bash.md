@@ -105,3 +105,9 @@ for code in $(seq -w 0 255); do for attr in 0 1; do printf "%s-%03s %bTest%b\n" 
     
 ##Useful links
 1. [How to parse command line arguments](https://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash)
+
+## Statistics
+
+###Find # of code lines in directory
+
+    (find . -type f -name '*.php' -print0 | xargs -0 cat) | wc -l

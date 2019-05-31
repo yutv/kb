@@ -9,3 +9,10 @@ To use `mysql` and `mysqldump` commands without password just store credentials 
 
     dbName='dbname' && mysqldump --opt $dbName | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' > $dbName.sql
 
+##Calculate database size
+
+    SELECT table_schema AS "Database", 
+    ROUND(SUM(data_length + index_length) / 1024 / 1024, 2) AS "Size (MB)" 
+    FROM information_schema.TABLES 
+    GROUP BY table_schema;
+

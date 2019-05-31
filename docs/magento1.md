@@ -29,3 +29,15 @@ ON DUPLICATE KEY UPDATE `value` = VALUES(`value`);
     ignore = Path var/.?*
     ignore = Path media
 
+##force secure urls
+
+app/etc/local.xml
+    
+    <?xml version="1.0"?>
+    <config>
+      <frontend>
+        <secure_url>
+          <all>/</all>
+        </secure_url>
+      </frontend>
+    </config>
