@@ -102,7 +102,7 @@
         }, 
         {
             "location": "/git/", 
-            "text": "Daily Routine\n\n\nUpdate local list of remote branches\n\n\ngit branch -a\ngit remote update origin --prune\n\n\n\n\nAdding a remote\n\n\ngit remote -v\ngit remote add origin https://domain.com/myrepo.git\n\n\n\n\nMerge branch as new commit\n\n\ngit merge --squash branch_name\ngit commit\n\n\n\n\nSetup\n\n\nGlobal .gitignore\n\n\ngit config --global core.excludesfile ~/.gitignore\nvi ~/.gitignore\n\n\n\n\nAdd your global ignores, e.g:\n\n\n.idea\nvendor\nstudio\n\n\n\nStore passwords\n\n\ngit config --global credential.helper store\n\n\n\n\nWorkaround with 403 error\n\n\ngit config --global --unset-all credential.helper\ngit config --unset-all credential.helper", 
+            "text": "Daily Routine\n\n\nUpdate local list of remote branches\n\n\ngit branch -a\ngit remote update origin --prune\n\n\n\n\nAdding a remote\n\n\ngit remote -v\ngit remote add origin https://domain.com/myrepo.git\n\n\n\n\nMerge branch as new commit\n\n\ngit merge --squash branch_name\ngit commit\n\n\n\n\nSetup\n\n\nGlobal .gitignore\n\n\ngit config --global core.excludesfile ~/.gitignore\nvi ~/.gitignore\n\n\n\n\nAdd your global ignores, e.g:\n\n\n.idea\nvendor\nstudio\n\n\n\nStore passwords\n\n\ngit config --global credential.helper store\n\n\n\n\nWorkaround with 403 error\n\n\ngit config --global --unset-all credential.helper\ngit config --unset-all credential.helper\n\n\n\n\ngit lg\n\n\ngit config --global alias.lg \"log --all --color --graph --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)\n%an\n%Creset %C(yellow)%d%Creset' --abbrev-commit\"", 
             "title": "Git"
         }, 
         {
@@ -144,6 +144,11 @@
             "location": "/git/#workaround-with-403-error", 
             "text": "git config --global --unset-all credential.helper\ngit config --unset-all credential.helper", 
             "title": "Workaround with 403 error"
+        }, 
+        {
+            "location": "/git/#git-lg", 
+            "text": "git config --global alias.lg \"log --all --color --graph --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue) %an %Creset %C(yellow)%d%Creset' --abbrev-commit\"", 
+            "title": "git lg"
         }, 
         {
             "location": "/htaccess/", 
