@@ -28,6 +28,9 @@ Add your global ignores, e.g:
     .idea
     vendor
     studio
+    .sass-cache
+    .unison*
+    
 ###Store passwords
 ```bash
 git config --global credential.helper store
