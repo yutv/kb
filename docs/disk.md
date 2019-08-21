@@ -5,3 +5,7 @@
 where
 - oflag=dsync - synchronize I/O for data.
 
+##RAM disk
+
+    sudo mount -o size=2G -t tmpfs none my.project.com
+    
