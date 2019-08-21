@@ -92,13 +92,18 @@
         }, 
         {
             "location": "/disk/", 
-            "text": "write iso to disk\n\n\n    dd if=os.img of=/dev/sdX bs=1M status=progress oflag=dsync\n\n\n\n\nwhere\n- oflag=dsync - synchronize I/O for data.", 
+            "text": "write iso to disk\n\n\n    dd if=os.img of=/dev/sdX bs=1M status=progress oflag=dsync\n\n\n\n\nwhere\n- oflag=dsync - synchronize I/O for data.\n\n\nRAM disk\n\n\nsudo mount -o size=2G -t tmpfs none my.project.com", 
             "title": "Disk"
         }, 
         {
             "location": "/disk/#write-iso-to-disk", 
             "text": "dd if=os.img of=/dev/sdX bs=1M status=progress oflag=dsync  where\n- oflag=dsync - synchronize I/O for data.", 
             "title": "write iso to disk"
+        }, 
+        {
+            "location": "/disk/#ram-disk", 
+            "text": "sudo mount -o size=2G -t tmpfs none my.project.com", 
+            "title": "RAM disk"
         }, 
         {
             "location": "/git/", 
@@ -327,18 +332,13 @@
         }, 
         {
             "location": "/system/", 
-            "text": "Info\n\n\n#system info in short format\ninxi -F\n\n\n\nUsgin RAM disk\n\n\nsudo mount -o size=2G -t tmpfs none my.project.com", 
+            "text": "Info\n\n\n#system info in short format\ninxi -F", 
             "title": "System"
         }, 
         {
             "location": "/system/#info", 
             "text": "#system info in short format\ninxi -F", 
             "title": "Info"
-        }, 
-        {
-            "location": "/system/#usgin-ram-disk", 
-            "text": "sudo mount -o size=2G -t tmpfs none my.project.com", 
-            "title": "Usgin RAM disk"
         }
     ]
 }
