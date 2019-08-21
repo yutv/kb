@@ -38,3 +38,7 @@ git config --global credential.helper store
 git config --global --unset-all credential.helper
 git config --unset-all credential.helper
 ```
+
+### git lg
+
+    git config --global alias.lg "log --all --color --graph --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %C(yellow)%d%Creset' --abbrev-commit"
