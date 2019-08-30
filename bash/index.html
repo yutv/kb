@@ -547,10 +547,11 @@
                   <h1>Bash</h1>
                 
                 <h2 id="path-info">path info</h2>
-<pre><code>FILE="/home/user/file.php"
-echo "${FILE##*.}"    # php
-echo ${FILE##*/}      # file.php
-${FILE%/*}            # /home/user
+<pre><code>file="/home/user/file.inc.php"
+basename=${file##*/}       # file.inc.php
+filename=${baseName%.*}    # file.inc
+extension=${file##*.}      # php
+dirname=${file%/*}         # /home/user
 </code></pre>
 <h2 id="ssh-authentication-wo-password">SSH authentication w/o password</h2>
 <pre><code class="bash">cd ~/.ssh
