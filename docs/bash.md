@@ -1,3 +1,10 @@
+##path info
+
+    FILE="/home/user/file.php"
+    echo "${FILE##*.}"    # php
+    echo ${FILE##*/}      # file.php
+    ${FILE%/*}            # /home/user 
+
 ##SSH authentication w/o password
 ```bash
 cd ~/.ssh
@@ -111,3 +118,4 @@ for code in $(seq -w 0 255); do for attr in 0 1; do printf "%s-%03s %bTest%b\n" 
 ###Find # of code lines in directory
 
     (find . -type f -name '*.php' -print0 | xargs -0 cat) | wc -l
+
