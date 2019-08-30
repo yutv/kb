@@ -189,6 +189,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#path-info" title="path info" class="md-nav__link">
+    path info
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ssh-authentication-wo-password" title="SSH authentication w/o password" class="md-nav__link">
     SSH authentication w/o password
   </a>
@@ -426,6 +433,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#path-info" title="path info" class="md-nav__link">
+    path info
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ssh-authentication-wo-password" title="SSH authentication w/o password" class="md-nav__link">
     SSH authentication w/o password
   </a>
@@ -532,7 +546,13 @@
                 
                   <h1>Bash</h1>
                 
-                <h2 id="ssh-authentication-wo-password">SSH authentication w/o password</h2>
+                <h2 id="path-info">path info</h2>
+<pre><code>FILE="/home/user/file.php"
+echo "${FILE##*.}"    # php
+echo ${FILE##*/}      # file.php
+${FILE%/*}            # /home/user
+</code></pre>
+<h2 id="ssh-authentication-wo-password">SSH authentication w/o password</h2>
 <pre><code class="bash">cd ~/.ssh
 ssh-keygen
 ssh-copy-id -i ~/.ssh/id_rsa.pub remote.host.com
