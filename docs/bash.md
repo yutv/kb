@@ -1,9 +1,10 @@
 ##path info
 
-    FILE="/home/user/file.php"
-    echo "${FILE##*.}"    # php
-    echo ${FILE##*/}      # file.php
-    ${FILE%/*}            # /home/user 
+    file="/home/user/file.inc.php"
+    basename=${file##*/}       # file.inc.php
+    filename=${baseName%.*}    # file.inc
+    extension=${file##*.}      # php
+    dirname=${file%/*}         # /home/user      
 
 ##SSH authentication w/o password
 ```bash
