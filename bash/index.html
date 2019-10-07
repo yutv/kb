@@ -285,6 +285,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ctrlc-hook" title="Ctrl+C Hook" class="md-nav__link">
+    Ctrl+C Hook
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -398,6 +405,18 @@
   <li class="md-nav__item">
     <a href="../network/" title="Network" class="md-nav__link">
       Network
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../php/" title="Php" class="md-nav__link">
+      Php
     </a>
   </li>
 
@@ -529,6 +548,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ctrlc-hook" title="Ctrl+C Hook" class="md-nav__link">
+    Ctrl+C Hook
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -549,7 +575,7 @@
                 <h2 id="path-info">path info</h2>
 <pre><code>file="/home/user/file.inc.php"
 basename=${file##*/}       # file.inc.php
-filename=${baseName%.*}    # file.inc
+filename=${basename%.*}    # file.inc
 extension=${file##*.}      # php
 dirname=${file%/*}         # /home/user
 </code></pre>
@@ -656,6 +682,13 @@ find . -type d -exec chmod 750 {} \;
 <h2 id="statistics">Statistics</h2>
 <h3 id="find-of-code-lines-in-directory">Find # of code lines in directory</h3>
 <pre><code>(find . -type f -name '*.php' -print0 | xargs -0 cat) | wc -l
+</code></pre>
+<h2 id="ctrlc-hook">Ctrl+C Hook</h2>
+<pre><code>trap ctrl_c INT
+
+function ctrl_c() {
+    echo "Triggered CTRL+C event"
+}
 </code></pre>
                 
                   

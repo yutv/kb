@@ -284,6 +284,18 @@
       
       
 
+
+  <li class="md-nav__item">
+    <a href="../php/" title="Php" class="md-nav__link">
+      Php
+    </a>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
@@ -311,6 +323,13 @@
         <li class="md-nav__item">
   <a href="#info" title="Info" class="md-nav__link">
     Info
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disable-selinu" title="Disable Selinu" class="md-nav__link">
+    Disable Selinu
   </a>
   
 </li>
@@ -349,6 +368,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#disable-selinu" title="Disable Selinu" class="md-nav__link">
+    Disable Selinu
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -370,6 +396,14 @@
 <pre><code>#system info in short format
 inxi -F
 </code></pre>
+<h2 id="disable-selinu">Disable Selinu</h2>
+<pre><code>#runtime
+sudo setenforce 0
+
+#permanently
+/etc/selinux/config
+SELINUX=disabled
+</code></pre>
                 
                   
                 
@@ -388,7 +422,7 @@ inxi -F
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../network/" title="Network" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../php/" title="Php" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -397,7 +431,7 @@ inxi -F
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Network
+                Php
               </span>
             </div>
           </a>

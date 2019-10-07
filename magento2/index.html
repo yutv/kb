@@ -308,6 +308,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#configuration" title="Configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disable-timestamp-in-static-paths-like-pubstatic12345993943somejs" title="Disable timestamp in static paths like pub/static12345993943/some.js" class="md-nav__link">
+    Disable timestamp in static paths like pub/static12345993943/some.js
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#layout" title="Layout" class="md-nav__link">
     Layout
   </a>
@@ -407,6 +427,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../php/" title="Php" class="md-nav__link">
+      Php
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../system/" title="System" class="md-nav__link">
       System
     </a>
@@ -463,6 +495,26 @@
   <a href="#create-module-package" title="Create module package" class="md-nav__link">
     Create module package
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" title="Configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disable-timestamp-in-static-paths-like-pubstatic12345993943somejs" title="Disable timestamp in static paths like pub/static12345993943/some.js" class="md-nav__link">
+    Disable timestamp in static paths like pub/static12345993943/some.js
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -579,6 +631,15 @@ zip -r9 "vendor-module-1.0.0.zip" . -x *.git* *.idea*
 <p>Alternative way (archive will have a path app/code/Vendor/Module/):</p>
 <pre><code>zip -r9 "vendor-module-1.0.0.zip" app/code/Vendor/Module/ -x *.git*
 </code></pre>
+<h2 id="configuration">Configuration</h2>
+<h3 id="disable-timestamp-in-static-paths-like-pubstatic12345993943somejs">Disable timestamp in static paths like pub/static12345993943/some.js</h3>
+<p>via Magento Admin:</p>
+<pre><code>Stores &gt; Configuration &gt; Advanced &gt; Developer &gt; Static Files Settings &gt; Sign Static Files &gt; No
+</code></pre>
+<p>via SQL query:</p>
+<pre><code>INSERT INTO core_config_data (`path`, `value`) VALUES ("dev/static/sign", 0) ON DUPLICATE KEY UPDATE `value`=0
+</code></pre>
+<p>cli command:</p>
 <h2 id="layout">Layout</h2>
 <h3 id="add-block-with-html-content">Add block with html content</h3>
 <pre><code>&lt;referenceContainer name="content"&gt;

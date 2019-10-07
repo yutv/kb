@@ -32,7 +32,7 @@
     
     
       
-        <title>Http2 - Knowledge Base</title>
+        <title>Php - Knowledge Base</title>
       
     
     
@@ -90,7 +90,7 @@
             
               
             
-            Http2
+            Php
           
         </span>
       </div>
@@ -224,50 +224,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Http2
-      </label>
-    
-    <a href="./" title="Http2" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../http2/" title="Http2" class="md-nav__link">
       Http2
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#check-http2-support" title="Check HTTP2 support" class="md-nav__link">
-    Check HTTP2 support
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#httpdconf" title="httpd.conf" class="md-nav__link">
-    httpd.conf
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -323,11 +284,43 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../php/" title="Php" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Php
+      </label>
+    
+    <a href="./" title="Php" class="md-nav__link md-nav__link--active">
       Php
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#useful-links" title="Useful links" class="md-nav__link">
+    Useful links
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -362,15 +355,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#check-http2-support" title="Check HTTP2 support" class="md-nav__link">
-    Check HTTP2 support
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#httpdconf" title="httpd.conf" class="md-nav__link">
-    httpd.conf
+  <a href="#useful-links" title="Useful links" class="md-nav__link">
+    Useful links
   </a>
   
 </li>
@@ -390,22 +376,12 @@
               
                 
                 
-                  <h1>Http2</h1>
+                  <h1>Php</h1>
                 
-                <h2 id="check-http2-support">Check HTTP2 support</h2>
-<pre><code>curl --http2 -vI https://http1.golang.org/ 2&gt;&amp;1 | grep ALPN
-* ALPN, offering h2
-* ALPN, offering http/1.1
-* ALPN, server did not agree to a protocol
-
-curl --http2 -vI https://http2.golang.org/ 2&gt;&amp;1 | grep ALPN
-* ALPN, offering h2
-* ALPN, offering http/1.1
-* ALPN, server accepted to use h2
-</code></pre>
-<h2 id="httpdconf">httpd.conf</h2>
-<pre><code>Protocols h2 http/1.1
-</code></pre>
+                <h2 id="useful-links">Useful links</h2>
+<ul>
+<li><a href="https://www.lambda-out-loud.com/posts/accessing-private-properties-php/">Accessing private properties in PHP</a></li>
+</ul>
                 
                   
                 
@@ -424,7 +400,7 @@ curl --http2 -vI https://http2.golang.org/ 2&gt;&amp;1 | grep ALPN
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../htaccess/" title="Htaccess" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../network/" title="Network" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -433,19 +409,19 @@ curl --http2 -vI https://http2.golang.org/ 2&gt;&amp;1 | grep ALPN
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Htaccess
+                Network
               </span>
             </div>
           </a>
         
         
-          <a href="../magento1/" title="Magento1" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../system/" title="System" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Magento1
+                System
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

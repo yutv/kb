@@ -305,6 +305,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#locking" title="Locking" class="md-nav__link">
+    Locking
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -322,6 +329,18 @@
   <li class="md-nav__item">
     <a href="../network/" title="Network" class="md-nav__link">
       Network
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../php/" title="Php" class="md-nav__link">
+      Php
     </a>
   </li>
 
@@ -377,6 +396,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#locking" title="Locking" class="md-nav__link">
+    Locking
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -408,6 +434,14 @@ password="devpassword"
 ROUND(SUM(data_length + index_length) / 1024 / 1024, 2) AS "Size (MB)" 
 FROM information_schema.TABLES 
 GROUP BY table_schema;
+</code></pre>
+<h2 id="locking">Locking</h2>
+<pre><code>if get_lock(lock_name, 1) then
+-- LOCKING ok, proceed
+    set @0 = release_lock(lock_name);
+else
+-- LOCKING failed, handle this
+end if;
 </code></pre>
                 
                   
