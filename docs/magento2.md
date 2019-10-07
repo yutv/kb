@@ -42,7 +42,8 @@ Alternative way (archive will have a path app/code/Vendor/Module/):
 
     zip -r9 "vendor-module-1.0.0.zip" app/code/Vendor/Module/ -x *.git*
 
-##Disable timestamp in static paths like pub/static12345993943/some.js
+##Configuration
+###Disable timestamp in static paths like pub/static12345993943/some.js
 
 via Magento Admin:
     
@@ -51,6 +52,11 @@ via Magento Admin:
 via SQL query:
 
     INSERT INTO core_config_data (`path`, `value`) VALUES ("dev/static/sign", 0) ON DUPLICATE KEY UPDATE `value`=0
+
+cli command:
+
+    
+
 
 ##Layout
 ###Add block with html content

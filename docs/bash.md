@@ -2,7 +2,7 @@
 
     file="/home/user/file.inc.php"
     basename=${file##*/}       # file.inc.php
-    filename=${baseName%.*}    # file.inc
+    filename=${basename%.*}    # file.inc
     extension=${file##*.}      # php
     dirname=${file%/*}         # /home/user      
 
@@ -120,3 +120,10 @@ for code in $(seq -w 0 255); do for attr in 0 1; do printf "%s-%03s %bTest%b\n" 
 
     (find . -type f -name '*.php' -print0 | xargs -0 cat) | wc -l
 
+## Ctrl+C Hook
+
+    trap ctrl_c INT
+    
+    function ctrl_c() {
+        echo "Triggered CTRL+C event"
+    }
