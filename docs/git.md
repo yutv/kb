@@ -1,4 +1,11 @@
 ##Daily Routine
+
+### Push w/o user/password prompt
+
+Change origin from https to ssh
+
+    git remote set-url origin git@github.com:username/projectname.git
+
 ###Update local list of remote branches
 ```bash
 git branch -a
