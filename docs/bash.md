@@ -67,6 +67,8 @@ for code in $(seq -w 0 255); do for attr in 0 1; do printf "%s-%03s %bTest%b\n" 
     set backspace=2
     set tabstop=4
     set expandtab
+    set number
+
 ##Load additional php.ini when run php from terminal
 1. Add the following line into **~/.bashrc** file:
 
