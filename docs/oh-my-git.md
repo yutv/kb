@@ -1,4 +1,4 @@
-# Installation
+## Installation
 
 1.  Checkout oh-my-git and switch to the "theme" branch
 

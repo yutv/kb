@@ -1,4 +1,4 @@
-# Installation
+## Installation
 
 1. Proceed with  [https://www.mkdocs.org/#installation](https://www.mkdocs.org/#installation)    
 2. Install theme
