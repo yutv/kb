@@ -238,6 +238,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../gnome/" title="Gnome" class="md-nav__link">
+      Gnome
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../htaccess/" title="Htaccess" class="md-nav__link">
       Htaccess
     </a>
@@ -286,8 +298,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../mkdocs/" title="Installation" class="md-nav__link">
-      Installation
+    <a href="../mkdocs/" title="Mkdocs" class="md-nav__link">
+      Mkdocs
     </a>
   </li>
 
@@ -322,8 +334,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../oh-my-git/" title="Installation" class="md-nav__link">
-      Installation
+    <a href="../oh-my-git/" title="Oh my git" class="md-nav__link">
+      Oh my git
     </a>
   </li>
 
@@ -388,8 +400,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#disable-selinu" class="md-nav__link">
-    Disable Selinu
+  <a href="#disable-selinux" class="md-nav__link">
+    Disable Selinux
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-parameters" class="md-nav__link">
+    Kernel parameters
   </a>
   
 </li>
@@ -431,8 +450,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#disable-selinu" class="md-nav__link">
-    Disable Selinu
+  <a href="#disable-selinux" class="md-nav__link">
+    Disable Selinux
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-parameters" class="md-nav__link">
+    Kernel parameters
   </a>
   
 </li>
@@ -460,13 +486,28 @@
 <pre><code>#system info in short format
 inxi -F
 </code></pre>
-<h2 id="disable-selinu">Disable Selinu</h2>
+<h2 id="disable-selinux">Disable Selinux</h2>
 <pre><code>#runtime
 sudo setenforce 0
 
 #permanently
 /etc/selinux/config
 SELINUX=disabled
+</code></pre>
+<h2 id="kernel-parameters">Kernel parameters</h2>
+<p><strong>vi /etc/sysctl.conf</strong></p>
+<pre><code># custom settings
+
+$ disable IPv6
+net.ipv6.conf.all.disable_ipv6 = 1
+net.ipv6.conf.default.disable_ipv6 = 1
+net.ipv6.conf.lo.disable_ipv6 = 1
+
+# Increase inotify.max_user_watches (https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers)   
+fs.inotify.max_user_watches = 524288
+</code></pre>
+<p><strong>Reload kernel parameters</strong></p>
+<pre><code>sysctl -p
 </code></pre>
                 
                   
