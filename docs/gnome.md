@@ -1,4 +1,4 @@
-## Sublime as a default text editor
+## Default GUI text editor
 
 Find the `text/plain=gedit.desktop` text in the one of the following files:
 
@@ -13,6 +13,10 @@ and replace to
 
     text/plain=sublime_text.desktop
     
-## Other
+## Default Console Text Editor
 
-1. [Make notify-send work from user cron file in ubuntu](https://selivan.github.io/2016/07/08/notify-send-from-cron-in-ubuntu.html)
+    sudo update-alternatives --config editor
+    
+## Other
+    
+    1. [Make notify-send work from user cron file in ubuntu](https://selivan.github.io/2016/07/08/notify-send-from-cron-in-ubuntu.html)
