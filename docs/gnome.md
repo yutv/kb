@@ -19,4 +19,4 @@ and replace to
     
 ## Other
     
-    1. [Make notify-send work from user cron file in ubuntu](https://selivan.github.io/2016/07/08/notify-send-from-cron-in-ubuntu.html)
+1. [Make notify-send work from user cron file in ubuntu](https://selivan.github.io/2016/07/08/notify-send-from-cron-in-ubuntu.html)
