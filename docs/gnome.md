@@ -1,10 +1,13 @@
 ## Sublime as a default text editor
 
-**vi /etc/gnome/defaults.list**
+Find the `text/plain=gedit.desktop` text in the one of the following files:
 
-find 
-
-    text/plain=gedit.desktop
+    # local user
+    vi ~/.local/share/applications/mimeapps.list
+    # or 
+    sudo vi /usr/share/applications/defaults.list
+    # or 
+    sudo vi /etc/gnome/defaults.list
 
 and replace to
 
