@@ -83,7 +83,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#sublime-as-a-default-text-editor" tabindex="1" class="md-skip">
+      <a href="#default-gui-text-editor" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -261,8 +261,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sublime-as-a-default-text-editor" class="md-nav__link">
-    Sublime as a default text editor
+  <a href="#default-gui-text-editor" class="md-nav__link">
+    Default GUI text editor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-console-text-editor" class="md-nav__link">
+    Default Console Text Editor
   </a>
   
 </li>
@@ -448,8 +455,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sublime-as-a-default-text-editor" class="md-nav__link">
-    Sublime as a default text editor
+  <a href="#default-gui-text-editor" class="md-nav__link">
+    Default GUI text editor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-console-text-editor" class="md-nav__link">
+    Default Console Text Editor
   </a>
   
 </li>
@@ -480,18 +494,24 @@
                 
                   <h1>Gnome</h1>
                 
-                <h2 id="sublime-as-a-default-text-editor">Sublime as a default text editor</h2>
-<p><strong>vi /etc/gnome/defaults.list</strong></p>
-<p>find </p>
-<pre><code>text/plain=gedit.desktop
+                <h2 id="default-gui-text-editor">Default GUI text editor</h2>
+<p>Find the <code>text/plain=gedit.desktop</code> text in the one of the following files:</p>
+<pre><code># local user
+vi ~/.local/share/applications/mimeapps.list
+# or 
+sudo vi /usr/share/applications/defaults.list
+# or 
+sudo vi /etc/gnome/defaults.list
 </code></pre>
 <p>and replace to</p>
 <pre><code>text/plain=sublime_text.desktop
 </code></pre>
+<h2 id="default-console-text-editor">Default Console Text Editor</h2>
+<pre><code>sudo update-alternatives --config editor
+</code></pre>
 <h2 id="other">Other</h2>
-<ol>
-<li><a href="https://selivan.github.io/2016/07/08/notify-send-from-cron-in-ubuntu.html">Make notify-send work from user cron file in ubuntu</a></li>
-</ol>
+<pre><code>1. [Make notify-send work from user cron file in ubuntu](https://selivan.github.io/2016/07/08/notify-send-from-cron-in-ubuntu.html)
+</code></pre>
                 
                   
                 
