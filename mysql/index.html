@@ -515,7 +515,10 @@ user="devuser"
 password="devpassword"
 </code></pre>
 <h2 id="dump-database-wo-definer">Dump database w/o DEFINER</h2>
-<pre><code>dbName='dbname' &amp;&amp; mysqldump --opt $dbName | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' &gt; $dbName.sql
+<pre><code>dbName='dbname' &amp;&amp; mysqldump --opt $dbName | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | bzip2 &gt; $dbName.sql.bz2
+</code></pre>
+<p>The same but with <code>--extended-insert=FALSE</code> option when you need to analyze/edit dump:</p>
+<pre><code>dbName='dbname' &amp;&amp; mysqldump --opt --extended-insert=FALSE $dbName | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | bzip2 &gt; $dbName.sql.bz2
 </code></pre>
 <h2 id="calculate-database-size">Calculate database size</h2>
 <pre><code>SELECT table_schema AS "Database", 
