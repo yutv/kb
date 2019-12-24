@@ -83,7 +83,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#get-my-ip-address" tabindex="1" class="md-skip">
+      <a href="#check-if-port-is-opened" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -345,6 +345,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#check-if-port-is-opened" class="md-nav__link">
+    Check if port is opened
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#get-my-ip-address" class="md-nav__link">
     Get my IP Address
   </a>
@@ -475,6 +482,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#check-if-port-is-opened" class="md-nav__link">
+    Check if port is opened
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#get-my-ip-address" class="md-nav__link">
     Get my IP Address
   </a>
@@ -534,7 +548,11 @@
                 
                   <h1>Network</h1>
                 
-                <h2 id="get-my-ip-address">Get my IP Address</h2>
+                <h2 id="check-if-port-is-opened">Check if port is opened</h2>
+<pre><code>$ nc -zvw5 google.com 80
+Connection to google.com 80 port [tcp/http] succeeded!
+</code></pre>
+<h2 id="get-my-ip-address">Get my IP Address</h2>
 <pre><code class="bash">ifconfig eth1 | awk '/inet addr/{print substr($2,6)}'
 </code></pre>
 
