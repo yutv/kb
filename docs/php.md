@@ -1,3 +1,6 @@
+## Date Diff
+    php -r "echo (new DateTime('2019-10-31 14:37:17'))->diff(new DateTime('2019-10-29 10:03:05'))->format('%R%ad%Hh');"
+
 ## Useful links
 
 - [Accessing private properties in PHP](https://www.lambda-out-loud.com/posts/accessing-private-properties-php/)
