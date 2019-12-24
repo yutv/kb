@@ -1,3 +1,8 @@
+## Check if port is opened
+
+    $ nc -zvw5 google.com 80
+    Connection to google.com 80 port [tcp/http] succeeded!
+
 ##Get my IP Address
 
 ```bash
