@@ -1,3 +1,7 @@
+## Grant Priviledges
+
+    GRANT ALL PRIVILEGES ON `website_com`.* TO 'website_user'@'%';
+    
 ##Store mysql user name and password
 To use `mysql` and `mysqldump` commands without password just store credentials in `~/.my.cnf` file, e.g.:
 
