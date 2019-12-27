@@ -83,7 +83,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#store-mysql-user-name-and-password" tabindex="1" class="md-skip">
+      <a href="#grant-priviledges" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -333,6 +333,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#grant-priviledges" class="md-nav__link">
+    Grant Priviledges
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#store-mysql-user-name-and-password" class="md-nav__link">
     Store mysql user name and password
   </a>
@@ -462,6 +469,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#grant-priviledges" class="md-nav__link">
+    Grant Priviledges
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#store-mysql-user-name-and-password" class="md-nav__link">
     Store mysql user name and password
   </a>
@@ -508,7 +522,10 @@
                 
                   <h1>Mysql</h1>
                 
-                <h2 id="store-mysql-user-name-and-password">Store mysql user name and password</h2>
+                <h2 id="grant-priviledges">Grant Priviledges</h2>
+<pre><code>GRANT ALL PRIVILEGES ON `website_com`.* TO 'website_user'@'%';
+</code></pre>
+<h2 id="store-mysql-user-name-and-password">Store mysql user name and password</h2>
 <p>To use <code>mysql</code> and <code>mysqldump</code> commands without password just store credentials in <code>~/.my.cnf</code> file, e.g.:</p>
 <pre><code>[client]
 user="devuser"
