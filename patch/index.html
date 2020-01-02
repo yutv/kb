@@ -36,7 +36,7 @@
     
     
       
-        <title>Composer - Knowledge Base</title>
+        <title>Patch - Knowledge Base</title>
       
     
     
@@ -83,7 +83,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#add-a-custom-packages-repository" tabindex="1" class="md-skip">
+      <a href="#create-directory-patch" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -109,7 +109,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Composer
+                Patch
               
             </span>
           
@@ -200,52 +200,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Composer
-      </label>
-    
-    <a href="./" title="Composer" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../composer/" title="Composer" class="md-nav__link">
       Composer
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#add-a-custom-packages-repository" class="md-nav__link">
-    Add a custom packages repository
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#install-composer-package-from-a-local-folder" class="md-nav__link">
-    Install composer package from a local folder
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -385,11 +344,52 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../patch/" title="Patch" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Patch
+      </label>
+    
+    <a href="./" title="Patch" class="md-nav__link md-nav__link--active">
       Patch
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-directory-patch" class="md-nav__link">
+    Create Directory Patch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apply-patch" class="md-nav__link">
+    Apply Patch
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -460,15 +460,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#add-a-custom-packages-repository" class="md-nav__link">
-    Add a custom packages repository
+  <a href="#create-directory-patch" class="md-nav__link">
+    Create Directory Patch
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-composer-package-from-a-local-folder" class="md-nav__link">
-    Install composer package from a local folder
+  <a href="#apply-patch" class="md-nav__link">
+    Apply Patch
   </a>
   
 </li>
@@ -490,19 +490,20 @@
               
                 
                 
-                  <h1>Composer</h1>
+                  <h1>Patch</h1>
                 
-                <h2 id="add-a-custom-packages-repository">Add a custom packages repository</h2>
-<pre><code>composer config --global repositories.example composer https://packages.example.com/
+                <h2 id="create-directory-patch">Create Directory Patch</h2>
+<pre><code>diff --exclude=".git" -ruN orig/ new/ | sed "s#new/#b/#" | sed 's#orig/#a/#' &gt; patch.sql
 </code></pre>
-<h2 id="install-composer-package-from-a-local-folder">Install composer package from a local folder</h2>
-<pre><code>mkdir -p ~/composer-packages/
-cp vendor-module-x.x.x.zip ~/composer-packages/
-cd ~/public_html/
-composer config repositories.local artifact ~/composer-packages/
-composer require vendor/module
-#or
-composer update vendor/module
+<p>where</p>
+<pre><code>-r == recursive, so do subdirectories
+-u == unified style, if your system lacks it or if recipient may not have it, use "-c"
+-N == treat absent files as empty
+</code></pre>
+<p>References: <a href="https://stackoverflow.com/questions/9980186/how-to-create-a-patch-for-a-whole-directory-to-update-it">1</a>,
+<a href="https://superuser.com/questions/644680/how-can-i-make-diff-x-ignore-specific-paths-and-not-file-names">2</a>.</p>
+<h2 id="apply-patch">Apply Patch</h2>
+<pre><code>patch '-p1' --no-backup-if-mismatch -d 'vendor/vendor-name/module-name' &lt; '_extra/patches/vendor-name/module-name/patch-name.patch'
 </code></pre>
                 
                   
@@ -524,7 +525,7 @@ composer update vendor/module
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../bash/" title="Bash" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../oh-my-git/" title="Oh my git" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -533,19 +534,19 @@ composer update vendor/module
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Bash
+                Oh my git
               </span>
             </div>
           </a>
         
         
-          <a href="../disk/" title="Disk" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../php/" title="Php" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Disk
+                Php
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
