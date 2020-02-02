@@ -1,7 +1,6 @@
-```bash
-# ~/.bashrc
-alias m2='php bin/magento'
-```
+
+--8<-- "m2.md"
+
 ## PhpStorm Urn
 1. container:
 ```bash

@@ -1,8 +1,6 @@
-```bash
-# ~/.bashrc
-alias m2='php bin/magento'
-```
-    
+
+--8<-- "m2.md"
+ 
 ## Sign Static Files
 Disable timestamp in static files like `pub/static/version12345993943/file.js`
 

@@ -1,3 +1,6 @@
+
+--8<-- "m2.md"
+
 **Run cron as standalone process:**
 ```bash
 m2 cron:run --group=default --bootstrap=standaloneProcessStarted=1
