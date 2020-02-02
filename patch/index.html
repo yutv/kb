@@ -63,6 +63,8 @@
     <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../css/extra.css">
+    
     
       
     
@@ -152,6 +154,75 @@
       
         
       
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." class="md-tabs__link md-tabs__link--active">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../magento-2/configuration/" class="md-tabs__link">
+          Magento 2
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
       
       <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
@@ -276,18 +347,6 @@
   <li class="md-nav__item">
     <a href="../magento1/" title="Magento1" class="md-nav__link">
       Magento1
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../magento2/" title="Magento2" class="md-nav__link">
-      Magento2
     </a>
   </li>
 
@@ -453,6 +512,102 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-20" type="checkbox" id="nav-20">
+    
+    <label class="md-nav__link" for="nav-20">
+      Magento 2
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-20">
+        Magento 2
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/configuration/" title="Configuration" class="md-nav__link">
+      Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/cron/" title="Cron" class="md-nav__link">
+      Cron
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/general/" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/layout/" title="Layout" class="md-nav__link">
+      Layout
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/ui/" title="Ui" class="md-nav__link">
+      Ui
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/useful-links/" title="Useful links" class="md-nav__link">
+      Useful links
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -505,18 +660,22 @@
                   <h1>Patch</h1>
                 
                 <h2 id="create-directory-patch">Create Directory Patch</h2>
-<pre><code>diff --exclude=".git" -ruN orig/ new/ | sed "s#new/#b/#" | sed 's#orig/#a/#' &gt; patch.sql
-</code></pre>
+<div class="codehilite"><pre><span></span>diff --exclude=&quot;.git&quot; -ruN orig/ new/ | sed &quot;s#new/#b/#&quot; | sed &#39;s#orig/#a/#&#39; &gt; patch.sql
+</pre></div>
+
+
 <p>where</p>
-<pre><code>-r == recursive, so do subdirectories
--u == unified style, if your system lacks it or if recipient may not have it, use "-c"
+<div class="codehilite"><pre><span></span>-r == recursive, so do subdirectories
+-u == unified style, if your system lacks it or if recipient may not have it, use &quot;-c&quot;
 -N == treat absent files as empty
-</code></pre>
+</pre></div>
+
+
 <p>References: <a href="https://stackoverflow.com/questions/9980186/how-to-create-a-patch-for-a-whole-directory-to-update-it">1</a>,
 <a href="https://superuser.com/questions/644680/how-can-i-make-diff-x-ignore-specific-paths-and-not-file-names">2</a>.</p>
 <h2 id="apply-patch">Apply Patch</h2>
-<pre><code>patch '-p1' --no-backup-if-mismatch -d 'vendor/vendor-name/module-name' &lt; '_extra/patches/vendor-name/module-name/patch-name.patch'
-</code></pre>
+<div class="codehilite"><pre><span></span>patch &#39;-p1&#39; --no-backup-if-mismatch -d &#39;vendor/vendor-name/module-name&#39; &lt; &#39;_extra/patches/vendor-name/module-name/patch-name.patch&#39;
+</pre></div>
                 
                   
                 

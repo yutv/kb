@@ -63,6 +63,8 @@
     <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../css/extra.css">
+    
     
       
     
@@ -152,6 +154,75 @@
       
         
       
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." class="md-tabs__link md-tabs__link--active">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../magento-2/configuration/" class="md-tabs__link">
+          Magento 2
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
       
       <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
@@ -276,18 +347,6 @@
   <li class="md-nav__item">
     <a href="../magento1/" title="Magento1" class="md-nav__link">
       Magento1
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../magento2/" title="Magento2" class="md-nav__link">
-      Magento2
     </a>
   </li>
 
@@ -474,6 +533,102 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-20" type="checkbox" id="nav-20">
+    
+    <label class="md-nav__link" for="nav-20">
+      Magento 2
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-20">
+        Magento 2
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/configuration/" title="Configuration" class="md-nav__link">
+      Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/cron/" title="Cron" class="md-nav__link">
+      Cron
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/general/" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/layout/" title="Layout" class="md-nav__link">
+      Layout
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/ui/" title="Ui" class="md-nav__link">
+      Ui
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/useful-links/" title="Useful links" class="md-nav__link">
+      Useful links
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -547,34 +702,44 @@
                   <h1>Mysql</h1>
                 
                 <h2 id="grant-priviledges">Grant Priviledges</h2>
-<pre><code>GRANT ALL PRIVILEGES ON `website_com`.* TO 'website_user'@'%';
-</code></pre>
+<div class="codehilite"><pre><span></span>GRANT ALL PRIVILEGES ON `website_com`.* TO &#39;website_user&#39;@&#39;%&#39;;
+</pre></div>
+
+
 <h2 id="store-mysql-user-name-and-password">Store mysql user name and password</h2>
 <p>To use <code>mysql</code> and <code>mysqldump</code> commands without password just store credentials in <code>~/.my.cnf</code> file, e.g.:</p>
-<pre><code>[client]
-user="devuser"
-password="devpassword"
-</code></pre>
+<div class="codehilite"><pre><span></span>[client]
+user=&quot;devuser&quot;
+password=&quot;devpassword&quot;
+</pre></div>
+
+
 <h2 id="dump-database-wo-definer">Dump database w/o DEFINER</h2>
-<pre><code>dbName='dbname' &amp;&amp; mysqldump --opt $dbName | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | bzip2 &gt; $dbName.sql.bz2
-</code></pre>
+<div class="codehilite"><pre><span></span>dbName=&#39;dbname&#39; &amp;&amp; mysqldump --opt $dbName | sed -e &#39;s/DEFINER[ ]*=[ ]*[^*]*\*/\*/&#39; | bzip2 &gt; $dbName.sql.bz2
+</pre></div>
+
+
 <p>The same but with <code>--extended-insert=FALSE</code> option when you need to analyze/edit dump:</p>
-<pre><code>dbName='dbname' &amp;&amp; mysqldump --opt --extended-insert=FALSE $dbName | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | bzip2 &gt; $dbName.sql.bz2
-</code></pre>
+<div class="codehilite"><pre><span></span>dbName=&#39;dbname&#39; &amp;&amp; mysqldump --opt --extended-insert=FALSE $dbName | sed -e &#39;s/DEFINER[ ]*=[ ]*[^*]*\*/\*/&#39; | bzip2 &gt; $dbName.sql.bz2
+</pre></div>
+
+
 <h2 id="calculate-database-size">Calculate database size</h2>
-<pre><code>SELECT table_schema AS "Database", 
-ROUND(SUM(data_length + index_length) / 1024 / 1024, 2) AS "Size (MB)" 
+<div class="codehilite"><pre><span></span>SELECT table_schema AS &quot;Database&quot;, 
+ROUND(SUM(data_length + index_length) / 1024 / 1024, 2) AS &quot;Size (MB)&quot; 
 FROM information_schema.TABLES 
 GROUP BY table_schema;
-</code></pre>
+</pre></div>
+
+
 <h2 id="locking">Locking</h2>
-<pre><code>if get_lock(lock_name, 1) then
+<div class="codehilite"><pre><span></span>if get_lock(lock_name, 1) then
 -- LOCKING ok, proceed
     set @0 = release_lock(lock_name);
 else
 -- LOCKING failed, handle this
 end if;
-</code></pre>
+</pre></div>
                 
                   
                 

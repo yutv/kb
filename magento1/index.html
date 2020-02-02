@@ -63,6 +63,8 @@
     <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../css/extra.css">
+    
     
       
     
@@ -152,6 +154,75 @@
       
         
       
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." class="md-tabs__link md-tabs__link--active">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../magento-2/configuration/" class="md-tabs__link">
+          Magento 2
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
       
       <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
@@ -341,18 +412,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../magento2/" title="Magento2" class="md-nav__link">
-      Magento2
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
     <a href="../mkdocs/" title="Mkdocs" class="md-nav__link">
       Mkdocs
     </a>
@@ -467,6 +526,102 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-20" type="checkbox" id="nav-20">
+    
+    <label class="md-nav__link" for="nav-20">
+      Magento 2
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-20">
+        Magento 2
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/configuration/" title="Configuration" class="md-nav__link">
+      Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/cron/" title="Cron" class="md-nav__link">
+      Cron
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/general/" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/layout/" title="Layout" class="md-nav__link">
+      Layout
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/ui/" title="Ui" class="md-nav__link">
+      Ui
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/useful-links/" title="Useful links" class="md-nav__link">
+      Useful links
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -533,34 +688,38 @@
                   <h1>Magento1</h1>
                 
                 <h2 id="setup-dynamic-base-url">Setup Dynamic Base URL</h2>
-<pre><code class="sql">INSERT INTO core_config_data (`path`, `value`) VALUES
-('web/url/use_store',  1), 
-('web/unsecure/base_url',  '{{base_url}}'), 
-('web/secure/base_url', '{{base_url}}'),
-('web/unsecure/base_link_url', '{{unsecure_base_url}}'),
-('web/unsecure/base_skin_url', '{{unsecure_base_url}}skin/'),
-('web/unsecure/base_media_url', '{{unsecure_base_url}}media/'),
-('web/unsecure/base_js_url', '{{unsecure_base_url}}js/'),
-('web/secure/base_link_url', '{{secure_base_url}}'),
-('web/secure/base_skin_url', '{{secure_base_url}}skin/'),
-('web/secure/base_media_url', '{{secure_base_url}}media/'),
-('web/secure/base_js_url', '{{secure_base_url}}js/')
-ON DUPLICATE KEY UPDATE `value` = VALUES(`value`);
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">core_config_data</span> <span class="p">(</span><span class="o">`</span><span class="n">path</span><span class="o">`</span><span class="p">,</span> <span class="o">`</span><span class="n">value</span><span class="o">`</span><span class="p">)</span> <span class="k">VALUES</span>
+<span class="p">(</span><span class="s1">&#39;web/url/use_store&#39;</span><span class="p">,</span>  <span class="mi">1</span><span class="p">),</span> 
+<span class="p">(</span><span class="s1">&#39;web/unsecure/base_url&#39;</span><span class="p">,</span>  <span class="s1">&#39;{{base_url}}&#39;</span><span class="p">),</span> 
+<span class="p">(</span><span class="s1">&#39;web/secure/base_url&#39;</span><span class="p">,</span> <span class="s1">&#39;{{base_url}}&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="s1">&#39;web/unsecure/base_link_url&#39;</span><span class="p">,</span> <span class="s1">&#39;{{unsecure_base_url}}&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="s1">&#39;web/unsecure/base_skin_url&#39;</span><span class="p">,</span> <span class="s1">&#39;{{unsecure_base_url}}skin/&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="s1">&#39;web/unsecure/base_media_url&#39;</span><span class="p">,</span> <span class="s1">&#39;{{unsecure_base_url}}media/&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="s1">&#39;web/unsecure/base_js_url&#39;</span><span class="p">,</span> <span class="s1">&#39;{{unsecure_base_url}}js/&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="s1">&#39;web/secure/base_link_url&#39;</span><span class="p">,</span> <span class="s1">&#39;{{secure_base_url}}&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="s1">&#39;web/secure/base_skin_url&#39;</span><span class="p">,</span> <span class="s1">&#39;{{secure_base_url}}skin/&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="s1">&#39;web/secure/base_media_url&#39;</span><span class="p">,</span> <span class="s1">&#39;{{secure_base_url}}media/&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="s1">&#39;web/secure/base_js_url&#39;</span><span class="p">,</span> <span class="s1">&#39;{{secure_base_url}}js/&#39;</span><span class="p">)</span>
+<span class="k">ON</span> <span class="n">DUPLICATE</span> <span class="k">KEY</span> <span class="k">UPDATE</span> <span class="o">`</span><span class="n">value</span><span class="o">`</span> <span class="o">=</span> <span class="k">VALUES</span><span class="p">(</span><span class="o">`</span><span class="n">value</span><span class="o">`</span><span class="p">);</span>
+</pre></div>
 
 <h2 id="cli-clear-cache">CLI clear cache</h2>
-<pre><code>php -r 'require "app/Mage.php"; Mage::app()-&gt;getCacheInstance()-&gt;flush();'
-</code></pre>
+<div class="codehilite"><pre><span></span>php -r &#39;require &quot;app/Mage.php&quot;; Mage::app()-&gt;getCacheInstance()-&gt;flush();&#39;
+</pre></div>
+
+
 <h2 id="unison-profile">Unison profile</h2>
 <p>~/.unison/magento1.prf</p>
-<pre><code>include default
+<div class="codehilite"><pre><span></span>include default
 ignore = Path var/?*
 ignore = Path var/.?*
 ignore = Path media
-</code></pre>
+</pre></div>
+
+
 <h2 id="force-secure-urls">force secure urls</h2>
 <p>app/etc/local.xml</p>
-<pre><code>&lt;?xml version="1.0"?&gt;
+<div class="codehilite"><pre><span></span>&lt;?xml version=&quot;1.0&quot;?&gt;
 &lt;config&gt;
   &lt;frontend&gt;
     &lt;secure_url&gt;
@@ -568,7 +727,7 @@ ignore = Path media
     &lt;/secure_url&gt;
   &lt;/frontend&gt;
 &lt;/config&gt;
-</code></pre>
+</pre></div>
                 
                   
                 
@@ -604,13 +763,13 @@ ignore = Path media
           </a>
         
         
-          <a href="../magento2/" title="Magento2" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../mkdocs/" title="Mkdocs" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Magento2
+                Mkdocs
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

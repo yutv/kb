@@ -63,6 +63,8 @@
     <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../css/extra.css">
+    
     
       
     
@@ -152,6 +154,75 @@
       
         
       
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." class="md-tabs__link md-tabs__link--active">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../magento-2/configuration/" class="md-tabs__link">
+          Magento 2
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
       
       <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
@@ -334,18 +405,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../magento2/" title="Magento2" class="md-nav__link">
-      Magento2
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
     <a href="../mkdocs/" title="Mkdocs" class="md-nav__link">
       Mkdocs
     </a>
@@ -460,6 +519,102 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-20" type="checkbox" id="nav-20">
+    
+    <label class="md-nav__link" for="nav-20">
+      Magento 2
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-20">
+        Magento 2
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/configuration/" title="Configuration" class="md-nav__link">
+      Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/cron/" title="Cron" class="md-nav__link">
+      Cron
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/general/" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/layout/" title="Layout" class="md-nav__link">
+      Layout
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/ui/" title="Ui" class="md-nav__link">
+      Ui
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/useful-links/" title="Useful links" class="md-nav__link">
+      Useful links
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -520,26 +675,30 @@
                 
                 <h2 id="disable-browser-cache-for-specific-folder">Disable Browser Cache for specific folder</h2>
 <p>Place the following line into .htaccess:</p>
-<pre><code>Header set Cache-Control "no-store" "expr=%{REQUEST_URI}=~/(VendorName1|VendorName2|requirejs-config\.js)/i"
-</code></pre>
+<div class="codehilite"><pre><span></span>Header set Cache-Control &quot;no-store&quot; &quot;expr=%{REQUEST_URI}=~/(VendorName1|VendorName2|requirejs-config\.js)/i&quot;
+</pre></div>
+
+
 <p>As result url with "VendorName" in path will get <code>Pragma "no-cache"</code> http header, so browser won't cache it.
 This trick is very useful for magento developers who are working with js components or html templates and want to disable cache for a certain folder only.  </p>
 <h2 id="basic-auth-with-url-exception">Basic Auth with URL exception</h2>
 <p>Access <strong>/dir/subdir/file.txt</strong> file without authorization</p>
-<pre><code>SetEnvIf Request_URI "dir\/subdir\/file\.txt$" no_auth
+<div class="codehilite"><pre><span></span>SetEnvIf Request_URI &quot;dir\/subdir\/file\.txt$&quot; no_auth
 AuthType Basic
 AuthUserFile /home/user/public_html/.htpasswd
-AuthName "Restricted Area"
+AuthName &quot;Restricted Area&quot;
 Require valid-user
 Order allow,deny
 Allow from env=no_auth
 Satisfy any
-</code></pre>
+</pre></div>
+
+
 <h2 id="define-base-path-as-environment-variable-for-further-usage">Define base path as environment variable for further usage</h2>
-<pre><code>RewriteCond %{REQUEST_URI}::$1 ^(/.+)/(.*)::\2$
+<div class="codehilite"><pre><span></span>RewriteCond %{REQUEST_URI}::$1 ^(/.+)/(.*)::\2$
 RewriteRule ^(.*) - [E=BASE:%1]
 RewriteRule ^(.*)$ %{ENV:BASE}/index.php [L]
-</code></pre>
+</pre></div>
                 
                   
                 

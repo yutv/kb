@@ -63,6 +63,8 @@
     <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../css/extra.css">
+    
     
       
     
@@ -152,6 +154,75 @@
       
         
       
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." class="md-tabs__link md-tabs__link--active">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../magento-2/configuration/" class="md-tabs__link">
+          Magento 2
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
       
       <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
@@ -395,18 +466,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../magento2/" title="Magento2" class="md-nav__link">
-      Magento2
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
     <a href="../mkdocs/" title="Mkdocs" class="md-nav__link">
       Mkdocs
     </a>
@@ -518,6 +577,102 @@
     <a href="../xdebug/" title="Xdebug" class="md-nav__link">
       Xdebug
     </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-20" type="checkbox" id="nav-20">
+    
+    <label class="md-nav__link" for="nav-20">
+      Magento 2
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-20">
+        Magento 2
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/configuration/" title="Configuration" class="md-nav__link">
+      Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/cron/" title="Cron" class="md-nav__link">
+      Cron
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/general/" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/layout/" title="Layout" class="md-nav__link">
+      Layout
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/ui/" title="Ui" class="md-nav__link">
+      Ui
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/useful-links/" title="Useful links" class="md-nav__link">
+      Useful links
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -643,48 +798,51 @@
                 <h2 id="daily-routine">Daily Routine</h2>
 <h3 id="push-wo-userpassword-prompt">Push w/o user/password prompt</h3>
 <p>Change origin from https to ssh</p>
-<pre><code>git remote set-url origin git@github.com:username/projectname.git
-</code></pre>
+<div class="codehilite"><pre><span></span>git remote set-url origin git@github.com:username/projectname.git
+</pre></div>
+
+
 <h3 id="update-local-list-of-remote-branches">Update local list of remote branches</h3>
-<pre><code class="bash">git branch -a
+<div class="codehilite"><pre><span></span>git branch -a
 git remote update origin --prune
-</code></pre>
+</pre></div>
 
 <h3 id="adding-a-remote">Adding a remote</h3>
-<pre><code class="bash">git remote -v
+<div class="codehilite"><pre><span></span>git remote -v
 git remote add origin https://domain.com/myrepo.git
-</code></pre>
+</pre></div>
 
 <h3 id="merge-branch-as-new-commit">Merge branch as new commit</h3>
-<pre><code class="bash">git merge --squash branch_name
+<div class="codehilite"><pre><span></span>git merge --squash branch_name
 git commit
-</code></pre>
+</pre></div>
 
 <h2 id="setup">Setup</h2>
 <h3 id="global-gitignore">Global .gitignore</h3>
-<pre><code class="bash">git config --global core.excludesfile ~/.gitignore
+<p><div class="codehilite"><pre><span></span>git config --global core.excludesfile ~/.gitignore
 vi ~/.gitignore
-</code></pre>
-
-<p>Add your global ignores, e.g:</p>
-<pre><code>.idea
+</pre></div>
+Add your global ignores, e.g:</p>
+<div class="codehilite"><pre><span></span>.idea
 vendor
 studio
 .sass-cache
 .unison*
-</code></pre>
+</pre></div>
+
+
 <h3 id="store-passwords">Store passwords</h3>
-<pre><code class="bash">git config --global credential.helper store
-</code></pre>
+<div class="codehilite"><pre><span></span>git config --global credential.helper store
+</pre></div>
 
 <h3 id="workaround-with-403-error">Workaround with 403 error</h3>
-<pre><code class="bash">git config --global --unset-all credential.helper
+<div class="codehilite"><pre><span></span>git config --global --unset-all credential.helper
 git config --unset-all credential.helper
-</code></pre>
+</pre></div>
 
 <h3 id="git-lg">git lg</h3>
-<pre><code>git config --global alias.lg "log --all --color --graph --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset %C(yellow)%d%Creset' --abbrev-commit"
-</code></pre>
+<div class="codehilite"><pre><span></span>git config --global alias.lg &quot;log --all --color --graph --pretty=format:&#39;%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset %C(yellow)%d%Creset&#39; --abbrev-commit&quot;
+</pre></div>
                 
                   
                 

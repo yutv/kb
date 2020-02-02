@@ -63,6 +63,8 @@
     <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../css/extra.css">
+    
     
       
     
@@ -152,6 +154,75 @@
       
         
       
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." class="md-tabs__link md-tabs__link--active">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../magento-2/configuration/" class="md-tabs__link">
+          Magento 2
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
       
       <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
@@ -417,18 +488,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../magento2/" title="Magento2" class="md-nav__link">
-      Magento2
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
     <a href="../mkdocs/" title="Mkdocs" class="md-nav__link">
       Mkdocs
     </a>
@@ -540,6 +599,102 @@
     <a href="../xdebug/" title="Xdebug" class="md-nav__link">
       Xdebug
     </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-20" type="checkbox" id="nav-20">
+    
+    <label class="md-nav__link" for="nav-20">
+      Magento 2
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-20">
+        Magento 2
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/configuration/" title="Configuration" class="md-nav__link">
+      Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/cron/" title="Cron" class="md-nav__link">
+      Cron
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/general/" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/layout/" title="Layout" class="md-nav__link">
+      Layout
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/ui/" title="Ui" class="md-nav__link">
+      Ui
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/useful-links/" title="Useful links" class="md-nav__link">
+      Useful links
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -685,65 +840,73 @@
                   <h1>Bash</h1>
                 
                 <h2 id="path-info">path info</h2>
-<pre><code>file="/home/user/file.inc.php"
+<div class="codehilite"><pre><span></span>file=&quot;/home/user/file.inc.php&quot;
 basename=${file##*/}       # file.inc.php
 filename=${basename%.*}    # file.inc
 extension=${file##*.}      # php
 dirname=${file%/*}         # /home/user
-</code></pre>
+</pre></div>
+
+
 <h2 id="ssh-authentication-wo-password">SSH authentication w/o password</h2>
-<pre><code class="bash">cd ~/.ssh
+<p><div class="codehilite"><pre><span></span><span class="nb">cd</span> ~/.ssh
 ssh-keygen
 ssh-copy-id -i ~/.ssh/id_rsa.pub remote.host.com
 ssh-add
 ssh remote.host.com
-</code></pre>
-
-<p>If username has a “@” symbol then use the following:</p>
-<pre><code class="bash">ssh -l user@example.com example.com
+</pre></div>
+If username has a “@” symbol then use the following:
+<div class="codehilite"><pre><span></span>ssh -l user@example.com example.com
 mkdir .ssh
 touch .ssh/authorized_keys
-exit
-cat ~/.ssh/id_rsa.pub | ssh -l user@example.com example.com 'cat &gt;&gt; .ssh/authorized_keys'
-chmod 700 .ssh
-chmod 400 .ssh/authorized_keys
+<span class="nb">exit</span>
+cat ~/.ssh/id_rsa.pub <span class="p">|</span> ssh -l user@example.com example.com <span class="s1">&#39;cat &gt;&gt; .ssh/authorized_keys&#39;</span>
+chmod <span class="m">700</span> .ssh
+chmod <span class="m">400</span> .ssh/authorized_keys
 ssh -l user@example.com example.com
-</code></pre>
-
+</pre></div></p>
 <h2 id="bash-prompt-w-path-and-colors">Bash prompt w/ path and colors</h2>
 <p>Add the following line to your <code>~/.bash_profile</code>:</p>
 <p>Green</p>
-<pre><code>export PS1="\[\e[0;38;05;15m\][\[\e[0;38;05;47m\]\u\[\e[0;38;05;15m\]@\[\e[0;38;05;208m\]\h:\[\e[0;38;05;111m\]\w\[\e[0;38;05;15m\]]\\$ \[\e[0m\]"
-</code></pre>
+<div class="codehilite"><pre><span></span>export PS1=&quot;\[\e[0;38;05;15m\][\[\e[0;38;05;47m\]\u\[\e[0;38;05;15m\]@\[\e[0;38;05;208m\]\h:\[\e[0;38;05;111m\]\w\[\e[0;38;05;15m\]]\\$ \[\e[0m\]&quot;
+</pre></div>
+
+
 <p>Remote (yellow)</p>
-<pre><code>export PS1="\[\e[0;38;05;15m\][\[\e[0;38;05;226m\]\u\[\e[0;38;05;15m\]@\[\e[0;38;05;226m\]\h:\[\e[0;38;05;180m\]\w\[\e[0;38;05;15m\]]\\$ \[\e[0m\]"
-</code></pre>
+<div class="codehilite"><pre><span></span>export PS1=&quot;\[\e[0;38;05;15m\][\[\e[0;38;05;226m\]\u\[\e[0;38;05;15m\]@\[\e[0;38;05;226m\]\h:\[\e[0;38;05;180m\]\w\[\e[0;38;05;15m\]]\\$ \[\e[0m\]&quot;
+</pre></div>
+
+
 <p>Remote Root (red and yellow)</p>
-<pre><code>export PS1="\[\e[0;38;05;15m\][\[\e[0;38;05;196m\]\u\[\e[0;38;05;15m\]@\[\e[0;38;05;226m\]\h:\[\e[0;38;05;180m\]\w\[\e[0;38;05;15m\]]\\$ \[\e[0m\]"
-</code></pre>
-<p>Show colors:</p>
-<pre><code class="bash">for i in {0..255}; do echo -e &quot;\e[38;05;${i}m${i}&quot;; done | column -c 80 -s '  '; echo -e &quot;\e[m&quot;
-</code></pre>
+<div class="codehilite"><pre><span></span>export PS1=&quot;\[\e[0;38;05;15m\][\[\e[0;38;05;196m\]\u\[\e[0;38;05;15m\]@\[\e[0;38;05;226m\]\h:\[\e[0;38;05;180m\]\w\[\e[0;38;05;15m\]]\\$ \[\e[0m\]&quot;
+</pre></div>
 
-<pre><code class="bash">for code in $(seq -w 0 255); do for attr in 0 1; do printf &quot;%s-%03s %bTest%b\n&quot; &quot;${attr}&quot; &quot;${code}&quot; &quot;\e[${attr};38;05;${code}m&quot; &quot;\e[m&quot;; done; done | column -c $((COLUMNS*2))
-</code></pre>
 
+<p>Show colors:
+<div class="codehilite"><pre><span></span><span class="k">for</span> i in <span class="o">{</span><span class="m">0</span>..255<span class="o">}</span><span class="p">;</span> <span class="k">do</span> <span class="nb">echo</span> -e <span class="s2">&quot;\e[38;05;</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">m</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span> <span class="k">done</span> <span class="p">|</span> column -c <span class="m">80</span> -s <span class="s1">&#39;  &#39;</span><span class="p">;</span> <span class="nb">echo</span> -e <span class="s2">&quot;\e[m&quot;</span>
+</pre></div>
+<div class="codehilite"><pre><span></span><span class="k">for</span> code in <span class="k">$(</span>seq -w <span class="m">0</span> <span class="m">255</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span> <span class="k">for</span> attr in <span class="m">0</span> <span class="m">1</span><span class="p">;</span> <span class="k">do</span> <span class="nb">printf</span> <span class="s2">&quot;%s-%03s %bTest%b\n&quot;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">attr</span><span class="si">}</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">code</span><span class="si">}</span><span class="s2">&quot;</span> <span class="s2">&quot;\e[</span><span class="si">${</span><span class="nv">attr</span><span class="si">}</span><span class="s2">;38;05;</span><span class="si">${</span><span class="nv">code</span><span class="si">}</span><span class="s2">m&quot;</span> <span class="s2">&quot;\e[m&quot;</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span> <span class="k">done</span> <span class="p">|</span> column -c <span class="k">$((</span>COLUMNS*2<span class="k">))</span>
+</pre></div></p>
 <h2 id="aliases">Aliases</h2>
-<pre><code>#general
-alias ll='LC_COLLATE=C ls -la --color=auto'
+<div class="codehilite"><pre><span></span>#general
+alias ll=&#39;LC_COLLATE=C ls -la --color=auto&#39;
 
 #svn
-alias ssie='svn st --ignore-externals | grep ^[^xX]'
-alias xdiff='svn diff -x "-w --ignore-eol-style" | vim -R -'
-</code></pre>
+alias ssie=&#39;svn st --ignore-externals | grep ^[^xX]&#39;
+alias xdiff=&#39;svn diff -x &quot;-w --ignore-eol-style&quot; | vim -R -&#39;
+</pre></div>
+
+
 <h2 id="vim">VIM</h2>
 <p>~/.vimrc</p>
-<pre><code>set nocompatible
+<div class="codehilite"><pre><span></span>set nocompatible
 set backspace=2
 set tabstop=4
 set expandtab
 set number
-</code></pre>
+</pre></div>
+
+
 <h2 id="load-additional-phpini-when-run-php-from-terminal">Load additional php.ini when run php from terminal</h2>
 <ol>
 <li>
@@ -763,46 +926,58 @@ set number
 </li>
 <li>
 <p>Check memory limit:</p>
-<pre><code>$ php -i | grep memory_limit
+<div class="codehilite"><pre><span></span>$ php -i | grep memory_limit
 memory_limit =&gt; -1 =&gt; -1
-</code></pre>
+</pre></div>
+
+
 </li>
 </ol>
 <p><a href="http://php.net/manual/en/configuration.file.php#configuration.file.scan">More info on php.net</a></p>
 <h2 id="convert-dos-to-unix-newlines-in-current-directory-excluding-git-directory">Convert DOS to Unix newlines in current directory excluding .git directory</h2>
-<pre><code>find . -type f -not -path './.git/*' -print0 | xargs -0 dos2unix
-</code></pre>
+<div class="codehilite"><pre><span></span>find . -type f -not -path &#39;./.git/*&#39; -print0 | xargs -0 dos2unix
+</pre></div>
+
+
 <h2 id="use-custom-ssh-port-with-rsyncsshscpsshfs">Use custom SSH port with rsync/ssh/scp/sshfs</h2>
-<pre><code>rsync -avz -e "ssh -p 2244" --exclude=var user@server.com:/html/ .
+<div class="codehilite"><pre><span></span>rsync -avz -e &quot;ssh -p 2244&quot; --exclude=var user@server.com:/html/ .
 ssh user@server.com -p 2244
 scp -P 2244 user@server.com:/html/website_db.sql .
 sshfs user@server.com:/html -p 2244 server.com
-</code></pre>
+</pre></div>
+
+
 <h2 id="upload-multiple-files-wo-file-name-duplication">Upload multiple files w/o file name duplication</h2>
-<pre><code>scp {,user@example.com:~/}public_html/index.php
+<div class="codehilite"><pre><span></span>scp {,user@example.com:~/}public_html/index.php
 scp {,user@example.com:~/}public_html/.htaccess
 scp {,user@example.com:~/}public_html/images/logo.png
 scp {,user@example.com:~/}public_html/js/jquery.js
-</code></pre>
+</pre></div>
+
+
 <h2 id="fix-permissions">FIX permissions</h2>
-<pre><code>find . -type f -exec chmod 640 {} \;
+<div class="codehilite"><pre><span></span>find . -type f -exec chmod 640 {} \;
 find . -type d -exec chmod 750 {} \;
-</code></pre>
+</pre></div>
+
+
 <h2 id="useful-links">Useful links</h2>
 <ol>
 <li><a href="https://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash">How to parse command line arguments</a></li>
 </ol>
 <h2 id="statistics">Statistics</h2>
 <h3 id="find-of-code-lines-in-directory">Find # of code lines in directory</h3>
-<pre><code>(find . -type f -name '*.php' -print0 | xargs -0 cat) | wc -l
-</code></pre>
+<div class="codehilite"><pre><span></span>(find . -type f -name &#39;*.php&#39; -print0 | xargs -0 cat) | wc -l
+</pre></div>
+
+
 <h2 id="ctrlc-hook">Ctrl+C Hook</h2>
-<pre><code>trap ctrl_c INT
+<div class="codehilite"><pre><span></span>trap ctrl_c INT
 
 function ctrl_c() {
-    echo "Triggered CTRL+C event"
+    echo &quot;Triggered CTRL+C event&quot;
 }
-</code></pre>
+</pre></div>
                 
                   
                 

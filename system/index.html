@@ -63,6 +63,8 @@
     <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../css/extra.css">
+    
     
       
     
@@ -152,6 +154,75 @@
       
         
       
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." class="md-tabs__link md-tabs__link--active">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../magento-2/configuration/" class="md-tabs__link">
+          Magento 2
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
       
       <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
@@ -276,18 +347,6 @@
   <li class="md-nav__item">
     <a href="../magento1/" title="Magento1" class="md-nav__link">
       Magento1
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../magento2/" title="Magento2" class="md-nav__link">
-      Magento2
     </a>
   </li>
 
@@ -460,6 +519,102 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-20" type="checkbox" id="nav-20">
+    
+    <label class="md-nav__link" for="nav-20">
+      Magento 2
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-20">
+        Magento 2
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/configuration/" title="Configuration" class="md-nav__link">
+      Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/cron/" title="Cron" class="md-nav__link">
+      Cron
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/general/" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/layout/" title="Layout" class="md-nav__link">
+      Layout
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/ui/" title="Ui" class="md-nav__link">
+      Ui
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magento-2/useful-links/" title="Useful links" class="md-nav__link">
+      Useful links
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -519,20 +674,24 @@
                   <h1>System</h1>
                 
                 <h2 id="info">Info</h2>
-<pre><code>#system info in short format
+<div class="codehilite"><pre><span></span>#system info in short format
 inxi -F
-</code></pre>
+</pre></div>
+
+
 <h2 id="disable-selinux">Disable Selinux</h2>
-<pre><code>#runtime
+<div class="codehilite"><pre><span></span>#runtime
 sudo setenforce 0
 
 #permanently
 /etc/selinux/config
 SELINUX=disabled
-</code></pre>
+</pre></div>
+
+
 <h2 id="kernel-parameters">Kernel parameters</h2>
 <p><strong>vi /etc/sysctl.conf</strong></p>
-<pre><code># custom settings
+<div class="codehilite"><pre><span></span># custom settings
 
 $ disable IPv6
 net.ipv6.conf.all.disable_ipv6 = 1
@@ -541,10 +700,12 @@ net.ipv6.conf.lo.disable_ipv6 = 1
 
 # Increase inotify.max_user_watches (https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers)   
 fs.inotify.max_user_watches = 524288
-</code></pre>
+</pre></div>
+
+
 <p><strong>Reload kernel parameters</strong></p>
-<pre><code>sysctl -p
-</code></pre>
+<div class="codehilite"><pre><span></span>sysctl -p
+</pre></div>
                 
                   
                 
