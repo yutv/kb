@@ -784,6 +784,9 @@ zip -r9 "vendor-module-1.0.0.zip" . -x *.git* *.idea*
 <h3 id="show-all-ui-components-on-the-page">Show all UI components on the page</h3>
 <pre><code>require('uiRegistry').get(function(item) { console.log(item.name, item); });
 </code></pre>
+<p>Filter</p>
+<pre><code>require('uiRegistry').get(function(item) { item.name &amp;&amp; ~item.name.indexOf('configurable') &amp;&amp; console.log(item.name); });
+</code></pre>
 <h2 id="add-administrator">Add administrator</h2>
 <pre><code>php bin/magento admin:user:create --admin-user=admin --admin-password=password --admin-email=support@example.com --admin-firstname=Support --admin-lastname=Account
 </code></pre>
