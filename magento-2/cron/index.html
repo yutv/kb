@@ -210,6 +210,19 @@
   
     <li class="md-tabs__item">
       
+        <a href="../../_snippets/m2/" class="md-tabs__link">
+           snippets
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
         <a href="../configuration/" class="md-tabs__link md-tabs__link--active">
           Magento 2
         </a>
@@ -473,18 +486,54 @@
       
       
 
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-20" type="checkbox" id="nav-20">
+    
+    <label class="md-nav__link" for="nav-20">
+       snippets
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-20">
+         snippets
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../_snippets/m2/" title="M2" class="md-nav__link">
+      M2
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-20" type="checkbox" id="nav-20" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-21" type="checkbox" id="nav-21" checked>
     
-    <label class="md-nav__link" for="nav-20">
+    <label class="md-nav__link" for="nav-21">
       Magento 2
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-20">
+      <label class="md-nav__title" for="nav-21">
         Magento 2
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -589,7 +638,11 @@
                 
                   <h1>Cron</h1>
                 
-                <p><strong>Run cron as standalone process:</strong>
+                <div class="codehilite"><pre><span></span><span class="c1"># ~/.bashrc</span>
+<span class="nb">alias</span> <span class="nv">m2</span><span class="o">=</span><span class="s1">&#39;php bin/magento&#39;</span>
+</pre></div>
+
+<p><strong>Run cron as standalone process:</strong>
 <div class="codehilite"><pre><span></span>m2 cron:run --group<span class="o">=</span>default --bootstrap<span class="o">=</span><span class="nv">standaloneProcessStarted</span><span class="o">=</span><span class="m">1</span>
 </pre></div></p>
 <p><strong>Files:</strong></p>
