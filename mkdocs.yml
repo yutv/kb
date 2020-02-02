@@ -1,9 +1,26 @@
 site_name: Knowledge Base
 theme:
   name: 'material'
+#  name: null
+#  custom_dir: 'mkdocs-material/material'
+  language: en
+  feature:
+    tabs: true
   palette:
       primary: 'Teal'
       accent: 'Teal'
+
+extra_css:
+  - 'css/extra.css'
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - footnotes
+
 extra:
     social:
         - type: 'github'

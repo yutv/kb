@@ -1,0 +1,13 @@
+.md-content {
+    margin-left: 8.1rem;
+}
+.md-sidebar.md-sidebar--primary {
+    width: 8.1rem;
+}
+.md-sidebar.md-sidebar--secondary{
+    margin-left: 71rem;
+}
+.md-sidebar__scrollwrap {
+    /*overflow-y: initial;*/
+}
+.md-grid {max-width: 72rem}
