@@ -94,6 +94,10 @@ cli command:
 
     require('uiRegistry').get(function(item) { console.log(item.name, item); });
 
+Filter
+    
+    require('uiRegistry').get(function(item) { item.name && ~item.name.indexOf('configurable') && console.log(item.name); });
+
 ## Add administrator
 
     php bin/magento admin:user:create --admin-user=admin --admin-password=password --admin-email=support@example.com --admin-firstname=Support --admin-lastname=Account
