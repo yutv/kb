@@ -36,7 +36,7 @@
     
     
       
-        <title>Pdf - Knowledge Base</title>
+        <title>Redis - Knowledge Base</title>
       
     
     
@@ -85,7 +85,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#create-booklet" tabindex="1" class="md-skip">
+      <a href="#useful-commands" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -111,7 +111,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Pdf
+                Redis
               
             </span>
           
@@ -430,45 +430,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Pdf
-      </label>
-    
-    <a href="./" title="Pdf" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../pdf/" title="Pdf" class="md-nav__link">
       Pdf
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#create-booklet" class="md-nav__link">
-    Create Booklet
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -488,11 +454,45 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../redis/" title="Redis" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Redis
+      </label>
+    
+    <a href="./" title="Redis" class="md-nav__link md-nav__link--active">
       Redis
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#useful-commands" class="md-nav__link">
+    Useful commands
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -683,8 +683,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-booklet" class="md-nav__link">
-    Create Booklet
+  <a href="#useful-commands" class="md-nav__link">
+    Useful commands
   </a>
   
 </li>
@@ -706,10 +706,11 @@
               
                 
                 
-                  <h1>Pdf</h1>
+                  <h1>Redis</h1>
                 
-                <h2 id="create-booklet">Create Booklet</h2>
-<div class="codehilite"><pre><span></span>pdfbook --short-edge --frame true --scale 0.95 file.pdf
+                <h2 id="useful-commands">Useful commands</h2>
+<div class="codehilite"><pre><span></span>redis-cli FLUSHDB  <span class="c1"># delete all the keys of the currently selected DB.</span>
+redis-cli FLUSHALL <span class="c1"># delete all the keys of all the existing databases, not just the currently selected one.</span>
 </pre></div>
                 
                   
@@ -731,7 +732,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../patch/" title="Patch" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../php/" title="Php" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -740,19 +741,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Patch
+                Php
               </span>
             </div>
           </a>
         
         
-          <a href="../php/" title="Php" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../ssh/" title="Ssh" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Php
+                Ssh
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
