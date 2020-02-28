@@ -10,13 +10,20 @@ To use `mysql` and `mysqldump` commands without password just store credentials 
     password="devpassword"
 
 ##Dump database w/o DEFINER
+1. 
+```bash
+dbName='dbname' && mysqldump --opt $dbName | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | bzip2 > $dbName.sql.bz2
+```
+2. 
+```bash
+dbName='dbname' && mysqldump --opt $dbName | sed -E 's/DEFINER=[^ *]+//' | bzip2 > $dbName.sql.bz2
+```
 
-    dbName='dbname' && mysqldump --opt $dbName | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | bzip2 > $dbName.sql.bz2
+Additional useful options:
 
-The same but with `--extended-insert=FALSE` option when you need to analyze/edit dump:
-    
-    dbName='dbname' && mysqldump --opt --extended-insert=FALSE $dbName | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | bzip2 > $dbName.sql.bz2
-    
+- `--extended-insert=FALSE` - to analyze/edit dump
+- `--insert-ignore` - when db has unique key duplicates (happens some time)  
+
 ##Calculate database size
 
     SELECT table_schema AS "Database", 
