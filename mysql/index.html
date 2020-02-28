@@ -778,15 +778,17 @@ password=&quot;devpassword&quot;
 
 
 <h2 id="dump-database-wo-definer">Dump database w/o DEFINER</h2>
-<div class="codehilite"><pre><span></span>dbName=&#39;dbname&#39; &amp;&amp; mysqldump --opt $dbName | sed -e &#39;s/DEFINER[ ]*=[ ]*[^*]*\*/\*/&#39; | bzip2 &gt; $dbName.sql.bz2
-</pre></div>
-
-
-<p>The same but with <code>--extended-insert=FALSE</code> option when you need to analyze/edit dump:</p>
-<div class="codehilite"><pre><span></span>dbName=&#39;dbname&#39; &amp;&amp; mysqldump --opt --extended-insert=FALSE $dbName | sed -e &#39;s/DEFINER[ ]*=[ ]*[^*]*\*/\*/&#39; | bzip2 &gt; $dbName.sql.bz2
-</pre></div>
-
-
+<ol>
+<li><div class="codehilite"><pre><span></span><span class="nv">dbName</span><span class="o">=</span><span class="s1">&#39;dbname&#39;</span> <span class="o">&amp;&amp;</span> mysqldump --opt <span class="nv">$dbName</span> <span class="p">|</span> sed -e <span class="s1">&#39;s/DEFINER[ ]*=[ ]*[^*]*\*/\*/&#39;</span> <span class="p">|</span> bzip2 &gt; <span class="nv">$dbName</span>.sql.bz2
+</pre></div></li>
+<li><div class="codehilite"><pre><span></span><span class="nv">dbName</span><span class="o">=</span><span class="s1">&#39;dbname&#39;</span> <span class="o">&amp;&amp;</span> mysqldump --opt <span class="nv">$dbName</span> <span class="p">|</span> sed -E <span class="s1">&#39;s/DEFINER=[^ *]+//&#39;</span> <span class="p">|</span> bzip2 &gt; <span class="nv">$dbName</span>.sql.bz2
+</pre></div></li>
+</ol>
+<p>Additional useful options:</p>
+<ul>
+<li><code>--extended-insert=FALSE</code> - to analyze/edit dump</li>
+<li><code>--insert-ignore</code> - when db has unique key duplicates (happens some time)  </li>
+</ul>
 <h2 id="calculate-database-size">Calculate database size</h2>
 <div class="codehilite"><pre><span></span>SELECT table_schema AS &quot;Database&quot;, 
 ROUND(SUM(data_length + index_length) / 1024 / 1024, 2) AS &quot;Size (MB)&quot; 
