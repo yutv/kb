@@ -210,14 +210,12 @@
         
       
         
-      
-        
   
   
     <li class="md-tabs__item">
       
-        <a href="../../_snippets/m2/" class="md-tabs__link">
-           snippets
+        <a href="../../bash/general/" class="md-tabs__link">
+          Bash
         </a>
       
     </li>
@@ -268,18 +266,6 @@
   <li class="md-nav__item">
     <a href="../.." title="Home" class="md-nav__link">
       Home
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../bash/" title="Bash" class="md-nav__link">
-      Bash
     </a>
   </li>
 
@@ -507,14 +493,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-21" type="checkbox" id="nav-21">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-20" type="checkbox" id="nav-20">
     
-    <label class="md-nav__link" for="nav-21">
-       snippets
+    <label class="md-nav__link" for="nav-20">
+      Bash
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-21">
-         snippets
+      <label class="md-nav__title" for="nav-20">
+        Bash
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -525,8 +511,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../_snippets/m2/" title="M2" class="md-nav__link">
-      M2
+    <a href="../../bash/general/" title="General" class="md-nav__link">
+      General
     </a>
   </li>
 
@@ -545,13 +531,13 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-22" type="checkbox" id="nav-22" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-21" type="checkbox" id="nav-21" checked>
     
-    <label class="md-nav__link" for="nav-22">
+    <label class="md-nav__link" for="nav-21">
       Magento 2
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-22">
+      <label class="md-nav__title" for="nav-21">
         Magento 2
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -640,6 +626,20 @@
         <li class="md-nav__item">
   <a href="#add-administrator" class="md-nav__link">
     Add Administrator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-patch-development" class="md-nav__link">
+    Data Patch Development
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recompile" class="md-nav__link">
+    Recompile
   </a>
   
 </li>
@@ -749,6 +749,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#data-patch-development" class="md-nav__link">
+    Data Patch Development
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recompile" class="md-nav__link">
+    Recompile
+  </a>
+  
+</li>
+      
       
       
       
@@ -768,10 +782,16 @@
                 
                   <h1>General</h1>
                 
-                <div class="codehilite"><pre><span></span><span class="c1"># ~/.bashrc</span>
-<span class="nb">alias</span> <span class="nv">m2</span><span class="o">=</span><span class="s1">&#39;php bin/magento&#39;</span>
+                <details class="warning"><summary>Bash Environment Configuration</summary><p><strong>~/.bashrc.d/env</strong>
+<div class="codehilite"><pre><span></span><span class="nb">export</span> <span class="nv">PS1</span><span class="o">=</span><span class="s2">&quot;\[\e[0;38;05;15m\][\[\e[0;38;05;47m\]\u\[\e[0;38;05;15m\]@\[\e[0;38;05;153m\]\h:\[\e[0;38;05;111m\]\w\[\e[0;38;05;15m\]]\\</span>$<span class="s2"> \[\e[0m\]&quot;</span>
+<span class="nb">alias</span> <span class="nv">phpx</span><span class="o">=</span><span class="s1">&#39;php -dxdebug.remote_autostart=1&#39;</span>
+<span class="nb">alias</span> <span class="nv">m2</span><span class="o">=</span><span class="s1">&#39;php bin/magento&#39;</span>                    
+<span class="nb">alias</span> <span class="nv">m2x</span><span class="o">=</span><span class="s1">&#39;phpx bin/magento&#39;</span>
 </pre></div>
-
+<strong>~/.profile</strong>
+<div class="codehilite"><pre><span></span><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+</pre></div></p>
+</details>
 <h2 id="phpstorm-urn">PhpStorm Urn</h2>
 <ol>
 <li>container:
@@ -811,6 +831,23 @@ zip -r9 &quot;vendor-module-1.0.0.zip&quot; . -x *.git* *.idea*
 
 <h2 id="add-administrator">Add Administrator</h2>
 <div class="codehilite"><pre><span></span>m2 admin:user:create --admin-user<span class="o">=</span>admin --admin-password<span class="o">=</span>password --admin-email<span class="o">=</span>support@example.com --admin-firstname<span class="o">=</span>Support --admin-lastname<span class="o">=</span>Account
+</pre></div>
+
+<h2 id="data-patch-development">Data Patch Development</h2>
+<div class="codehilite"><pre><span></span>mysql -e <span class="s1">&#39;DELETE FROM patch_list WHERE patch_name = &quot;Vendor\\Module\\Setup\\Patch\\Data\\InitializeStoresAndWebsites&quot;&#39;</span> <span class="o">&amp;&amp;</span> m2x setup:upgrade
+</pre></div>
+
+<h2 id="recompile">Recompile</h2>
+<div class="codehilite"><pre><span></span><span class="nv">m2</span><span class="o">=</span><span class="s2">&quot;php -d memory_limit=-1 bin/magento&quot;</span> <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> <span class="nv">$m2</span> maintenance:enable <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> <span class="nv">$m2</span> cache:clean <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> rm -Rf generated/code/* var/cache/* var/page_cache/* var/di/* var/view_preprocessed/* pub/static/* <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> redis-cli FLUSHALL <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> <span class="nv">$m2</span> setup:di:compile <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> <span class="nv">$m2</span> setup:static-content:deploy -t Vendor/default fr_FR en_US <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> <span class="nv">$m2</span> setup:static-content:deploy -t Magento/backend fr_FR en_US <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> <span class="nv">$m2</span> maintenance:disable <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> sudo systemctl restart varnish
 </pre></div>
                 
                   

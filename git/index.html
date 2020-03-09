@@ -208,14 +208,12 @@
         
       
         
-      
-        
   
   
     <li class="md-tabs__item">
       
-        <a href="../_snippets/m2/" class="md-tabs__link">
-           snippets
+        <a href="../bash/general/" class="md-tabs__link">
+          Bash
         </a>
       
     </li>
@@ -266,18 +264,6 @@
   <li class="md-nav__item">
     <a href=".." title="Home" class="md-nav__link">
       Home
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../bash/" title="Bash" class="md-nav__link">
-      Bash
     </a>
   </li>
 
@@ -372,6 +358,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    Misc
+  </a>
   
 </li>
       
@@ -614,14 +607,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-21" type="checkbox" id="nav-21">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-20" type="checkbox" id="nav-20">
     
-    <label class="md-nav__link" for="nav-21">
-       snippets
+    <label class="md-nav__link" for="nav-20">
+      Bash
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-21">
-         snippets
+      <label class="md-nav__title" for="nav-20">
+        Bash
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -632,8 +625,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../_snippets/m2/" title="M2" class="md-nav__link">
-      M2
+    <a href="../bash/general/" title="General" class="md-nav__link">
+      General
     </a>
   </li>
 
@@ -650,13 +643,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-22" type="checkbox" id="nav-22">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-21" type="checkbox" id="nav-21">
     
-    <label class="md-nav__link" for="nav-22">
+    <label class="md-nav__link" for="nav-21">
       Magento 2
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-22">
+      <label class="md-nav__title" for="nav-21">
         Magento 2
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -799,6 +792,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    Misc
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#setup" class="md-nav__link">
     Setup
   </a>
@@ -880,6 +880,15 @@ git remote add origin https://domain.com/myrepo.git
 git commit
 </pre></div>
 
+<h2 id="misc">Misc</h2>
+<ol>
+<li>define parent branch 
+    <div class="codehilite"><pre><span></span><span class="nv">parent</span><span class="o">=</span><span class="k">$(</span>git log --pretty<span class="o">=</span>format:<span class="s1">&#39;%D&#39;</span> HEAD^ <span class="p">|</span> grep <span class="s1">&#39;origin/&#39;</span> <span class="p">|</span> head -n1 <span class="p">|</span> sed <span class="s1">&#39;s@origin/@@&#39;</span> <span class="p">|</span> sed <span class="s1">&#39;s@,.*@@&#39;</span><span class="k">)</span>
+</pre></div></li>
+<li>list of unmerged files and locally changed files:
+    <div class="codehilite"><pre><span></span><span class="o">(</span>git diff --no-commit-id --name-only origin/<span class="nv">$parent</span>..HEAD<span class="p">;</span> git status --porcelain <span class="p">|</span> sed s/^...//<span class="o">)</span> <span class="p">|</span> sort <span class="p">|</span> uniq
+</pre></div></li>
+</ol>
 <h2 id="setup">Setup</h2>
 <h3 id="global-gitignore">Global .gitignore</h3>
 <p><div class="codehilite"><pre><span></span>git config --global core.excludesfile ~/.gitignore
