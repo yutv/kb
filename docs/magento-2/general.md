@@ -47,3 +47,8 @@ Alternative way (archive will have a path app/code/Vendor/Module/):
 ```bash
 m2 admin:user:create --admin-user=admin --admin-password=password --admin-email=support@example.com --admin-firstname=Support --admin-lastname=Account
 ```
+
+## Data Patch Development
+```bash
+mysql -e 'DELETE FROM patch_list WHERE patch_name = "Vendor\\Module\\Setup\\Patch\\Data\\InitializeStoresAndWebsites"' && m2x setup:upgrade
+```
