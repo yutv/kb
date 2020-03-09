@@ -19,8 +19,9 @@ markdown_extensions:
       guess_lang: false
   - pymdownx.inlinehilite
   - pymdownx.superfences
+  - pymdownx.details
   - pymdownx.snippets:
-      base_path: docs/_snippets
+      base_path: _snippets
       check_paths: true
   - footnotes
 
