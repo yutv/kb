@@ -726,6 +726,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../magento-2/db/" title="Db" class="md-nav__link">
+      Db
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../magento-2/general/" title="General" class="md-nav__link">
       General
     </a>
@@ -868,7 +880,9 @@ password=&quot;devpassword&quot;
 <p>Additional useful options:</p>
 <ul>
 <li><code>--extended-insert=FALSE</code> - to analyze/edit dump</li>
-<li><code>--insert-ignore</code> - when db has unique key duplicates (happens some time)  </li>
+<li><code>--insert-ignore</code> - when db has unique key duplicates (happens some time)</li>
+<li><code>| sed 's/ AUTO_INCREMENT=[0-9]*//g'</code> - ignore AUTO_INCREMENT  </li>
+<li><code>--ignore-table=cron_schedule</code> - ignore AUTO_INCREMENT  </li>
 </ul>
 <h2 id="calculate-database-size">Calculate database size</h2>
 <div class="codehilite"><pre><span></span>SELECT table_schema AS &quot;Database&quot;, 
