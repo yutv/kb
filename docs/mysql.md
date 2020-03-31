@@ -22,7 +22,9 @@ dbName='dbname' && mysqldump --opt $dbName | sed -E 's/DEFINER=[^ *]+//' | bzip2
 Additional useful options:
 
 - `--extended-insert=FALSE` - to analyze/edit dump
-- `--insert-ignore` - when db has unique key duplicates (happens some time)  
+- `--insert-ignore` - when db has unique key duplicates (happens some time)
+- `| sed 's/ AUTO_INCREMENT=[0-9]*//g'` - ignore AUTO_INCREMENT  
+- `--ignore-table=cron_schedule` - ignore AUTO_INCREMENT  
 
 ##Calculate database size
 
