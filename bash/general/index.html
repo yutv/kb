@@ -625,6 +625,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#datetime-format" class="md-nav__link">
+    Date/Time format
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ctrlc-hook" class="md-nav__link">
     Ctrl+C Hook
   </a>
@@ -967,6 +974,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#datetime-format" class="md-nav__link">
+    Date/Time format
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ctrlc-hook" class="md-nav__link">
     Ctrl+C Hook
   </a>
@@ -1104,6 +1118,10 @@ find . -type d -exec chmod 750 {} \;
 <h2 id="statistics">Statistics</h2>
 <h3 id="find-of-code-lines-in-directory">Find # of code lines in directory</h3>
 <div class="codehilite"><pre><span></span><span class="o">(</span>find . -type f -name <span class="s1">&#39;*.php&#39;</span> -print0 <span class="p">|</span> xargs -0 cat<span class="o">)</span> <span class="p">|</span> wc -l
+</pre></div>
+
+<h2 id="datetime-format">Date/Time format</h2>
+<div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;`date +%Y-%m-%d\ %H:%M:%S\ %:z`&quot;</span>
 </pre></div>
 
 <h2 id="ctrlc-hook">Ctrl+C Hook</h2>
