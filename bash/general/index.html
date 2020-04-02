@@ -1121,7 +1121,8 @@ find . -type d -exec chmod 750 {} \;
 </pre></div>
 
 <h2 id="datetime-format">Date/Time format</h2>
-<div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;`date +%Y-%m-%d\ %H:%M:%S\ %:z`&quot;</span>
+<div class="codehilite"><pre><span></span>date +%Y-%m-%d<span class="se">\ </span>%H:%M:%S<span class="se">\ </span>%:z     <span class="c1"># 2020-04-02 21:53:08 +03:00</span>
+date -Iseconds                    <span class="c1"># 2020-04-02T23:02:42+03:00</span>
 </pre></div>
 
 <h2 id="ctrlc-hook">Ctrl+C Hook</h2>
