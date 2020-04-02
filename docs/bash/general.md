@@ -114,7 +114,8 @@ scp {,user@example.com:~/}public_html/js/jquery.js
 
 ## Date/Time format
 ```bash
-echo "`date +%Y-%m-%d\ %H:%M:%S\ %:z`"
+date +%Y-%m-%d\ %H:%M:%S\ %:z     # 2020-04-02 21:53:08 +03:00
+date -Iseconds                    # 2020-04-02T23:02:42+03:00
 ``` 
 
 ## Ctrl+C Hook
