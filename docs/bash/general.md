@@ -112,6 +112,11 @@ scp {,user@example.com:~/}public_html/js/jquery.js
 (find . -type f -name '*.php' -print0 | xargs -0 cat) | wc -l
 ```
 
+## Date/Time format
+```bash
+echo "`date +%Y-%m-%d\ %H:%M:%S\ %:z`"
+``` 
+
 ## Ctrl+C Hook
 
     trap ctrl_c INT
