@@ -666,6 +666,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#undoing-a-git-push" class="md-nav__link">
+    Undoing a 'git push'
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#move-a-commit-to-another-branch" class="md-nav__link">
+    Move a commit to another branch
+  </a>
+  
+</li>
+      
       
       
       
@@ -964,6 +978,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#undoing-a-git-push" class="md-nav__link">
+    Undoing a 'git push'
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#move-a-commit-to-another-branch" class="md-nav__link">
+    Move a commit to another branch
+  </a>
+  
+</li>
+      
       
       
       
@@ -1043,6 +1071,20 @@ git rebase -i master        <span class="c1"># pick first comment and fixup the 
 git push
 <span class="c1">#git push -f                # if changed were already pushed to remote</span>
 </pre></div>
+
+<h2 id="undoing-a-git-push">Undoing a 'git push'</h2>
+<p><div class="codehilite"><pre><span></span>git push -f origin last_known_good_commit:branch_name
+</pre></div>
+Source: <a href="https://stackoverflow.com/questions/1270514/undoing-a-git-push">1</a></p>
+<h2 id="move-a-commit-to-another-branch">Move a commit to another branch</h2>
+<p>Copy commit to a new branch:
+<div class="codehilite"><pre><span></span>git checkout -b new_branch_name
+git cherry-pick &lt;commit&gt;
+</pre></div>
+Back to the last good commit in the old branch:
+<div class="codehilite"><pre><span></span>git checkout old_branch_name
+git reset --hard &lt;last_good_commit&gt;
+</pre></div></p>
                 
                   
                 
