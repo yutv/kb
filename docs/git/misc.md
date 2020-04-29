@@ -6,3 +6,8 @@
     ```bash
     (git diff --no-commit-id --name-only origin/$parent..HEAD; git status --porcelain | sed s/^...//) | sort | uniq
     ```
+3. Skip gitlab CI
+```bash
+git push -o ci.skip
+``` 
+Source: [1](https://devops.stackexchange.com/questions/6809/is-there-a-ci-skip-option-in-gitlab-ci)

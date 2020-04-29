@@ -8,6 +8,16 @@
 ```bash
 ifconfig eth1 | awk '/inet addr/{print substr($2,6)}'
 ```
+
+# View SSL Certificate on remote host
+```bash
+echo | openssl s_client -showcerts -servername gnupg.org -connect gnupg.org:443 2>/dev/null | openssl x509 -inform pem -noout -text
+```
+
+```bash
+nmap -p 443 --script ssl-cert gnupg.org
+```
+
 ##OpenWRT
 ###Speed test with iperf3
 ```bash

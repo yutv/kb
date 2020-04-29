@@ -21,3 +21,34 @@ var uiQuery = (q) => require('uiRegistry').get((component, name) => {
 ```javascript
 uiQuery('checkout');
 ```
+### Show message on early stage
+```js
+define([
+    'uiElement'
+], function (Element) {
+    'use strict';
+
+    return Element.extend({
+        defaults: {
+            msgError: 'Some error message',
+            modules: {
+                messages: 'messages'
+            }
+        },
+
+        initialize: function () {
+            this._super();
+            this.showError(this.msgError);
+        },
+
+        showError: function (text) {
+            this.messages(function (component) {
+                var data = component.messages();
+                data.messages = data.messages || [];
+                data.messages.push({ text: text, type: 'error' });
+                component.messages(data);
+            });
+        }
+    });
+});
+```
