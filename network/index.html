@@ -386,78 +386,12 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
+      
     
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Network
-      </label>
     
     <a href="./" title="Network" class="md-nav__link md-nav__link--active">
       Network
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#check-if-port-is-opened" class="md-nav__link">
-    Check if port is opened
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#get-my-ip-address" class="md-nav__link">
-    Get my IP Address
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#openwrt" class="md-nav__link">
-    OpenWRT
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#speed-test-with-iperf3" class="md-nav__link">
-    Speed test with iperf3
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#set-up-dropbear-public-key-authentication" class="md-nav__link">
-    Set up Dropbear public key authentication
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ip-addresses-daily-log-cron-job" class="md-nav__link">
-    IP Addresses daily log (cron job)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
     
   </li>
 
@@ -812,63 +746,8 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#check-if-port-is-opened" class="md-nav__link">
-    Check if port is opened
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#get-my-ip-address" class="md-nav__link">
-    Get my IP Address
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#openwrt" class="md-nav__link">
-    OpenWRT
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#speed-test-with-iperf3" class="md-nav__link">
-    Speed test with iperf3
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#set-up-dropbear-public-key-authentication" class="md-nav__link">
-    Set up Dropbear public key authentication
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ip-addresses-daily-log-cron-job" class="md-nav__link">
-    IP Addresses daily log (cron job)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
   
 </nav>
                   </div>
@@ -881,8 +760,6 @@
               
                 
                 
-                  <h1>Network</h1>
-                
                 <h2 id="check-if-port-is-opened">Check if port is opened</h2>
 <div class="codehilite"><pre><span></span>$ nc -zvw5 google.com 80
 Connection to google.com 80 port [tcp/http] succeeded!
@@ -891,6 +768,13 @@ Connection to google.com 80 port [tcp/http] succeeded!
 
 <h2 id="get-my-ip-address">Get my IP Address</h2>
 <div class="codehilite"><pre><span></span>ifconfig eth1 <span class="p">|</span> awk <span class="s1">&#39;/inet addr/{print substr($2,6)}&#39;</span>
+</pre></div>
+
+<h1 id="view-ssl-certificate-on-remote-host">View SSL Certificate on remote host</h1>
+<div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="p">|</span> openssl s_client -showcerts -servername gnupg.org -connect gnupg.org:443 <span class="m">2</span>&gt;/dev/null <span class="p">|</span> openssl x509 -inform pem -noout -text
+</pre></div>
+
+<div class="codehilite"><pre><span></span>nmap -p <span class="m">443</span> --script ssl-cert gnupg.org
 </pre></div>
 
 <h2 id="openwrt">OpenWRT</h2>

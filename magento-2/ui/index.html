@@ -733,6 +733,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#show-message-on-early-stage" class="md-nav__link">
+    Show message on early stage
+  </a>
+  
+</li>
+      
       
       
       
@@ -786,6 +793,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#show-message-on-early-stage" class="md-nav__link">
+    Show message on early stage
+  </a>
+  
+</li>
+      
       
       
       
@@ -826,6 +840,36 @@ Filter by name:</p>
 <div class="codehilite"><pre><span></span><span class="nx">uiQuery</span><span class="p">(</span><span class="s1">&#39;checkout&#39;</span><span class="p">);</span>
 </pre></div></li>
 </ol>
+<h3 id="show-message-on-early-stage">Show message on early stage</h3>
+<div class="codehilite"><pre><span></span><span class="nx">define</span><span class="p">([</span>
+    <span class="s1">&#39;uiElement&#39;</span>
+<span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">Element</span><span class="p">)</span> <span class="p">{</span>
+    <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="nx">Element</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+        <span class="nx">defaults</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">msgError</span><span class="o">:</span> <span class="s1">&#39;Some error message&#39;</span><span class="p">,</span>
+            <span class="nx">modules</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">messages</span><span class="o">:</span> <span class="s1">&#39;messages&#39;</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+
+        <span class="nx">initialize</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">_super</span><span class="p">();</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">showError</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">msgError</span><span class="p">);</span>
+        <span class="p">},</span>
+
+        <span class="nx">showError</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">messages</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">component</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">component</span><span class="p">.</span><span class="nx">messages</span><span class="p">();</span>
+                <span class="nx">data</span><span class="p">.</span><span class="nx">messages</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">messages</span> <span class="o">||</span> <span class="p">[];</span>
+                <span class="nx">data</span><span class="p">.</span><span class="nx">messages</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span> <span class="nx">text</span><span class="o">:</span> <span class="nx">text</span><span class="p">,</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;error&#39;</span> <span class="p">});</span>
+                <span class="nx">component</span><span class="p">.</span><span class="nx">messages</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+            <span class="p">});</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
                 
                   
                 

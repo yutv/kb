@@ -752,6 +752,10 @@
 <li>list of unmerged files and locally changed files:
     <div class="codehilite"><pre><span></span><span class="o">(</span>git diff --no-commit-id --name-only origin/<span class="nv">$parent</span>..HEAD<span class="p">;</span> git status --porcelain <span class="p">|</span> sed s/^...//<span class="o">)</span> <span class="p">|</span> sort <span class="p">|</span> uniq
 </pre></div></li>
+<li>Skip gitlab CI
+<div class="codehilite"><pre><span></span>git push -o ci.skip
+</pre></div>
+Source: <a href="https://devops.stackexchange.com/questions/6809/is-there-a-ci-skip-option-in-gitlab-ci">1</a></li>
 </ol>
                 
                   
