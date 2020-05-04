@@ -333,6 +333,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#acl" class="md-nav__link">
+    ACL
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#full-access-for-two-users" class="md-nav__link">
+    Full access for two users
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -796,6 +816,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#acl" class="md-nav__link">
+    ACL
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#full-access-for-two-users" class="md-nav__link">
+    Full access for two users
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -822,6 +862,13 @@ where
 - oflag=dsync - synchronize I/O for data.</p>
 <h2 id="ram-disk">RAM disk</h2>
 <div class="codehilite"><pre><span></span>sudo mount -o size=2G -t tmpfs none my.project.com
+</pre></div>
+
+
+<h2 id="acl">ACL</h2>
+<h3 id="full-access-for-two-users">Full access for two users</h3>
+<div class="codehilite"><pre><span></span>setfacl -R -d -m u:user1:rwx,u:user2:rwx .
+setfacl -R -m u:user1:rwx,u:user2:rwx .
 </pre></div>
                 
                   
