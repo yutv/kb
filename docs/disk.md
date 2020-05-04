@@ -5,7 +5,14 @@
 where
 - oflag=dsync - synchronize I/O for data.
 
-##RAM disk
+## RAM disk
 
     sudo mount -o size=2G -t tmpfs none my.project.com
     
+## ACL
+
+### Full access for two users
+```bash
+setfacl -R -d -m u:user1:rwx,u:user2:rwx .
+setfacl -R -m u:user1:rwx,u:user2:rwx .
+```
