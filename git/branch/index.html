@@ -664,6 +664,19 @@
     Rebase
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rebase-onto-another-branch" class="md-nav__link">
+    Rebase onto another branch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -976,6 +989,19 @@
     Rebase
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rebase-onto-another-branch" class="md-nav__link">
+    Rebase onto another branch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1072,6 +1098,19 @@ git push
 <span class="c1">#git push -f                # if changed were already pushed to remote</span>
 </pre></div>
 
+<h3 id="rebase-onto-another-branch">Rebase onto another branch</h3>
+<p>Precondition:
+<div class="codehilite"><pre><span></span>git checkout master
+git checkout -b feature_1 <span class="c1"># create a branch from master</span>
+<span class="c1"># add changes &amp; commit changes</span>
+git checkout -b feature_2 <span class="c1"># create a branch from feature_1</span>
+<span class="c1"># add changes &amp; commit changes</span>
+</pre></div>
+Rebase <code>feature_2</code> onto <code>master</code> branch: 
+<div class="codehilite"><pre><span></span>git checkout feature_2
+git rebase --onto master feature_1
+</pre></div>
+<a href="https://git-scm.com/book/en/v2/Git-Branching-Rebasing#_more_interesting_rebases">More info</a></p>
 <h2 id="undoing-a-git-push">Undoing a 'git push'</h2>
 <p><div class="codehilite"><pre><span></span>git push -f origin last_known_good_commit:branch_name
 </pre></div>
