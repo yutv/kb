@@ -81,9 +81,9 @@ Precondition:
 ```bash
 git checkout master
 git checkout -b feature_1 # create a branch from master
-# add changes & commit changes
+# add & commit changes
 git checkout -b feature_2 # create a branch from feature_1
-# add changes & commit changes
+# add & commit changes
 ```
 Rebase `feature_2` onto `master` branch: 
 ```bash
