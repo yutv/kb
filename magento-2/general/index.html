@@ -717,6 +717,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#add-administrator" class="md-nav__link">
+    Add Administrator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#upgrade-magento-project" class="md-nav__link">
     Upgrade Magento Project
   </a>
@@ -726,13 +733,6 @@
         <li class="md-nav__item">
   <a href="#create-module-package" class="md-nav__link">
     Create module package
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-administrator" class="md-nav__link">
-    Add Administrator
   </a>
   
 </li>
@@ -836,6 +836,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#add-administrator" class="md-nav__link">
+    Add Administrator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#upgrade-magento-project" class="md-nav__link">
     Upgrade Magento Project
   </a>
@@ -845,13 +852,6 @@
         <li class="md-nav__item">
   <a href="#create-module-package" class="md-nav__link">
     Create module package
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-administrator" class="md-nav__link">
-    Add Administrator
   </a>
   
 </li>
@@ -916,7 +916,14 @@
 </pre></div>
 Specific Magento version:
 <div class="codehilite"><pre><span></span>composer create-project --repository-url<span class="o">=</span>https://repo.magento.com/ magento/project-community-edition<span class="o">=</span><span class="m">2</span>.3.3 m233
+</pre></div>
+Install via CLI (since Magento 2.4 there is no Web installer)
+<div class="codehilite"><pre><span></span>m2 setup:install --use-rewrites --use-secure<span class="o">=</span><span class="m">1</span> --base-url-secure<span class="o">=</span>https://dev.local/m24x/ --use-secure-admin<span class="o">=</span><span class="m">1</span> --base-url<span class="o">=</span>https://dev.local/m24x/ --backend-frontname<span class="o">=</span>admin --db-name<span class="o">=</span>m24x --db-user<span class="o">=</span>duser --db-password<span class="o">=</span>dpass --session-save<span class="o">=</span>files
 </pre></div></p>
+<h2 id="add-administrator">Add Administrator</h2>
+<div class="codehilite"><pre><span></span>m2 admin:user:create --admin-user<span class="o">=</span>admin --admin-password<span class="o">=</span>password --admin-email<span class="o">=</span>support@example.com --admin-firstname<span class="o">=</span>Support --admin-lastname<span class="o">=</span>Account
+</pre></div>
+
 <h2 id="upgrade-magento-project">Upgrade Magento Project</h2>
 <div class="codehilite"><pre><span></span>cp composer.json composer.json.bak
 composer require magento/product-community-edition <span class="m">2</span>.3.3 --no-update
@@ -936,10 +943,6 @@ zip -r9 &quot;vendor-module-1.0.0.zip&quot; . -x *.git* *.idea*
 <div class="codehilite"><pre><span></span>zip -r9 &quot;vendor-module-1.0.0.zip&quot; app/code/Vendor/Module/ -x *.git*
 </pre></div>
 
-
-<h2 id="add-administrator">Add Administrator</h2>
-<div class="codehilite"><pre><span></span>m2 admin:user:create --admin-user<span class="o">=</span>admin --admin-password<span class="o">=</span>password --admin-email<span class="o">=</span>support@example.com --admin-firstname<span class="o">=</span>Support --admin-lastname<span class="o">=</span>Account
-</pre></div>
 
 <h2 id="data-patch-development">Data Patch Development</h2>
 <div class="codehilite"><pre><span></span>mysql -e <span class="s1">&#39;DELETE FROM patch_list WHERE patch_name = &quot;Vendor\\Module\\Setup\\Patch\\Data\\InitializeStoresAndWebsites&quot;&#39;</span> <span class="o">&amp;&amp;</span> m2x setup:upgrade
