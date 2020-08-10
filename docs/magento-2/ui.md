@@ -1,3 +1,8 @@
+### Show knockout model associates with DOM node
+```javascript
+require('ko').dataFor(jQuery('.totals.shipping.excl').get(0));
+```
+
 ### Show all UI components on the page
 ```javascript
 require('uiRegistry').get((component, name) => {
