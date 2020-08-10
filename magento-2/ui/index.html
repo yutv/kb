@@ -85,7 +85,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#show-all-ui-components-on-the-page" tabindex="1" class="md-skip">
+      <a href="#show-knockout-model-associates-with-dom-node" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -727,6 +727,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#show-knockout-model-associates-with-dom-node" class="md-nav__link">
+    Show knockout model associates with DOM node
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#show-all-ui-components-on-the-page" class="md-nav__link">
     Show all UI components on the page
   </a>
@@ -787,6 +794,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#show-knockout-model-associates-with-dom-node" class="md-nav__link">
+    Show knockout model associates with DOM node
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#show-all-ui-components-on-the-page" class="md-nav__link">
     Show all UI components on the page
   </a>
@@ -819,7 +833,11 @@
                 
                   <h1>Ui</h1>
                 
-                <h3 id="show-all-ui-components-on-the-page">Show all UI components on the page</h3>
+                <h3 id="show-knockout-model-associates-with-dom-node">Show knockout model associates with DOM node</h3>
+<div class="codehilite"><pre><span></span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ko&#39;</span><span class="p">).</span><span class="nx">dataFor</span><span class="p">(</span><span class="nx">jQuery</span><span class="p">(</span><span class="s1">&#39;.totals.shipping.excl&#39;</span><span class="p">).</span><span class="nx">get</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+</pre></div>
+
+<h3 id="show-all-ui-components-on-the-page">Show all UI components on the page</h3>
 <p><div class="codehilite"><pre><span></span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;uiRegistry&#39;</span><span class="p">).</span><span class="nx">get</span><span class="p">((</span><span class="nx">component</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">groupCollapsed</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span> 
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">component</span><span class="p">);</span> 
