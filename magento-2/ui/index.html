@@ -741,8 +741,36 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    Misc
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#observe-dom-node-attribute-mutation" class="md-nav__link">
+    Observe DOM Node Attribute Mutation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jquery-change-event-observer-position" class="md-nav__link">
+    jQuery Change Event Observer Position
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#show-message-on-early-stage" class="md-nav__link">
     Show message on early stage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#files" class="md-nav__link">
+    Files
   </a>
   
 </li>
@@ -808,8 +836,36 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    Misc
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#observe-dom-node-attribute-mutation" class="md-nav__link">
+    Observe DOM Node Attribute Mutation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jquery-change-event-observer-position" class="md-nav__link">
+    jQuery Change Event Observer Position
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#show-message-on-early-stage" class="md-nav__link">
     Show message on early stage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#files" class="md-nav__link">
+    Files
   </a>
   
 </li>
@@ -858,6 +914,56 @@ Filter by name:</p>
 <div class="codehilite"><pre><span></span><span class="nx">uiQuery</span><span class="p">(</span><span class="s1">&#39;checkout&#39;</span><span class="p">);</span>
 </pre></div></li>
 </ol>
+<h3 id="misc">Misc</h3>
+<div class="codehilite"><pre><span></span><span class="nx">require</span><span class="p">([</span><span class="s1">&#39;Magento_Checkout/js/model/quote&#39;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">quote</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="nx">getAddress</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">address</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">address</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">address</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="p">(</span><span class="o">!</span><span class="nx">address</span><span class="p">.</span><span class="nx">street</span><span class="p">)</span> <span class="o">?</span> <span class="nx">address</span><span class="p">.</span><span class="nx">street</span> <span class="o">:</span> <span class="nx">address</span><span class="p">.</span><span class="nx">street</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="nx">quote</span><span class="p">.</span><span class="nx">billingAddress</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">address</span><span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">groupCollapsed</span><span class="p">(</span><span class="s1">&#39;billingAddress: &#39;</span> <span class="o">+</span> <span class="nx">getAddress</span><span class="p">(</span><span class="nx">address</span><span class="p">));</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">trace</span><span class="p">();</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">groupEnd</span><span class="p">();</span>
+    <span class="p">});</span>
+    <span class="nx">quote</span><span class="p">.</span><span class="nx">shippingAddress</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">address</span><span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">groupCollapsed</span><span class="p">(</span><span class="s1">&#39;shippingAddress: &#39;</span> <span class="o">+</span> <span class="nx">getAddress</span><span class="p">(</span><span class="nx">address</span><span class="p">));</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">trace</span><span class="p">()</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">groupEnd</span><span class="p">();</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="nx">require</span><span class="p">([</span><span class="s1">&#39;Magento_Checkout/js/model/quote&#39;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">quote</span><span class="p">){</span>
+    <span class="nx">quote</span><span class="p">.</span><span class="nx">shippingMethod</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">shippingMethod</span><span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">groupCollapsed</span><span class="p">(</span><span class="s1">&#39;shippingMethod: &#39;</span> <span class="o">+</span> <span class="nx">shippingMethod</span><span class="p">.</span><span class="nx">carrier_code</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="nx">shippingMethod</span><span class="p">.</span><span class="nx">method_code</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">trace</span><span class="p">();</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">groupEnd</span><span class="p">();</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+
+<h3 id="observe-dom-node-attribute-mutation">Observe DOM Node Attribute Mutation</h3>
+<div class="codehilite"><pre><span></span>    <span class="kr">const</span> <span class="nx">targetNode</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#telephone&#39;</span><span class="p">);</span>
+    <span class="kr">const</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">attributes</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">childList</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">subtree</span><span class="o">:</span> <span class="kc">true</span> <span class="p">};</span>
+    <span class="kr">const</span> <span class="nx">callback</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">mutationsList</span><span class="p">,</span> <span class="nx">observer</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">mutation</span> <span class="k">of</span> <span class="nx">mutationsList</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">groupCollapsed</span><span class="p">(</span><span class="s1">&#39;mutation[&#39;</span> <span class="o">+</span> <span class="nx">mutation</span><span class="p">.</span><span class="nx">type</span> <span class="o">+</span> <span class="s1">&#39;]: &#39;</span> <span class="o">+</span> <span class="nx">mutation</span><span class="p">.</span><span class="nx">attributeName</span><span class="p">);</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mutation</span><span class="p">);</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">trace</span><span class="p">()</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">groupEnd</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">};</span>
+    <span class="kr">const</span> <span class="nx">observer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MutationObserver</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
+    <span class="nx">observer</span><span class="p">.</span><span class="nx">observe</span><span class="p">(</span><span class="nx">targetNode</span><span class="p">,</span> <span class="nx">config</span><span class="p">);</span>
+</pre></div>
+
+<h3 id="jquery-change-event-observer-position">jQuery Change Event Observer Position</h3>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">element</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;#element&#39;</span><span class="p">),</span>
+    <span class="nx">submitObserver</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">_data</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="s1">&#39;events&#39;</span><span class="p">).</span><span class="nx">submit</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">_data</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="s1">&#39;events&#39;</span><span class="p">).</span><span class="nx">submit</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="nx">submitObserver</span><span class="p">);</span>
+</pre></div>
+
 <h3 id="show-message-on-early-stage">Show message on early stage</h3>
 <div class="codehilite"><pre><span></span><span class="nx">define</span><span class="p">([</span>
     <span class="s1">&#39;uiElement&#39;</span>
@@ -888,6 +994,12 @@ Filter by name:</p>
     <span class="p">});</span>
 <span class="p">});</span>
 </pre></div>
+
+<h3 id="files">Files</h3>
+<ol>
+<li><a href="https://github.com/magento/magento2/blob/2.4-develop/lib/web/mage/common.js">mage/common.js</a> on form submit automatically adds form_key input if missed.</li>
+<li><a href="https://github.com/magento/magento2/blob/2.4-develop/app/code/Magento/Ui/view/base/web/js/block-loader.js">block-loader.js</a> when use it with jquery.validate keep in mind it disables inputs </li>
+</ol>
                 
                   
                 
