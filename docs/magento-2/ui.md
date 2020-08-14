@@ -26,6 +26,60 @@ var uiQuery = (q) => require('uiRegistry').get((component, name) => {
 ```javascript
 uiQuery('checkout');
 ```
+
+### Misc
+```javascript
+require(['Magento_Checkout/js/model/quote'], function(quote){
+    var getAddress = function (address) {
+        if (!address) {
+            return address;
+        }
+        return (!address.street) ? address.street : address.street[0];
+    }
+    quote.billingAddress.subscribe(function(address){
+        console.groupCollapsed('billingAddress: ' + getAddress(address));
+        console.trace();
+        console.groupEnd();
+    });
+    quote.shippingAddress.subscribe(function(address){
+        console.groupCollapsed('shippingAddress: ' + getAddress(address));
+        console.trace()
+        console.groupEnd();
+    });
+});
+
+require(['Magento_Checkout/js/model/quote'], function(quote){
+    quote.shippingMethod.subscribe(function(shippingMethod){
+        console.groupCollapsed('shippingMethod: ' + shippingMethod.carrier_code + '_' + shippingMethod.method_code);
+        console.trace();
+        console.groupEnd();
+    });
+});
+``` 
+
+### Observe DOM Node Attribute Mutation
+```javascript
+    const targetNode = document.querySelector('#telephone');
+    const config = { attributes: true, childList: true, subtree: true };
+    const callback = function(mutationsList, observer) {
+        for (let mutation of mutationsList) {
+            console.groupCollapsed('mutation[' + mutation.type + ']: ' + mutation.attributeName);
+            console.log(mutation);
+            console.trace()
+            console.groupEnd();
+        }
+    };
+    const observer = new MutationObserver(callback);
+    observer.observe(targetNode, config);
+```
+
+### jQuery Change Event Observer Position
+```javascript
+var element = document.getElementById('#element'),
+    submitObserver = $._data(element, 'events').submit.pop();
+    $._data(element, 'events').submit.unshift(submitObserver);
+``` 
+
 ### Show message on early stage
 ```js
 define([
@@ -57,3 +111,8 @@ define([
     });
 });
 ```
+
+### Files
+
+1. [mage/common.js](https://github.com/magento/magento2/blob/2.4-develop/lib/web/mage/common.js) on form submit automatically adds form_key input if missed.
+2. [block-loader.js](https://github.com/magento/magento2/blob/2.4-develop/app/code/Magento/Ui/view/base/web/js/block-loader.js) when use it with jquery.validate keep in mind it disables inputs 
