@@ -76,8 +76,9 @@ require(['Magento_Checkout/js/model/quote'], function(quote){
 ### jQuery Change Event Observer Position
 ```javascript
 var element = document.getElementById('#element'),
-    submitObserver = $._data(element, 'events').submit.pop();
-    $._data(element, 'events').submit.unshift(submitObserver);
+element.on('click', this.onClick.bind(this));       # add on click observer
+observer = $._data(element, 'events').click.pop();  # remove the last observer
+$._data(element, 'events').click.unshift(observer); # insert it to the beginning 
 ``` 
 
 ### Show message on early stage
