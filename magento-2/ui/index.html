@@ -903,12 +903,33 @@
 Filter by name:</p>
 <ol>
 <li>define the <code class="codehilite"><span class="nx">uiQuery</span><span class="p">(</span><span class="nx">q</span><span class="p">)</span></code> function:
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uiQuery</span> <span class="o">=</span> <span class="p">(</span><span class="nx">q</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;uiRegistry&#39;</span><span class="p">).</span><span class="nx">get</span><span class="p">((</span><span class="nx">component</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">name</span> <span class="o">||</span> <span class="o">!~</span><span class="nx">name</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">q</span><span class="p">))</span> <span class="k">return</span><span class="p">;</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">groupCollapsed</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span> 
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">component</span><span class="p">);</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">groupEnd</span><span class="p">();</span>
-<span class="p">});</span>
+<div class="codehilite"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">uiQuery</span> <span class="o">=</span> <span class="p">(</span><span class="nx">q</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kd">function</span> <span class="nx">execute</span><span class="p">(</span><span class="nx">q</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">require</span><span class="p">([</span><span class="s1">&#39;uiRegistry&#39;</span><span class="p">],</span> <span class="nx">registry</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="nb">window</span><span class="p">.</span><span class="nx">m2ui</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">name</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">name</span> <span class="o">||</span> <span class="o">!~</span><span class="nx">name</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">q</span><span class="p">))</span> <span class="k">return</span><span class="p">;</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">groupCollapsed</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span> 
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">registry</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">name</span><span class="p">));</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">groupEnd</span><span class="p">();</span>
+            <span class="p">});</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">m2ui</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">execute</span><span class="p">(</span><span class="nx">q</span><span class="p">);</span>
+
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">require</span><span class="p">([</span><span class="s1">&#39;uiRegistry&#39;</span><span class="p">],</span> <span class="nx">registry</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="nx">registry</span><span class="p">.</span><span class="nx">get</span><span class="p">((</span><span class="nx">component</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="nb">window</span><span class="p">.</span><span class="nx">m2ui</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">m2ui</span> <span class="o">||</span> <span class="p">[];</span>
+            <span class="nb">window</span><span class="p">.</span><span class="nx">m2ui</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span> 
+        <span class="p">});</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">m2ui</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span>
+        <span class="nx">execute</span><span class="p">(</span><span class="nx">q</span><span class="p">);</span>
+
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">});</span>
+<span class="p">};</span>
 </pre></div></li>
 <li>search for "checkout" components:
 <div class="codehilite"><pre><span></span><span class="nx">uiQuery</span><span class="p">(</span><span class="s1">&#39;checkout&#39;</span><span class="p">);</span>
