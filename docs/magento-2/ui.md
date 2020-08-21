@@ -15,12 +15,33 @@ Filter by name:
 
 1. define the `#!js uiQuery(q)` function:
 ```javascript
-var uiQuery = (q) => require('uiRegistry').get((component, name) => {
-   if (!name || !~name.indexOf(q)) return;
-   console.groupCollapsed(name); 
-   console.log(component);
-   console.groupEnd();
-});
+window.uiQuery = (q) => {
+	function execute(q) {
+		require(['uiRegistry'], registry => {
+			window.m2ui.map((name) => {
+		        if (!name || !~name.indexOf(q)) return;
+		        console.groupCollapsed(name); 
+		        console.log(registry.get(name));
+		        console.groupEnd();
+		    });
+		});
+	}
+	if (window.m2ui) {
+		execute(q);
+		
+		return;
+	}
+	require(['uiRegistry'], registry => {
+	    registry.get((component, name) => {
+	        window.m2ui = window.m2ui || [];
+	        window.m2ui.push(name); 
+	    });
+	    window.m2ui.sort();
+	    execute(q);
+	    
+	    return;
+	});
+};
 ```
 2. search for "checkout" components:
 ```javascript
