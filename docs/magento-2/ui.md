@@ -1,6 +1,16 @@
+### Magento 2 UI custom debug functions
+
+1. Install Browser Plugin to include additioanl JS like [Custom JavaScript for Websites 2](https://chrome.google.com/webstore/detail/custom-javascript-for-web/ddbjnfjiigjmcpcpkmhogomapikjbjdk/) 
+2. Include external JS: https://yutv.github.io/kb/js/m2.js
+3. Open Developer Tools (F12), the following function should be awailable:
+```javascript
+uiInfo('#element-id');
+uiQuery('checkout');
+```
+
 ### Show knockout model associates with DOM node
 ```javascript
-require('ko').dataFor(jQuery('.totals.shipping.excl').get(0));
+require('ko').dataFor(document.querySelector('.totals.shipping.excl'));
 ```
 
 ### Show all UI components on the page
@@ -11,43 +21,6 @@ require('uiRegistry').get((component, name) => {
     console.groupEnd();
 });
 ```
-Filter by name:
-
-1. define the `#!js uiQuery(q)` function:
-```javascript
-window.uiQuery = (q) => {
-	function execute(q) {
-		require(['uiRegistry'], registry => {
-			window.m2ui.map((name) => {
-		        if (!name || !~name.indexOf(q)) return;
-		        console.groupCollapsed(name); 
-		        console.log(registry.get(name));
-		        console.groupEnd();
-		    });
-		});
-	}
-	if (window.m2ui) {
-		execute(q);
-		
-		return;
-	}
-	require(['uiRegistry'], registry => {
-	    registry.get((component, name) => {
-	        window.m2ui = window.m2ui || [];
-	        window.m2ui.push(name); 
-	    });
-	    window.m2ui.sort();
-	    execute(q);
-	    
-	    return;
-	});
-};
-```
-2. search for "checkout" components:
-```javascript
-uiQuery('checkout');
-```
-
 ### Misc
 ```javascript
 require(['Magento_Checkout/js/model/quote'], function(quote){
