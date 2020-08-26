@@ -1,27 +1,29 @@
-### Magento 2 UI custom debug functions
+## M2JS
 
-1. Install Browser Plugin to include additioanl JS like [Custom JavaScript for Websites 2](https://chrome.google.com/webstore/detail/custom-javascript-for-web/ddbjnfjiigjmcpcpkmhogomapikjbjdk/) 
-2. Include external JS: https://yutv.github.io/kb/js/m2.js
-3. Open Developer Tools (F12), the following function should be awailable:
+Magento 2 UI custom debug functions: **uiInfo** and **uiQuery**.
+
+1. Install a Browser Plugin to include additional JS like [User JavaScript and CSS](https://chrome.google.com/webstore/detail/user-javascript-and-css/nbhcbdghjpllgmfilhnhkllmkecfmpld) 
+2. Include external JS Library: [https://yutv.github.io/kb/js/m2.js](https://yutv.github.io/kb/js/m2.js)
+3. Open Developer Tools (F12), the following functions should be available:
 ```javascript
-uiInfo('#element-id');
-uiQuery('checkout');
+uiQuery(); // list of UI components on the page
+uiInfo();  // information about UI Component
 ```
 
+**Usage Examples:**
+
+1. `uiQuery()` - show all ui components on the page.
+2. `uiQuery('shipping-step')` - show ui components which have `shipping-step` in the name.
+3. Inspect a DOM Element using the Developer Tools (F12) and run the `uiInfo()`. It will output information about knockout view model attached to the selected DOM element.
+4. `uiInfo('#my-element-id')` - show ko view model attached to the DOM element with given selector.
+
+## Misc
 ### Show knockout model associates with DOM node
 ```javascript
 require('ko').dataFor(document.querySelector('.totals.shipping.excl'));
 ```
 
-### Show all UI components on the page
-```javascript
-require('uiRegistry').get((component, name) => {
-    console.groupCollapsed(name); 
-    console.log(component); 
-    console.groupEnd();
-});
-```
-### Misc
+### Debug when shipping/billing address changed
 ```javascript
 require(['Magento_Checkout/js/model/quote'], function(quote){
     var getAddress = function (address) {
@@ -41,7 +43,10 @@ require(['Magento_Checkout/js/model/quote'], function(quote){
         console.groupEnd();
     });
 });
+```
 
+### Debug when shipping method changed
+```javascript
 require(['Magento_Checkout/js/model/quote'], function(quote){
     quote.shippingMethod.subscribe(function(shippingMethod){
         console.groupCollapsed('shippingMethod: ' + shippingMethod.carrier_code + '_' + shippingMethod.method_code);
@@ -107,7 +112,7 @@ define([
 });
 ```
 
-### Files
+## Files
 
 1. [mage/common.js](https://github.com/magento/magento2/blob/2.4-develop/lib/web/mage/common.js) on form submit automatically adds form_key input if missed.
-2. [block-loader.js](https://github.com/magento/magento2/blob/2.4-develop/app/code/Magento/Ui/view/base/web/js/block-loader.js) when use it with jquery.validate keep in mind it disables inputs 
+2. [block-loader.js](https://github.com/magento/magento2/blob/2.4-develop/app/code/Magento/Ui/view/base/web/js/block-loader.js) when use it with `jquery.validate.js` keep in mind it disables form fields. 
