@@ -1,21 +1,21 @@
 ## M2JS
 
-Magento 2 UI custom debug functions: **uiInfo** and **uiQuery**.
+Magento 2 UI custom debug functions: **uii** (ui info) and **uiq** (ui query).
 
 1. Install a Browser Plugin to include additional JS like [User JavaScript and CSS](https://chrome.google.com/webstore/detail/user-javascript-and-css/nbhcbdghjpllgmfilhnhkllmkecfmpld) 
 2. Include external JS Library: [https://yutv.github.io/kb/js/m2.js](https://yutv.github.io/kb/js/m2.js)
 3. Open Developer Tools (F12), the following functions should be available:
 ```javascript
-uiQuery(); // list of UI components on the page
-uiInfo();  // information about UI Component
+uiq(); // list of UI components on the page
+uii();  // information about UI Component
 ```
 
 **Usage Examples:**
 
-1. `uiQuery()` - show all ui components on the page.
-2. `uiQuery('shipping-step')` - show ui components which have `shipping-step` in the name.
-3. Inspect a DOM Element using the Developer Tools (F12) and run the `uiInfo()`. It will output information about knockout view model attached to the selected DOM element.
-4. `uiInfo('#my-element-id')` - show ko view model attached to the DOM element with given selector.
+1. `uiq()` - show all ui components on the page.
+2. `uiq('shipping-step')` - show ui components which have `shipping-step` in the name.
+3. Inspect a DOM Element using the Developer Tools (F12) and run the `uii()`. It will output information about knockout view model attached to the selected DOM element.
+4. `uii('#my-element-id')` - show ko view model attached to the DOM element with given selector.
 
 ## Misc
 ### Show knockout model associates with DOM node
@@ -23,38 +23,41 @@ uiInfo();  // information about UI Component
 require('ko').dataFor(document.querySelector('.totals.shipping.excl'));
 ```
 
-### Debug when shipping/billing address changed
+### Debug when shipping/billing address and shipping method changed 
 ```javascript
-require(['Magento_Checkout/js/model/quote'], function(quote){
-    var getAddress = function (address) {
-        if (!address) {
-            return address;
+if (window.checkoutConfig) {
+    require(['Magento_Checkout/js/model/quote'], function(quote){
+        var getAddress = function (address) {
+            if (!address) {
+                return address;
+            }
+            
+            var result = (!address.street) ? address.street : address.street[0];
+            result += ', ' + address.countryId;
+            
+            return result;
         }
-        return (!address.street) ? address.street : address.street[0];
-    }
-    quote.billingAddress.subscribe(function(address){
-        console.groupCollapsed('billingAddress: ' + getAddress(address));
-        console.trace();
-        console.groupEnd();
+        quote.billingAddress.subscribe(function(address){
+            console.groupCollapsed('billingAddress: ' + getAddress(address));
+            console.info(address);
+            console.trace();
+            console.groupEnd();
+        });
+        quote.shippingAddress.subscribe(function(address){
+            console.groupCollapsed('shippingAddress: ' + getAddress(address));
+            console.info(address);
+            console.trace()
+            console.groupEnd();
+        });
+        quote.shippingMethod.subscribe(function(shippingMethod){
+            console.groupCollapsed('shippingMethod: ' + shippingMethod?.carrier_code + '_' + shippingMethod?.method_code);
+            console.info(shippingMethod);
+            console.trace();
+            console.groupEnd();
+        });
     });
-    quote.shippingAddress.subscribe(function(address){
-        console.groupCollapsed('shippingAddress: ' + getAddress(address));
-        console.trace()
-        console.groupEnd();
-    });
-});
+}
 ```
-
-### Debug when shipping method changed
-```javascript
-require(['Magento_Checkout/js/model/quote'], function(quote){
-    quote.shippingMethod.subscribe(function(shippingMethod){
-        console.groupCollapsed('shippingMethod: ' + shippingMethod.carrier_code + '_' + shippingMethod.method_code);
-        console.trace();
-        console.groupEnd();
-    });
-});
-``` 
 
 ### Observe DOM Node Attribute Mutation
 ```javascript
