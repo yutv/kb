@@ -749,15 +749,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#debug-when-shippingbilling-address-changed" class="md-nav__link">
-    Debug when shipping/billing address changed
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#debug-when-shipping-method-changed" class="md-nav__link">
-    Debug when shipping method changed
+  <a href="#debug-when-shippingbilling-address-and-shipping-method-changed" class="md-nav__link">
+    Debug when shipping/billing address and shipping method changed
   </a>
   
 </li>
@@ -864,15 +857,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#debug-when-shippingbilling-address-changed" class="md-nav__link">
-    Debug when shipping/billing address changed
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#debug-when-shipping-method-changed" class="md-nav__link">
-    Debug when shipping method changed
+  <a href="#debug-when-shippingbilling-address-and-shipping-method-changed" class="md-nav__link">
+    Debug when shipping/billing address and shipping method changed
   </a>
   
 </li>
@@ -930,56 +916,60 @@
                   <h1>Ui</h1>
                 
                 <h2 id="m2js">M2JS</h2>
-<p>Magento 2 UI custom debug functions: <strong>uiInfo</strong> and <strong>uiQuery</strong>.</p>
+<p>Magento 2 UI custom debug functions: <strong>uii</strong> (ui info) and <strong>uiq</strong> (ui query).</p>
 <ol>
 <li>Install a Browser Plugin to include additional JS like <a href="https://chrome.google.com/webstore/detail/user-javascript-and-css/nbhcbdghjpllgmfilhnhkllmkecfmpld">User JavaScript and CSS</a> </li>
 <li>Include external JS Library: <a href="https://yutv.github.io/kb/js/m2.js">https://yutv.github.io/kb/js/m2.js</a></li>
 <li>Open Developer Tools (F12), the following functions should be available:
-<div class="codehilite"><pre><span></span><span class="nx">uiQuery</span><span class="p">();</span> <span class="c1">// list of UI components on the page</span>
-<span class="nx">uiInfo</span><span class="p">();</span>  <span class="c1">// information about UI Component</span>
+<div class="codehilite"><pre><span></span><span class="nx">uiq</span><span class="p">();</span> <span class="c1">// list of UI components on the page</span>
+<span class="nx">uii</span><span class="p">();</span>  <span class="c1">// information about UI Component</span>
 </pre></div></li>
 </ol>
 <p><strong>Usage Examples:</strong></p>
 <ol>
-<li><code>uiQuery()</code> - show all ui components on the page.</li>
-<li><code>uiQuery('shipping-step')</code> - show ui components which have <code>shipping-step</code> in the name.</li>
-<li>Inspect a DOM Element using the Developer Tools (F12) and run the <code>uiInfo()</code>. It will output information about knockout view model attached to the selected DOM element.</li>
-<li><code>uiInfo('#my-element-id')</code> - show ko view model attached to the DOM element with given selector.</li>
+<li><code>uiq()</code> - show all ui components on the page.</li>
+<li><code>uiq('shipping-step')</code> - show ui components which have <code>shipping-step</code> in the name.</li>
+<li>Inspect a DOM Element using the Developer Tools (F12) and run the <code>uii()</code>. It will output information about knockout view model attached to the selected DOM element.</li>
+<li><code>uii('#my-element-id')</code> - show ko view model attached to the DOM element with given selector.</li>
 </ol>
 <h2 id="misc">Misc</h2>
 <h3 id="show-knockout-model-associates-with-dom-node">Show knockout model associates with DOM node</h3>
 <div class="codehilite"><pre><span></span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ko&#39;</span><span class="p">).</span><span class="nx">dataFor</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.totals.shipping.excl&#39;</span><span class="p">));</span>
 </pre></div>
 
-<h3 id="debug-when-shippingbilling-address-changed">Debug when shipping/billing address changed</h3>
-<div class="codehilite"><pre><span></span><span class="nx">require</span><span class="p">([</span><span class="s1">&#39;Magento_Checkout/js/model/quote&#39;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">quote</span><span class="p">){</span>
-    <span class="kd">var</span> <span class="nx">getAddress</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">address</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">address</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="nx">address</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="p">(</span><span class="o">!</span><span class="nx">address</span><span class="p">.</span><span class="nx">street</span><span class="p">)</span> <span class="o">?</span> <span class="nx">address</span><span class="p">.</span><span class="nx">street</span> <span class="o">:</span> <span class="nx">address</span><span class="p">.</span><span class="nx">street</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
-    <span class="p">}</span>
-    <span class="nx">quote</span><span class="p">.</span><span class="nx">billingAddress</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">address</span><span class="p">){</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">groupCollapsed</span><span class="p">(</span><span class="s1">&#39;billingAddress: &#39;</span> <span class="o">+</span> <span class="nx">getAddress</span><span class="p">(</span><span class="nx">address</span><span class="p">));</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">trace</span><span class="p">();</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">groupEnd</span><span class="p">();</span>
-    <span class="p">});</span>
-    <span class="nx">quote</span><span class="p">.</span><span class="nx">shippingAddress</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">address</span><span class="p">){</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">groupCollapsed</span><span class="p">(</span><span class="s1">&#39;shippingAddress: &#39;</span> <span class="o">+</span> <span class="nx">getAddress</span><span class="p">(</span><span class="nx">address</span><span class="p">));</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">trace</span><span class="p">()</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">groupEnd</span><span class="p">();</span>
-    <span class="p">});</span>
-<span class="p">});</span>
-</pre></div>
+<h3 id="debug-when-shippingbilling-address-and-shipping-method-changed">Debug when shipping/billing address and shipping method changed</h3>
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">checkoutConfig</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">require</span><span class="p">([</span><span class="s1">&#39;Magento_Checkout/js/model/quote&#39;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">quote</span><span class="p">){</span>
+        <span class="kd">var</span> <span class="nx">getAddress</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">address</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">address</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="nx">address</span><span class="p">;</span>
+            <span class="p">}</span>
 
-<h3 id="debug-when-shipping-method-changed">Debug when shipping method changed</h3>
-<div class="codehilite"><pre><span></span><span class="nx">require</span><span class="p">([</span><span class="s1">&#39;Magento_Checkout/js/model/quote&#39;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">quote</span><span class="p">){</span>
-    <span class="nx">quote</span><span class="p">.</span><span class="nx">shippingMethod</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">shippingMethod</span><span class="p">){</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">groupCollapsed</span><span class="p">(</span><span class="s1">&#39;shippingMethod: &#39;</span> <span class="o">+</span> <span class="nx">shippingMethod</span><span class="p">.</span><span class="nx">carrier_code</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="nx">shippingMethod</span><span class="p">.</span><span class="nx">method_code</span><span class="p">);</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">trace</span><span class="p">();</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">groupEnd</span><span class="p">();</span>
+            <span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="p">(</span><span class="o">!</span><span class="nx">address</span><span class="p">.</span><span class="nx">street</span><span class="p">)</span> <span class="o">?</span> <span class="nx">address</span><span class="p">.</span><span class="nx">street</span> <span class="o">:</span> <span class="nx">address</span><span class="p">.</span><span class="nx">street</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+            <span class="nx">result</span> <span class="o">+=</span> <span class="s1">&#39;, &#39;</span> <span class="o">+</span> <span class="nx">address</span><span class="p">.</span><span class="nx">countryId</span><span class="p">;</span>
+
+            <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="nx">quote</span><span class="p">.</span><span class="nx">billingAddress</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">address</span><span class="p">){</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">groupCollapsed</span><span class="p">(</span><span class="s1">&#39;billingAddress: &#39;</span> <span class="o">+</span> <span class="nx">getAddress</span><span class="p">(</span><span class="nx">address</span><span class="p">));</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="nx">address</span><span class="p">);</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">trace</span><span class="p">();</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">groupEnd</span><span class="p">();</span>
+        <span class="p">});</span>
+        <span class="nx">quote</span><span class="p">.</span><span class="nx">shippingAddress</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">address</span><span class="p">){</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">groupCollapsed</span><span class="p">(</span><span class="s1">&#39;shippingAddress: &#39;</span> <span class="o">+</span> <span class="nx">getAddress</span><span class="p">(</span><span class="nx">address</span><span class="p">));</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="nx">address</span><span class="p">);</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">trace</span><span class="p">()</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">groupEnd</span><span class="p">();</span>
+        <span class="p">});</span>
+        <span class="nx">quote</span><span class="p">.</span><span class="nx">shippingMethod</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">shippingMethod</span><span class="p">){</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">groupCollapsed</span><span class="p">(</span><span class="s1">&#39;shippingMethod: &#39;</span> <span class="o">+</span> <span class="nx">shippingMethod</span><span class="o">?</span><span class="p">.</span><span class="nx">carrier_code</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="nx">shippingMethod</span><span class="o">?</span><span class="p">.</span><span class="nx">method_code</span><span class="p">);</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="nx">shippingMethod</span><span class="p">);</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">trace</span><span class="p">();</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">groupEnd</span><span class="p">();</span>
+        <span class="p">});</span>
     <span class="p">});</span>
-<span class="p">});</span>
+<span class="p">}</span>
 </pre></div>
 
 <h3 id="observe-dom-node-attribute-mutation">Observe DOM Node Attribute Mutation</h3>
