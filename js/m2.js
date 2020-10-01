@@ -1,26 +1,32 @@
-require(['uiRegistry'], registry => {
-    window.uiq = (q) => {
-        q = q || '';
+window.addEventListener('DOMContentLoaded', () => {
+    require(['uiRegistry'], registry => {
+        window.ui = (name) => {
+            return registry.get(name);
+        };
 
-        var result = [];
-        registry.get((component, name) => {
-            if (name && !!~name.indexOf(q)) {
-                result.push(name);
+        window.uiq = (q) => {
+            q = q || '';
+
+            var result = [];
+            registry.get((component, name) => {
+                if (name && !!~name.indexOf(q)) {
+                    result.push(name);
+                }
+            });
+
+            if (result.length === 1) {
+                return registry.get(result[0]);
             }
-        });
 
-        if (result.length === 1) {
-            return registry.get(result[0]);
+            result.sort().forEach(function (name) {
+                var component = registry.get(name);
+                console.groupCollapsed(name);
+                console.log('template', component.template);
+                console.log(component);
+                console.groupEnd();
+            });
         }
-
-        result.sort().forEach(function(name) {
-            var component = registry.get(name);
-            console.groupCollapsed(name);
-            console.log('template', component.template);
-            console.log(component);
-            console.groupEnd();
-        });
-    }
+    });
 });
 
 window.uii = (selector) => {
