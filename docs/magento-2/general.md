@@ -22,6 +22,23 @@ Specific Magento version:
 ```bash
 composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.3.3 m233
 ```
+
+## Install Magento from CLI
+```bash
+php bin/magento setup:install \
+	--backend-frontname=admin \
+	--db-name=m23xe2 \
+	--db-user=dev \
+	--db-password=devpass \
+    --admin-user=admin \
+    --admin-password=admin123 \
+    --admin-email=admin@example.com \
+    --admin-firstname=John \
+    --admin-lastname=Smith \
+    --cleanup-database \
+    -n \
+    -vvv
+```
  
 ## Upgrade Magento Project
 ```bash
