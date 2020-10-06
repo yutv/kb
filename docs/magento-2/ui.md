@@ -61,7 +61,11 @@ if (window.checkoutConfig) {
 
 ### Observe DOM Node Attribute Mutation
 ```javascript
-    const targetNode = document.querySelector('#telephone');
+window.addEventListener('DOMContentLoaded', () => {
+    const targetNode = document.querySelector('#payment_fr_express_checkout_other_express_checkout_required_enable_express_checkout');
+    if (!targetNode) {
+        return;
+    }
     const config = { attributes: true, childList: true, subtree: true };
     const callback = function(mutationsList, observer) {
         for (let mutation of mutationsList) {
@@ -73,6 +77,7 @@ if (window.checkoutConfig) {
     };
     const observer = new MutationObserver(callback);
     observer.observe(targetNode, config);
+});
 ```
 
 ### jQuery Change Event Observer Position
