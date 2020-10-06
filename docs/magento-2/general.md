@@ -40,6 +40,16 @@ php bin/magento setup:install \
     -vvv
 ```
  
+Install via CLI (since Magento 2.4 there is no Web installer)
+```bash
+m2 setup:install --use-rewrites --use-secure=1 --base-url-secure=https://dev.local/m24x/ --use-secure-admin=1 --base-url=https://dev.local/m24x/ --backend-frontname=admin --db-name=m24x --db-user=duser --db-password=dpass --session-save=files
+```
+
+## Add Administrator
+```bash
+m2 admin:user:create --admin-user=admin --admin-password=password --admin-email=support@example.com --admin-firstname=Support --admin-lastname=Account
+```
+
 ## Upgrade Magento Project
 ```bash
 cp composer.json composer.json.bak
@@ -59,11 +69,6 @@ For Marketplace:
 Alternative way (archive will have a path app/code/Vendor/Module/):
 
     zip -r9 "vendor-module-1.0.0.zip" app/code/Vendor/Module/ -x *.git*
-
-## Add Administrator
-```bash
-m2 admin:user:create --admin-user=admin --admin-password=password --admin-email=support@example.com --admin-firstname=Support --admin-lastname=Account
-```
 
 ## Data Patch Development
 ```bash

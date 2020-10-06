@@ -75,6 +75,23 @@ git push
 #git push -f                # if changed were already pushed to remote
 ```
 
+### Rebase onto another branch
+
+Precondition:
+```bash
+git checkout master
+git checkout -b feature_1 # create a branch from master
+# add & commit changes
+git checkout -b feature_2 # create a branch from feature_1
+# add & commit changes
+```
+Rebase `feature_2` onto `master` branch: 
+```bash
+git checkout feature_2
+git rebase --onto master feature_1
+```
+[More info](https://git-scm.com/book/en/v2/Git-Branching-Rebasing#_more_interesting_rebases)
+
 ## Undoing a 'git push'
 ```bash
 git push -f origin last_known_good_commit:branch_name
