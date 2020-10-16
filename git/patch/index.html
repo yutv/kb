@@ -36,7 +36,7 @@
     
     
       
-        <title>Branch - Knowledge Base</title>
+        <title>Patch - Knowledge Base</title>
       
     
     
@@ -85,7 +85,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#misc" tabindex="1" class="md-skip">
+      <a href="#create-a-git-patch" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -111,7 +111,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Branch
+                Patch
               
             </span>
           
@@ -227,7 +227,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="./" class="md-tabs__link md-tabs__link--active">
+        <a href="../branch/" class="md-tabs__link md-tabs__link--active">
           Git
         </a>
       
@@ -560,161 +560,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Branch
-      </label>
-    
-    <a href="./" title="Branch" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../branch/" title="Branch" class="md-nav__link">
       Branch
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#misc" class="md-nav__link">
-    Misc
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#remove-gone-branches" class="md-nav__link">
-    Remove gone branches
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#replace-local-branch-with-origin" class="md-nav__link">
-    Replace local branch with origin
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#merge" class="md-nav__link">
-    Merge
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#check-if-commit-merged" class="md-nav__link">
-    Check if commit merged:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#merged-branches" class="md-nav__link">
-    Merged branches
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#not-merged-branches" class="md-nav__link">
-    Not merged branches
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-dry-run" class="md-nav__link">
-    --dry-run
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#squash" class="md-nav__link">
-    Squash
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#remove" class="md-nav__link">
-    Remove
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#rename" class="md-nav__link">
-    Rename
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#rebase" class="md-nav__link">
-    Rebase
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#rebase-onto-another-branch" class="md-nav__link">
-    Rebase onto another branch
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#undoing-a-git-push" class="md-nav__link">
-    Undoing a 'git push'
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#move-a-commit-to-another-branch" class="md-nav__link">
-    Move a commit to another branch
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -758,11 +608,52 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../patch/" title="Patch" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Patch
+      </label>
+    
+    <a href="./" title="Patch" class="md-nav__link md-nav__link--active">
       Patch
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-git-patch" class="md-nav__link">
+    Create a Git Patch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apply-git-patch" class="md-nav__link">
+    Apply Git Patch
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -934,124 +825,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#misc" class="md-nav__link">
-    Misc
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#remove-gone-branches" class="md-nav__link">
-    Remove gone branches
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#replace-local-branch-with-origin" class="md-nav__link">
-    Replace local branch with origin
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#merge" class="md-nav__link">
-    Merge
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#check-if-commit-merged" class="md-nav__link">
-    Check if commit merged:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#merged-branches" class="md-nav__link">
-    Merged branches
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#not-merged-branches" class="md-nav__link">
-    Not merged branches
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-dry-run" class="md-nav__link">
-    --dry-run
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#squash" class="md-nav__link">
-    Squash
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#remove" class="md-nav__link">
-    Remove
+  <a href="#create-a-git-patch" class="md-nav__link">
+    Create a Git Patch
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#rename" class="md-nav__link">
-    Rename
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#rebase" class="md-nav__link">
-    Rebase
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#rebase-onto-another-branch" class="md-nav__link">
-    Rebase onto another branch
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#undoing-a-git-push" class="md-nav__link">
-    Undoing a 'git push'
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#move-a-commit-to-another-branch" class="md-nav__link">
-    Move a commit to another branch
+  <a href="#apply-git-patch" class="md-nav__link">
+    Apply Git Patch
   </a>
   
 </li>
@@ -1073,95 +855,17 @@
               
                 
                 
-                  <h1>Branch</h1>
+                  <h1>Patch</h1>
                 
-                <h2 id="misc">Misc</h2>
-<h3 id="remove-gone-branches">Remove gone branches</h3>
-<p><div class="codehilite"><pre><span></span>git fetch -p <span class="o">&amp;&amp;</span> git branch -vv <span class="p">|</span> awk <span class="s1">&#39;/: gone]/{print $1}&#39;</span> <span class="p">|</span> xargs git branch -D
+                <h2 id="create-a-git-patch">Create a Git Patch</h2>
+<p><div class="codehilite"><pre><span></span>git format-patch -1 HEAD
 </pre></div>
-Sources: <a href="https://stackoverflow.com/a/59912825/5575527">1</a>, <a href="https://stackoverflow.com/a/38404202/5575527">2</a>.</p>
-<h3 id="replace-local-branch-with-origin">Replace local branch with origin</h3>
-<p><div class="codehilite"><pre><span></span>git reset --hard origin/featureXXX
+where
+ - <code>-n</code> number of commits from the topmost one  </p>
+<p>Source: <a href="https://stackoverflow.com/questions/6658313/how-to-generate-a-git-patch-for-a-specific-commit">stackoweflow</a> </p>
+<h2 id="apply-git-patch">Apply Git Patch</h2>
+<div class="codehilite"><pre><span></span>git am &lt; file.patch
 </pre></div>
-Source: <a href="https://stackoverflow.com/a/9210705/5575527">1</a></p>
-<h2 id="merge">Merge</h2>
-<h3 id="check-if-commit-merged">Check if commit merged:</h3>
-<div class="codehilite"><pre><span></span>git fetch origin <span class="c1"># ??</span>
-git branch -r --contains &lt;commit&gt;
-</pre></div>
-
-<h3 id="merged-branches">Merged branches</h3>
-<div class="codehilite"><pre><span></span>git branch --merged master      <span class="c1"># local branches</span>
-git branch -r --merged master   <span class="c1"># remote branches</span>
-git branch -a --merged master   <span class="c1"># all branches</span>
-</pre></div>
-
-<h3 id="not-merged-branches">Not merged branches</h3>
-<div class="codehilite"><pre><span></span>git branch --no-merged master      <span class="c1"># local branches</span>
-git branch -r --no-merged master   <span class="c1"># remote branches</span>
-git branch -a --no-merged master   <span class="c1"># all branches</span>
-</pre></div>
-
-<h3 id="-dry-run">--dry-run</h3>
-<p><div class="codehilite"><pre><span></span>git merge --no-commit --no-ff my_branch
-git diff --cached
-git merge --abort
-</pre></div>
-see <a href="https://stackoverflow.com/questions/501407/is-there-a-git-merge-dry-run-option">stackoverflow</a></p>
-<h3 id="squash">Squash</h3>
-<p>Merge branch as a new single commit:
-<div class="codehilite"><pre><span></span>git checkout master
-git merge --squash bugfix
-git commit
-</pre></div></p>
-<h2 id="remove">Remove</h2>
-<div class="codehilite"><pre><span></span>git branch -a                             <span class="c1"># show list of branches</span>
-git branch -d &lt;branch_name&gt;               <span class="c1"># remove “&lt;branch_name&gt;” branch locally</span>
-git push origin --delete &lt;branch_name&gt;    <span class="c1"># remove remote “&lt;branch_name&gt;” branch</span>
-git branch -a                             <span class="c1"># show list of branches to ensure “&lt;branch_name&gt;” is removed</span>
-</pre></div>
-
-<h2 id="rename">Rename</h2>
-<p><div class="codehilite"><pre><span></span>git branch -m old-name new-name           <span class="c1"># rename</span>
-git push origin :old-name new-name        <span class="c1"># push to origin</span>
-git push origin -u new-name               <span class="c1"># add upstream (tracking) reference</span>
-</pre></div>
-Source: <a href="https://stackoverflow.com/a/40034426/5575527">1</a></p>
-<h2 id="rebase">Rebase</h2>
-<div class="codehilite"><pre><span></span>git checkout master
-git pull
-git checkout my_brarch
-git rebase -i master        <span class="c1"># pick first comment and fixup the rest ones</span>
-git push
-<span class="c1">#git push -f                # if changed were already pushed to remote</span>
-</pre></div>
-
-<h3 id="rebase-onto-another-branch">Rebase onto another branch</h3>
-<p>Precondition:
-<div class="codehilite"><pre><span></span>git checkout master
-git checkout -b feature_1 <span class="c1"># create a branch from master</span>
-<span class="c1"># add &amp; commit changes</span>
-git checkout -b feature_2 <span class="c1"># create a branch from feature_1</span>
-<span class="c1"># add &amp; commit changes</span>
-</pre></div>
-Rebase <code>feature_2</code> onto <code>master</code> branch: 
-<div class="codehilite"><pre><span></span>git checkout feature_2
-git rebase --onto master feature_1
-</pre></div>
-<a href="https://git-scm.com/book/en/v2/Git-Branching-Rebasing#_more_interesting_rebases">More info</a></p>
-<h2 id="undoing-a-git-push">Undoing a 'git push'</h2>
-<p><div class="codehilite"><pre><span></span>git push -f origin last_known_good_commit:branch_name
-</pre></div>
-Source: <a href="https://stackoverflow.com/questions/1270514/undoing-a-git-push">1</a></p>
-<h2 id="move-a-commit-to-another-branch">Move a commit to another branch</h2>
-<p>Copy commit to a new branch:
-<div class="codehilite"><pre><span></span>git checkout -b new_branch_name
-git cherry-pick &lt;commit&gt;
-</pre></div>
-Back to the last good commit in the old branch:
-<div class="codehilite"><pre><span></span>git checkout old_branch_name
-git reset --hard &lt;last_good_commit&gt;
-</pre></div></p>
                 
                   
                 
@@ -1182,7 +886,7 @@ git reset --hard &lt;last_good_commit&gt;
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../bash/general/" title="General" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../misc/" title="Misc" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1191,19 +895,19 @@ git reset --hard &lt;last_good_commit&gt;
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                General
+                Misc
               </span>
             </div>
           </a>
         
         
-          <a href="../config/" title="Config" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../stash/" title="Stash" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Config
+                Stash
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
