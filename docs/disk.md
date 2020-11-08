@@ -10,7 +10,7 @@ where
     sudo mount -o size=2G -t tmpfs none my.project.com
 
 ## Create Windows usb flash
-1) Install WoeUSB: https://github.com/slacka/WoeUSB
+1) Install WoeUSB: https://github.com/WoeUSB/WoeUSB
 2) Unmount flash drive using Disks program
 3) Write ISO
 4) Reboot and install Windows
