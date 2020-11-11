@@ -699,6 +699,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../magento-2/api/" title="Api" class="md-nav__link">
+      Api
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../magento-2/bulk-actions/" title="Bulk Actions" class="md-nav__link">
       Bulk Actions
     </a>
@@ -815,6 +827,15 @@ Connection to google.com 80 port [tcp/http] succeeded!
 <div class="codehilite"><pre><span></span>nmap -p <span class="m">443</span> --script ssl-cert gnupg.org
 </pre></div>
 
+<h2 id="set-interface-zone-permanently">Set interface zone permanently</h2>
+<p><code>vi /etc/network/if-up.d/internal-zone</code>
+<div class="codehilite"><pre><span></span><span class="ch">#!/bin/sh</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$IFACE</span><span class="s2">&quot;</span> !<span class="o">=</span> <span class="s2">&quot;lxcbr0&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$IFACE</span><span class="s2">&quot;</span> !<span class="o">=</span> <span class="s2">&quot;docker0&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">exit</span> <span class="m">0</span>
+<span class="k">fi</span>
+firewall-cmd --zone<span class="o">=</span>internal --change-interface<span class="o">=</span><span class="s2">&quot;</span><span class="nv">$IFACE</span><span class="s2">&quot;</span>
+</pre></div></p>
 <h2 id="openwrt">OpenWRT</h2>
 <h3 id="speed-test-with-iperf3">Speed test with iperf3</h3>
 <p><div class="codehilite"><pre><span></span><span class="c1"># iperf3 -c ping.online.net -u -b 1G </span>
