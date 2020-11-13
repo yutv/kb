@@ -10,13 +10,11 @@ gsettings list-recursively org.gnome.desktop.wm.keybindings | grep -F '<Alt>F7' 
 
 Find the `text/plain=gedit.desktop` text in the one of the following files:
 
-    # local user
-    vi ~/.local/share/applications/mimeapps.list
-    # or 
-    sudo vi /usr/share/applications/defaults.list
-    # or 
-    sudo vi /etc/gnome/defaults.list
-
+```bash
+vi ~/.local/share/applications/mimeapps.list   # local user
+sudo vi /usr/share/applications/defaults.list  # all users
+sudo vi /etc/gnome/defaults.list               # defaults
+```
 and replace to
 
     text/plain=sublime_text.desktop

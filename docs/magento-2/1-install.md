@@ -6,43 +6,46 @@
 
 Latest Magento version:
 
-```bash tab="Magento Open Source"
+=== "Magento Open Source"
+```bash
 composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition mce24x
 ```
-
-```bash tab="Magento Commerce"
+=== "Magento Commerce"
+```bash
 composer create-project --repository-url=https://repo.magento.com/ magento/product-enterprise-edition mee24x
 ```
-
-```bash tab="Magento Cloud"
+=== "Magento Cloud"
+```bash
 composer create-project --repository-url=https://repo.magento.com/ magento/magento-cloud-metapackage mc24x
 ```
 
 Specific Magento version:
 
-```bash tab="Magento Open Source"
+=== "Magento Open Source"
+```bash
 composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.4.0 mce240
 ```
-
-```bash tab="Magento Commerce"
+=== "Magento Commerce"
+```bash 
 composer create-project --repository-url=https://repo.magento.com/ magento/product-enterprise-edition=2.4.0 mee240
 ```
-
-```bash tab="Magento Cloud"
+=== "Magento Cloud"
+```bash 
 composer create-project --repository-url=https://repo.magento.com/ magento/magento-cloud-metapackage=2.4.0 mc240
 ```
 
 Show available versions:
 
-```bash tab="Magento Open Source"
+=== "Magento Open Source"
+```bash 
 composer show magento/product-community-edition 2.4.* --all | grep -m 1 versions
 ```
-
-```bash tab="Magento Commerce"
+=== "Magento Commerce"
+```bash
 composer show magento/product-enterprise-edition 2.4.* --all | grep -m 1 versions
 ```
-
-```bash tab="Magento Cloud"
+=== "Magento Cloud"
+```bash
 composer show magento/magento-cloud-metapackage 2.4.* --all | grep -m 1 versions
 ```
 
