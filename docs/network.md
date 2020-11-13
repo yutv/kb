@@ -19,7 +19,13 @@ nmap -p 443 --script ssl-cert gnupg.org
 ```
 
 ## Set interface zone permanently
-`vi /etc/network/if-up.d/internal-zone`
+
+Create a new `if-up` script
+```bash
+touch /etc/network/if-up.d/internal-zone && chmod +x $_ && vi $_
+```
+
+Put the following content and save (Shift+ZZ)
 ```bash
 #!/bin/sh
 
