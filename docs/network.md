@@ -18,6 +18,23 @@ echo | openssl s_client -showcerts -servername gnupg.org -connect gnupg.org:443 
 nmap -p 443 --script ssl-cert gnupg.org
 ```
 
+## Set interface zone permanently
+
+Create a new `if-up` script
+```bash
+touch /etc/network/if-up.d/internal-zone && chmod +x $_ && vi $_
+```
+
+Put the following content and save (Shift+ZZ)
+```bash
+#!/bin/sh
+
+if [ "$IFACE" != "lxcbr0" ] && [ "$IFACE" != "docker0" ]; then
+    exit 0
+fi
+firewall-cmd --zone=internal --change-interface="$IFACE"
+```
+
 ##OpenWRT
 ###Speed test with iperf3
 ```bash

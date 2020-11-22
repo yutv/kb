@@ -1,20 +1,23 @@
+# Configuration
 --8<-- "m2.md"
  
 ## Sign Static Files
 Disable timestamp in static files like `pub/static/version12345993943/file.js`
 
-```bash tab=
-m2 config:set dev/static/sign 0
-```
+=== "bash"
+    ```bash
+    m2 config:set dev/static/sign 0
+    ```
 
-```Admin tab=
-Stores > Configuration > Advanced > Developer > Static Files Settings > Sign Static Files > No
-```
-
-```SQL tab=
-INSERT INTO core_config_data (`path`, `value`) VALUES ('dev/static/sign', 0) 
-ON DUPLICATE KEY UPDATE `value` = VALUES(value);
-```
+=== "Magento Admin"
+    ```
+    Stores > Configuration > Advanced > Developer > Static Files Settings > Sign Static Files > No
+    ```    
+=== "sql"
+    ```SQL
+    INSERT INTO core_config_data (`path`, `value`) VALUES ('dev/static/sign', 0) 
+    ON DUPLICATE KEY UPDATE `value` = VALUES(value);
+    ```
 
 ## General
  

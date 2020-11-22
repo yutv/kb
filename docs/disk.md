@@ -1,15 +1,16 @@
 ## write iso to disk
 ```bash
-    dd if=os.img of=/dev/sdX bs=1M status=progress oflag=dsync
+dd if=os.img of=/dev/sdX bs=1M status=progress oflag=dsync
 ```
 where
 - oflag=dsync - synchronize I/O for data.
 
 ## RAM disk
+```bash
+sudo mount -o size=2G -t tmpfs none my.project.com
+```
 
-    sudo mount -o size=2G -t tmpfs none my.project.com
-
-## Create Windows usb flash
+## Create Windows USB flash
 1) Install WoeUSB: https://github.com/WoeUSB/WoeUSB
 2) Unmount flash drive using Disks program
 3) Write ISO

@@ -4,8 +4,8 @@ theme:
 #  name: null
 #  custom_dir: 'mkdocs-material/material'
   language: en
-  feature:
-    tabs: true
+  features:
+    - navigation.tabs
   palette:
       primary: 'Teal'
       accent: 'Teal'
@@ -14,6 +14,8 @@ extra_css:
   - 'css/extra.css'
 
 markdown_extensions:
+  - def_list
+  - pymdownx.tabbed
   - admonition
   - codehilite:
       guess_lang: false
@@ -27,9 +29,9 @@ markdown_extensions:
 
 extra:
     social:
-        - type: 'github'
+        - icon: fontawesome/brands/github-alt
           link: 'https://github.com/yutv'
-        - type: 'twitter'
+        - icon: fontawesome/brands/twitter
           link: 'https://twitter.com/YuriiTvardyi'
-        - type: 'linkedin'
+        - icon: fontawesome/brands/linkedin
           link: 'https://www.linkedin.com/in/yuriitvardyi/'

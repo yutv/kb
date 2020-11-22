@@ -1,6 +1,7 @@
 Set of useful tips for developers who are using bash, git, mysql, etc.
 
-##Mkdocs
+## Mkdocs
+
 - `pip install mkdocs` - install mkdocs ([more info](https://www.mkdocs.org/#installation))
 - `pip install mkdocs-material` -  install material theme ([more info](https://github.com/squidfunk/mkdocs-material))
 - `mkdocs serve` - start HTTP server

@@ -1,13 +1,15 @@
 ## Create Directory Patch
+```bash
+diff --exclude=".git" -ruN orig/ new/ | sed "s#new/#b/#" | sed 's#orig/#a/#' > patch.sql
+```
+where:
 
-    diff --exclude=".git" -ruN orig/ new/ | sed "s#new/#b/#" | sed 's#orig/#a/#' > patch.sql
+```
+-r - recursive, so do subdirectories
+-u - unified style, if your system lacks it or if recipient may not have it, use "-c"
+-N - treat absent files as empty
+```
 
-where
-
-    -r == recursive, so do subdirectories
-    -u == unified style, if your system lacks it or if recipient may not have it, use "-c"
-    -N == treat absent files as empty
-    
 References: [1](https://stackoverflow.com/questions/9980186/how-to-create-a-patch-for-a-whole-directory-to-update-it),
 [2](https://superuser.com/questions/644680/how-can-i-make-diff-x-ignore-specific-paths-and-not-file-names).
 
