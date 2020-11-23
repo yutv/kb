@@ -42,3 +42,36 @@ window.uii = (selector) => {
         return component;
     }
 }
+
+if (window.checkoutConfig) {
+    require(['Magento_Checkout/js/model/quote'], function(quote){
+        var getAddress = function (address) {
+            if (!address) {
+                return address;
+            }
+
+            var result = (!address.street) ? address.street : address.street[0];
+            result += ', ' + address.countryId;
+
+            return result;
+        }
+        quote.billingAddress.subscribe(function(address){
+            console.groupCollapsed('billingAddress: ' + getAddress(address));
+            console.info(address);
+            console.trace();
+            console.groupEnd();
+        });
+        quote.shippingAddress.subscribe(function(address){
+            console.groupCollapsed('shippingAddress: ' + getAddress(address));
+            console.info(address);
+            console.trace()
+            console.groupEnd();
+        });
+        quote.shippingMethod.subscribe(function(shippingMethod){
+            console.groupCollapsed('shippingMethod: ' + shippingMethod?.carrier_code + '_' + shippingMethod?.method_code);
+            console.info(shippingMethod);
+            console.trace();
+            console.groupEnd();
+        });
+    });
+}
