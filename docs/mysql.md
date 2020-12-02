@@ -25,6 +25,7 @@ Additional useful options:
 - `--insert-ignore` - when db has unique key duplicates (happens some time)
 - `| sed 's/ AUTO_INCREMENT=[0-9]*//g'` - ignore AUTO_INCREMENT  
 - `--ignore-table=cron_schedule` - ignore AUTO_INCREMENT  
+- `--no-data` - dump schema w/o data  
 
 ## Find foreign key references
 
