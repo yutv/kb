@@ -26,7 +26,40 @@ Additional useful options:
 - `| sed 's/ AUTO_INCREMENT=[0-9]*//g'` - ignore AUTO_INCREMENT  
 - `--ignore-table=cron_schedule` - ignore AUTO_INCREMENT  
 
-##Calculate database size
+## Find foreign key references
+
+All columns
+```sql
+SELECT
+    TABLE_NAME,
+    COLUMN_NAME,
+    CONSTRAINT_NAME,
+    REFERENCED_TABLE_NAME,
+    REFERENCED_COLUMN_NAME
+FROM
+    INFORMATION_SCHEMA.KEY_COLUMN_USAGE
+WHERE
+	REFERENCED_TABLE_SCHEMA = 'db_name'
+    AND REFERENCED_TABLE_NAME = 'table_name';
+```
+Specific column:
+```sql
+SELECT
+    TABLE_NAME,
+    COLUMN_NAME,
+    CONSTRAINT_NAME,
+    REFERENCED_TABLE_NAME,
+    REFERENCED_COLUMN_NAME
+FROM
+    INFORMATION_SCHEMA.KEY_COLUMN_USAGE
+WHERE
+	REFERENCED_TABLE_SCHEMA = 'db_name'
+    AND REFERENCED_TABLE_NAME = 'table_name'
+    AND REFERENCED_COLUMN_NAME = 'column_name';
+```
+Source: https://tableplus.com/blog/2018/08/mysql-how-to-see-foreign-key-relationship-of-a-table.html
+
+## Calculate database size
 
     SELECT table_schema AS "Database", 
     ROUND(SUM(data_length + index_length) / 1024 / 1024, 2) AS "Size (MB)" 
