@@ -26,6 +26,7 @@ Additional useful options:
 - `| sed 's/ AUTO_INCREMENT=[0-9]*//g'` - ignore AUTO_INCREMENT  
 - `--ignore-table=cron_schedule` - ignore AUTO_INCREMENT  
 - `--no-data` - dump schema w/o data  
+- `--no-create-info` - dump data w/o schema  
 
 ## Find foreign key references
 
