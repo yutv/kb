@@ -410,6 +410,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#find-foreign-key-references" class="md-nav__link">
+    Find foreign key references
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#calculate-database-size" class="md-nav__link">
     Calculate database size
   </a>
@@ -875,6 +882,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#find-foreign-key-references" class="md-nav__link">
+    Find foreign key references
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#calculate-database-size" class="md-nav__link">
     Calculate database size
   </a>
@@ -927,7 +941,38 @@ password=&quot;devpassword&quot;
 <li><code>--insert-ignore</code> - when db has unique key duplicates (happens some time)</li>
 <li><code>| sed 's/ AUTO_INCREMENT=[0-9]*//g'</code> - ignore AUTO_INCREMENT  </li>
 <li><code>--ignore-table=cron_schedule</code> - ignore AUTO_INCREMENT  </li>
+<li><code>--no-data</code> - dump schema w/o data  </li>
+<li><code>--no-create-info</code> - dump data w/o schema  </li>
 </ul>
+<h2 id="find-foreign-key-references">Find foreign key references</h2>
+<p>All columns
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span>
+    <span class="k">TABLE_NAME</span><span class="p">,</span>
+    <span class="k">COLUMN_NAME</span><span class="p">,</span>
+    <span class="k">CONSTRAINT_NAME</span><span class="p">,</span>
+    <span class="n">REFERENCED_TABLE_NAME</span><span class="p">,</span>
+    <span class="n">REFERENCED_COLUMN_NAME</span>
+<span class="k">FROM</span>
+    <span class="n">INFORMATION_SCHEMA</span><span class="p">.</span><span class="n">KEY_COLUMN_USAGE</span>
+<span class="k">WHERE</span>
+    <span class="n">REFERENCED_TABLE_SCHEMA</span> <span class="o">=</span> <span class="s1">&#39;db_name&#39;</span>
+    <span class="k">AND</span> <span class="n">REFERENCED_TABLE_NAME</span> <span class="o">=</span> <span class="s1">&#39;table_name&#39;</span><span class="p">;</span>
+</code></pre></div>
+Specific column:
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span>
+    <span class="k">TABLE_NAME</span><span class="p">,</span>
+    <span class="k">COLUMN_NAME</span><span class="p">,</span>
+    <span class="k">CONSTRAINT_NAME</span><span class="p">,</span>
+    <span class="n">REFERENCED_TABLE_NAME</span><span class="p">,</span>
+    <span class="n">REFERENCED_COLUMN_NAME</span>
+<span class="k">FROM</span>
+    <span class="n">INFORMATION_SCHEMA</span><span class="p">.</span><span class="n">KEY_COLUMN_USAGE</span>
+<span class="k">WHERE</span>
+    <span class="n">REFERENCED_TABLE_SCHEMA</span> <span class="o">=</span> <span class="s1">&#39;db_name&#39;</span>
+    <span class="k">AND</span> <span class="n">REFERENCED_TABLE_NAME</span> <span class="o">=</span> <span class="s1">&#39;table_name&#39;</span>
+    <span class="k">AND</span> <span class="n">REFERENCED_COLUMN_NAME</span> <span class="o">=</span> <span class="s1">&#39;column_name&#39;</span><span class="p">;</span>
+</code></pre></div>
+Source: https://tableplus.com/blog/2018/08/mysql-how-to-see-foreign-key-relationship-of-a-table.html</p>
 <h2 id="calculate-database-size">Calculate database size</h2>
 <div class="codehilite"><pre><span></span><code>SELECT table_schema AS &quot;Database&quot;, 
 ROUND(SUM(data_length + index_length) / 1024 / 1024, 2) AS &quot;Size (MB)&quot; 

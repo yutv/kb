@@ -331,6 +331,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#create-windows-usb-flash" class="md-nav__link">
+    Create Windows USB flash
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#acl" class="md-nav__link">
     ACL
   </a>
@@ -867,6 +874,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#create-windows-usb-flash" class="md-nav__link">
+    Create Windows USB flash
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#acl" class="md-nav__link">
     ACL
   </a>
@@ -909,6 +923,11 @@ where
 <h2 id="ram-disk">RAM disk</h2>
 <div class="highlight"><pre><span></span><code>sudo mount -o <span class="nv">size</span><span class="o">=</span>2G -t tmpfs none my.project.com
 </code></pre></div>
+<h2 id="create-windows-usb-flash">Create Windows USB flash</h2>
+<p>1) Install WoeUSB: https://github.com/WoeUSB/WoeUSB
+2) Unmount flash drive using Disks program
+3) Write ISO
+4) Reboot and install Windows</p>
 <h2 id="acl">ACL</h2>
 <h3 id="full-access-for-two-users">Full access for two users</h3>
 <div class="highlight"><pre><span></span><code>setfacl -R -d -m u:user1:rwx,u:user2:rwx .
