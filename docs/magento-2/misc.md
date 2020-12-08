@@ -42,6 +42,13 @@ m2="php -d memory_limit=-1 bin/magento" \
     && sudo systemctl restart varnish
 ```
 
+## Bookmarks
+
+1. `I`:`\Magento\Framework\Interception\Interceptor::___callPlugins` - interceptor implementation
+2. `E`:`\Elasticsearch\Connections\Connection::performRequest` - catch elasticsearch query
+3. `M`:`\Zend_Db_Adapter_Pdo_Abstract::query` - catch MySQL query
+4. `P`:`\Magento\Catalog\Pricing\Price\FinalPrice` - catalog final price 
+
 ## Useful Links
 
 1. `Magento\CatalogInventory\Model\StockStateProvider::checkQty(StockItemInterface $stockItem, $qty)` ([view](https://github.com/magento/magento2/blob/2.3.3/app/code/Magento/CatalogInventory/Model/StockStateProvider.php#L240))
