@@ -126,5 +126,11 @@ date -Iseconds                    # 2020-04-02T23:02:42+03:00
         echo "Triggered CTRL+C event"
     }
 
+## Diff large files
+```bash
+diff -y --suppress-common-lines --speed-large-files file1 file2
+```
+Source: [unix.stackexchange.com](https://unix.stackexchange.com/questions/458834/side-by-side-diff-of-large-files#answer-458846)
+
 ## Useful links
 1. [How to parse command line arguments](https://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash)
