@@ -23,3 +23,8 @@ sudo mount -o size=2G -t tmpfs none my.project.com
 setfacl -R -d -m u:user1:rwx,u:user2:rwx .
 setfacl -R -m u:user1:rwx,u:user2:rwx .
 ```
+## Check read-only file systems
+```bash
+grep "[[:space:]]ro[[:space:],]" /proc/mounts
+```
+Source: [serverfault.com](https://serverfault.com/questions/193971/determine-if-filesystem-or-partition-is-mounted-ro-or-rw-via-bash-script#answer-349025)

@@ -3,7 +3,7 @@
     $ nc -zvw5 google.com 80
     Connection to google.com 80 port [tcp/http] succeeded!
 
-##Get my IP Address
+## Get my IP Address
 
 ```bash
 ifconfig eth1 | awk '/inet addr/{print substr($2,6)}'
@@ -29,10 +29,25 @@ Put the following content and save (Shift+ZZ)
 ```bash
 #!/bin/sh
 
-if [ "$IFACE" != "lxcbr0" ] && [ "$IFACE" != "docker0" ]; then
+if [ "$IFACE" != "lxcbr0" ]; then
     exit 0
 fi
 firewall-cmd --zone=internal --change-interface="$IFACE"
+```
+Note: the latest docker has issues if the `docker0` interface isn't in the `docker` zone.  
+```bash
+sudo firewall-cmd --zone=docker --change-interface=docker0
+```
+See [stackoverflow](https://stackoverflow.com/questions/65213831/failed-to-start-daemon-error-initializing-network-controller-error-creating-de)
+
+Reboot and check
+```bash
+$ sudo firewall-cmd --get-active-zones
+docker
+  interfaces: docker0
+internal
+  interfaces: lxcbr0
+...
 ```
 
 ##OpenWRT

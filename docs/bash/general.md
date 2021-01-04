@@ -126,6 +126,11 @@ date -Iseconds                    # 2020-04-02T23:02:42+03:00
         echo "Triggered CTRL+C event"
     }
 
+## Process start end time
+```
+ps -eo pid,lstart,etime,args | sed '1p;/php/!d'
+```
+
 ## Diff large files
 ```bash
 diff -y --suppress-common-lines --speed-large-files file1 file2

@@ -16,6 +16,17 @@ INSERT INTO `cron_schedule` (`job_code`, `status`, `messages`, `created_at`, `sc
 m2 cache:clean
 m2x cron:run --group=default --bootstrap=standaloneProcessStarted=1
 ```
+
+## Reindex invalid indexers (on schedule mode)
+```sql
+TRUNCATE `cron_schedule`;
+INSERT INTO `cron_schedule` (`job_code`, `status`, `messages`, `created_at`, `scheduled_at`, `executed_at`, `finished_at`) VALUES
+('indexer_reindex_all_invalid', 'pending', NULL, NOW(), NOW(), NULL, NULL);
+```
+```bash
+m2 cron:run --group=index --bootstrap=standaloneProcessStarted=1
+```
+
 ## Statistics
 ```sql
 SELECT date(scheduled_at), 
