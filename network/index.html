@@ -419,8 +419,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../perrofmance/" class="md-nav__link">
-      Perrofmance
+    <a href="../performance/" class="md-nav__link">
+      Performance
     </a>
   </li>
 
@@ -768,6 +768,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../magento-2/ng98/" class="md-nav__link">
+      Ng98
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../magento-2/ui/" class="md-nav__link">
       Ui
     </a>
@@ -827,10 +839,22 @@ Connection to google.com 80 port [tcp/http] succeeded!
 <p>Put the following content and save (Shift+ZZ)
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/sh</span>
 
-<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$IFACE</span><span class="s2">&quot;</span> !<span class="o">=</span> <span class="s2">&quot;lxcbr0&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$IFACE</span><span class="s2">&quot;</span> !<span class="o">=</span> <span class="s2">&quot;docker0&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$IFACE</span><span class="s2">&quot;</span> !<span class="o">=</span> <span class="s2">&quot;lxcbr0&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
     <span class="nb">exit</span> <span class="m">0</span>
 <span class="k">fi</span>
 firewall-cmd --zone<span class="o">=</span>internal --change-interface<span class="o">=</span><span class="s2">&quot;</span><span class="nv">$IFACE</span><span class="s2">&quot;</span>
+</code></pre></div>
+Note: the latest docker has issues if the <code>docker0</code> interface isn't in the <code>docker</code> zone.<br />
+<div class="highlight"><pre><span></span><code>sudo firewall-cmd --zone<span class="o">=</span>docker --change-interface<span class="o">=</span>docker0
+</code></pre></div>
+See <a href="https://stackoverflow.com/questions/65213831/failed-to-start-daemon-error-initializing-network-controller-error-creating-de">stackoverflow</a></p>
+<p>Reboot and check
+<div class="highlight"><pre><span></span><code>$ sudo firewall-cmd --get-active-zones
+docker
+  interfaces: docker0
+internal
+  interfaces: lxcbr0
+...
 </code></pre></div></p>
 <h2 id="openwrt">OpenWRT</h2>
 <h3 id="speed-test-with-iperf3">Speed test with iperf3</h3>

@@ -412,8 +412,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../perrofmance/" class="md-nav__link">
-      Perrofmance
+    <a href="../../performance/" class="md-nav__link">
+      Performance
     </a>
   </li>
 
@@ -756,6 +756,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#reindex-invalid-indexers-on-schedule-mode" class="md-nav__link">
+    Reindex invalid indexers (on schedule mode)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#statistics" class="md-nav__link">
     Statistics
   </a>
@@ -818,6 +825,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../ng98/" class="md-nav__link">
+      Ng98
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../ui/" class="md-nav__link">
       Ui
     </a>
@@ -860,6 +879,13 @@
         <li class="md-nav__item">
   <a href="#debug-cron-job" class="md-nav__link">
     Debug Cron Job
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reindex-invalid-indexers-on-schedule-mode" class="md-nav__link">
+    Reindex invalid indexers (on schedule mode)
   </a>
   
 </li>
@@ -914,6 +940,13 @@
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>m2 cache:clean
 m2x cron:run --group<span class="o">=</span>default --bootstrap<span class="o">=</span><span class="nv">standaloneProcessStarted</span><span class="o">=</span><span class="m">1</span>
+</code></pre></div></p>
+<h2 id="reindex-invalid-indexers-on-schedule-mode">Reindex invalid indexers (on schedule mode)</h2>
+<p><div class="highlight"><pre><span></span><code><span class="k">TRUNCATE</span> <span class="o">`</span><span class="n">cron_schedule</span><span class="o">`</span><span class="p">;</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="o">`</span><span class="n">cron_schedule</span><span class="o">`</span> <span class="p">(</span><span class="o">`</span><span class="n">job_code</span><span class="o">`</span><span class="p">,</span> <span class="o">`</span><span class="n">status</span><span class="o">`</span><span class="p">,</span> <span class="o">`</span><span class="n">messages</span><span class="o">`</span><span class="p">,</span> <span class="o">`</span><span class="n">created_at</span><span class="o">`</span><span class="p">,</span> <span class="o">`</span><span class="n">scheduled_at</span><span class="o">`</span><span class="p">,</span> <span class="o">`</span><span class="n">executed_at</span><span class="o">`</span><span class="p">,</span> <span class="o">`</span><span class="n">finished_at</span><span class="o">`</span><span class="p">)</span> <span class="k">VALUES</span>
+<span class="p">(</span><span class="s1">&#39;indexer_reindex_all_invalid&#39;</span><span class="p">,</span> <span class="s1">&#39;pending&#39;</span><span class="p">,</span> <span class="k">NULL</span><span class="p">,</span> <span class="n">NOW</span><span class="p">(),</span> <span class="n">NOW</span><span class="p">(),</span> <span class="k">NULL</span><span class="p">,</span> <span class="k">NULL</span><span class="p">);</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>m2 cron:run --group<span class="o">=</span>index --bootstrap<span class="o">=</span><span class="nv">standaloneProcessStarted</span><span class="o">=</span><span class="m">1</span>
 </code></pre></div></p>
 <h2 id="statistics">Statistics</h2>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="nb">date</span><span class="p">(</span><span class="n">scheduled_at</span><span class="p">),</span> 
