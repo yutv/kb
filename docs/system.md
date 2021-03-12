@@ -29,3 +29,36 @@
 **Reload kernel parameters**
 
     sysctl -p
+# Battery Info
+
+```bash
+upower -i /org/freedesktop/UPower/devices/battery_BAT0
+```
+output:
+```bash
+native-path:          BAT0
+vendor:               Hewlett-Packard
+model:                Primary
+power supply:         yes
+updated:              Fri 12 Mar 2021 11:39:46 EET (58 seconds ago)
+has history:          yes
+has statistics:       yes
+battery
+present:             yes
+rechargeable:        yes
+state:               discharging
+warning-level:       none
+energy:              58.7664 Wh
+energy-empty:        0 Wh
+energy-full:         58.7664 Wh
+energy-full-design:  57.288 Wh
+energy-rate:         6.8376 W
+voltage:             12.783 V
+time to empty:       8.6 hours
+percentage:          100%
+capacity:            100%
+technology:          lithium-ion
+icon-name:          'battery-full-symbolic'
+History (rate):
+1615541986	6.838	discharging
+```
