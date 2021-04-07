@@ -163,6 +163,8 @@
         
       
         
+      
+        
   <li class="md-tabs__item">
     <a href="../http2/" class="md-tabs__link">
       Http2
@@ -302,6 +304,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../docker/" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../gnome/" class="md-nav__link">
       Gnome
     </a>
@@ -431,6 +445,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#convert-pdf-to-jpg" class="md-nav__link">
+    Convert PDF to JPG
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -517,14 +538,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-19" type="checkbox" id="nav-19">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-20" type="checkbox" id="nav-20">
     
-    <label class="md-nav__link" for="nav-19">
+    <label class="md-nav__link" for="nav-20">
       Bash
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Bash" data-md-level="1">
-      <label class="md-nav__title" for="nav-19">
+      <label class="md-nav__title" for="nav-20">
         <span class="md-nav__icon md-icon"></span>
         Bash
       </label>
@@ -555,14 +576,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-20" type="checkbox" id="nav-20">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-21" type="checkbox" id="nav-21">
     
-    <label class="md-nav__link" for="nav-20">
+    <label class="md-nav__link" for="nav-21">
       Git
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Git" data-md-level="1">
-      <label class="md-nav__title" for="nav-20">
+      <label class="md-nav__title" for="nav-21">
         <span class="md-nav__icon md-icon"></span>
         Git
       </label>
@@ -677,14 +698,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-21" type="checkbox" id="nav-21">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-22" type="checkbox" id="nav-22">
     
-    <label class="md-nav__link" for="nav-21">
+    <label class="md-nav__link" for="nav-22">
       Magento 2
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Magento 2" data-md-level="1">
-      <label class="md-nav__title" for="nav-21">
+      <label class="md-nav__title" for="nav-22">
         <span class="md-nav__icon md-icon"></span>
         Magento 2
       </label>
@@ -844,6 +865,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#convert-pdf-to-jpg" class="md-nav__link">
+    Convert PDF to JPG
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -861,6 +889,10 @@
                 
                 <h2 id="create-booklet">Create Booklet</h2>
 <div class="codehilite"><pre><span></span><code>pdfbook --short-edge --frame true --scale 0.95 file.pdf
+</code></pre></div>
+
+<h2 id="convert-pdf-to-jpg">Convert PDF to JPG</h2>
+<div class="highlight"><pre><span></span><code>vips copy sample.pdf<span class="o">[</span><span class="nv">dpi</span><span class="o">=</span><span class="m">300</span>,page<span class="o">=</span><span class="m">0</span><span class="o">]</span> sample-page-1.jpg
 </code></pre></div>
                 
               
