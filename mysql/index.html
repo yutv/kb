@@ -944,7 +944,7 @@
                   <h1>Mysql</h1>
                 
                 <h2 id="grant-priviledges">Grant Priviledges</h2>
-<div class="codehilite"><pre><span></span><code>GRANT ALL PRIVILEGES ON `website_com`.* TO &#39;website_user&#39;@&#39;%&#39;;
+<div class="codehilite"><pre><span></span><code>GRANT ALL PRIVILEGES ON `website_db`.* TO &#39;website_user&#39;@&#39;%&#39;;
 </code></pre></div>
 
 <h2 id="store-mysql-user-name-and-password">Store mysql user name and password</h2>
@@ -956,9 +956,9 @@ password=&quot;devpassword&quot;
 
 <h2 id="dump-database-wo-definer">Dump database w/o DEFINER</h2>
 <ol>
-<li><div class="highlight"><pre><span></span><code><span class="nv">dbName</span><span class="o">=</span><span class="s1">&#39;dbname&#39;</span> <span class="o">&amp;&amp;</span> mysqldump --opt <span class="nv">$dbName</span> <span class="p">|</span> sed -e <span class="s1">&#39;s/DEFINER[ ]*=[ ]*[^*]*\*/\*/&#39;</span> <span class="p">|</span> bzip2 &gt; <span class="nv">$dbName</span>.sql.bz2
+<li><div class="highlight"><pre><span></span><code><span class="nv">dbName</span><span class="o">=</span><span class="s1">&#39;dbname&#39;</span> <span class="o">&amp;&amp;</span> mysqldump --no-tablespaces --opt <span class="nv">$dbName</span> <span class="p">|</span> sed -e <span class="s1">&#39;s/DEFINER[ ]*=[ ]*[^*]*\*/\*/&#39;</span> <span class="p">|</span> bzip2 &gt; <span class="nv">$dbName</span>.sql.bz2
 </code></pre></div></li>
-<li><div class="highlight"><pre><span></span><code><span class="nv">dbName</span><span class="o">=</span><span class="s1">&#39;dbname&#39;</span> <span class="o">&amp;&amp;</span> mysqldump --opt <span class="nv">$dbName</span> <span class="p">|</span> sed -E <span class="s1">&#39;s/DEFINER=[^ *]+//&#39;</span> <span class="p">|</span> bzip2 &gt; <span class="nv">$dbName</span>.sql.bz2
+<li><div class="highlight"><pre><span></span><code><span class="nv">dbName</span><span class="o">=</span><span class="s1">&#39;dbname&#39;</span> <span class="o">&amp;&amp;</span> mysqldump --no-tablespaces --opt <span class="nv">$dbName</span> <span class="p">|</span> sed -E <span class="s1">&#39;s/DEFINER=[^ *]+//&#39;</span> <span class="p">|</span> bzip2 &gt; <span class="nv">$dbName</span>.sql.bz2
 </code></pre></div></li>
 </ol>
 <p>Additional useful options:</p>
@@ -969,6 +969,7 @@ password=&quot;devpassword&quot;
 <li><code>--ignore-table=cron_schedule</code> - ignore AUTO_INCREMENT  </li>
 <li><code>--no-data</code> - dump schema w/o data  </li>
 <li><code>--no-create-info</code> - dump data w/o schema  </li>
+<li><code>--no-tablespaces</code>  </li>
 </ul>
 <h2 id="find-foreign-key-references">Find foreign key references</h2>
 <p>All columns
