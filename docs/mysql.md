@@ -1,6 +1,6 @@
 ## Grant Priviledges
 
-    GRANT ALL PRIVILEGES ON `website_com`.* TO 'website_user'@'%';
+    GRANT ALL PRIVILEGES ON `website_db`.* TO 'website_user'@'%';
     
 ##Store mysql user name and password
 To use `mysql` and `mysqldump` commands without password just store credentials in `~/.my.cnf` file, e.g.:
@@ -12,11 +12,11 @@ To use `mysql` and `mysqldump` commands without password just store credentials 
 ##Dump database w/o DEFINER
 1. 
 ```bash
-dbName='dbname' && mysqldump --opt $dbName | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | bzip2 > $dbName.sql.bz2
+dbName='dbname' && mysqldump --no-tablespaces --opt $dbName | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | bzip2 > $dbName.sql.bz2
 ```
 2. 
 ```bash
-dbName='dbname' && mysqldump --opt $dbName | sed -E 's/DEFINER=[^ *]+//' | bzip2 > $dbName.sql.bz2
+dbName='dbname' && mysqldump --no-tablespaces --opt $dbName | sed -E 's/DEFINER=[^ *]+//' | bzip2 > $dbName.sql.bz2
 ```
 
 Additional useful options:
@@ -27,6 +27,7 @@ Additional useful options:
 - `--ignore-table=cron_schedule` - ignore AUTO_INCREMENT  
 - `--no-data` - dump schema w/o data  
 - `--no-create-info` - dump data w/o schema  
+- `--no-tablespaces`  
 
 ## Find foreign key references
 

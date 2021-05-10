@@ -68,7 +68,7 @@ m2 setup:install \
 ```bash
 m2 admin:user:create \
     --admin-user=admin \
-    --admin-password=password \ 
+    --admin-password=password \
     --admin-email=$USER@dev.local \
     --admin-firstname=Support \
     --admin-lastname=Account
