@@ -939,6 +939,7 @@
 <span class="nb">alias</span> <span class="nv">m2</span><span class="o">=</span><span class="s1">&#39;php bin/magento&#39;</span>                    
 <span class="nb">alias</span> <span class="nv">m2x</span><span class="o">=</span><span class="s1">&#39;phpx bin/magento&#39;</span>
 <span class="nb">alias</span> m2-clean<span class="o">=</span><span class="s1">&#39;rm -Rf generated/* var/cache/* var/page_cache/* var/di/* var/view_preprocessed/* pub/static/* &amp;&amp; redis-cli FLUSHALL&#39;</span>
+<span class="nb">alias</span> m2-cssclean<span class="o">=</span><span class="s2">&quot;rm -Rf var/view_preprocessed/* &amp;&amp; find pub/static/ -name &#39;styles-*.css&#39; -exec rm -f {} \;&quot;</span>
 </code></pre></div>
 <strong>~/.profile</strong>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>

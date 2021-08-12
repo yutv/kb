@@ -953,6 +953,7 @@
 <span class="nb">alias</span> <span class="nv">m2</span><span class="o">=</span><span class="s1">&#39;php bin/magento&#39;</span>                    
 <span class="nb">alias</span> <span class="nv">m2x</span><span class="o">=</span><span class="s1">&#39;phpx bin/magento&#39;</span>
 <span class="nb">alias</span> m2-clean<span class="o">=</span><span class="s1">&#39;rm -Rf generated/* var/cache/* var/page_cache/* var/di/* var/view_preprocessed/* pub/static/* &amp;&amp; redis-cli FLUSHALL&#39;</span>
+<span class="nb">alias</span> m2-cssclean<span class="o">=</span><span class="s2">&quot;rm -Rf var/view_preprocessed/* &amp;&amp; find pub/static/ -name &#39;styles-*.css&#39; -exec rm -f {} \;&quot;</span>
 </code></pre></div>
 <strong>~/.profile</strong>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
@@ -1000,6 +1001,7 @@ zip -r9 &quot;vendor-module-1.0.0.zip&quot; . -x *.git* *.idea*
 <li><code>E</code>:<code>\Elasticsearch\Connections\Connection::performRequest</code> - catch elasticsearch query</li>
 <li><code>M</code>:<code>\Zend_Db_Adapter_Pdo_Abstract::query</code> - catch MySQL query</li>
 <li><code>P</code>:<code>\Magento\Catalog\Pricing\Price\FinalPrice</code> - catalog final price </li>
+<li><code>R</code>:<code>\Magento\Framework\HTTP\PhpEnvironment\Response::setHttpResponseCode</code> - show does redirect, set break point here to find out.</li>
 </ol>
 <h2 id="useful-links">Useful Links</h2>
 <ol>
