@@ -48,6 +48,7 @@ m2="php -d memory_limit=-1 bin/magento" \
 2. `E`:`\Elasticsearch\Connections\Connection::performRequest` - catch elasticsearch query
 3. `M`:`\Zend_Db_Adapter_Pdo_Abstract::query` - catch MySQL query
 4. `P`:`\Magento\Catalog\Pricing\Price\FinalPrice` - catalog final price 
+5. `R`:`\Magento\Framework\HTTP\PhpEnvironment\Response::setHttpResponseCode` - show does redirect, set break point here to find out.
 
 ## Useful Links
 

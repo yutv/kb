@@ -119,6 +119,14 @@ define([
     });
 });
 ```
+## jQuery Validate
+
+### custom message
+```html
+<input type="text" name="firstname" data-validate='{"required":true}' data-msg-required="Please introduce yourself"/>
+```
+
+https://magento.stackexchange.com/questions/163585/magento-2-how-to-set-custom-validation-message
 
 ## Files
 
