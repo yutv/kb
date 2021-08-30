@@ -806,6 +806,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#disable-event-programmatically" class="md-nav__link">
+    Disable event programmatically
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#data-patch-development" class="md-nav__link">
     Data Patch Development
   </a>
@@ -905,6 +912,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#disable-event-programmatically" class="md-nav__link">
+    Disable event programmatically
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#data-patch-development" class="md-nav__link">
     Data Patch Development
   </a>
@@ -980,6 +994,28 @@ zip -r9 &quot;vendor-module-1.0.0.zip&quot; . -x *.git* *.idea*
 <div class="codehilite"><pre><span></span><code>zip -r9 &quot;vendor-module-1.0.0.zip&quot; app/code/Vendor/Module/ -x *.git*
 </code></pre></div>
 
+<h2 id="disable-event-programmatically">Disable event programmatically</h2>
+<div class="highlight"><pre><span></span><code><span class="x">use Magento\Framework\Event\Config\Data;</span>
+
+<span class="x">class Foo</span>
+<span class="x">{</span>
+<span class="x">    public function __construct(Data $eventConfigData) </span>
+<span class="x">    {</span>
+<span class="x">        $this-&gt;eventConfigData = $eventConfigData;</span>
+<span class="x">    }</span>
+
+<span class="x">    protected function disableEventObservers(string $event): void</span>
+<span class="x">    {</span>
+<span class="x">        $observers = $this-&gt;eventConfigData-&gt;get($event, []);</span>
+<span class="x">        if ($observers) {</span>
+<span class="x">            $observers = array_combine(array_keys($observers), array_fill(0, count($observers), [&#39;disabled&#39; =&gt; true]));</span>
+<span class="x">            $this-&gt;eventConfigData-&gt;merge([$event =&gt; $observers]);</span>
+<span class="x">        }</span>
+<span class="x">    }</span>
+<span class="x">}</span>
+
+<span class="x">// usage: $this-&gt;disableEventObservers(&#39;sales_order_shipment_save_after&#39;);</span>
+</code></pre></div>
 <h2 id="data-patch-development">Data Patch Development</h2>
 <div class="highlight"><pre><span></span><code>mysql -e <span class="s1">&#39;DELETE FROM patch_list WHERE patch_name = &quot;Vendor\\Module\\Setup\\Patch\\Data\\InitializeStoresAndWebsites&quot;&#39;</span> <span class="o">&amp;&amp;</span> m2x setup:upgrade
 </code></pre></div>
