@@ -24,6 +24,30 @@ Alternative way (archive will have a path app/code/Vendor/Module/):
 
     zip -r9 "vendor-module-1.0.0.zip" app/code/Vendor/Module/ -x *.git*
 
+## Disable event programmatically
+```php
+use Magento\Framework\Event\Config\Data;
+
+class Foo
+{
+    public function __construct(Data $eventConfigData) 
+    {
+        $this->eventConfigData = $eventConfigData;
+    }
+
+    protected function disableEventObservers(string $event): void
+    {
+        $observers = $this->eventConfigData->get($event, []);
+        if ($observers) {
+            $observers = array_combine(array_keys($observers), array_fill(0, count($observers), ['disabled' => true]));
+            $this->eventConfigData->merge([$event => $observers]);
+        }
+    }
+}
+
+// usage: $this->disableEventObservers('sales_order_shipment_save_after');
+```
+
 ## Data Patch Development
 ```bash
 mysql -e 'DELETE FROM patch_list WHERE patch_name = "Vendor\\Module\\Setup\\Patch\\Data\\InitializeStoresAndWebsites"' && m2x setup:upgrade
