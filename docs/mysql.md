@@ -64,11 +64,21 @@ Source: https://tableplus.com/blog/2018/08/mysql-how-to-see-foreign-key-relation
 
 ## Calculate database size
 
-    SELECT table_schema AS "Database", 
-    ROUND(SUM(data_length + index_length) / 1024 / 1024, 2) AS "Size (MB)" 
-    FROM information_schema.TABLES 
-    GROUP BY table_schema;
+```sql
+SELECT table_schema AS `database`, 
+ROUND(SUM(data_length + index_length) / 1024 / 1024, 2) AS size_mb 
+FROM information_schema.TABLES 
+GROUP BY table_schema;
+```
+## Show Tables size
 
+```sql
+SELECT table_name AS `table`, 
+ROUND((data_length + index_length) / 1024 / 1024, 2) AS size_mb 
+FROM information_schema.TABLES 
+WHERE TABLE_SCHEMA = 'mydb'
+ORDER BY size_mb DESC
+```
 ## Locking
 
     if get_lock(lock_name, 1) then
