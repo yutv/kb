@@ -70,6 +70,11 @@ m2="php -d memory_limit=-1 bin/magento" \
 
 1. `I`:`\Magento\Framework\Interception\Interceptor::___callPlugins` - interceptor implementation
 2. `E`:`\Elasticsearch\Connections\Connection::performRequest` - catch elasticsearch query
+```php
+if (preg_match('/^{"size":[^0].*/', (string) $body)) {
+    die('<pre>' . json_encode(json_decode($body, true), JSON_PRETTY_PRINT));
+}
+```
 3. `M`:`\Zend_Db_Adapter_Pdo_Abstract::query` - catch MySQL query
 4. `P`:`\Magento\Catalog\Pricing\Price\FinalPrice` - catalog final price 
 5. `R`:`\Magento\Framework\HTTP\PhpEnvironment\Response::setHttpResponseCode` - show does redirect, set break point here to find out.
