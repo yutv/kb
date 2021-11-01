@@ -74,6 +74,12 @@ m2 admin:user:create \
     --admin-lastname=Account
 ```
 
+## Disable Two factor Authentication
+```bash
+php bin/magento module:disable Magento_TwoFactorAuth
+php bin/magento setup:upgrade
+```
+
 ## Upgrade Magento Project
 ```bash
 cp composer.json composer.json.bak
