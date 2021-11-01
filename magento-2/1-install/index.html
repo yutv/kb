@@ -167,12 +167,16 @@
         
       
         
+      
+        
   <li class="md-tabs__item">
     <a href="../../http2/" class="md-tabs__link">
       Http2
     </a>
   </li>
 
+      
+        
       
         
       
@@ -310,6 +314,18 @@
   <li class="md-nav__item">
     <a href="../../docker/" class="md-nav__link">
       Docker
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../docs/" class="md-nav__link">
+      Docs
     </a>
   </li>
 
@@ -464,6 +480,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../raspberry-pi/" class="md-nav__link">
+      GPU Memory
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../../redis/" class="md-nav__link">
       Redis
     </a>
@@ -513,14 +541,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-21" type="checkbox" id="nav-21">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-23" type="checkbox" id="nav-23">
     
-    <label class="md-nav__link" for="nav-21">
+    <label class="md-nav__link" for="nav-23">
       Bash
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Bash" data-md-level="1">
-      <label class="md-nav__title" for="nav-21">
+      <label class="md-nav__title" for="nav-23">
         <span class="md-nav__icon md-icon"></span>
         Bash
       </label>
@@ -551,14 +579,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-22" type="checkbox" id="nav-22">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-24" type="checkbox" id="nav-24">
     
-    <label class="md-nav__link" for="nav-22">
+    <label class="md-nav__link" for="nav-24">
       Git
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Git" data-md-level="1">
-      <label class="md-nav__title" for="nav-22">
+      <label class="md-nav__title" for="nav-24">
         <span class="md-nav__icon md-icon"></span>
         Git
       </label>
@@ -675,14 +703,14 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-23" type="checkbox" id="nav-23" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-25" type="checkbox" id="nav-25" checked>
     
-    <label class="md-nav__link" for="nav-23">
+    <label class="md-nav__link" for="nav-25">
       Magento 2
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Magento 2" data-md-level="1">
-      <label class="md-nav__title" for="nav-23">
+      <label class="md-nav__title" for="nav-25">
         <span class="md-nav__icon md-icon"></span>
         Magento 2
       </label>
@@ -742,6 +770,13 @@
         <li class="md-nav__item">
   <a href="#add-administrator" class="md-nav__link">
     Add Administrator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disable-two-factor-authentication" class="md-nav__link">
+    Disable Two factor Authentication
   </a>
   
 </li>
@@ -918,6 +953,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#disable-two-factor-authentication" class="md-nav__link">
+    Disable Two factor Authentication
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#upgrade-magento-project" class="md-nav__link">
     Upgrade Magento Project
   </a>
@@ -957,7 +999,7 @@
 </code></pre></div>
 </div>
 <input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Magento Commerce</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code>composer create-project --repository-url<span class="o">=</span>https://repo.magento.com/ magento/product-enterprise-edition mee24x
+<div class="highlight"><pre><span></span><code>composer create-project --repository-url<span class="o">=</span>https://repo.magento.com/ magento/project-enterprise-edition mee24x
 </code></pre></div>
 </div>
 <input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">Magento Cloud</label><div class="tabbed-content">
@@ -971,7 +1013,7 @@
 </code></pre></div>
 </div>
 <input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Magento Commerce</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code>composer create-project --repository-url<span class="o">=</span>https://repo.magento.com/ magento/product-enterprise-edition<span class="o">=</span><span class="m">2</span>.4.0 mee240
+<div class="highlight"><pre><span></span><code>composer create-project --repository-url<span class="o">=</span>https://repo.magento.com/ magento/project-enterprise-edition<span class="o">=</span><span class="m">2</span>.4.0 mee240
 </code></pre></div>
 </div>
 <input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">Magento Cloud</label><div class="tabbed-content">
@@ -1013,6 +1055,10 @@
     --admin-email<span class="o">=</span><span class="nv">$USER</span>@dev.local <span class="se">\</span>
     --admin-firstname<span class="o">=</span>Support <span class="se">\</span>
     --admin-lastname<span class="o">=</span>Account
+</code></pre></div>
+<h2 id="disable-two-factor-authentication">Disable Two factor Authentication</h2>
+<div class="highlight"><pre><span></span><code>php bin/magento module:disable Magento_TwoFactorAuth
+php bin/magento setup:upgrade
 </code></pre></div>
 <h2 id="upgrade-magento-project">Upgrade Magento Project</h2>
 <div class="highlight"><pre><span></span><code>cp composer.json composer.json.bak

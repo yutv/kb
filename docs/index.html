@@ -14,7 +14,7 @@
     
     
       
-        <title>Mysql - Knowledge Base</title>
+        <title>Docs - Knowledge Base</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#grant-priviledges" class="md-skip">
+        <a href="#convert-epub-to-kindle" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Mysql
+              Docs
             
           </span>
         </div>
@@ -320,11 +320,45 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../docs/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Docs
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       Docs
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#convert-epub-to-kindle" class="md-nav__link">
+    convert epub to kindle
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -404,87 +438,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Mysql
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
-    <a href="./" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../mysql/" class="md-nav__link">
       Mysql
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#grant-priviledges" class="md-nav__link">
-    Grant Priviledges
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#store-mysql-user-name-and-password" class="md-nav__link">
-    Store mysql user name and password
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dump-database-wo-definer" class="md-nav__link">
-    Dump database w/o DEFINER
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#find-foreign-key-references" class="md-nav__link">
-    Find foreign key references
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#calculate-database-size" class="md-nav__link">
-    Calculate database size
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#show-tables-size" class="md-nav__link">
-    Show Tables size
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#locking" class="md-nav__link">
-    Locking
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -936,50 +894,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#grant-priviledges" class="md-nav__link">
-    Grant Priviledges
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#store-mysql-user-name-and-password" class="md-nav__link">
-    Store mysql user name and password
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dump-database-wo-definer" class="md-nav__link">
-    Dump database w/o DEFINER
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#find-foreign-key-references" class="md-nav__link">
-    Find foreign key references
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#calculate-database-size" class="md-nav__link">
-    Calculate database size
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#show-tables-size" class="md-nav__link">
-    Show Tables size
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#locking" class="md-nav__link">
-    Locking
+  <a href="#convert-epub-to-kindle" class="md-nav__link">
+    convert epub to kindle
   </a>
   
 </li>
@@ -997,85 +913,11 @@
               
                 
                 
-                  <h1>Mysql</h1>
+                  <h1>Docs</h1>
                 
-                <h2 id="grant-priviledges">Grant Priviledges</h2>
-<div class="codehilite"><pre><span></span><code>GRANT ALL PRIVILEGES ON `website_db`.* TO &#39;website_user&#39;@&#39;%&#39;;
-</code></pre></div>
-
-<h2 id="store-mysql-user-name-and-password">Store mysql user name and password</h2>
-<p>To use <code>mysql</code> and <code>mysqldump</code> commands without password just store credentials in <code>~/.my.cnf</code> file, e.g.:</p>
-<div class="codehilite"><pre><span></span><code>[client]
-user=&quot;devuser&quot;
-password=&quot;devpassword&quot;
-</code></pre></div>
-
-<h2 id="dump-database-wo-definer">Dump database w/o DEFINER</h2>
-<ol>
-<li><div class="highlight"><pre><span></span><code><span class="nv">dbName</span><span class="o">=</span><span class="s1">&#39;dbname&#39;</span> <span class="o">&amp;&amp;</span> mysqldump --no-tablespaces --opt <span class="nv">$dbName</span> <span class="p">|</span> sed -e <span class="s1">&#39;s/DEFINER[ ]*=[ ]*[^*]*\*/\*/&#39;</span> <span class="p">|</span> bzip2 &gt; <span class="nv">$dbName</span>.sql.bz2
-</code></pre></div></li>
-<li><div class="highlight"><pre><span></span><code><span class="nv">dbName</span><span class="o">=</span><span class="s1">&#39;dbname&#39;</span> <span class="o">&amp;&amp;</span> mysqldump --no-tablespaces --opt <span class="nv">$dbName</span> <span class="p">|</span> sed -E <span class="s1">&#39;s/DEFINER=[^ *]+//&#39;</span> <span class="p">|</span> bzip2 &gt; <span class="nv">$dbName</span>.sql.bz2
-</code></pre></div></li>
-</ol>
-<p>Additional useful options:</p>
-<ul>
-<li><code>--extended-insert=FALSE</code> - to analyze/edit dump</li>
-<li><code>--insert-ignore</code> - when db has unique key duplicates (happens some time)</li>
-<li><code>| sed 's/ AUTO_INCREMENT=[0-9]*//g'</code> - ignore AUTO_INCREMENT  </li>
-<li><code>--ignore-table=cron_schedule</code> - ignore AUTO_INCREMENT  </li>
-<li><code>--no-data</code> - dump schema w/o data  </li>
-<li><code>--no-create-info</code> - dump data w/o schema  </li>
-<li><code>--no-tablespaces</code>  </li>
-</ul>
-<h2 id="find-foreign-key-references">Find foreign key references</h2>
-<p>All columns
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span>
-    <span class="k">TABLE_NAME</span><span class="p">,</span>
-    <span class="k">COLUMN_NAME</span><span class="p">,</span>
-    <span class="k">CONSTRAINT_NAME</span><span class="p">,</span>
-    <span class="n">REFERENCED_TABLE_NAME</span><span class="p">,</span>
-    <span class="n">REFERENCED_COLUMN_NAME</span>
-<span class="k">FROM</span>
-    <span class="n">INFORMATION_SCHEMA</span><span class="p">.</span><span class="n">KEY_COLUMN_USAGE</span>
-<span class="k">WHERE</span>
-    <span class="n">REFERENCED_TABLE_SCHEMA</span> <span class="o">=</span> <span class="s1">&#39;db_name&#39;</span>
-    <span class="k">AND</span> <span class="n">REFERENCED_TABLE_NAME</span> <span class="o">=</span> <span class="s1">&#39;table_name&#39;</span><span class="p">;</span>
-</code></pre></div>
-Specific column:
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span>
-    <span class="k">TABLE_NAME</span><span class="p">,</span>
-    <span class="k">COLUMN_NAME</span><span class="p">,</span>
-    <span class="k">CONSTRAINT_NAME</span><span class="p">,</span>
-    <span class="n">REFERENCED_TABLE_NAME</span><span class="p">,</span>
-    <span class="n">REFERENCED_COLUMN_NAME</span>
-<span class="k">FROM</span>
-    <span class="n">INFORMATION_SCHEMA</span><span class="p">.</span><span class="n">KEY_COLUMN_USAGE</span>
-<span class="k">WHERE</span>
-    <span class="n">REFERENCED_TABLE_SCHEMA</span> <span class="o">=</span> <span class="s1">&#39;db_name&#39;</span>
-    <span class="k">AND</span> <span class="n">REFERENCED_TABLE_NAME</span> <span class="o">=</span> <span class="s1">&#39;table_name&#39;</span>
-    <span class="k">AND</span> <span class="n">REFERENCED_COLUMN_NAME</span> <span class="o">=</span> <span class="s1">&#39;column_name&#39;</span><span class="p">;</span>
-</code></pre></div>
-Source: https://tableplus.com/blog/2018/08/mysql-how-to-see-foreign-key-relationship-of-a-table.html</p>
-<h2 id="calculate-database-size">Calculate database size</h2>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="n">table_schema</span> <span class="k">AS</span> <span class="o">`</span><span class="k">database</span><span class="o">`</span><span class="p">,</span> 
-<span class="n">ROUND</span><span class="p">(</span><span class="k">SUM</span><span class="p">(</span><span class="n">data_length</span> <span class="o">+</span> <span class="n">index_length</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1024</span> <span class="o">/</span> <span class="mi">1024</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="k">AS</span> <span class="n">size_mb</span> 
-<span class="k">FROM</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">TABLES</span> 
-<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">table_schema</span><span class="p">;</span>
-</code></pre></div>
-<h2 id="show-tables-size">Show Tables size</h2>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="k">table_name</span> <span class="k">AS</span> <span class="o">`</span><span class="k">table</span><span class="o">`</span><span class="p">,</span> 
-<span class="n">ROUND</span><span class="p">((</span><span class="n">data_length</span> <span class="o">+</span> <span class="n">index_length</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1024</span> <span class="o">/</span> <span class="mi">1024</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="k">AS</span> <span class="n">size_mb</span> 
-<span class="k">FROM</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">TABLES</span> 
-<span class="k">WHERE</span> <span class="n">TABLE_SCHEMA</span> <span class="o">=</span> <span class="s1">&#39;mydb&#39;</span>
-<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">size_mb</span> <span class="k">DESC</span>
-</code></pre></div>
-<h2 id="locking">Locking</h2>
-<div class="codehilite"><pre><span></span><code>if get_lock(lock_name, 1) then
--- LOCKING ok, proceed
-    set @0 = release_lock(lock_name);
-else
--- LOCKING failed, handle this
-end if;
+                <h2 id="convert-epub-to-kindle">convert epub to kindle</h2>
+<div class="highlight"><pre><span></span><code>sudo apt-get install calibre
+ebook-convert file.epub file.mobi
 </code></pre></div>
                 
               
@@ -1095,7 +937,7 @@ end if;
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../mkdocs/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../docker/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1104,19 +946,19 @@ end if;
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Mkdocs
+                Docker
               </div>
             </div>
           </a>
         
         
-          <a href="../network/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../gnome/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Network
+                Gnome
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

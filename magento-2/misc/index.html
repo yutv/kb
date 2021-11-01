@@ -167,12 +167,16 @@
         
       
         
+      
+        
   <li class="md-tabs__item">
     <a href="../../http2/" class="md-tabs__link">
       Http2
     </a>
   </li>
 
+      
+        
       
         
       
@@ -310,6 +314,18 @@
   <li class="md-nav__item">
     <a href="../../docker/" class="md-nav__link">
       Docker
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../docs/" class="md-nav__link">
+      Docs
     </a>
   </li>
 
@@ -464,6 +480,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../raspberry-pi/" class="md-nav__link">
+      GPU Memory
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../../redis/" class="md-nav__link">
       Redis
     </a>
@@ -513,14 +541,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-21" type="checkbox" id="nav-21">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-23" type="checkbox" id="nav-23">
     
-    <label class="md-nav__link" for="nav-21">
+    <label class="md-nav__link" for="nav-23">
       Bash
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Bash" data-md-level="1">
-      <label class="md-nav__title" for="nav-21">
+      <label class="md-nav__title" for="nav-23">
         <span class="md-nav__icon md-icon"></span>
         Bash
       </label>
@@ -551,14 +579,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-22" type="checkbox" id="nav-22">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-24" type="checkbox" id="nav-24">
     
-    <label class="md-nav__link" for="nav-22">
+    <label class="md-nav__link" for="nav-24">
       Git
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Git" data-md-level="1">
-      <label class="md-nav__title" for="nav-22">
+      <label class="md-nav__title" for="nav-24">
         <span class="md-nav__icon md-icon"></span>
         Git
       </label>
@@ -675,14 +703,14 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-23" type="checkbox" id="nav-23" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-25" type="checkbox" id="nav-25" checked>
     
-    <label class="md-nav__link" for="nav-23">
+    <label class="md-nav__link" for="nav-25">
       Magento 2
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Magento 2" data-md-level="1">
-      <label class="md-nav__title" for="nav-23">
+      <label class="md-nav__title" for="nav-25">
         <span class="md-nav__icon md-icon"></span>
         Magento 2
       </label>
@@ -1048,7 +1076,12 @@ zip -r9 &quot;vendor-module-1.0.0.zip&quot; . -x *.git* *.idea*
 <h2 id="bookmarks">Bookmarks</h2>
 <ol>
 <li><code>I</code>:<code>\Magento\Framework\Interception\Interceptor::___callPlugins</code> - interceptor implementation</li>
-<li><code>E</code>:<code>\Elasticsearch\Connections\Connection::performRequest</code> - catch elasticsearch query</li>
+<li><code>E</code>:<code>\Elasticsearch\Connections\Connection::performRequest</code> - catch elasticsearch query
+<div class="highlight"><pre><span></span><code><span class="x">if (preg_match(&#39;/^{&quot;size&quot;:[^0].*/&#39;, (string) $body)) {</span>
+<span class="x">    die(&#39;&lt;pre&gt;&#39; . json_encode(json_decode($body, true), JSON_PRETTY_PRINT));</span>
+<span class="x">}</span>
+</code></pre></div>
+2.1.<code>\Smile\ElasticsuiteVirtualCategory\Model\Rule::getChildrenCategories</code></li>
 <li><code>M</code>:<code>\Zend_Db_Adapter_Pdo_Abstract::query</code> - catch MySQL query</li>
 <li><code>P</code>:<code>\Magento\Catalog\Pricing\Price\FinalPrice</code> - catalog final price </li>
 <li><code>R</code>:<code>\Magento\Framework\HTTP\PhpEnvironment\Response::setHttpResponseCode</code> - show does redirect, set break point here to find out.</li>
