@@ -12,7 +12,7 @@ Latest Magento version:
     ```
 === "Magento Commerce"
     ```bash
-    composer create-project --repository-url=https://repo.magento.com/ magento/product-enterprise-edition mee24x
+    composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition mee24x
     ```
 === "Magento Cloud"
     ```bash
@@ -27,7 +27,7 @@ Specific Magento version:
     ```
 === "Magento Commerce"
     ```bash 
-    composer create-project --repository-url=https://repo.magento.com/ magento/product-enterprise-edition=2.4.0 mee240
+    composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.4.0 mee240
     ```
 === "Magento Cloud"
     ```bash 
