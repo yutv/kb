@@ -3,6 +3,17 @@
     $ nc -zvw5 google.com 80
     Connection to google.com 80 port [tcp/http] succeeded!
 
+## Get nameservers for the domain
+```bash
+nslookup -type=soa google.com        # get primary nameserver
+nslookup -type=ns google.com         # get nameservers
+```
+
+## Get A-record
+```bash
+dig google.com @ns1.google.com
+```
+
 ## Get my IP Address
 
 ```bash
