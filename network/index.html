@@ -880,6 +880,13 @@
 Connection to google.com 80 port [tcp/http] succeeded!
 </code></pre></div>
 
+<h2 id="get-nameservers-for-the-domain">Get nameservers for the domain</h2>
+<div class="highlight"><pre><span></span><code>nslookup -type<span class="o">=</span>soa google.com        <span class="c1"># get primary nameserver</span>
+nslookup -type<span class="o">=</span>ns google.com         <span class="c1"># get nameservers</span>
+</code></pre></div>
+<h2 id="get-a-record">Get A-record</h2>
+<div class="highlight"><pre><span></span><code>dig google.com @ns1.google.com
+</code></pre></div>
 <h2 id="get-my-ip-address">Get my IP Address</h2>
 <div class="highlight"><pre><span></span><code>ifconfig eth1 <span class="p">|</span> awk <span class="s1">&#39;/inet addr/{print substr($2,6)}&#39;</span>
 </code></pre></div>
