@@ -962,6 +962,9 @@
 gsettings <span class="nb">set</span> org.gnome.desktop.wm.keybindings switch-windows <span class="s2">&quot;[&#39;&lt;Alt&gt;Tab&#39;]&quot;</span>        <span class="c1"># don&#39;t group windows on Alt+Tab</span>
 gsettings <span class="nb">set</span> org.gnome.desktop.wm.keybindings begin-move <span class="s1">&#39;[]&#39;</span>                      <span class="c1"># release Alt+F7 shortcut for PhpStorm</span>
 gsettings list-recursively org.gnome.desktop.wm.keybindings <span class="p">|</span> grep -F <span class="s1">&#39;&lt;Alt&gt;F7&#39;</span>     <span class="c1"># find specific shortcut</span>
+
+gsettings <span class="nb">set</span> org.gnome.desktop.peripherals.touchpad send-events disabled-on-external-mouse <span class="c1"># automatically disable the touchpad when a mouse is plugged in</span>
+gsettings <span class="nb">set</span> org.gnome.desktop.peripherals.touchpad send-events enabled                    <span class="c1"># undo previous config </span>
 </code></pre></div>
 <h2 id="default-gui-text-editor">Default GUI text editor</h2>
 <p>Find the <code>text/plain=gedit.desktop</code> text in the one of the following files:</p>
