@@ -4,6 +4,9 @@ gsettings set org.gnome.desktop.wm.keybindings switch-applications "['<Super>Tab
 gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"        # don't group windows on Alt+Tab
 gsettings set org.gnome.desktop.wm.keybindings begin-move '[]'                      # release Alt+F7 shortcut for PhpStorm
 gsettings list-recursively org.gnome.desktop.wm.keybindings | grep -F '<Alt>F7'     # find specific shortcut
+
+gsettings set org.gnome.desktop.peripherals.touchpad send-events disabled-on-external-mouse # automatically disable the touchpad when a mouse is plugged in
+gsettings set org.gnome.desktop.peripherals.touchpad send-events enabled                    # undo previous config 
 ```
 
 ## Default GUI text editor
