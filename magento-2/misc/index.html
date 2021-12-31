@@ -1082,9 +1082,21 @@ zip -r9 &quot;vendor-module-1.0.0.zip&quot; . -x *.git* *.idea*
 <span class="x">}</span>
 </code></pre></div>
 2.1.<code>\Smile\ElasticsuiteVirtualCategory\Model\Rule::getChildrenCategories</code></li>
-<li><code>M</code>:<code>\Zend_Db_Adapter_Pdo_Abstract::query</code> - catch MySQL query</li>
-<li><code>P</code>:<code>\Magento\Catalog\Pricing\Price\FinalPrice</code> - catalog final price </li>
-<li><code>R</code>:<code>\Magento\Framework\HTTP\PhpEnvironment\Response::setHttpResponseCode</code> - show does redirect, set break point here to find out.</li>
+<li><code>M</code>:<code>\Zend_Db_Adapter_Pdo_Abstract::query</code> - catch MySQL query
+<div class="highlight"><pre><span></span><code><span class="x">static $handle;</span>
+<span class="x">if (null === $handle) {</span>
+<span class="x">   $handle = fopen(BP . &#39;/var/log/sql.log&#39;, &#39;w+&#39;);</span>
+<span class="x">}</span>
+<span class="x">if ($handle) {</span>
+<span class="x">   $message = &#39;SQL: &#39; . $sql . PHP_EOL;</span>
+<span class="x">   if ($bind) {</span>
+<span class="x">       $message .= &#39;BING: &#39; . print_r($bind, true) . PHP_EOL;</span>
+<span class="x">   }</span>
+<span class="x">   fwrite($handle, $message . PHP_EOL);</span>
+<span class="x">}</span>
+</code></pre></div></li>
+<li><code>P</code>:<code>\Magento\Catalog\Pricing\Price\FinalPrice</code> - catalog final price 
+5<code>R</code>:<code>\Magento\Framework\HTTP\PhpEnvironment\Response::setHttpResponseCode</code> - show does redirect, set break point here to find out.</li>
 </ol>
 <h2 id="useful-links">Useful Links</h2>
 <ol>

@@ -1006,10 +1006,14 @@ where
 <div class="highlight"><pre><span></span><code>sudo mount -o <span class="nv">size</span><span class="o">=</span>2G -t tmpfs none my.project.com
 </code></pre></div>
 <h2 id="create-windows-usb-flash">Create Windows USB flash</h2>
-<p>1) Install WoeUSB: https://github.com/WoeUSB/WoeUSB
-2) Unmount flash drive using Disks program
-3) Write ISO
-4) Reboot and install Windows</p>
+<ol>
+<li>Install <a href="https://github.com/WoeUSB/WoeUSB">WoeUSB</a></li>
+<li>Unmount flash drive using Disks program</li>
+<li>Write ISO
+<div class="highlight"><pre><span></span><code>bash woeusb-5.2.4.bash --device windows.iso /dev/sdc
+</code></pre></div></li>
+<li>Reboot and install Windows</li>
+</ol>
 <h2 id="acl">ACL</h2>
 <h3 id="full-access-for-two-users">Full access for two users</h3>
 <div class="highlight"><pre><span></span><code>setfacl -R -d -m u:user1:rwx,u:user2:rwx .
