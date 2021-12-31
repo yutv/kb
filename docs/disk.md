@@ -11,10 +11,14 @@ sudo mount -o size=2G -t tmpfs none my.project.com
 ```
 
 ## Create Windows USB flash
-1) Install WoeUSB: https://github.com/WoeUSB/WoeUSB
-2) Unmount flash drive using Disks program
-3) Write ISO
-4) Reboot and install Windows
+
+1. Install [WoeUSB](https://github.com/WoeUSB/WoeUSB)
+2. Unmount flash drive using Disks program
+3. Write ISO
+```bash
+bash woeusb-5.2.4.bash --device windows.iso /dev/sdc
+```
+4. Reboot and install Windows
 
 ## ACL
 

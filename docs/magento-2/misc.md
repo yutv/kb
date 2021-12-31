@@ -77,8 +77,21 @@ if (preg_match('/^{"size":[^0].*/', (string) $body)) {
 ```
 2.1.`\Smile\ElasticsuiteVirtualCategory\Model\Rule::getChildrenCategories`
 3. `M`:`\Zend_Db_Adapter_Pdo_Abstract::query` - catch MySQL query
+```php
+static $handle;
+if (null === $handle) {
+   $handle = fopen(BP . '/var/log/sql.log', 'w+');
+}
+if ($handle) {
+   $message = 'SQL: ' . $sql . PHP_EOL;
+   if ($bind) {
+       $message .= 'BING: ' . print_r($bind, true) . PHP_EOL;
+   }
+   fwrite($handle, $message . PHP_EOL);
+}
+```
 4. `P`:`\Magento\Catalog\Pricing\Price\FinalPrice` - catalog final price 
-5. `R`:`\Magento\Framework\HTTP\PhpEnvironment\Response::setHttpResponseCode` - show does redirect, set break point here to find out.
+5`R`:`\Magento\Framework\HTTP\PhpEnvironment\Response::setHttpResponseCode` - show does redirect, set break point here to find out.
 
 ## Useful Links
 
