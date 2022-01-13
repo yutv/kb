@@ -37,3 +37,8 @@ git remote -v                                          # show
 git remote add origin git@github.com:user/repo.git     # add
 git remote set-url origin git@github.com:user/repo.git # change
 ```
+
+# MISC
+```bash
+git config --global core.commentChar ';' # change comment character
+```
