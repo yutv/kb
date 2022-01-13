@@ -1,6 +1,10 @@
-## Grant Priviledges
-
-    GRANT ALL PRIVILEGES ON `website_db`.* TO 'website_user'@'%';
+##Grant Priviledges
+```sql
+GRANT ALL PRIVILEGES ON `db_name`.* TO 'user_name'@'%';
+```
+```sql
+GRANT ALL PRIVILEGES ON *.* TO 'user_name'@'%';
+```
     
 ##Store mysql user name and password
 To use `mysql` and `mysqldump` commands without password just store credentials in `~/.my.cnf` file, e.g.:
@@ -12,11 +16,15 @@ To use `mysql` and `mysqldump` commands without password just store credentials 
 ##Dump database w/o DEFINER
 1. 
 ```bash
-dbName='dbname' && mysqldump --no-tablespaces --opt $dbName | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | bzip2 > $dbName.sql.bz2
+dbName='dbname' && mysqldump --no-tablespaces --single-transaction --opt $dbName \
+  | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' \
+  | gzip > $dbName`date +%Y%m%dT%H%M%S`.sql.gz
 ```
 2. 
 ```bash
-dbName='dbname' && mysqldump --no-tablespaces --opt $dbName | sed -E 's/DEFINER=[^ *]+//' | bzip2 > $dbName.sql.bz2
+dbName='dbname' && mysqldump --no-tablespaces --single-transaction --opt $dbName \
+  | sed -E 's/DEFINER=[^ *]+//' \
+  | gzip > $dbName`date +%Y%m%dT%H%M%S`.sql.gz
 ```
 
 Additional useful options:
@@ -29,61 +37,77 @@ Additional useful options:
 - `--no-create-info` - dump data w/o schema  
 - `--no-tablespaces`  
 
+## DB import
+1. Regular db import
+```bash
+zcat ../db/website-db.sql.gz | sed -E 's/DEFINER=[^ *]+//' | mysql website_db
+```
+2. Workaround in case of importing db from backup with duplicates e.g. "Duplicate entry 'foo' for key 'bar'":
+```bash
+zcat ../db/website-db.sql.gz | sed 's/INSERT INTO `/INSERT IGNORE INTO `/g' | sed -E 's/DEFINER=[^ *]+//' | mysql website_db
+```
+
+## Apply additional DB patches from folder
+```bash
+cat dev/misc/db/after-import/* | mysql website_db
+```
+
 ## Find foreign key references
 
-All columns
-```sql
-SELECT
-    TABLE_NAME,
-    COLUMN_NAME,
-    CONSTRAINT_NAME,
-    REFERENCED_TABLE_NAME,
-    REFERENCED_COLUMN_NAME
-FROM
-    INFORMATION_SCHEMA.KEY_COLUMN_USAGE
-WHERE
-	REFERENCED_TABLE_SCHEMA = 'db_name'
-    AND REFERENCED_TABLE_NAME = 'table_name';
-```
-Specific column:
-```sql
-SELECT
-    TABLE_NAME,
-    COLUMN_NAME,
-    CONSTRAINT_NAME,
-    REFERENCED_TABLE_NAME,
-    REFERENCED_COLUMN_NAME
-FROM
-    INFORMATION_SCHEMA.KEY_COLUMN_USAGE
-WHERE
-	REFERENCED_TABLE_SCHEMA = 'db_name'
-    AND REFERENCED_TABLE_NAME = 'table_name'
-    AND REFERENCED_COLUMN_NAME = 'column_name';
-```
-Source: https://tableplus.com/blog/2018/08/mysql-how-to-see-foreign-key-relationship-of-a-table.html
+=== "All columns"
+    ```sql
+    SELECT
+        TABLE_NAME,
+        COLUMN_NAME,
+        CONSTRAINT_NAME,
+        REFERENCED_TABLE_NAME,
+        REFERENCED_COLUMN_NAME
+    FROM
+        INFORMATION_SCHEMA.KEY_COLUMN_USAGE
+    WHERE
+        REFERENCED_TABLE_SCHEMA = 'db_name'
+        AND REFERENCED_TABLE_NAME = 'table_name';
+    ```
+=== "Specific column"
+    ```sql
+    SELECT
+        TABLE_NAME,
+        COLUMN_NAME,
+        CONSTRAINT_NAME,
+        REFERENCED_TABLE_NAME,
+        REFERENCED_COLUMN_NAME
+    FROM
+        INFORMATION_SCHEMA.KEY_COLUMN_USAGE
+    WHERE
+        REFERENCED_TABLE_SCHEMA = 'db_name'
+        AND REFERENCED_TABLE_NAME = 'table_name'
+        AND REFERENCED_COLUMN_NAME = 'column_name';
+    ```
+Source: [1](https://tableplus.com/blog/2018/08/mysql-how-to-see-foreign-key-relationship-of-a-table.html)
 
-## Calculate database size
+## Statistics
 
-```sql
-SELECT table_schema AS `database`, 
-ROUND(SUM(data_length + index_length) / 1024 / 1024, 2) AS size_mb 
-FROM information_schema.TABLES 
-GROUP BY table_schema;
-```
-## Show Tables size
-
-```sql
-SELECT table_name AS `table`, 
-ROUND((data_length + index_length) / 1024 / 1024, 2) AS size_mb 
-FROM information_schema.TABLES 
-WHERE TABLE_SCHEMA = 'mydb'
-ORDER BY size_mb DESC
-```
+=== "Databases size"
+    ```sql
+    SELECT table_schema AS `database`, 
+    ROUND(SUM(data_length + index_length) / 1024 / 1024, 2) AS size_mb 
+    FROM information_schema.TABLES 
+    GROUP BY table_schema;
+    ```
+=== "Tables size"
+    ```sql
+    SELECT table_name AS `table`, 
+    ROUND((data_length + index_length) / 1024 / 1024, 2) AS size_mb 
+    FROM information_schema.TABLES 
+    WHERE TABLE_SCHEMA = 'mydb'
+    ORDER BY size_mb DESC
+    ```
 ## Locking
-
-    if get_lock(lock_name, 1) then
-    -- LOCKING ok, proceed
-        set @0 = release_lock(lock_name);
-    else
-    -- LOCKING failed, handle this
-    end if;
+```sql
+IF GET_LOCK(lock_name, 1) THEN
+-- LOCKING ok, proceed
+    SET @0 = release_lock(lock_name);
+ELSE
+-- LOCKING failed, handle this
+END IF;
+```

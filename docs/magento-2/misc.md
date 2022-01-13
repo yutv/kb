@@ -60,8 +60,8 @@ m2="php -d memory_limit=-1 bin/magento" \
     && rm -Rf generated/code/* var/cache/* var/page_cache/* var/di/* var/view_preprocessed/* pub/static/* \
     && redis-cli FLUSHALL \
     && $m2 setup:di:compile \
-    && $m2 setup:static-content:deploy -t Vendor/default fr_FR en_US \
-    && $m2 setup:static-content:deploy -t Magento/backend fr_FR en_US \
+    && $m2 setup:static-content:deploy -j 4 -t Vendor/default fr_FR en_US \
+    && $m2 setup:static-content:deploy -j 4 -t Magento/backend fr_FR en_US \
     && $m2 maintenance:disable \
     && sudo systemctl restart varnish
 ```

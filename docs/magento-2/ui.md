@@ -18,6 +18,10 @@ uii();  // information about UI Component
 4. `uii('#my-element-id')` - show ko view model attached to the DOM element with given selector.
 
 ## Misc
+## Get product IDs from a category page
+```javascript
+jQuery('.product-item-info').map(function (i, e) { return e.id.replace('product-item-info_', ''); }).toArray().join(',');
+```
 ### Show knockout model associates with DOM node
 ```javascript
 require('ko').dataFor(document.querySelector('.totals.shipping.excl'));
@@ -125,8 +129,7 @@ define([
 ```html
 <input type="text" name="firstname" data-validate='{"required":true}' data-msg-required="Please introduce yourself"/>
 ```
-
-https://magento.stackexchange.com/questions/163585/magento-2-how-to-set-custom-validation-message
+Source: [1](https://magento.stackexchange.com/questions/163585/magento-2-how-to-set-custom-validation-message)
 
 ## Files
 

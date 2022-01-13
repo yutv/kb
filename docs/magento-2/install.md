@@ -54,9 +54,9 @@ Show available versions:
 m2 setup:install \
     --use-rewrites=1 \
     --use-secure=1 \
-    --base-url-secure=https://dev.local/m24x/ \
+    --base-url-secure=https://m24x.dev.local/ \
     --use-secure-admin=1 \
-    --base-url=https://dev.local/m24x/ \
+    --base-url=https://m24x.dev.local/ \
     --backend-frontname=admin \
     --db-name=m24x \
     --db-user=duser \

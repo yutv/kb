@@ -1,8 +1,6 @@
 site_name: Knowledge Base
 theme:
-  name: 'material'
-#  name: null
-#  custom_dir: 'mkdocs-material/material'
+  name: material
   language: en
   features:
     - navigation.tabs
@@ -10,12 +8,59 @@ theme:
       primary: 'Teal'
       accent: 'Teal'
 
+nav:
+  - Home:
+    - Mkdocs: index.md
+    - Composer: composer.md
+    - Disk: disk.md
+    - Docker: docker.md
+    - Docs: docs.md
+    - Gnome: gnome.md
+    - Htaccess: htaccess.md
+    - Http 2: http2.md
+    - Images: images.md
+    - Magento 1: magento1.md
+    - MySQL: mysql.md
+    - Network: network.md
+    - Patch: patch.md
+    - PDF: pdf.md
+    - Performance: performance.md
+    - PHP: php.md
+    - Raspberry Pi: raspberry-pi.md
+    - Redis: redis.md
+    - SSH: ssh.md
+    - System: system.md
+    - Xdebug: xdebug.md
+  - Bash:
+    - General: bash/general.md
+    - FU: bash/fu.md
+  - Git:
+    - Branch: git/branch.md
+    - Config: git/config.md
+    - Diff: git/diff.md
+    - Patch: git/patch.md
+    - Stash: git/stash.md
+    - Tag: git/tag.md
+    - Misc: git/misc.md
+    - Oh My Git: git/oh-my-git.md
+  - Magento 2:
+    - Install: magento-2/install.md
+    - Configuration: magento-2/configuration.md
+    - Bulk Actions: magento-2/bulk-actions.md
+    - Cron: magento-2/cron.md
+    - DB: magento-2/db.md
+    - Layout: magento-2/layout.md
+    - Misc: magento-2/misc.md
+    - NG98: magento-2/ng98.md
+    - UI: magento-2/ui.md
+
 extra_css:
   - 'css/extra.css'
 
 markdown_extensions:
   - def_list
-  - pymdownx.tabbed
+  - pymdownx.tabbed:
+      alternate_style: true
   - admonition
   - codehilite:
       guess_lang: false

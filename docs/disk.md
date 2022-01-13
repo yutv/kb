@@ -10,6 +10,10 @@ where
 sudo mount -o size=2G -t tmpfs none my.project.com
 ```
 
+## Mounted filesystems in nice layout
+```bash
+mount | column -t
+```
 ## Create Windows USB flash
 
 1. Install [WoeUSB](https://github.com/WoeUSB/WoeUSB)

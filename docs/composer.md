@@ -1,3 +1,5 @@
+# Composer
+
 ## Add a custom packages repository
 
     composer config --global repositories.example composer https://packages.example.com/
