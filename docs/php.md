@@ -1,10 +1,3 @@
-## Composer
-
-### Install
-```bash
-curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/bin --filename=composer
-```
-
 ## Date Diff
     php -r "echo (new DateTime('2019-10-31 14:37:17'))->diff(new DateTime('2019-10-29 10:03:05'))->format('%R%ad%Hh');"
 

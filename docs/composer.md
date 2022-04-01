@@ -1,5 +1,10 @@
 # Composer
 
+## Install
+```bash
+curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/bin --filename=composer
+```
+
 ## Add a custom packages repository
 
     composer config --global repositories.example composer https://packages.example.com/
