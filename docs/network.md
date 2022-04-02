@@ -61,6 +61,17 @@ internal
 ...
 ```
 
+## File Transfer via network
+
+Sender:
+```bash
+nc -v -l 80 < file.gz
+```
+Receiver:
+```bash
+nc -w 3 remote-ip 80 > file.gz
+```
+
 ##OpenWRT
 ###Speed test with iperf3
 ```bash
