@@ -515,6 +515,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#file-transfer-via-network" class="md-nav__link">
+    File Transfer via network
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#openwrt" class="md-nav__link">
     OpenWRT
   </a>
@@ -1130,6 +1137,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#file-transfer-via-network" class="md-nav__link">
+    File Transfer via network
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#openwrt" class="md-nav__link">
     OpenWRT
   </a>
@@ -1224,6 +1238,13 @@ docker
 internal
   interfaces: lxcbr0
 ...
+</code></pre></div></p>
+<h2 id="file-transfer-via-network">File Transfer via network</h2>
+<p>Sender:
+<div class="highlight"><pre><span></span><code>nc -v -l <span class="m">80</span> &lt; file.gz
+</code></pre></div>
+Receiver:
+<div class="highlight"><pre><span></span><code>nc -w <span class="m">3</span> remote-ip <span class="m">80</span> &gt; file.gz
 </code></pre></div></p>
 <h2 id="openwrt">OpenWRT</h2>
 <h3 id="speed-test-with-iperf3">Speed test with iperf3</h3>
