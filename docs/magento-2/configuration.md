@@ -23,7 +23,7 @@ Disable timestamp in static files like `pub/static/version12345993943/file.js`
  
 **Stores > Configuration > General > Web**
 ```bash
-m2 config:set "web/cookie/cookie_lifetime" 31536000      # Default Cookie Settings > Cookie Lifetime
+m2 config:set "web/cookie/cookie_lifetime" 256000        # Default Cookie Settings > Cookie Lifetime
 m2 config:set "web/seo/use_rewrites" 1                   # Search Engine Optimization > Use Web Server Rewrites = Yes
 ```
 **Stores > Configuration > Mageplaza Extensions > General Configuration**
