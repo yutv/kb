@@ -28,11 +28,12 @@ bash woeusb-5.2.4.bash --device windows.iso /dev/sdc
 
 ### Full access for two users
 ```bash
-setfacl -R -d -m u:user1:rwx,u:user2:rwx .
-setfacl -R -m u:user1:rwx,u:user2:rwx .
-
-setfacl -R -d -m g:media:rwx .
-setfacl -R -m g:media:rwx .
+setfacl -R -d -m u:user1:rwx,u:user2:rwx .   # set default ACL for specific users
+setfacl -R -m u:user1:rwx,u:user2:rwx .      # set ACL for specific users
+setfacl -bn .                                # remove all extended ACL entries
+setfacl -R -d -m g:media:rwx .               # default ACL for media group
+setfacl -R -m g:media:rwx .                  # ACL for media group
+getfacl .                                    # get file access control lists
 ```
 ## Check read-only file systems
 ```bash
