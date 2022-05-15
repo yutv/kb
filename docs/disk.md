@@ -30,9 +30,19 @@ bash woeusb-5.2.4.bash --device windows.iso /dev/sdc
 ```bash
 setfacl -R -d -m u:user1:rwx,u:user2:rwx .
 setfacl -R -m u:user1:rwx,u:user2:rwx .
+
+setfacl -R -d -m g:media:rwx .
+setfacl -R -m g:media:rwx .
 ```
 ## Check read-only file systems
 ```bash
 grep "[[:space:]]ro[[:space:],]" /proc/mounts
 ```
 Source: [serverfault.com](https://serverfault.com/questions/193971/determine-if-filesystem-or-partition-is-mounted-ro-or-rw-via-bash-script#answer-349025)
+
+## Groups
+
+```bash
+usermod -aG group_name user_name    # add group to user
+newgrp group_name                   # activate the changes to groups
+```
