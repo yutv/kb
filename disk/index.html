@@ -1165,11 +1165,12 @@ where
 </ol>
 <h2 id="acl">ACL</h2>
 <h3 id="full-access-for-two-users">Full access for two users</h3>
-<div class="highlight"><pre><span></span><code>setfacl -R -d -m u:user1:rwx,u:user2:rwx .
-setfacl -R -m u:user1:rwx,u:user2:rwx .
-
-setfacl -R -d -m g:media:rwx .
-setfacl -R -m g:media:rwx .
+<div class="highlight"><pre><span></span><code>setfacl -R -d -m u:user1:rwx,u:user2:rwx .   <span class="c1"># set default ACL for specific users</span>
+setfacl -R -m u:user1:rwx,u:user2:rwx .      <span class="c1"># set ACL for specific users</span>
+setfacl -bn .                                <span class="c1"># remove all extended ACL entries</span>
+setfacl -R -d -m g:media:rwx .               <span class="c1"># default ACL for media group</span>
+setfacl -R -m g:media:rwx .                  <span class="c1"># ACL for media group</span>
+getfacl .                                    <span class="c1"># get file access control lists</span>
 </code></pre></div>
 <h2 id="check-read-only-file-systems">Check read-only file systems</h2>
 <p><div class="highlight"><pre><span></span><code>grep <span class="s2">&quot;[[:space:]]ro[[:space:],]&quot;</span> /proc/mounts
