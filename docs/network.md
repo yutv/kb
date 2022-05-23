@@ -5,13 +5,19 @@
 
 ## Get nameservers for the domain
 ```bash
-nslookup -type=soa google.com        # get primary nameserver
-nslookup -type=ns google.com         # get nameservers
+nslookup -type=soa google.com             # get primary nameserver
+nslookup -type=ns google.com              # get nameservers
+dig +nocmd +noall +answer ns google.com   # get nameservers using dig
 ```
 
 ## Get A-record
 ```bash
 dig google.com @ns1.google.com
+```
+
+## Get domain TTL
+```bash
+dig +nocmd +noall +answer +ttlunits google.com @ns1.google.com
 ```
 
 ## Get my IP Address
