@@ -824,8 +824,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#move-a-commit-to-another-branch" class="md-nav__link">
-    Move a commit to another branch
+  <a href="#copy-commit-to-a-new-branch" class="md-nav__link">
+    Copy commit to a new branch:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#back-branch-to-the-last-good-commit" class="md-nav__link">
+    Back branch to the last good commit:
   </a>
   
 </li>
@@ -1244,8 +1251,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#move-a-commit-to-another-branch" class="md-nav__link">
-    Move a commit to another branch
+  <a href="#copy-commit-to-a-new-branch" class="md-nav__link">
+    Copy commit to a new branch:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#back-branch-to-the-last-good-commit" class="md-nav__link">
+    Back branch to the last good commit:
   </a>
   
 </li>
@@ -1338,15 +1352,15 @@ git rebase --onto master feature_1
 <p><div class="highlight"><pre><span></span><code>git push -f origin last_known_good_commit:branch_name
 </code></pre></div>
 Source: <a href="https://stackoverflow.com/questions/1270514/undoing-a-git-push">1</a></p>
-<h2 id="move-a-commit-to-another-branch">Move a commit to another branch</h2>
-<p>Copy commit to a new branch:
+<h2 id="copy-commit-to-a-new-branch">Copy commit to a new branch:</h2>
 <div class="highlight"><pre><span></span><code>git checkout -b new_branch_name
 git cherry-pick &lt;commit&gt;
 </code></pre></div>
-Back to the last good commit in the old branch:
-<div class="highlight"><pre><span></span><code>git checkout old_branch_name
+<h2 id="back-branch-to-the-last-good-commit">Back branch to the last good commit:</h2>
+<div class="highlight"><pre><span></span><code>git checkout branch_name
 git reset --hard &lt;last_good_commit&gt;
-</code></pre></div></p>
+git push -f
+</code></pre></div>
 
               
             </article>
