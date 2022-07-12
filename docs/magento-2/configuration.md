@@ -40,6 +40,7 @@ php bin/magento setup:store-config:set --base-url='http://example.com/' \
 ```
 ```bash
 php bin/magento cache:clean
+php bin/magento cache:flush
 ```
 
 ## Admin
