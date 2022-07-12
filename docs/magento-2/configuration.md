@@ -33,7 +33,13 @@ m2 config:set "smtp/general/enabled" 0                   # Enable Mageplaza SMTP
  
 **Set Base URL**
 ```bash
-url="prj.com" && m2 setup:store-config:set --base-url="https://$url/" --base-url-secure="https://$url/" --use-secure=1 --use-secure-admin=1 && m2 cache:clean
+php bin/magento setup:store-config:set --base-url='http://example.com/' \
+  --base-url-secure='https://example.com/' \
+  --use-secure=1 \
+  --use-secure-admin=1
+```
+```bash
+php bin/magento cache:clean
 ```
 
 ## Admin

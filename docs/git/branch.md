@@ -98,15 +98,14 @@ git push -f origin last_known_good_commit:branch_name
 ```
 Source: [1](https://stackoverflow.com/questions/1270514/undoing-a-git-push)
 
-## Move a commit to another branch
-
-Copy commit to a new branch:
+## Copy commit to a new branch:
 ```bash
 git checkout -b new_branch_name
 git cherry-pick <commit>
 ```
-Back to the last good commit in the old branch:
+## Back branch to the last good commit:
 ```bash
-git checkout old_branch_name
+git checkout branch_name
 git reset --hard <last_good_commit>
+git push -f
 ```
