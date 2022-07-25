@@ -611,6 +611,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#show-list-of-files-accessed-by-the-process" class="md-nav__link">
+    Show list of files accessed by the process
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1060,6 +1067,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#show-list-of-files-accessed-by-the-process" class="md-nav__link">
+    Show list of files accessed by the process
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1134,6 +1148,9 @@ icon-name:          <span class="s1">&#39;battery-full-symbolic&#39;</span>
 History <span class="o">(</span>rate<span class="o">)</span>:
 <span class="m">1615541986</span>  <span class="m">6</span>.838   discharging
 </code></pre></div></p>
+<h1 id="show-list-of-files-accessed-by-the-process">Show list of files accessed by the process</h1>
+<div class="highlight"><pre><span></span><code>strace -f -t -e <span class="nv">trace</span><span class="o">=</span>file mgc project:info <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> grep access <span class="p">|</span> sort <span class="p">|</span> uniq
+</code></pre></div>
 
               
             </article>
