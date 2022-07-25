@@ -62,3 +62,9 @@ icon-name:          'battery-full-symbolic'
 History (rate):
 1615541986	6.838	discharging
 ```
+
+# Show list of files accessed by the process
+
+```bash
+strace -f -t -e trace=file mgc project:info 2>&1 | grep access | sort | uniq
+```
