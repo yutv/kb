@@ -92,6 +92,12 @@ if ($handle) {
 ```
 4. `P`:`\Magento\Catalog\Pricing\Price\FinalPrice` - catalog final price 
 5`R`:`\Magento\Framework\HTTP\PhpEnvironment\Response::setHttpResponseCode` - show does redirect, set break point here to find out.
+5. pub/index.php - show XML layouts called for a current page
+```php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$xmlLayout = $objectManager->get(\Magento\Framework\App\View::class);
+echo '<pre>';print_r($xmlLayout->getLayout()->getUpdate()->getHandles());
+```
 
 ## Useful Links
 
