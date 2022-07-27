@@ -1213,6 +1213,11 @@ zip -r9 &quot;vendor-module-1.0.0.zip&quot; . -x *.git* *.idea*
 </code></pre></div></li>
 <li><code>P</code>:<code>\Magento\Catalog\Pricing\Price\FinalPrice</code> - catalog final price 
 5<code>R</code>:<code>\Magento\Framework\HTTP\PhpEnvironment\Response::setHttpResponseCode</code> - show does redirect, set break point here to find out.</li>
+<li>pub/index.php - show XML layouts called for a current page
+<div class="highlight"><pre><span></span><code><span class="x">$objectManager = \Magento\Framework\App\ObjectManager::getInstance();</span>
+<span class="x">$xmlLayout = $objectManager-&gt;get(\Magento\Framework\App\View::class);</span>
+<span class="x">echo &#39;&lt;pre&gt;&#39;;print_r($xmlLayout-&gt;getLayout()-&gt;getUpdate()-&gt;getHandles());</span>
+</code></pre></div></li>
 </ol>
 <h2 id="useful-links">Useful Links</h2>
 <ol>
