@@ -811,6 +811,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#rebase-onto-a-rebased-branch" class="md-nav__link">
+    Rebase onto a rebased branch
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1238,6 +1245,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#rebase-onto-a-rebased-branch" class="md-nav__link">
+    Rebase onto a rebased branch
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1348,6 +1362,10 @@ Rebase <code>feature_2</code> onto <code>master</code> branch:
 git rebase --onto master feature_1
 </code></pre></div>
 <a href="https://git-scm.com/book/en/v2/Git-Branching-Rebasing#_more_interesting_rebases">More info</a></p>
+<h3 id="rebase-onto-a-rebased-branch">Rebase onto a rebased branch</h3>
+<p><div class="highlight"><pre><span></span><code> git rebase --onto feature1 feature1@<span class="o">{</span><span class="m">1</span><span class="o">}</span> feature2
+</code></pre></div>
+<a href="https://stackoverflow.com/questions/31881885/how-to-rebase-a-branch-off-a-rebased-branch#answer-53928753">More info</a></p>
 <h2 id="undoing-a-git-push">Undoing a 'git push'</h2>
 <p><div class="highlight"><pre><span></span><code>git push -f origin last_known_good_commit:branch_name
 </code></pre></div>

@@ -1211,8 +1211,8 @@ zip -r9 &quot;vendor-module-1.0.0.zip&quot; . -x *.git* *.idea*
 <span class="x">   fwrite($handle, $message . PHP_EOL);</span>
 <span class="x">}</span>
 </code></pre></div></li>
-<li><code>P</code>:<code>\Magento\Catalog\Pricing\Price\FinalPrice</code> - catalog final price 
-5<code>R</code>:<code>\Magento\Framework\HTTP\PhpEnvironment\Response::setHttpResponseCode</code> - show does redirect, set break point here to find out.</li>
+<li><code>P</code>:<code>\Magento\Catalog\Pricing\Price\FinalPrice</code> - catalog final price </li>
+<li><code>R</code>:<code>\Magento\Framework\HTTP\PhpEnvironment\Response::setHttpResponseCode</code> - show does redirect, set break point here to find out.</li>
 <li>pub/index.php - show XML layouts called for a current page
 <div class="highlight"><pre><span></span><code><span class="x">$objectManager = \Magento\Framework\App\ObjectManager::getInstance();</span>
 <span class="x">$xmlLayout = $objectManager-&gt;get(\Magento\Framework\App\View::class);</span>
