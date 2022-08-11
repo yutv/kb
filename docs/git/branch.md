@@ -92,6 +92,12 @@ git rebase --onto master feature_1
 ```
 [More info](https://git-scm.com/book/en/v2/Git-Branching-Rebasing#_more_interesting_rebases)
 
+### Rebase onto a rebased branch
+```bash
+ git rebase --onto feature1 feature1@{1} feature2
+```
+[More info](https://stackoverflow.com/questions/31881885/how-to-rebase-a-branch-off-a-rebased-branch#answer-53928753)
+
 ## Undoing a 'git push'
 ```bash
 git push -f origin last_known_good_commit:branch_name
