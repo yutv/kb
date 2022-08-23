@@ -974,6 +974,9 @@
 <p><strong>Breakpoint:</strong> 
 <div class="highlight"><pre><span></span><code>false !== strpos(&#39;&#39; . $sql, &#39;cataloginventory_stock_item&#39;) &amp;&amp; false !== strpos(&#39;&#39; . $sql, &#39;UPDATE&#39;)
 </code></pre></div></p>
+<p><strong>Watch Query</strong>
+<div class="highlight"><pre><span></span><code><span class="x">\Magento\Framework\App\ObjectManager::getInstance()-&gt;get(\Magento\Framework\App\ResourceConnection::class)-&gt;getConnection()-&gt;queryAll(&#39;SELECT * FROM `catalog_product`&#39;)</span>
+</code></pre></div></p>
 
               
             </article>
