@@ -90,6 +90,7 @@ if ($handle) {
    fwrite($handle, $message . PHP_EOL);
 }
 ```
+3.1. `\Magento\Framework\DB\Adapter\Pdo\Mysql::prepareSqlCondition` - conditions map like 'lteq', 'gteq'
 4. `P`:`\Magento\Catalog\Pricing\Price\FinalPrice` - catalog final price 
 5. `R`:`\Magento\Framework\HTTP\PhpEnvironment\Response::setHttpResponseCode` - show does redirect, set break point here to find out.
 6. pub/index.php - show XML layouts called for a current page
