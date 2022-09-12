@@ -66,6 +66,20 @@ m2="php -d memory_limit=-1 bin/magento" \
     && sudo systemctl restart varnish
 ```
 
+## Well known validation (for Magento Cloud)
+
+URL Example:
+```
+/.well-known/apple-developer-merchantid-domain-association
+```
+
+Fastly Solution:
+```VCL
+if (req.url ~ "/.well-known/") {
+    set req.url = regsub(req.url, "\/\.well-known\/", "/media/.well-known/");
+}
+```
+
 ## Bookmarks
 
 1. `I`:`\Magento\Framework\Interception\Interceptor::___callPlugins` - interceptor implementation
