@@ -973,6 +973,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#well-known-validation-for-magento-cloud" class="md-nav__link">
+    Well known validation (for Magento Cloud)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#bookmarks" class="md-nav__link">
     Bookmarks
   </a>
@@ -1089,6 +1096,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#well-known-validation-for-magento-cloud" class="md-nav__link">
+    Well known validation (for Magento Cloud)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#bookmarks" class="md-nav__link">
     Bookmarks
   </a>
@@ -1189,6 +1203,15 @@ zip -r9 &quot;vendor-module-1.0.0.zip&quot; . -x *.git* *.idea*
     <span class="o">&amp;&amp;</span> <span class="nv">$m2</span> maintenance:disable <span class="se">\</span>
     <span class="o">&amp;&amp;</span> sudo systemctl restart varnish
 </code></pre></div>
+<h2 id="well-known-validation-for-magento-cloud">Well known validation (for Magento Cloud)</h2>
+<p>URL Example:
+<div class="highlight"><pre><span></span><code>/.well-known/apple-developer-merchantid-domain-association
+</code></pre></div></p>
+<p>Fastly Solution:
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="nv">req.url</span> <span class="o">~</span> <span class="s">&quot;/.well-known/&quot;</span><span class="p">)</span> <span class="o">{</span>
+    <span class="k">set</span> <span class="nv">req.url</span> <span class="o">=</span> <span class="k">regsub</span><span class="p">(</span><span class="nv">req.url</span><span class="o">,</span> <span class="s">&quot;\/\.well-known\/&quot;</span><span class="o">,</span> <span class="s">&quot;/media/.well-known/&quot;</span><span class="p">);</span>
+<span class="o">}</span>
+</code></pre></div></p>
 <h2 id="bookmarks">Bookmarks</h2>
 <ol>
 <li><code>I</code>:<code>\Magento\Framework\Interception\Interceptor::___callPlugins</code> - interceptor implementation</li>
