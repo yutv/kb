@@ -135,3 +135,9 @@ Source: [1](https://magento.stackexchange.com/questions/163585/magento-2-how-to-
 
 1. [mage/common.js](https://github.com/magento/magento2/blob/2.4-develop/lib/web/mage/common.js) on form submit automatically adds form_key input if missed.
 2. [block-loader.js](https://github.com/magento/magento2/blob/2.4-develop/app/code/Magento/Ui/view/base/web/js/block-loader.js) when use it with `jquery.validate.js` keep in mind it disables form fields. 
+
+## Loader
+
+### Ajax Loader
+lib/web/mage/loader.js:207 - shows full screen loader
+data-bind="blockLoader: isLoading" - shows block loader

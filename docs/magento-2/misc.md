@@ -70,13 +70,13 @@ m2="php -d memory_limit=-1 bin/magento" \
 
 URL Example:
 ```
-/.well-known/apple-developer-merchantid-domain-association
+https://example.com/.well-known/abc => https://example.com/media/.well-known/example.com/abc
 ```
 
 Fastly Solution:
 ```VCL
 if (req.url ~ "/.well-known/") {
-    set req.url = regsub(req.url, "\/\.well-known\/", "/media/.well-known/");
+  set req.url = "/media/.well-known/" + req.http.host + regsub(req.url, "\/\.well-known\/", "/");
 }
 ```
 
