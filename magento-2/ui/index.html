@@ -1054,6 +1054,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#loader-animation" class="md-nav__link">
+    Loader Animation
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1178,6 +1185,13 @@
         <li class="md-nav__item">
   <a href="#files" class="md-nav__link">
     Files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loader-animation" class="md-nav__link">
+    Loader Animation
   </a>
   
 </li>
@@ -1319,6 +1333,14 @@ Source: <a href="https://magento.stackexchange.com/questions/163585/magento-2-ho
 <ol>
 <li><a href="https://github.com/magento/magento2/blob/2.4-develop/lib/web/mage/common.js">mage/common.js</a> on form submit automatically adds form_key input if missed.</li>
 <li><a href="https://github.com/magento/magento2/blob/2.4-develop/app/code/Magento/Ui/view/base/web/js/block-loader.js">block-loader.js</a> when use it with <code>jquery.validate.js</code> keep in mind it disables form fields. </li>
+</ol>
+<h2 id="loader-animation">Loader Animation</h2>
+<ol>
+<li><a href="https://github.com/magento/magento2/blob/2.4-develop/lib/web/mage/loader.js">mage/loader</a> - shows a full screen loader</li>
+<li><a href="https://github.com/magento/magento2/blob/2.4-develop/app/code/Magento/Ui/view/base/web/js/block-loader.js">ui/block-loader</a> - shows a block loader e.g.: <code>data-bind="blockLoader: isLoading"</code> </li>
+<li>show a block loader w/o UI components:
+<div class="highlight"><pre><span></span><code><span class="nx">ko</span><span class="p">.</span><span class="nx">bindingHandlers</span><span class="p">.</span><span class="nx">blockLoader</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">container</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mf">0</span><span class="p">),</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observable</span><span class="p">(</span><span class="kc">true</span><span class="p">));</span>
+</code></pre></div></li>
 </ol>
 
               
