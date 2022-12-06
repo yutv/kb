@@ -83,7 +83,7 @@ if (req.url ~ "/.well-known/") {
 ## Bookmarks
 
 1. `I`:`\Magento\Framework\Interception\Interceptor::___callPlugins` - interceptor implementation
-2. `E`:`\Elasticsearch\Connections\Connection::wrapHandler` - catch elasticsearch request/response
+2. `E`:`\Elasticsearch\Connections\Connection::wrapHandler:331` - catch elasticsearch request/response
 ```php
 if (preg_match('/^{"size":[^0].*/', (string) $request['body'])) {
    echo 'Request: '. $request['uri'] . PHP_EOL;
