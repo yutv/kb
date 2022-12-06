@@ -117,3 +117,9 @@ chmod 600 /etc/dropbear/authorized_keys
 ```cron
 0 4 * * * echo "`date +%Y-%m-%d` $(ifconfig eth1 | awk '/inet addr/{print substr($2,6)}')" >> /root/ip.log
 ```
+
+### Port Mapping
+ssh -L [LOCAL_IP:]LOCAL_PORT:DESTINATION:DESTINATION_PORT [USER@]SSH_SERVER
+```bash
+ssh -L 103306:db-server:3306 user@web.server.com
+```

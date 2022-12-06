@@ -83,10 +83,14 @@ if (req.url ~ "/.well-known/") {
 ## Bookmarks
 
 1. `I`:`\Magento\Framework\Interception\Interceptor::___callPlugins` - interceptor implementation
-2. `E`:`\Elasticsearch\Connections\Connection::performRequest` - catch elasticsearch query
+2. `E`:`\Elasticsearch\Connections\Connection::wrapHandler` - catch elasticsearch request/response
 ```php
-if (preg_match('/^{"size":[^0].*/', (string) $body)) {
-    die('<pre>' . json_encode(json_decode($body, true), JSON_PRETTY_PRINT));
+if (preg_match('/^{"size":[^0].*/', (string) $request['body'])) {
+   echo 'Request: '. $request['uri'] . PHP_EOL;
+   echo '<style>textarea {width:100%; height:45%}</style>';
+   echo '<textarea>' . json_encode(json_decode($request['body'], true), JSON_PRETTY_PRINT) . '</textarea>';
+   echo 'Response:<textarea>' . json_encode($response['body'], JSON_PRETTY_PRINT) . '</textarea>';
+   exit;
 }
 ```
 2.1.`\Smile\ElasticsuiteVirtualCategory\Model\Rule::getChildrenCategories`
