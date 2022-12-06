@@ -557,6 +557,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#port-mapping" class="md-nav__link">
+    Port Mapping
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1186,6 +1193,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#port-mapping" class="md-nav__link">
+    Port Mapping
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1299,6 +1313,10 @@ chmod <span class="m">600</span> /etc/dropbear/authorized_keys
 <h3 id="ip-addresses-daily-log-cron-job">IP Addresses daily log (cron job)</h3>
 <div class="highlight"><pre><span></span><code>0 4 * * * echo &quot;`date +%Y-%m-%d` $(ifconfig eth1 | awk &#39;/inet addr/{print substr($2,6)}&#39;)&quot; &gt;&gt; /root/ip.log
 </code></pre></div>
+<h3 id="port-mapping">Port Mapping</h3>
+<p>ssh -L [LOCAL_IP:]LOCAL_PORT:DESTINATION:DESTINATION_PORT [USER@]SSH_SERVER
+<div class="highlight"><pre><span></span><code>ssh -L <span class="m">103306</span>:db-server:3306 user@web.server.com
+</code></pre></div></p>
 
               
             </article>
