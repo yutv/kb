@@ -7,3 +7,7 @@ git diff --name-only HEAD~2 HEAD      # between last two comments
 ```bash
 git log --oneline release-1..develop  # between last release and current develop branch
 ```
+## Log with file list
+```bash
+git log --name-status
+```
