@@ -17,3 +17,8 @@ gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -dNOPAUSE -
 -dPDFSETTINGS=/printer	Output is of a printer type quality (300 dpi)
 -dPDFSETTINGS=/default	Selects the output which is useful for multiple purposes. Can cause large PDFS.
 ```
+## Extract images from PDF
+```bash
+pdfimages -all file.pdf .
+```
+[Source](https://askubuntu.com/questions/150100/extracting-embedded-images-from-a-pdf)
