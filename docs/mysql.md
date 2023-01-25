@@ -47,6 +47,30 @@ zcat ../db/website-db.sql.gz | sed -E 's/DEFINER=[^ *]+//' | mysql website_db
 zcat ../db/website-db.sql.gz | sed 's/INSERT INTO `/INSERT IGNORE INTO `/g' | sed -E 's/DEFINER=[^ *]+//' | mysql website_db
 ```
 
+## Delete row duplicates
+
+check for duplicates
+```sql
+SELECT url_rewrite_id, COUNT(*) AS cnt 
+FROM catalog_url_rewrite_product_category 
+GROUP BY url_rewrite_id 
+HAVING cnt > 1; 
+```
+
+delete duplicates
+```sql
+DELETE FROM catalog_url_rewrite_product_category
+WHERE url_rewrite_id IN (
+    SELECT url_rewrite_id
+    FROM (SELECT
+            url_rewrite_id,
+            ROW_NUMBER() OVER (PARTITION BY url_rewrite_id ORDER BY url_rewrite_id) AS row_num
+         FROM catalog_url_rewrite_product_category
+         ) AS t
+    WHERE row_num > 1
+);
+```
+
 ## Apply additional DB patches from folder
 ```bash
 cat dev/misc/db/after-import/* | mysql website_db
