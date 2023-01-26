@@ -11,3 +11,7 @@
 git push -o ci.skip
 ``` 
 Source: [1](https://devops.stackexchange.com/questions/6809/is-there-a-ci-skip-option-in-gitlab-ci)
+4. Restore staged file
+```bash
+git restore --staged <file>
+```
