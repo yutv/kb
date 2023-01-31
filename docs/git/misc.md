@@ -15,3 +15,8 @@ Source: [1](https://devops.stackexchange.com/questions/6809/is-there-a-ci-skip-o
 ```bash
 git restore --staged <file>
 ```
+5. Remove a git commit which has not been pushed
+```bash
+git reset --hard HEAD^
+```
+Source: [1](https://stackoverflow.com/questions/1611215/remove-a-git-commit-which-has-not-been-pushed) 
