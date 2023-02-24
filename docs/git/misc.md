@@ -19,4 +19,10 @@ git restore --staged <file>
 ```bash
 git reset --hard HEAD^
 ```
-Source: [1](https://stackoverflow.com/questions/1611215/remove-a-git-commit-which-has-not-been-pushed) 
+Source: [1](https://stackoverflow.com/questions/1611215/remove-a-git-commit-which-has-not-been-pushed)
+
+6. Find removed file
+```bash
+git log --all --full-history -- app/code/file/name.php 
+```
+Source [1](https://stackoverflow.com/questions/7203515/how-to-find-a-deleted-file-in-the-project-commit-history)
