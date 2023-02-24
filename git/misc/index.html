@@ -982,10 +982,18 @@ Source: <a href="https://devops.stackexchange.com/questions/6809/is-there-a-ci-s
 <li>Restore staged file
 <div class="highlight"><pre><span></span><code>git restore --staged &lt;file&gt;
 </code></pre></div></li>
-<li>Remove a git commit which has not been pushed
+<li>
+<p>Remove a git commit which has not been pushed
 <div class="highlight"><pre><span></span><code>git reset --hard HEAD^
 </code></pre></div>
-Source: <a href="https://stackoverflow.com/questions/1611215/remove-a-git-commit-which-has-not-been-pushed">1</a> </li>
+Source: <a href="https://stackoverflow.com/questions/1611215/remove-a-git-commit-which-has-not-been-pushed">1</a></p>
+</li>
+<li>
+<p>Find removed file
+<div class="highlight"><pre><span></span><code>git log --all --full-history -- app/code/file/name.php 
+</code></pre></div>
+Source <a href="https://stackoverflow.com/questions/7203515/how-to-find-a-deleted-file-in-the-project-commit-history">1</a></p>
+</li>
 </ol>
 
               
