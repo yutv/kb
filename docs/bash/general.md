@@ -1,3 +1,10 @@
+## filter output keeping the first line
+```bash
+df -h | awk 'NR==1||/var$/' 
+Filesystem                                     Size  Used Avail Use% Mounted on
+/dev/mapper/system-var                         9.8G  6.2G  3.2G  67% /var
+```
+
 ## path info
 
     file="/home/user/file.inc.php"
