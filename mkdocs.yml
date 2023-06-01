@@ -38,6 +38,7 @@ nav:
   - Git:
     - Branch: git/branch.md
     - Config: git/config.md
+    - Log: git/log.md
     - Diff: git/diff.md
     - Patch: git/patch.md
     - Stash: git/stash.md
