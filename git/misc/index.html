@@ -715,6 +715,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../log/" class="md-nav__link">
+        Log
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../diff/" class="md-nav__link">
         Diff
       </a>
@@ -983,9 +997,6 @@
   <h1>Misc</h1>
 
 <ol>
-<li>define parent branch 
-    <div class="highlight"><pre><span></span><code><span class="nv">parent</span><span class="o">=</span><span class="k">$(</span>git log --pretty<span class="o">=</span>format:<span class="s1">&#39;%D&#39;</span> HEAD^ <span class="p">|</span> grep <span class="s1">&#39;origin/&#39;</span> <span class="p">|</span> head -n1 <span class="p">|</span> sed <span class="s1">&#39;s@origin/@@&#39;</span> <span class="p">|</span> sed <span class="s1">&#39;s@,.*@@&#39;</span><span class="k">)</span>
-</code></pre></div></li>
 <li>list of unmerged files and locally changed files:
     <div class="highlight"><pre><span></span><code><span class="o">(</span>git diff --no-commit-id --name-only origin/<span class="nv">$parent</span>..HEAD<span class="p">;</span> git status --porcelain <span class="p">|</span> sed s/^...//<span class="o">)</span> <span class="p">|</span> sort <span class="p">|</span> uniq
 </code></pre></div></li>
@@ -996,18 +1007,10 @@ Source: <a href="https://devops.stackexchange.com/questions/6809/is-there-a-ci-s
 <li>Restore staged file
 <div class="highlight"><pre><span></span><code>git restore --staged &lt;file&gt;
 </code></pre></div></li>
-<li>
-<p>Remove a git commit which has not been pushed
+<li>Remove a git commit which has not been pushed
 <div class="highlight"><pre><span></span><code>git reset --hard HEAD^
 </code></pre></div>
-Source: <a href="https://stackoverflow.com/questions/1611215/remove-a-git-commit-which-has-not-been-pushed">1</a></p>
-</li>
-<li>
-<p>Find removed file
-<div class="highlight"><pre><span></span><code>git log --all --full-history -- app/code/file/name.php 
-</code></pre></div>
-Source <a href="https://stackoverflow.com/questions/7203515/how-to-find-a-deleted-file-in-the-project-commit-history">1</a></p>
-</li>
+Source: <a href="https://stackoverflow.com/questions/1611215/remove-a-git-commit-which-has-not-been-pushed">1</a></li>
 </ol>
 
               
