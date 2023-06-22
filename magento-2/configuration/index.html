@@ -1126,9 +1126,6 @@
 <summary>Bash Environment Configuration</summary>
 <p><strong>~/.bashrc.d/env</strong>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">PS1</span><span class="o">=</span><span class="s2">&quot;\[\e[0;38;05;15m\][\[\e[0;38;05;47m\]\u\[\e[0;38;05;15m\]@\[\e[0;38;05;153m\]\h:\[\e[0;38;05;111m\]\w\[\e[0;38;05;15m\]]\\</span>$<span class="s2"> \[\e[0m\]&quot;</span>
-<span class="nb">alias</span> <span class="nv">phpx</span><span class="o">=</span><span class="s1">&#39;php -dxdebug.remote_autostart=1&#39;</span>
-<span class="nb">alias</span> <span class="nv">m2</span><span class="o">=</span><span class="s1">&#39;php bin/magento&#39;</span>                    
-<span class="nb">alias</span> <span class="nv">m2x</span><span class="o">=</span><span class="s1">&#39;phpx bin/magento&#39;</span>
 <span class="nb">alias</span> m2-clean<span class="o">=</span><span class="s1">&#39;rm -Rf generated/* var/cache/* var/page_cache/* var/di/* var/view_preprocessed/* pub/static/* &amp;&amp; redis-cli FLUSHALL&#39;</span>
 <span class="nb">alias</span> m2-cssclean<span class="o">=</span><span class="s2">&quot;rm -Rf var/view_preprocessed/* &amp;&amp; find pub/static/ -name &#39;styles-*.css&#39; -exec rm -f {} \;&quot;</span>
 </code></pre></div>
@@ -1141,7 +1138,7 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">bash</label><label for="__tabbed_1_2">Magento Admin</label><label for="__tabbed_1_3">sql</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>m2 config:set dev/static/sign <span class="m">0</span>
+<div class="highlight"><pre><span></span><code>php bin/magento config:set dev/static/sign <span class="m">0</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1157,11 +1154,11 @@
 </div>
 <h2 id="general">General</h2>
 <p><strong>Stores &gt; Configuration &gt; General &gt; Web</strong>
-<div class="highlight"><pre><span></span><code>m2 config:set <span class="s2">&quot;web/cookie/cookie_lifetime&quot;</span> <span class="m">256000</span>        <span class="c1"># Default Cookie Settings &gt; Cookie Lifetime</span>
-m2 config:set <span class="s2">&quot;web/seo/use_rewrites&quot;</span> <span class="m">1</span>                   <span class="c1"># Search Engine Optimization &gt; Use Web Server Rewrites = Yes</span>
+<div class="highlight"><pre><span></span><code>php bin/magento config:set <span class="s2">&quot;web/cookie/cookie_lifetime&quot;</span> <span class="m">256000</span>        <span class="c1"># Default Cookie Settings &gt; Cookie Lifetime</span>
+php bin/magento config:set <span class="s2">&quot;web/seo/use_rewrites&quot;</span> <span class="m">1</span>                   <span class="c1"># Search Engine Optimization &gt; Use Web Server Rewrites = Yes</span>
 </code></pre></div>
 <strong>Stores &gt; Configuration &gt; Mageplaza Extensions &gt; General Configuration</strong>
-<div class="highlight"><pre><span></span><code>m2 config:set <span class="s2">&quot;smtp/general/enabled&quot;</span> <span class="m">0</span>                   <span class="c1"># Enable Mageplaza SMTP = No</span>
+<div class="highlight"><pre><span></span><code>php bin/magento config:set <span class="s2">&quot;smtp/general/enabled&quot;</span> <span class="m">0</span>                   <span class="c1"># Enable Mageplaza SMTP = No</span>
 </code></pre></div></p>
 <p><strong>Set Base URL</strong>
 <div class="highlight"><pre><span></span><code>php bin/magento setup:store-config:set --base-url<span class="o">=</span><span class="s1">&#39;http://example.com/&#39;</span> <span class="se">\</span>
@@ -1174,31 +1171,31 @@ php bin/magento cache:flush
 </code></pre></div></p>
 <h2 id="admin">Admin</h2>
 <p><strong>Stores &gt; Configuration &gt; Advanced &gt; Admin</strong>
-<div class="highlight"><pre><span></span><code>m2 config:set <span class="s2">&quot;admin/captcha/enable&quot;</span> <span class="m">0</span>                   <span class="c1"># CAPTCHA &gt; Enable CAPTCHA in Admin = No</span>
+<div class="highlight"><pre><span></span><code>php bin/magento config:set <span class="s2">&quot;admin/captcha/enable&quot;</span> <span class="m">0</span>                   <span class="c1"># CAPTCHA &gt; Enable CAPTCHA in Admin = No</span>
 </code></pre></div>
 <strong>Stores &gt; Configuration &gt; Advanced &gt; Admin &gt; Security</strong>
-<div class="highlight"><pre><span></span><code>m2 config:set <span class="s2">&quot;admin/security/session_lifetime&quot;</span> <span class="m">31536000</span> <span class="c1"># Admin Session Lifetime (seconds)</span>
-m2 config:set <span class="s2">&quot;admin/security/password_lifetime&quot;</span> <span class="s2">&quot;&quot;</span>      <span class="c1"># Password Lifetime (days)</span>
-m2 config:set <span class="s2">&quot;admin/security/admin_account_sharing&quot;</span> <span class="m">1</span>   <span class="c1"># Admin Account Sharing = Yes</span>
-m2 config:set <span class="s2">&quot;admin/security/lockout_failures&quot;</span> <span class="s2">&quot;&quot;</span>       <span class="c1"># Maximum Login Failures to Lockout Account = &quot;&quot;</span>
-m2 config:set <span class="s2">&quot;admin/security/password_is_forced&quot;</span> <span class="m">0</span>      <span class="c1"># Password Change = &quot;Recommended&quot;</span>
-m2 config:set <span class="s2">&quot;admin/security/use_form_key&quot;</span> <span class="m">0</span>            <span class="c1"># Add Secret Key to URLs = No</span>
+<div class="highlight"><pre><span></span><code>php bin/magento config:set <span class="s2">&quot;admin/security/session_lifetime&quot;</span> <span class="m">31536000</span> <span class="c1"># Admin Session Lifetime (seconds)</span>
+php bin/magento config:set <span class="s2">&quot;admin/security/password_lifetime&quot;</span> <span class="s2">&quot;&quot;</span>      <span class="c1"># Password Lifetime (days)</span>
+php bin/magento config:set <span class="s2">&quot;admin/security/admin_account_sharing&quot;</span> <span class="m">1</span>   <span class="c1"># Admin Account Sharing = Yes</span>
+php bin/magento config:set <span class="s2">&quot;admin/security/lockout_failures&quot;</span> <span class="s2">&quot;&quot;</span>       <span class="c1"># Maximum Login Failures to Lockout Account = &quot;&quot;</span>
+php bin/magento config:set <span class="s2">&quot;admin/security/password_is_forced&quot;</span> <span class="m">0</span>      <span class="c1"># Password Change = &quot;Recommended&quot;</span>
+php bin/magento config:set <span class="s2">&quot;admin/security/use_form_key&quot;</span> <span class="m">0</span>            <span class="c1"># Add Secret Key to URLs = No</span>
 </code></pre></div></p>
 <h2 id="cssjs">CSS/JS</h2>
 <p><strong>Stores &gt; Configuration &gt; Advanced &gt; CSS Settings</strong>
-<div class="highlight"><pre><span></span><code>m2 config:set <span class="s2">&quot;dev/css/merge_css_files&quot;</span> <span class="m">0</span>                <span class="c1"># Merge CSS Files = No</span>
-m2 config:set <span class="s2">&quot;dev/css/minify_files&quot;</span> <span class="m">0</span>                   <span class="c1"># Minify CSS Files = No</span>
+<div class="highlight"><pre><span></span><code>php bin/magento config:set <span class="s2">&quot;dev/css/merge_css_files&quot;</span> <span class="m">0</span>                <span class="c1"># Merge CSS Files = No</span>
+php bin/magento config:set <span class="s2">&quot;dev/css/minify_files&quot;</span> <span class="m">0</span>                   <span class="c1"># Minify CSS Files = No</span>
 </code></pre></div></p>
 <p><strong>Stores &gt; Configuration &gt; Advanced &gt; JavaScript Settings</strong>
-<div class="highlight"><pre><span></span><code>m2 config:set <span class="s2">&quot;dev/js/merge_files&quot;</span> <span class="m">0</span>                     <span class="c1"># Merge JavaScript Files = No</span>
-m2 config:set <span class="s2">&quot;dev/js/enable_js_bundling&quot;</span> <span class="m">0</span>              <span class="c1"># Enable JavaScript Bundling = No</span>
-m2 config:set <span class="s2">&quot;dev/js/minify_files&quot;</span> <span class="m">0</span>                    <span class="c1"># Minify JavaScript Files = No</span>
+<div class="highlight"><pre><span></span><code>php bin/magento config:set <span class="s2">&quot;dev/js/merge_files&quot;</span> <span class="m">0</span>                     <span class="c1"># Merge JavaScript Files = No</span>
+php bin/magento config:set <span class="s2">&quot;dev/js/enable_js_bundling&quot;</span> <span class="m">0</span>              <span class="c1"># Enable JavaScript Bundling = No</span>
+php bin/magento config:set <span class="s2">&quot;dev/js/minify_files&quot;</span> <span class="m">0</span>                    <span class="c1"># Minify JavaScript Files = No</span>
 </code></pre></div></p>
 <h2 id="debug">Debug</h2>
 <p><strong>Template Hints</strong></p>
-<p><div class="highlight"><pre><span></span><code>m2 config:set <span class="s2">&quot;dev/debug/template_hints_storefront&quot;</span> <span class="m">1</span> <span class="o">&amp;&amp;</span> m2 config:set <span class="s2">&quot;dev/debug/template_hints_blocks&quot;</span> <span class="m">1</span> <span class="c1"># enable</span>
+<p><div class="highlight"><pre><span></span><code>php bin/magento config:set <span class="s2">&quot;dev/debug/template_hints_storefront&quot;</span> <span class="m">1</span> <span class="o">&amp;&amp;</span> php bin/magento config:set <span class="s2">&quot;dev/debug/template_hints_blocks&quot;</span> <span class="m">1</span> <span class="c1"># enable</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>m2 config:set <span class="s2">&quot;dev/debug/template_hints_storefront&quot;</span> <span class="m">0</span> <span class="o">&amp;&amp;</span> m2 config:set <span class="s2">&quot;dev/debug/template_hints_blocks&quot;</span> <span class="m">0</span> <span class="c1"># disable</span>
+<div class="highlight"><pre><span></span><code>php bin/magento config:set <span class="s2">&quot;dev/debug/template_hints_storefront&quot;</span> <span class="m">0</span> <span class="o">&amp;&amp;</span> php bin/magento config:set <span class="s2">&quot;dev/debug/template_hints_blocks&quot;</span> <span class="m">0</span> <span class="c1"># disable</span>
 </code></pre></div></p>
 <div class="admonition info">
 <p class="admonition-title">Magento Admin</p>
@@ -1206,21 +1203,21 @@ m2 config:set <span class="s2">&quot;dev/js/minify_files&quot;</span> <span clas
 Stores &gt; Configuration &gt; Advanced &gt; Developer &gt; Debug &gt; Add Block Class Type to Hints</p>
 </div>
 <p><strong>Debug Logging</strong>
-<div class="highlight"><pre><span></span><code>m2 setup:config:set --enable-debug-logging<span class="o">=</span><span class="nb">true</span> <span class="o">&amp;&amp;</span> m2 cache:flush   <span class="c1"># enable</span>
+<div class="highlight"><pre><span></span><code>php bin/magento setup:config:set --enable-debug-logging<span class="o">=</span><span class="nb">true</span> <span class="o">&amp;&amp;</span> php bin/magento cache:flush   <span class="c1"># enable</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>m2 setup:config:set --enable-debug-logging<span class="o">=</span><span class="nb">false</span> <span class="o">&amp;&amp;</span> m2 cache:flush  <span class="c1"># disable</span>
+<div class="highlight"><pre><span></span><code>php bin/magento setup:config:set --enable-debug-logging<span class="o">=</span><span class="nb">false</span> <span class="o">&amp;&amp;</span> php bin/magento cache:flush  <span class="c1"># disable</span>
 </code></pre></div></p>
 <p><strong>Syslog Logging</strong>
-<div class="highlight"><pre><span></span><code>m2 setup:config:set --enable-syslog-logging<span class="o">=</span><span class="nb">true</span> <span class="o">&amp;&amp;</span> m2 cache:flush  <span class="c1"># enable</span>
+<div class="highlight"><pre><span></span><code>php bin/magento setup:config:set --enable-syslog-logging<span class="o">=</span><span class="nb">true</span> <span class="o">&amp;&amp;</span> php bin/magento cache:flush  <span class="c1"># enable</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>m2 setup:config:set --enable-syslog-logging<span class="o">=</span><span class="nb">false</span> <span class="o">&amp;&amp;</span> m2 cache:flush <span class="c1"># disable</span>
+<div class="highlight"><pre><span></span><code>php bin/magento setup:config:set --enable-syslog-logging<span class="o">=</span><span class="nb">false</span> <span class="o">&amp;&amp;</span> php bin/magento cache:flush <span class="c1"># disable</span>
 </code></pre></div></p>
 <p><strong>Database logging</strong>
-<div class="highlight"><pre><span></span><code>m2 dev:query-log:enable <span class="o">&amp;&amp;</span> m2 cache:flush
+<div class="highlight"><pre><span></span><code>php bin/magento dev:query-log:enable <span class="o">&amp;&amp;</span> php bin/magento cache:flush
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>cat var/debug/db.log <span class="p">|</span> less
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>m2 dev:query-log:disable <span class="o">&amp;&amp;</span> m2 cache:flush
+<div class="highlight"><pre><span></span><code>php bin/magento dev:query-log:disable <span class="o">&amp;&amp;</span> php bin/magento cache:flush
 </code></pre></div></p>
 
               

@@ -1126,9 +1126,6 @@
 <summary>Bash Environment Configuration</summary>
 <p><strong>~/.bashrc.d/env</strong>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">PS1</span><span class="o">=</span><span class="s2">&quot;\[\e[0;38;05;15m\][\[\e[0;38;05;47m\]\u\[\e[0;38;05;15m\]@\[\e[0;38;05;153m\]\h:\[\e[0;38;05;111m\]\w\[\e[0;38;05;15m\]]\\</span>$<span class="s2"> \[\e[0m\]&quot;</span>
-<span class="nb">alias</span> <span class="nv">phpx</span><span class="o">=</span><span class="s1">&#39;php -dxdebug.remote_autostart=1&#39;</span>
-<span class="nb">alias</span> <span class="nv">m2</span><span class="o">=</span><span class="s1">&#39;php bin/magento&#39;</span>                    
-<span class="nb">alias</span> <span class="nv">m2x</span><span class="o">=</span><span class="s1">&#39;phpx bin/magento&#39;</span>
 <span class="nb">alias</span> m2-clean<span class="o">=</span><span class="s1">&#39;rm -Rf generated/* var/cache/* var/page_cache/* var/di/* var/view_preprocessed/* pub/static/* &amp;&amp; redis-cli FLUSHALL&#39;</span>
 <span class="nb">alias</span> m2-cssclean<span class="o">=</span><span class="s2">&quot;rm -Rf var/view_preprocessed/* &amp;&amp; find pub/static/ -name &#39;styles-*.css&#39; -exec rm -f {} \;&quot;</span>
 </code></pre></div>
@@ -1189,7 +1186,7 @@
 </div>
 </div>
 <h2 id="install-magento-from-cli">Install Magento from CLI</h2>
-<div class="highlight"><pre><span></span><code>m2 setup:install <span class="se">\</span>
+<div class="highlight"><pre><span></span><code>php bin/magento setup:install <span class="se">\</span>
     --use-rewrites<span class="o">=</span><span class="m">1</span> <span class="se">\</span>
     --use-secure<span class="o">=</span><span class="m">1</span> <span class="se">\</span>
     --base-url-secure<span class="o">=</span>https://m24x.dev.local/ <span class="se">\</span>
@@ -1202,7 +1199,7 @@
     --session-save<span class="o">=</span>files
 </code></pre></div>
 <h2 id="add-administrator">Add Administrator</h2>
-<div class="highlight"><pre><span></span><code>m2 admin:user:create <span class="se">\</span>
+<div class="highlight"><pre><span></span><code>php bin/magento admin:user:create <span class="se">\</span>
     --admin-user<span class="o">=</span>admin <span class="se">\</span>
     --admin-password<span class="o">=</span>password <span class="se">\</span>
     --admin-email<span class="o">=</span><span class="nv">$USER</span>@dev.local <span class="se">\</span>
@@ -1217,7 +1214,7 @@ php bin/magento setup:upgrade
 <div class="highlight"><pre><span></span><code>cp composer.json composer.json.bak
 composer require magento/product-community-edition <span class="m">2</span>.3.3 --no-update
 composer update
-m2 setup:upgrade
+php bin/magento setup:upgrade
 </code></pre></div>
 
               
