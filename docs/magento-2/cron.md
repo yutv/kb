@@ -3,7 +3,7 @@
 
 ## Run cron as standalone process:
 ```bash
-m2 cron:run --group=default --bootstrap=standaloneProcessStarted=1
+php bin/magento cron:run --group=default --bootstrap=standaloneProcessStarted=1
 ```
 
 ## Debug Cron Job
@@ -13,8 +13,8 @@ INSERT INTO `cron_schedule` (`job_code`, `status`, `messages`, `created_at`, `sc
 ('lengow_connector_launch_export', 'pending', NULL, NOW(), NOW(), NULL, NULL);
 ```
 ```bash
-m2 cache:clean
-m2x cron:run --group=default --bootstrap=standaloneProcessStarted=1
+php bin/magento cache:clean
+php bin/magento cron:run --group=default --bootstrap=standaloneProcessStarted=1
 ```
 
 ## Reindex invalid indexers (on schedule mode)
@@ -24,7 +24,7 @@ INSERT INTO `cron_schedule` (`job_code`, `status`, `messages`, `created_at`, `sc
 ('indexer_reindex_all_invalid', 'pending', NULL, NOW(), NOW(), NULL, NULL);
 ```
 ```bash
-m2 cron:run --group=index --bootstrap=standaloneProcessStarted=1
+php bin/magento cron:run --group=index --bootstrap=standaloneProcessStarted=1
 ```
 
 ## Statistics

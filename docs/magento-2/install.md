@@ -51,7 +51,7 @@ Show available versions:
 
 ## Install Magento from CLI
 ```bash
-m2 setup:install \
+php bin/magento setup:install \
     --use-rewrites=1 \
     --use-secure=1 \
     --base-url-secure=https://m24x.dev.local/ \
@@ -66,7 +66,7 @@ m2 setup:install \
 
 ## Add Administrator
 ```bash
-m2 admin:user:create \
+php bin/magento admin:user:create \
     --admin-user=admin \
     --admin-password=password \
     --admin-email=$USER@dev.local \
@@ -85,5 +85,5 @@ php bin/magento setup:upgrade
 cp composer.json composer.json.bak
 composer require magento/product-community-edition 2.3.3 --no-update
 composer update
-m2 setup:upgrade
+php bin/magento setup:upgrade
 ```

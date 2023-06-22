@@ -4,7 +4,7 @@
 ## PhpStorm Urn
 1. container:
 ```bash
-m2 dev:urn-catalog:generate .idea/misc.xml
+php bin/magento dev:urn-catalog:generate .idea/misc.xml
 ```
 2. host:
 ```bash
@@ -50,19 +50,19 @@ class Foo
 
 ## Data Patch Development
 ```bash
-mysql -e 'DELETE FROM patch_list WHERE patch_name = "Vendor\\Module\\Setup\\Patch\\Data\\InitializeStoresAndWebsites"' && m2x setup:upgrade
+mysql -e 'DELETE FROM patch_list WHERE patch_name = "Vendor\\Module\\Setup\\Patch\\Data\\InitializeStoresAndWebsites"' && php bin/magento setup:upgrade
 ```
 ## Recompile
 ```bash
 m2="php -d memory_limit=-1 bin/magento" \
-    && $m2 maintenance:enable \
-    && $m2 cache:clean \
+    && $php bin/magento maintenance:enable \
+    && $php bin/magento cache:clean \
     && rm -Rf generated/code/* var/cache/* var/page_cache/* var/di/* var/view_preprocessed/* pub/static/* \
     && redis-cli FLUSHALL \
-    && $m2 setup:di:compile \
-    && $m2 setup:static-content:deploy -j 4 -t Vendor/default fr_FR en_US \
-    && $m2 setup:static-content:deploy -j 4 -t Magento/backend fr_FR en_US \
-    && $m2 maintenance:disable \
+    && $php bin/magento setup:di:compile \
+    && $php bin/magento setup:static-content:deploy -j 4 -t Vendor/default fr_FR en_US \
+    && $php bin/magento setup:static-content:deploy -j 4 -t Magento/backend fr_FR en_US \
+    && $php bin/magento maintenance:disable \
     && sudo systemctl restart varnish
 ```
 
@@ -127,4 +127,3 @@ echo '<pre>';print_r($xmlLayout->getLayout()->getUpdate()->getHandles());
     - `\Magento\Quote\Model\Quote\Item\Processor::prepare`
     - `\Magento\Tax\Model\Sales\Total\Quote\CommonTaxCollector::updateItemTaxInfo`
 5. [Test or style the Order Success Page or how to stop Success Page redirecting](https://magento.stackexchange.com/questions/211273/how-to-test-or-style-the-order-success-page-or-how-to-stop-success-page-redirect)
- 
