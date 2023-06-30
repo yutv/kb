@@ -1144,9 +1144,10 @@ studio
 .sass-cache
 </code></pre></div></p>
 <h2 id="log-alias">Log alias</h2>
-<div class="highlight"><pre><span></span><code>git config --global alias.lg <span class="s2">&quot;log --all --color --graph --pretty=format:&#39;%Cred%h%Creset - %s %Cgreen(%cr %ci) %C(bold blue)&lt;%an&gt;%Creset %C(yellow)%d%Creset&#39; --abbrev-commit&quot;</span>
-git config --global alias.lgm <span class="s2">&quot;log --pretty=oneline --abbrev-commit&quot;</span>
+<p><div class="highlight"><pre><span></span><code>git config --global alias.lg <span class="s2">&quot;log --color --pretty=format:&#39;%Cred%h%Creset - %s %Cgreen(%cr %ci) %C(bold blue)&lt;%an&gt;%Creset %C(yellow)%d%Creset&#39; --abbrev-commit&quot;</span>
 </code></pre></div>
+<div class="highlight"><pre><span></span><code>git config --global alias.lgm <span class="s2">&quot;log --pretty=oneline --abbrev-commit&quot;</span>
+</code></pre></div></p>
 <h2 id="automatically-prune">Automatically prune</h2>
 <p>Before fetching, automatically remove any remote-tracking references that no longer exist on the remote.
 <div class="highlight"><pre><span></span><code>git config --global fetch.prune <span class="nb">true</span>
