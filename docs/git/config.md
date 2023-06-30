@@ -20,7 +20,9 @@ studio
 
 ## Log alias 
 ```bash
-git config --global alias.lg "log --all --color --graph --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr %ci) %C(bold blue)<%an>%Creset %C(yellow)%d%Creset' --abbrev-commit"
+git config --global alias.lg "log --color --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr %ci) %C(bold blue)<%an>%Creset %C(yellow)%d%Creset' --abbrev-commit"
+```
+```bash
 git config --global alias.lgm "log --pretty=oneline --abbrev-commit"
 ```
 
