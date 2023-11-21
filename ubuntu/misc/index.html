@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../ubuntu/misc/">
+        <link rel="prev" href="../../bash/fu/">
       
       
-        <link rel="next" href="../config/">
+        <link rel="next" href="../../git/branch/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Branch - Knowledge Base</title>
+        <title>Misc - Knowledge Base</title>
       
     
     
@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#misc" class="md-skip">
+        <a href="#check-whether-the-x11-or-wayland-is-active" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Branch
+              Misc
             
           </span>
         </div>
@@ -209,11 +209,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../ubuntu/misc/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
   Ubuntu
@@ -227,13 +229,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../git/branch/" class="md-tabs__link">
           
   
   Git
@@ -871,72 +871,6 @@
       
   
   
-  
-    
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-            
-  
-  <span class="md-ellipsis">
-    Ubuntu
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            Ubuntu
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ubuntu/misc/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Misc
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
     
   
   
@@ -953,24 +887,24 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
-    Git
+    Ubuntu
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Git
+            Ubuntu
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -991,7 +925,7 @@
           
   
   <span class="md-ellipsis">
-    Branch
+    Misc
   </span>
   
 
@@ -1002,7 +936,7 @@
         
   
   <span class="md-ellipsis">
-    Branch
+    Misc
   </span>
   
 
@@ -1022,171 +956,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#misc" class="md-nav__link">
+  <a href="#check-whether-the-x11-or-wayland-is-active" class="md-nav__link">
     <span class="md-ellipsis">
-      Misc
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Misc">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#remove-gone-branches" class="md-nav__link">
-    <span class="md-ellipsis">
-      Remove gone branches
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#replace-local-branch-with-origin" class="md-nav__link">
-    <span class="md-ellipsis">
-      Replace local branch with origin
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#merge" class="md-nav__link">
-    <span class="md-ellipsis">
-      Merge
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Merge">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#check-if-commit-merged" class="md-nav__link">
-    <span class="md-ellipsis">
-      Check if commit merged:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#merged-branches" class="md-nav__link">
-    <span class="md-ellipsis">
-      Merged branches
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#not-merged-branches" class="md-nav__link">
-    <span class="md-ellipsis">
-      Not merged branches
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-dry-run" class="md-nav__link">
-    <span class="md-ellipsis">
-      --dry-run
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#squash" class="md-nav__link">
-    <span class="md-ellipsis">
-      Squash
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#remove" class="md-nav__link">
-    <span class="md-ellipsis">
-      Remove
+      Check whether the X11 or Wayland is active.
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#rename" class="md-nav__link">
+  <a href="#disable-wayland" class="md-nav__link">
     <span class="md-ellipsis">
-      Rename
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#rebase" class="md-nav__link">
-    <span class="md-ellipsis">
-      Rebase
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Rebase">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#rebase-onto-another-branch" class="md-nav__link">
-    <span class="md-ellipsis">
-      Rebase onto another branch
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rebase-onto-a-rebased-branch" class="md-nav__link">
-    <span class="md-ellipsis">
-      Rebase onto a rebased branch
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#undoing-a-git-push" class="md-nav__link">
-    <span class="md-ellipsis">
-      Undoing a 'git push'
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#copy-commit-to-a-new-branch" class="md-nav__link">
-    <span class="md-ellipsis">
-      Copy commit to a new branch:
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#back-branch-to-the-last-good-commit" class="md-nav__link">
-    <span class="md-ellipsis">
-      Back branch to the last good commit:
+      Disable Wayland
     </span>
   </a>
   
@@ -1201,13 +982,79 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Git
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Git
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
               
                 
   
   
   
     <li class="md-nav__item">
-      <a href="../config/" class="md-nav__link">
+      <a href="../../git/branch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Branch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/config/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1227,7 +1074,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../log/" class="md-nav__link">
+      <a href="../../git/log/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1247,7 +1094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../diff/" class="md-nav__link">
+      <a href="../../git/diff/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1267,7 +1114,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../patch/" class="md-nav__link">
+      <a href="../../git/patch/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1287,7 +1134,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../stash/" class="md-nav__link">
+      <a href="../../git/stash/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1307,7 +1154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tag/" class="md-nav__link">
+      <a href="../../git/tag/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1327,7 +1174,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../misc/" class="md-nav__link">
+      <a href="../../git/misc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1347,7 +1194,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../oh-my-git/" class="md-nav__link">
+      <a href="../../git/oh-my-git/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1619,171 +1466,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#misc" class="md-nav__link">
+  <a href="#check-whether-the-x11-or-wayland-is-active" class="md-nav__link">
     <span class="md-ellipsis">
-      Misc
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Misc">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#remove-gone-branches" class="md-nav__link">
-    <span class="md-ellipsis">
-      Remove gone branches
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#replace-local-branch-with-origin" class="md-nav__link">
-    <span class="md-ellipsis">
-      Replace local branch with origin
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#merge" class="md-nav__link">
-    <span class="md-ellipsis">
-      Merge
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Merge">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#check-if-commit-merged" class="md-nav__link">
-    <span class="md-ellipsis">
-      Check if commit merged:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#merged-branches" class="md-nav__link">
-    <span class="md-ellipsis">
-      Merged branches
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#not-merged-branches" class="md-nav__link">
-    <span class="md-ellipsis">
-      Not merged branches
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-dry-run" class="md-nav__link">
-    <span class="md-ellipsis">
-      --dry-run
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#squash" class="md-nav__link">
-    <span class="md-ellipsis">
-      Squash
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#remove" class="md-nav__link">
-    <span class="md-ellipsis">
-      Remove
+      Check whether the X11 or Wayland is active.
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#rename" class="md-nav__link">
+  <a href="#disable-wayland" class="md-nav__link">
     <span class="md-ellipsis">
-      Rename
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#rebase" class="md-nav__link">
-    <span class="md-ellipsis">
-      Rebase
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Rebase">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#rebase-onto-another-branch" class="md-nav__link">
-    <span class="md-ellipsis">
-      Rebase onto another branch
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rebase-onto-a-rebased-branch" class="md-nav__link">
-    <span class="md-ellipsis">
-      Rebase onto a rebased branch
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#undoing-a-git-push" class="md-nav__link">
-    <span class="md-ellipsis">
-      Undoing a 'git push'
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#copy-commit-to-a-new-branch" class="md-nav__link">
-    <span class="md-ellipsis">
-      Copy commit to a new branch:
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#back-branch-to-the-last-good-commit" class="md-nav__link">
-    <span class="md-ellipsis">
-      Back branch to the last good commit:
+      Disable Wayland
     </span>
   </a>
   
@@ -1804,94 +1498,18 @@
                   
 
 
-  <h1>Branch</h1>
+  <h1>Misc</h1>
 
-<h2 id="misc">Misc</h2>
-<h3 id="remove-gone-branches">Remove gone branches</h3>
-<p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>fetch<span class="w"> </span>-p<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>branch<span class="w"> </span>-vv<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;/: gone]/{print $1}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>git<span class="w"> </span>branch<span class="w"> </span>-D
+<h2 id="check-whether-the-x11-or-wayland-is-active">Check whether the X11 or Wayland is active.</h2>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="nv">$XDG_SESSION_TYPE</span>
 </code></pre></div>
-Sources: <a href="https://stackoverflow.com/a/59912825/5575527">1</a>, <a href="https://stackoverflow.com/a/38404202/5575527">2</a>.</p>
-<h3 id="replace-local-branch-with-origin">Replace local branch with origin</h3>
-<p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>origin/featureXXX
+<h2 id="disable-wayland">Disable Wayland</h2>
+<p><div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/gdm3/custom.conf
 </code></pre></div>
-Source: <a href="https://stackoverflow.com/a/9210705/5575527">1</a></p>
-<h2 id="merge">Merge</h2>
-<h3 id="check-if-commit-merged">Check if commit merged:</h3>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>fetch<span class="w"> </span>origin<span class="w"> </span><span class="c1"># ??</span>
-git<span class="w"> </span>branch<span class="w"> </span>-r<span class="w"> </span>--contains<span class="w"> </span>&lt;commit&gt;
+<div class="highlight"><pre><span></span><code><span class="na">WaylandEnable</span><span class="o">=</span><span class="s">false</span>
 </code></pre></div>
-<h3 id="merged-branches">Merged branches</h3>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>branch<span class="w"> </span>--merged<span class="w"> </span>master<span class="w">      </span><span class="c1"># local branches</span>
-git<span class="w"> </span>branch<span class="w"> </span>-r<span class="w"> </span>--merged<span class="w"> </span>master<span class="w">   </span><span class="c1"># remote branches</span>
-git<span class="w"> </span>branch<span class="w"> </span>-a<span class="w"> </span>--merged<span class="w"> </span>master<span class="w">   </span><span class="c1"># all branches</span>
-</code></pre></div>
-<h3 id="not-merged-branches">Not merged branches</h3>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>branch<span class="w"> </span>--no-merged<span class="w"> </span>master<span class="w">      </span><span class="c1"># local branches</span>
-git<span class="w"> </span>branch<span class="w"> </span>-r<span class="w"> </span>--no-merged<span class="w"> </span>master<span class="w">   </span><span class="c1"># remote branches</span>
-git<span class="w"> </span>branch<span class="w"> </span>-a<span class="w"> </span>--no-merged<span class="w"> </span>master<span class="w">   </span><span class="c1"># all branches</span>
-</code></pre></div>
-<h3 id="-dry-run">--dry-run</h3>
-<p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>merge<span class="w"> </span>--no-commit<span class="w"> </span>--no-ff<span class="w"> </span>my_branch
-git<span class="w"> </span>diff<span class="w"> </span>--cached
-git<span class="w"> </span>merge<span class="w"> </span>--abort
-</code></pre></div>
-see <a href="https://stackoverflow.com/questions/501407/is-there-a-git-merge-dry-run-option">stackoverflow</a></p>
-<h3 id="squash">Squash</h3>
-<p>Merge branch as a new single commit:
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>master
-git<span class="w"> </span>merge<span class="w"> </span>--squash<span class="w"> </span>bugfix
-git<span class="w"> </span>commit
+<div class="highlight"><pre><span></span><code>restart
 </code></pre></div></p>
-<h2 id="remove">Remove</h2>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>branch<span class="w"> </span>-a<span class="w">                             </span><span class="c1"># show list of branches</span>
-git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>&lt;branch_name&gt;<span class="w">               </span><span class="c1"># remove “&lt;branch_name&gt;” branch locally</span>
-git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>--delete<span class="w"> </span>&lt;branch_name&gt;<span class="w">    </span><span class="c1"># remove remote “&lt;branch_name&gt;” branch</span>
-git<span class="w"> </span>branch<span class="w"> </span>-a<span class="w">                             </span><span class="c1"># show list of branches to ensure “&lt;branch_name&gt;” is removed</span>
-</code></pre></div>
-<h2 id="rename">Rename</h2>
-<p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>branch<span class="w"> </span>-m<span class="w"> </span>old-name<span class="w"> </span>new-name<span class="w">           </span><span class="c1"># rename</span>
-git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>:old-name<span class="w"> </span>new-name<span class="w">        </span><span class="c1"># push to origin</span>
-git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>-u<span class="w"> </span>new-name<span class="w">               </span><span class="c1"># add upstream (tracking) reference</span>
-</code></pre></div>
-Source: <a href="https://stackoverflow.com/a/40034426/5575527">1</a></p>
-<h2 id="rebase">Rebase</h2>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>master
-git<span class="w"> </span>pull
-git<span class="w"> </span>checkout<span class="w"> </span>my_brarch
-git<span class="w"> </span>rebase<span class="w"> </span>-i<span class="w"> </span>master<span class="w">        </span><span class="c1"># pick first comment and fixup the rest ones</span>
-git<span class="w"> </span>push
-<span class="c1">#git push -f                # if changed were already pushed to remote</span>
-</code></pre></div>
-<h3 id="rebase-onto-another-branch">Rebase onto another branch</h3>
-<p>Precondition:
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>master
-git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature_1<span class="w"> </span><span class="c1"># create a branch from master</span>
-<span class="c1"># add &amp; commit changes</span>
-git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature_2<span class="w"> </span><span class="c1"># create a branch from feature_1</span>
-<span class="c1"># add &amp; commit changes</span>
-</code></pre></div>
-Rebase <code>feature_2</code> onto <code>master</code> branch: 
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>feature_2
-git<span class="w"> </span>rebase<span class="w"> </span>--onto<span class="w"> </span>master<span class="w"> </span>feature_1
-</code></pre></div>
-<a href="https://git-scm.com/book/en/v2/Git-Branching-Rebasing#_more_interesting_rebases">More info</a></p>
-<h3 id="rebase-onto-a-rebased-branch">Rebase onto a rebased branch</h3>
-<p><div class="highlight"><pre><span></span><code><span class="w"> </span>git<span class="w"> </span>rebase<span class="w"> </span>--onto<span class="w"> </span>feature1<span class="w"> </span>feature1@<span class="o">{</span><span class="m">1</span><span class="o">}</span><span class="w"> </span>feature2
-</code></pre></div>
-<a href="https://stackoverflow.com/questions/31881885/how-to-rebase-a-branch-off-a-rebased-branch#answer-53928753">More info</a></p>
-<h2 id="undoing-a-git-push">Undoing a 'git push'</h2>
-<p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span>-f<span class="w"> </span>origin<span class="w"> </span>last_known_good_commit:branch_name
-</code></pre></div>
-Source: <a href="https://stackoverflow.com/questions/1270514/undoing-a-git-push">1</a></p>
-<h2 id="copy-commit-to-a-new-branch">Copy commit to a new branch:</h2>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>new_branch_name
-git<span class="w"> </span>cherry-pick<span class="w"> </span>&lt;commit&gt;
-</code></pre></div>
-<h2 id="back-branch-to-the-last-good-commit">Back branch to the last good commit:</h2>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>branch_name
-git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>&lt;last_good_commit&gt;
-git<span class="w"> </span>push<span class="w"> </span>-f
-</code></pre></div>
 
 
 
