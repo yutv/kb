@@ -4,9 +4,11 @@ theme:
   language: en
   features:
     - navigation.tabs
+    - content.code.copy
   palette:
-      primary: 'Teal'
-      accent: 'Teal'
+    scheme: slate
+    primary: black
+    accent: amber
 
 nav:
   - Home:
@@ -35,6 +37,8 @@ nav:
   - Bash:
     - General: bash/general.md
     - FU: bash/fu.md
+  - Ubuntu:
+    - Misc: ubuntu/misc.md
   - Git:
     - Branch: git/branch.md
     - Config: git/config.md
