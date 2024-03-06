@@ -1326,9 +1326,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#reindex-invalid-indexers-on-schedule-mode" class="md-nav__link">
+  <a href="#reindex-invalid-indexers-full-reindex-of-invalid-indexers" class="md-nav__link">
     <span class="md-ellipsis">
-      Reindex invalid indexers (on schedule mode)
+      Reindex invalid indexers (full reindex of invalid indexers)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reindex-of-subscribed-records-of-idle-indexers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reindex of subscribed records of idle indexers
     </span>
   </a>
   
@@ -1511,9 +1520,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#reindex-invalid-indexers-on-schedule-mode" class="md-nav__link">
+  <a href="#reindex-invalid-indexers-full-reindex-of-invalid-indexers" class="md-nav__link">
     <span class="md-ellipsis">
-      Reindex invalid indexers (on schedule mode)
+      Reindex invalid indexers (full reindex of invalid indexers)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reindex-of-subscribed-records-of-idle-indexers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reindex of subscribed records of idle indexers
     </span>
   </a>
   
@@ -1576,10 +1594,17 @@
 <div class="highlight"><pre><span></span><code>php<span class="w"> </span>bin/magento<span class="w"> </span>cache:clean
 php<span class="w"> </span>bin/magento<span class="w"> </span>cron:run<span class="w"> </span>--group<span class="o">=</span>default<span class="w"> </span>--bootstrap<span class="o">=</span><span class="nv">standaloneProcessStarted</span><span class="o">=</span><span class="m">1</span>
 </code></pre></div></p>
-<h2 id="reindex-invalid-indexers-on-schedule-mode">Reindex invalid indexers (on schedule mode)</h2>
+<h2 id="reindex-invalid-indexers-full-reindex-of-invalid-indexers">Reindex invalid indexers (full reindex of invalid indexers)</h2>
 <p><div class="highlight"><pre><span></span><code><span class="k">TRUNCATE</span><span class="w"> </span><span class="o">`</span><span class="n">cron_schedule</span><span class="o">`</span><span class="p">;</span>
 <span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="o">`</span><span class="n">cron_schedule</span><span class="o">`</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">job_code</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">status</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">messages</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">created_at</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">scheduled_at</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">executed_at</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">finished_at</span><span class="o">`</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span>
 <span class="p">(</span><span class="s1">&#39;indexer_reindex_all_invalid&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;pending&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">NOW</span><span class="p">(),</span><span class="w"> </span><span class="n">NOW</span><span class="p">(),</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w"> </span><span class="k">NULL</span><span class="p">);</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>php<span class="w"> </span>bin/magento<span class="w"> </span>cron:run<span class="w"> </span>--group<span class="o">=</span>index<span class="w"> </span>--bootstrap<span class="o">=</span><span class="nv">standaloneProcessStarted</span><span class="o">=</span><span class="m">1</span>
+</code></pre></div></p>
+<h2 id="reindex-of-subscribed-records-of-idle-indexers">Reindex of subscribed records of idle indexers</h2>
+<p><div class="highlight"><pre><span></span><code><span class="k">TRUNCATE</span><span class="w"> </span><span class="o">`</span><span class="n">cron_schedule</span><span class="o">`</span><span class="p">;</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="o">`</span><span class="n">cron_schedule</span><span class="o">`</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">job_code</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">status</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">messages</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">created_at</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">scheduled_at</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">executed_at</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">finished_at</span><span class="o">`</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span>
+<span class="p">(</span><span class="s1">&#39;indexer_update_all_views&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;pending&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">NOW</span><span class="p">(),</span><span class="w"> </span><span class="n">NOW</span><span class="p">(),</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w"> </span><span class="k">NULL</span><span class="p">);</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>php<span class="w"> </span>bin/magento<span class="w"> </span>cron:run<span class="w"> </span>--group<span class="o">=</span>index<span class="w"> </span>--bootstrap<span class="o">=</span><span class="nv">standaloneProcessStarted</span><span class="o">=</span><span class="m">1</span>
 </code></pre></div></p>
