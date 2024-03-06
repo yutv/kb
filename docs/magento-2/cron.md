@@ -17,11 +17,20 @@ php bin/magento cache:clean
 php bin/magento cron:run --group=default --bootstrap=standaloneProcessStarted=1
 ```
 
-## Reindex invalid indexers (on schedule mode)
+## Reindex invalid indexers (full reindex of invalid indexers)
 ```sql
 TRUNCATE `cron_schedule`;
 INSERT INTO `cron_schedule` (`job_code`, `status`, `messages`, `created_at`, `scheduled_at`, `executed_at`, `finished_at`) VALUES
 ('indexer_reindex_all_invalid', 'pending', NULL, NOW(), NOW(), NULL, NULL);
+```
+```bash
+php bin/magento cron:run --group=index --bootstrap=standaloneProcessStarted=1
+```
+## Reindex of subscribed records of idle indexers
+```sql
+TRUNCATE `cron_schedule`;
+INSERT INTO `cron_schedule` (`job_code`, `status`, `messages`, `created_at`, `scheduled_at`, `executed_at`, `finished_at`) VALUES
+('indexer_update_all_views', 'pending', NULL, NOW(), NOW(), NULL, NULL);
 ```
 ```bash
 php bin/magento cron:run --group=index --bootstrap=standaloneProcessStarted=1
