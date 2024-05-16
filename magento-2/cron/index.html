@@ -1578,6 +1578,7 @@
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PS1</span><span class="o">=</span><span class="s2">&quot;\[\e[0;38;05;15m\][\[\e[0;38;05;47m\]\u\[\e[0;38;05;15m\]@\[\e[0;38;05;153m\]\h:\[\e[0;38;05;111m\]\w\[\e[0;38;05;15m\]]\\</span>$<span class="s2"> \[\e[0m\]&quot;</span>
 <span class="nb">alias</span><span class="w"> </span>m2-clean<span class="o">=</span><span class="s1">&#39;rm -Rf generated/* var/cache/* var/page_cache/* var/di/* var/view_preprocessed/* pub/static/* &amp;&amp; redis-cli FLUSHALL&#39;</span>
 <span class="nb">alias</span><span class="w"> </span>m2-cssclean<span class="o">=</span><span class="s2">&quot;rm -Rf var/view_preprocessed/* &amp;&amp; find pub/static/ -name &#39;styles-*.css&#39; -exec rm -f {} \;&quot;</span>
+<span class="nb">alias</span><span class="w"> </span>m2-translation-clean<span class="o">=</span><span class="s2">&quot;find pub/static/ -name &#39;js-transl*.*&#39; -exec rm -f {} \; &amp;&amp; php bin/magento cache:clean translate&quot;</span>
 </code></pre></div>
 <strong>~/.profile</strong>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
