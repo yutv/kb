@@ -828,6 +828,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#manage-monitors-brightness" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manage monitors brightness
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1537,6 +1546,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#manage-monitors-brightness" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manage monitors brightness
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1615,6 +1633,20 @@ History<span class="w"> </span><span class="o">(</span>rate<span class="o">)</sp
 </code></pre></div></p>
 <h1 id="show-list-of-files-accessed-by-the-process">Show list of files accessed by the process</h1>
 <div class="highlight"><pre><span></span><code>strace<span class="w"> </span>-f<span class="w"> </span>-t<span class="w"> </span>-e<span class="w"> </span><span class="nv">trace</span><span class="o">=</span>file<span class="w"> </span>mgc<span class="w"> </span>project:info<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>access<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
+</code></pre></div>
+<h1 id="manage-monitors-brightness">Manage monitors brightness</h1>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$#</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Usage: &quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$0</span><span class="s2"> &lt;brightness-level&gt;&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;e.g.: </span><span class="nv">$0</span><span class="s2"> 0.8&quot;</span>
+<span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">0</span>
+<span class="k">fi</span>
+
+<span class="k">for</span><span class="w"> </span>output<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>xrandr<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39; connected&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $1}&#39;</span><span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span>xrandr<span class="w"> </span>--output<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$output</span><span class="s2">&quot;</span><span class="w"> </span>--brightness<span class="w"> </span><span class="nv">$1</span>
+<span class="k">done</span>
 </code></pre></div>
 
 
