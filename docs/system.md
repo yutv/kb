@@ -68,3 +68,19 @@ History (rate):
 ```bash
 strace -f -t -e trace=file mgc project:info 2>&1 | grep access | sort | uniq
 ```
+
+# Manage monitors brightness
+```bash
+#!/bin/bash
+
+if [ $# -ne 1 ] ; then
+    echo "Usage: "
+    echo "$0 <brightness-level>"
+    echo "e.g.: $0 0.8"
+    exit 0
+fi
+
+for output in $(xrandr | grep ' connected' | awk '{print $1}'); do
+    xrandr --output "$output" --brightness $1
+done
+```
