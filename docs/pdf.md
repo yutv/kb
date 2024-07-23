@@ -1,3 +1,8 @@
+## Create pdf from images
+```
+montage 01.jpg 02.jpg 03.jpg -tile 1x1 -geometry 1000 -page A4 -compress jpeg -quality 75 -background white my-document.pdf
+```
+
 ## Create Booklet
 
     pdfbook --short-edge --frame true --scale 0.95 file.pdf
