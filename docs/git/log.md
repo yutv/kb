@@ -20,3 +20,7 @@ git log --name-status
 ```bash
 git log --pretty=format:'%D' HEAD^ | grep 'origin/' | head -n1 | sed 's@origin/@@' | sed 's@,.*@@'
 ```
+# find deleted file
+```bash
+git log --all --full-history -- '**/file.*'
+```

@@ -98,6 +98,13 @@ git rebase --onto master feature_1
 ```
 [More info](https://stackoverflow.com/questions/31881885/how-to-rebase-a-branch-off-a-rebased-branch#answer-53928753)
 
+## Reverting git rebase
+```bash
+git reflog
+git reset --hard HEAD@{2} # be absolutely sure before resetting with the --hard option
+```
+Source: [1](https://stackoverflow.com/questions/134882/undoing-a-git-rebase)
+
 ## Undoing a 'git push'
 ```bash
 git push -f origin last_known_good_commit:branch_name
