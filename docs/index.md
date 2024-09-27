@@ -2,6 +2,8 @@ Set of useful tips for developers who are using bash, git, mysql, etc.
 
 Install:
 
+- `python3 -m venv .venv` - install python virtual env
+- `source .venv/bin/activate` - activate virtual env
 - `pip install mkdocs` - install mkdocs ([more info](https://www.mkdocs.org/#installation))
 - `pip install mkdocs-material` -  install material theme ([more info](https://github.com/squidfunk/mkdocs-material))
 - make sure the PATH is configured: `export PATH="$HOME/.local/bin:$PATH"`
