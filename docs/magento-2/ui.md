@@ -144,3 +144,14 @@ Source: [1](https://magento.stackexchange.com/questions/163585/magento-2-how-to-
 ```javascript
 ko.bindingHandlers.blockLoader.update(this.container.get(0), ko.observable(true));
 ```
+
+## Bind HTML
+```html
+<div data-bind="bindHtml: content"></div>
+```
+```html
+<div bindHtml="
+    <div data-bind='text: \'String from the text binding\''></div>
+"></div>
+```
+Source: [1](https://developer.adobe.com/commerce/frontend-core/ui-components/concepts/knockout-bindings/#bindhtml)
