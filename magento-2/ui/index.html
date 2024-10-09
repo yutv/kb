@@ -1566,6 +1566,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#bind-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bind HTML
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1726,6 +1735,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#bind-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bind HTML
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1874,6 +1892,14 @@ Source: <a href="https://magento.stackexchange.com/questions/163585/magento-2-ho
 <div class="highlight"><pre><span></span><code><span class="nx">ko</span><span class="p">.</span><span class="nx">bindingHandlers</span><span class="p">.</span><span class="nx">blockLoader</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">container</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mf">0</span><span class="p">),</span><span class="w"> </span><span class="nx">ko</span><span class="p">.</span><span class="nx">observable</span><span class="p">(</span><span class="kc">true</span><span class="p">));</span>
 </code></pre></div></li>
 </ol>
+<h2 id="bind-html">Bind HTML</h2>
+<p><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">data-bind</span><span class="o">=</span><span class="s">&quot;bindHtml: content&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">bindHtml</span><span class="o">=</span><span class="s">&quot;</span>
+<span class="s">    &lt;div data-bind=&#39;text: \&#39;String from the text binding\&#39;&#39;&gt;&lt;/div&gt;</span>
+<span class="s">&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+Source: <a href="https://developer.adobe.com/commerce/frontend-core/ui-components/concepts/knockout-bindings/#bindhtml">1</a></p>
 
 
 
