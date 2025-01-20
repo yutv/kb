@@ -695,6 +695,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../phpstorm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PhpStorm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../raspberry-pi/" class="md-nav__link">
         
   
@@ -1519,6 +1540,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#show-message-dynamically" class="md-nav__link">
+    <span class="md-ellipsis">
+      show message dynamically
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init-ui-component-dynamically" class="md-nav__link">
+    <span class="md-ellipsis">
+      init UI component dynamically
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-of-ui-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      list of UI components
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1683,6 +1731,33 @@
   <a href="#show-message-on-early-stage" class="md-nav__link">
     <span class="md-ellipsis">
       Show message on early stage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-message-dynamically" class="md-nav__link">
+    <span class="md-ellipsis">
+      show message dynamically
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init-ui-component-dynamically" class="md-nav__link">
+    <span class="md-ellipsis">
+      init UI component dynamically
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-of-ui-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      list of UI components
     </span>
   </a>
   
@@ -1873,6 +1948,15 @@
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">});</span>
 <span class="p">});</span>
+</code></pre></div>
+<h3 id="show-message-dynamically">show message dynamically</h3>
+<div class="highlight"><pre><span></span><code><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;Magento_Customer/js/customer-data&#39;</span><span class="p">).</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;messages&#39;</span><span class="p">)({</span><span class="nx">messages</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;error&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">text</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;test message&#39;</span><span class="p">}]});</span>
+</code></pre></div>
+<h3 id="init-ui-component-dynamically">init UI component dynamically</h3>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<h3 id="list-of-ui-components">list of UI components</h3>
+<div class="highlight"><pre><span></span><code><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;uiRegistry&#39;</span><span class="p">).</span><span class="nx">get</span><span class="p">((</span><span class="nx">c</span><span class="p">,</span><span class="w"> </span><span class="nx">n</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span><span class="w"> </span><span class="nx">c</span><span class="p">));</span>
 </code></pre></div>
 <h2 id="jquery-validate">jQuery Validate</h2>
 <h3 id="custom-message">custom message</h3>
