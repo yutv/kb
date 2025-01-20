@@ -29,6 +29,7 @@ nav:
     - PDF: pdf.md
     - Performance: performance.md
     - PHP: php.md
+    - PhpStorm: phpstorm.md
     - Raspberry Pi: raspberry-pi.md
     - Redis: redis.md
     - SSH: ssh.md

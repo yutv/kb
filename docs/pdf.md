@@ -7,6 +7,11 @@ montage 01.jpg 02.jpg 03.jpg -tile 1x1 -geometry 1000 -page A4 -compress jpeg -q
 
     pdfbook --short-edge --frame true --scale 0.95 file.pdf
 
+## Split pdf
+
+```bash
+pdftk input.pdf cat 1 output output_p1.pdf
+```
 ## Convert PDF to JPG
 ```bash
 vips copy sample.pdf[dpi=300,page=0] sample-page-1.jpg

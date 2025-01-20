@@ -123,6 +123,19 @@ define([
     });
 });
 ```
+### show message dynamically
+```js
+require('Magento_Customer/js/customer-data').get('messages')({messages: [{type: 'error', text: 'test message'}]});
+```
+### init UI component dynamically
+```js
+
+```
+### list of UI components
+```js
+require('uiRegistry').get((c, n) => console.log(n, c));
+```
+
 ## jQuery Validate
 
 ### custom message
