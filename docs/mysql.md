@@ -123,7 +123,7 @@ Source: [1](https://tableplus.com/blog/2018/08/mysql-how-to-see-foreign-key-rela
     SELECT table_name AS `table`, 
     ROUND((data_length + index_length) / 1024 / 1024, 2) AS size_mb 
     FROM information_schema.TABLES 
-    WHERE TABLE_SCHEMA = 'mydb'
+    WHERE TABLE_SCHEMA = DATABASE()
     ORDER BY size_mb DESC
     ```
 ## Locking
